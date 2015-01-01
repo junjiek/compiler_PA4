@@ -3,13 +3,17 @@ package decaf.dataflow;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
 
 import decaf.tac.Functy;
 import decaf.tac.Tac;
 import decaf.tac.Tac.Kind;
+import decaf.tac.Temp;
 
 public class FlowGraph implements Iterable<BasicBlock> {
 
@@ -173,7 +177,24 @@ public class FlowGraph implements Iterable<BasicBlock> {
 		return bbs.size();
 	}
 	public void analyzeArriveDef() {
-
+		Hashtable<Temp, ArrayList<DefRefPoint>> genAll = new Hashtable<Temp, ArrayList<DefRefPoint>>();
+		for (BasicBlock bb : bbs) {
+			for (DefRefPoint p : bb.gen) {
+				if (genAll.get(p.var) == null) {
+					ArrayList<DefRefPoint> pList = new ArrayList<DefRefPoint>();
+					pList.add(p);
+					genAll.put(p.var, pList);
+				} else {
+					genAll.get(p.var).add(p);
+				}
+			}
+		}
+		for (BasicBlock bb : bbs) {
+			for (DefRefPoint p : bb.gen) {
+				bb.kill.addAll(genAll.get(p.var));
+				bb.kill.remove(p);
+			}
+		}
 	}
 
 	public void analyzeLiveness() {
