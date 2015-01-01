@@ -3,7 +3,10 @@ package decaf.dataflow;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Hashtable;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.HashSet;
@@ -85,6 +88,8 @@ public class BasicBlock {
 
 	public Set<Integer> prev;
 
+	public Map<DefRefPoint, List<Integer>> udChain;
+
 	public Set<Temp> saves;
 
 	private List<Asm> asms;
@@ -99,11 +104,13 @@ public class BasicBlock {
 		gen = new TreeSet<DefRefPoint>(DefRefPoint.COMPARATOR);
 		kill = new TreeSet<DefRefPoint>(DefRefPoint.COMPARATOR);
 		prev = new TreeSet<Integer>();
+		udChain = new Hashtable<DefRefPoint, List<Integer>>();
 		next = new int[2];
 		asms = new ArrayList<Asm>();
 	}
 
 	public void computeDefAndLiveUse() {
+		Hashtable<Temp, Integer> newGenPointInBlock = new Hashtable<Temp, Integer>();
 		for (Tac tac = tacList; tac != null; tac = tac.next) {
 			switch (tac.opc) {
 			case ADD:
@@ -120,6 +127,7 @@ public class BasicBlock {
 			case LEQ:
 			case LES:
 				/* use op1 and op2, def op0 */
+				newGenPointInBlock.put(tac.op0, tac.globalNum);
 				if (tac.op1.lastVisitedBB != bbNum) {
 					liveUse.add (tac.op1);
 					tac.op1.lastVisitedBB = bbNum;
@@ -129,7 +137,6 @@ public class BasicBlock {
 					tac.op2.lastVisitedBB = bbNum;
 				}
 				if (tac.op0.lastVisitedBB != bbNum) {
-					gen.add(new DefRefPoint(tac.op0, tac.globalNum));
 					def.add (tac.op0);
 					tac.op0.lastVisitedBB = bbNum;
 				}
@@ -144,11 +151,13 @@ public class BasicBlock {
 					liveUse.add (tac.op1);
 					tac.op1.lastVisitedBB = bbNum;
 				}
-				if (tac.op0 != null && tac.op0.lastVisitedBB != bbNum) {  // in INDIRECT_CALL with return type VOID,
-					// tac.op0 is null
-					gen.add(new DefRefPoint(tac.op0, tac.globalNum));
-					def.add (tac.op0);
-					tac.op0.lastVisitedBB = bbNum;
+				if (tac.op0 != null) {  // in INDIRECT_CALL with return type VOID,
+										// tac.op0 is null
+					newGenPointInBlock.put(tac.op0, tac.globalNum);
+					if (tac.op0.lastVisitedBB != bbNum) {
+						def.add (tac.op0);
+						tac.op0.lastVisitedBB = bbNum;						
+					}
 				}
 				break;
 			case LOAD_VTBL:
@@ -157,11 +166,13 @@ public class BasicBlock {
 			case LOAD_STR_CONST:
 			case LOAD_IMM4:
 				/* def op0 */
-				if (tac.op0 != null && tac.op0.lastVisitedBB != bbNum) {  // in DIRECT_CALL with return type VOID,
-					// tac.op0 is null
-					gen.add(new DefRefPoint(tac.op0, tac.globalNum));
-					def.add (tac.op0);
-					tac.op0.lastVisitedBB = bbNum;
+				if (tac.op0 != null) {  // in DIRECT_CALL with return type VOID,
+										// tac.op0 is null
+					newGenPointInBlock.put(tac.op0, tac.globalNum);
+					if (tac.op0.lastVisitedBB != bbNum) {
+						def.add (tac.op0);
+						tac.op0.lastVisitedBB = bbNum;						
+					}
 				}
 				break;
 			case STORE:
@@ -192,12 +203,97 @@ public class BasicBlock {
 			var.lastVisitedBB = bbNum;
 		}
 		liveIn.addAll (liveUse);
+		Iterator<Temp> itr = newGenPointInBlock.keySet().iterator();
+		while(itr.hasNext()){ 
+			Temp key = itr.next(); 
+			Integer defPlace = newGenPointInBlock.get(key); 
+			gen.add(new DefRefPoint(key, defPlace));
+		} 
+	}
+	
+	private void calSingleUseDefChain(
+		DefRefPoint refPoint, Hashtable<Temp, ArrayList<Integer>> inAll,
+		Hashtable<Temp, Integer> newGenPointInBlock) {
+		if (!newGenPointInBlock.contains(refPoint.var)) {
+			ArrayList<Integer> defPoint = new ArrayList<>();
+			defPoint.add(newGenPointInBlock.get(refPoint.var));
+			udChain.put(refPoint, defPoint);
+		} else {
+			udChain.put(refPoint, inAll.get(refPoint.var));
+		}
 	}
 
-	public void analyzeArriveDef() {
-		// System.out.println("--gen--");
-		// System.out.println(gen.toString());
-
+	public void calUseDefChain() {
+		Hashtable<Temp, ArrayList<Integer>> inAll = new Hashtable<Temp, ArrayList<Integer>>();
+		for (DefRefPoint point : in) {
+			if (!inAll.contains(point.var)) {
+				ArrayList<Integer> defPlaceNum = new ArrayList<Integer>();
+				defPlaceNum.add(point.globalNum);
+				inAll.put(point.var, defPlaceNum);
+			} else {
+				inAll.get(point.var).add(point.globalNum);
+			}
+		}
+		Hashtable<Temp, Integer> newGenPointInBlock = new Hashtable<>();
+		for (Tac tac = tacList; tac != null; tac = tac.next) {
+			switch (tac.opc) {
+			case ADD:
+			case SUB:
+			case MUL:
+			case DIV:
+			case MOD:
+			case LAND:
+			case LOR:
+			case GTR:
+			case GEQ:
+			case EQU:
+			case NEQ:
+			case LEQ:
+			case LES:
+				/* use op1 and op2, def op0 */
+				calSingleUseDefChain(new DefRefPoint(tac.op1, tac.globalNum), inAll, newGenPointInBlock);
+				calSingleUseDefChain(new DefRefPoint(tac.op2, tac.globalNum), inAll, newGenPointInBlock);
+				newGenPointInBlock.put(tac.op0, tac.globalNum);
+				break;
+			case NEG:
+			case LNOT:
+			case ASSIGN:
+			case INDIRECT_CALL:
+			case LOAD:
+				/* use op1, def op0 */
+				calSingleUseDefChain(new DefRefPoint(tac.op1, tac.globalNum), inAll, newGenPointInBlock);
+				if (tac.op0 != null) { 
+					newGenPointInBlock.put(tac.op0, tac.globalNum);
+				}
+				break;
+			case LOAD_VTBL:
+			case DIRECT_CALL:
+			case RETURN:
+			case LOAD_STR_CONST:
+			case LOAD_IMM4:
+				/* def op0 */
+				if (tac.op0 != null) { 
+					// in DIRECT_CALL with return type VOID, tac.op0 is null
+					newGenPointInBlock.put(tac.op0, tac.globalNum);
+				}
+				break;
+			case STORE:
+				/* use op0 and op1*/
+				calSingleUseDefChain(new DefRefPoint(tac.op0, tac.globalNum), inAll, newGenPointInBlock);
+				calSingleUseDefChain(new DefRefPoint(tac.op1, tac.globalNum), inAll, newGenPointInBlock);
+				break;
+			case PARM:
+				/* use op0 */
+				calSingleUseDefChain(new DefRefPoint(tac.op0, tac.globalNum), inAll, newGenPointInBlock);
+				break;
+			default:
+				/* BRANCH MEMO MARK PARM*/
+				break;
+			}
+		}
+		if (var != null) {
+			// TODO: add return var ref
+		}
 	}
 	public void analyzeLiveness() {
 		if (tacList == null)

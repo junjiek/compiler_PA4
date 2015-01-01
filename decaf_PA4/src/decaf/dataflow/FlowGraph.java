@@ -32,7 +32,10 @@ public class FlowGraph implements Iterable<BasicBlock> {
 		analyzeArriveDef();
 		for (BasicBlock bb : bbs) {
 			bb.analyzeLiveness();
-			bb.analyzeArriveDef();
+			bb.calUseDefChain();
+			// System.out.println(bb.bbNum);
+			// System.out.println(bb.udChain.toString());
+			// System.out.println();
 		}
 	}
 
@@ -191,7 +194,7 @@ public class FlowGraph implements Iterable<BasicBlock> {
 		for (BasicBlock bb : bbs) {
 			bb.out = bb.gen;
 			for (DefRefPoint p : bb.gen) {
-				if (genAll.get(p.var) == null) {
+				if (!genAll.contains(p.var)) {
 					ArrayList<DefRefPoint> pList = new ArrayList<DefRefPoint>();
 					pList.add(p);
 					genAll.put(p.var, pList);
