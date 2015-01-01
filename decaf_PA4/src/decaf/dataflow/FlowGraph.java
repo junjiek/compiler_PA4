@@ -7,8 +7,8 @@ import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
-import java.util.TreeSet;
+
+import javax.swing.text.ChangedCharSetException;
 
 import decaf.tac.Functy;
 import decaf.tac.Tac;
@@ -99,17 +99,15 @@ public class FlowGraph implements Iterable<BasicBlock> {
 		BasicBlock current = null;
 		Tac nextStart = null;
 		Tac end = null;
-
 		while (start != null && start.bbNum < 0) {
 			start = start.next;
 		}
-
+		
 		for (; start != null; start = nextStart) {
 			int bbNum = start.bbNum;
 			while (start != null && start.opc == Tac.Kind.MARK) {
 				start = start.next;
 			}
-
 			if (start == null) {
 				current = new BasicBlock();
 				current.bbNum = bbNum;
@@ -176,9 +174,22 @@ public class FlowGraph implements Iterable<BasicBlock> {
 	public int size() {
 		return bbs.size();
 	}
+
+	private void calPrev() {
+		for (BasicBlock bb : bbs) {
+			for (int i = 0; i < 2; i++) {
+				if(bb.next[i] != 0){
+					bbs.get(bb.next[i]).prev.add(bb.bbNum);					
+				}
+			}
+		}
+	}
+
 	public void analyzeArriveDef() {
+		calPrev();
 		Hashtable<Temp, ArrayList<DefRefPoint>> genAll = new Hashtable<Temp, ArrayList<DefRefPoint>>();
 		for (BasicBlock bb : bbs) {
+			bb.out = bb.gen;
 			for (DefRefPoint p : bb.gen) {
 				if (genAll.get(p.var) == null) {
 					ArrayList<DefRefPoint> pList = new ArrayList<DefRefPoint>();
@@ -193,6 +204,21 @@ public class FlowGraph implements Iterable<BasicBlock> {
 			for (DefRefPoint p : bb.gen) {
 				bb.kill.addAll(genAll.get(p.var));
 				bb.kill.remove(p);
+			}
+		}
+		boolean changed = true;
+		while (changed) {
+			changed = false;
+			for (BasicBlock bb : bbs) {
+				for (Integer prevBlock : bb.prev) {
+					bb.in.addAll(bbs.get(prevBlock).out);
+				}
+				bb.in.removeAll(bb.kill);
+				if (bb.out.addAll(bb.in))
+					changed = true;
+				for (Integer prevBlock : bb.prev) {
+					bb.in.addAll(bbs.get(prevBlock).out);
+				}
 			}
 		}
 	}

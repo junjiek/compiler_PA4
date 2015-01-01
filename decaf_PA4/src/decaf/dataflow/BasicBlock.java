@@ -62,7 +62,7 @@ public class BasicBlock {
 	public Register varReg;
 
 	public int[] next;
-
+	
 	public boolean cancelled;
 
 	public boolean mark;
@@ -83,6 +83,8 @@ public class BasicBlock {
 
 	public Set<DefRefPoint> kill;
 
+	public Set<Integer> prev;
+
 	public Set<Temp> saves;
 
 	private List<Asm> asms;
@@ -96,6 +98,7 @@ public class BasicBlock {
 		out = new TreeSet<DefRefPoint>(DefRefPoint.COMPARATOR);
 		gen = new TreeSet<DefRefPoint>(DefRefPoint.COMPARATOR);
 		kill = new TreeSet<DefRefPoint>(DefRefPoint.COMPARATOR);
+		prev = new TreeSet<Integer>();
 		next = new int[2];
 		asms = new ArrayList<Asm>();
 	}
