@@ -46,7 +46,7 @@ class DefRefPoint {
 		@Override
 		public int compare(DefRefPoint o1, DefRefPoint o2) {
 
-			if (o1.globalNum != o2.globalNum) {
+			if (!o1.globalNum.equals(o2.globalNum)) {
 				return o1.globalNum > o2.globalNum ? 1 : -1;
 			} else {
 				return Temp.ID_COMPARATOR.compare(o1.var, o2.var);
@@ -237,7 +237,7 @@ public class BasicBlock {
 			defPoint.add(newGenPointInBlock.get(refPoint.var));
 			udChain.put(refPoint, defPoint);
 		} else {
-			if(inAll.containsKey(refPoint.var))
+			if(inAll.get(refPoint.var) != null)
 				udChain.put(refPoint, inAll.get(refPoint.var));
 			else
 				udChain.put(refPoint, defPoint);

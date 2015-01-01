@@ -1,6 +1,1454 @@
-Exception in thread "main" java.lang.NullPointerException
-	at decaf.dataflow.BasicBlock.udChainToString(BasicBlock.java:452)
-	at decaf.dataflow.BasicBlock.printUDChainTo(BasicBlock.java:487)
-	at decaf.dataflow.FlowGraph.printUDChainTo(FlowGraph.java:334)
-	at decaf.Driver.compile(Driver.java:132)
-	at decaf.Driver.main(Driver.java:152)
+FUNCTION _Matrix_New : 
+BASIC BLOCK 0 : 
+    1: _T38 = 4
+    2: parm _T38
+    3: _T39 =  call _Alloc
+    4: _T40 = VTBL <_Matrix>
+    5: *(_T39 + 0) = _T40
+    6: END BY RETURN, result = _T39
+  Use-Def Chain : 
+    (_T38, 2): [1]
+    (_T39, 5): [3]
+    (_T40, 5): [4]
+    (_T39, 6): [3]
+
+
+FUNCTION _DenseMatrix_New : 
+BASIC BLOCK 0 : 
+    1: _T41 = 8
+    2: parm _T41
+    3: _T42 =  call _Alloc
+    4: _T43 = 0
+    5: *(_T42 + 4) = _T43
+    6: _T44 = VTBL <_DenseMatrix>
+    7: *(_T42 + 0) = _T44
+    8: END BY RETURN, result = _T42
+  Use-Def Chain : 
+    (_T41, 2): [1]
+    (_T42, 5): [3]
+    (_T43, 5): [4]
+    (_T42, 7): [3]
+    (_T44, 7): [6]
+    (_T42, 8): [3]
+
+
+FUNCTION _SparseItem_New : 
+BASIC BLOCK 0 : 
+    1: _T45 = 16
+    2: parm _T45
+    3: _T46 =  call _Alloc
+    4: _T47 = 0
+    5: *(_T46 + 4) = _T47
+    6: *(_T46 + 8) = _T47
+    7: *(_T46 + 12) = _T47
+    8: _T48 = VTBL <_SparseItem>
+    9: *(_T46 + 0) = _T48
+    10: END BY RETURN, result = _T46
+  Use-Def Chain : 
+    (_T45, 2): [1]
+    (_T46, 5): [3]
+    (_T47, 5): [4]
+    (_T46, 6): [3]
+    (_T47, 6): [4]
+    (_T46, 7): [3]
+    (_T47, 7): [4]
+    (_T46, 9): [3]
+    (_T48, 9): [8]
+    (_T46, 10): [3]
+
+
+FUNCTION _SparseMatrix_New : 
+BASIC BLOCK 0 : 
+    1: _T49 = 8
+    2: parm _T49
+    3: _T50 =  call _Alloc
+    4: _T51 = 0
+    5: *(_T50 + 4) = _T51
+    6: _T52 = VTBL <_SparseMatrix>
+    7: *(_T50 + 0) = _T52
+    8: END BY RETURN, result = _T50
+  Use-Def Chain : 
+    (_T49, 2): [1]
+    (_T50, 5): [3]
+    (_T51, 5): [4]
+    (_T50, 7): [3]
+    (_T52, 7): [6]
+    (_T50, 8): [3]
+
+
+FUNCTION _Main_New : 
+BASIC BLOCK 0 : 
+    1: _T53 = 4
+    2: parm _T53
+    3: _T54 =  call _Alloc
+    4: _T55 = VTBL <_Main>
+    5: *(_T54 + 0) = _T55
+    6: END BY RETURN, result = _T54
+  Use-Def Chain : 
+    (_T53, 2): [1]
+    (_T54, 5): [3]
+    (_T55, 5): [4]
+    (_T54, 6): [3]
+
+
+FUNCTION _Matrix.Init : 
+BASIC BLOCK 0 : 
+    0: END BY RETURN, void result
+  Use-Def Chain : 
+
+
+FUNCTION _Matrix.Set : 
+BASIC BLOCK 0 : 
+    0: END BY RETURN, void result
+  Use-Def Chain : 
+
+
+FUNCTION _Matrix.Get : 
+BASIC BLOCK 0 : 
+    0: END BY RETURN, void result
+  Use-Def Chain : 
+
+
+FUNCTION _Matrix.PrintMatrix : 
+BASIC BLOCK 0 : 
+    1: _T58 = 0
+    2: _T56 = _T58
+    3: END BY BRANCH, goto 1
+  Use-Def Chain : 
+    (_T58, 2): [1]
+
+BASIC BLOCK 1 : 
+    4: _T59 = 10
+    5: _T60 = (_T56 < _T59)
+    6: END BY BEQZ, if _T60 = 0 : goto 6; 1 : goto 2
+  Use-Def Chain : 
+    (_T56, 5): [2, 31]
+    (_T59, 5): [4]
+    (_T60, 6): [5]
+
+BASIC BLOCK 2 : 
+    7: _T61 = 0
+    8: _T57 = _T61
+    9: END BY BRANCH, goto 3
+  Use-Def Chain : 
+    (_T61, 8): [7]
+
+BASIC BLOCK 3 : 
+    10: _T62 = 10
+    11: _T63 = (_T57 < _T62)
+    12: END BY BEQZ, if _T63 = 0 : goto 5; 1 : goto 4
+  Use-Def Chain : 
+    (_T57, 11): [8, 26]
+    (_T62, 11): [10]
+    (_T63, 12): [11]
+
+BASIC BLOCK 4 : 
+    13: parm _T8
+    14: parm _T56
+    15: parm _T57
+    16: _T64 = *(_T8 + 0)
+    17: _T65 = *(_T64 + 16)
+    18: _T66 =  call _T65
+    19: parm _T66
+    20: call _PrintInt
+    21: _T67 = "\t"
+    22: parm _T67
+    23: call _PrintString
+    24: _T68 = 1
+    25: _T69 = (_T57 + _T68)
+    26: _T57 = _T69
+    27: END BY BRANCH, goto 3
+  Use-Def Chain : 
+    (_T8, 13): []
+    (_T56, 14): [2, 31]
+    (_T57, 15): [8, 26]
+    (_T8, 16): []
+    (_T64, 17): [16]
+    (_T65, 18): [17]
+    (_T66, 19): [18]
+    (_T67, 22): [21]
+    (_T57, 25): [8, 26]
+    (_T68, 25): [24]
+    (_T69, 26): [25]
+
+BASIC BLOCK 5 : 
+    29: _T70 = 1
+    30: _T71 = (_T56 + _T70)
+    31: _T56 = _T71
+    32: _T72 = "\n"
+    33: parm _T72
+    34: call _PrintString
+    35: END BY BRANCH, goto 1
+  Use-Def Chain : 
+    (_T56, 30): [2, 31]
+    (_T70, 30): [29]
+    (_T71, 31): [30]
+    (_T72, 33): [32]
+
+BASIC BLOCK 6 : 
+    0: END BY RETURN, void result
+  Use-Def Chain : 
+
+
+FUNCTION _Matrix.SeedMatrix : 
+BASIC BLOCK 0 : 
+    1: _T75 = 0
+    2: _T73 = _T75
+    3: END BY BRANCH, goto 1
+  Use-Def Chain : 
+    (_T75, 2): [1]
+
+BASIC BLOCK 1 : 
+    4: _T76 = 5
+    5: _T77 = (_T73 < _T76)
+    6: END BY BEQZ, if _T77 = 0 : goto 6; 1 : goto 2
+  Use-Def Chain : 
+    (_T73, 5): [2, 28]
+    (_T76, 5): [4]
+    (_T77, 6): [5]
+
+BASIC BLOCK 2 : 
+    7: _T78 = 0
+    8: _T74 = _T78
+    9: END BY BRANCH, goto 3
+  Use-Def Chain : 
+    (_T78, 8): [7]
+
+BASIC BLOCK 3 : 
+    10: _T79 = 5
+    11: _T80 = (_T74 < _T79)
+    12: END BY BEQZ, if _T80 = 0 : goto 5; 1 : goto 4
+  Use-Def Chain : 
+    (_T74, 11): [8, 23]
+    (_T79, 11): [10]
+    (_T80, 12): [11]
+
+BASIC BLOCK 4 : 
+    13: _T81 = (_T73 + _T74)
+    14: parm _T9
+    15: parm _T73
+    16: parm _T74
+    17: parm _T81
+    18: _T82 = *(_T9 + 0)
+    19: _T83 = *(_T82 + 12)
+    20: call _T83
+    21: _T84 = 1
+    22: _T85 = (_T74 + _T84)
+    23: _T74 = _T85
+    24: END BY BRANCH, goto 3
+  Use-Def Chain : 
+    (_T73, 13): [2, 28]
+    (_T74, 13): [8, 23]
+    (_T9, 14): []
+    (_T73, 15): [2, 28]
+    (_T74, 16): [8, 23]
+    (_T81, 17): [13]
+    (_T9, 18): []
+    (_T82, 19): [18]
+    (_T83, 20): [19]
+    (_T74, 22): [8, 23]
+    (_T84, 22): [21]
+    (_T85, 23): [22]
+
+BASIC BLOCK 5 : 
+    26: _T86 = 1
+    27: _T87 = (_T73 + _T86)
+    28: _T73 = _T87
+    29: END BY BRANCH, goto 1
+  Use-Def Chain : 
+    (_T73, 27): [2, 28]
+    (_T86, 27): [26]
+    (_T87, 28): [27]
+
+BASIC BLOCK 6 : 
+    31: _T88 = 2
+    32: _T89 = 3
+    33: _T90 = 4
+    34: parm _T9
+    35: parm _T88
+    36: parm _T89
+    37: parm _T90
+    38: _T91 = *(_T9 + 0)
+    39: _T92 = *(_T91 + 12)
+    40: call _T92
+    41: _T93 = 4
+    42: _T94 = 6
+    43: _T95 = 2
+    44: parm _T9
+    45: parm _T93
+    46: parm _T94
+    47: parm _T95
+    48: _T96 = *(_T9 + 0)
+    49: _T97 = *(_T96 + 12)
+    50: call _T97
+    51: _T98 = 2
+    52: _T99 = 3
+    53: _T100 = 5
+    54: parm _T9
+    55: parm _T98
+    56: parm _T99
+    57: parm _T100
+    58: _T101 = *(_T9 + 0)
+    59: _T102 = *(_T101 + 12)
+    60: call _T102
+    61: _T103 = 0
+    62: _T104 = 0
+    63: _T105 = 1
+    64: parm _T9
+    65: parm _T103
+    66: parm _T104
+    67: parm _T105
+    68: _T106 = *(_T9 + 0)
+    69: _T107 = *(_T106 + 12)
+    70: call _T107
+    71: _T108 = 1
+    72: _T109 = 6
+    73: _T110 = 3
+    74: parm _T9
+    75: parm _T108
+    76: parm _T109
+    77: parm _T110
+    78: _T111 = *(_T9 + 0)
+    79: _T112 = *(_T111 + 12)
+    80: call _T112
+    81: _T113 = 7
+    82: _T114 = 7
+    83: _T115 = 7
+    84: parm _T9
+    85: parm _T113
+    86: parm _T114
+    87: parm _T115
+    88: _T116 = *(_T9 + 0)
+    89: _T117 = *(_T116 + 12)
+    90: call _T117
+    91: END BY RETURN, void result
+  Use-Def Chain : 
+    (_T9, 34): []
+    (_T88, 35): [31]
+    (_T89, 36): [32]
+    (_T90, 37): [33]
+    (_T9, 38): []
+    (_T91, 39): [38]
+    (_T92, 40): [39]
+    (_T9, 44): []
+    (_T93, 45): [41]
+    (_T94, 46): [42]
+    (_T95, 47): [43]
+    (_T9, 48): []
+    (_T96, 49): [48]
+    (_T97, 50): [49]
+    (_T9, 54): []
+    (_T98, 55): [51]
+    (_T99, 56): [52]
+    (_T100, 57): [53]
+    (_T9, 58): []
+    (_T101, 59): [58]
+    (_T102, 60): [59]
+    (_T9, 64): []
+    (_T103, 65): [61]
+    (_T104, 66): [62]
+    (_T105, 67): [63]
+    (_T9, 68): []
+    (_T106, 69): [68]
+    (_T107, 70): [69]
+    (_T9, 74): []
+    (_T108, 75): [71]
+    (_T109, 76): [72]
+    (_T110, 77): [73]
+    (_T9, 78): []
+    (_T111, 79): [78]
+    (_T112, 80): [79]
+    (_T9, 84): []
+    (_T113, 85): [81]
+    (_T114, 86): [82]
+    (_T115, 87): [83]
+    (_T9, 88): []
+    (_T116, 89): [88]
+    (_T117, 90): [89]
+
+
+FUNCTION _DenseMatrix.Init : 
+BASIC BLOCK 0 : 
+    1: _T120 = 0
+    2: _T118 = _T120
+    3: _T121 = *(_T10 + 4)
+    4: _T122 = 10
+    5: _T123 = 0
+    6: _T124 = (_T122 < _T123)
+    7: END BY BEQZ, if _T124 = 0 : goto 2; 1 : goto 1
+  Use-Def Chain : 
+    (_T120, 2): [1]
+    (_T10, 3): []
+    (_T122, 6): [4]
+    (_T123, 6): [5]
+    (_T124, 7): [6]
+
+BASIC BLOCK 1 : 
+    8: _T125 = "Decaf runtime error: Cannot create negative-sized array\n"
+    9: parm _T125
+    10: call _PrintString
+    11: call _Halt
+    12: END BY BRANCH, goto 2
+  Use-Def Chain : 
+    (_T125, 9): [8]
+
+BASIC BLOCK 2 : 
+    13: _T126 = 4
+    14: _T127 = (_T126 * _T122)
+    15: _T128 = (_T126 + _T127)
+    16: parm _T128
+    17: _T129 =  call _Alloc
+    18: *(_T129 + 0) = _T122
+    19: _T130 = 0
+    20: _T129 = (_T129 + _T128)
+    21: END BY BRANCH, goto 3
+  Use-Def Chain : 
+    (_T122, 14): [4]
+    (_T126, 14): [13]
+    (_T126, 15): [13]
+    (_T127, 15): [14]
+    (_T128, 16): [15]
+    (_T122, 18): [4]
+    (_T129, 18): [17]
+    (_T128, 20): [15]
+    (_T129, 20): [17]
+
+BASIC BLOCK 3 : 
+    22: _T128 = (_T128 - _T126)
+    23: END BY BEQZ, if _T128 = 0 : goto 5; 1 : goto 4
+  Use-Def Chain : 
+    (_T126, 22): [13]
+    (_T128, 22): [15, 22]
+    (_T128, 23): [22]
+
+BASIC BLOCK 4 : 
+    24: _T129 = (_T129 - _T126)
+    25: *(_T129 + 0) = _T130
+    26: END BY BRANCH, goto 3
+  Use-Def Chain : 
+    (_T126, 24): [13]
+    (_T129, 24): [20, 24]
+    (_T129, 25): [24]
+    (_T130, 25): [19]
+
+BASIC BLOCK 5 : 
+    28: *(_T10 + 4) = _T129
+    29: END BY BRANCH, goto 6
+  Use-Def Chain : 
+    (_T10, 28): []
+    (_T129, 28): [20, 24]
+
+BASIC BLOCK 6 : 
+    30: _T131 = 10
+    31: _T132 = (_T118 < _T131)
+    32: END BY BEQZ, if _T132 = 0 : goto 16; 1 : goto 7
+  Use-Def Chain : 
+    (_T118, 31): [2, 80]
+    (_T131, 31): [30]
+    (_T132, 32): [31]
+
+BASIC BLOCK 7 : 
+    33: _T133 = *(_T10 + 4)
+    34: _T134 = *(_T133 - 4)
+    35: _T135 = (_T118 < _T134)
+    36: END BY BEQZ, if _T135 = 0 : goto 9; 1 : goto 8
+  Use-Def Chain : 
+    (_T10, 33): []
+    (_T133, 34): [33]
+    (_T118, 35): [2, 80]
+    (_T134, 35): [34]
+    (_T135, 36): [35]
+
+BASIC BLOCK 8 : 
+    37: _T136 = 0
+    38: _T137 = (_T118 < _T136)
+    39: END BY BEQZ, if _T137 = 0 : goto 10; 1 : goto 9
+  Use-Def Chain : 
+    (_T118, 38): [2, 80]
+    (_T136, 38): [37]
+    (_T137, 39): [38]
+
+BASIC BLOCK 9 : 
+    41: _T138 = "Decaf runtime error: Array subscript out of bounds\n"
+    42: parm _T138
+    43: call _PrintString
+    44: call _Halt
+    45: END BY BRANCH, goto 10
+  Use-Def Chain : 
+    (_T138, 42): [41]
+
+BASIC BLOCK 10 : 
+    46: _T139 = 4
+    47: _T140 = (_T118 * _T139)
+    48: _T141 = (_T133 + _T140)
+    49: _T142 = *(_T141 + 0)
+    50: _T143 = 10
+    51: _T144 = 0
+    52: _T145 = (_T143 < _T144)
+    53: END BY BEQZ, if _T145 = 0 : goto 12; 1 : goto 11
+  Use-Def Chain : 
+    (_T118, 47): [2, 80]
+    (_T139, 47): [46]
+    (_T133, 48): [33]
+    (_T140, 48): [47]
+    (_T141, 49): [48]
+    (_T143, 52): [50]
+    (_T144, 52): [51]
+    (_T145, 53): [52]
+
+BASIC BLOCK 11 : 
+    54: _T146 = "Decaf runtime error: Cannot create negative-sized array\n"
+    55: parm _T146
+    56: call _PrintString
+    57: call _Halt
+    58: END BY BRANCH, goto 12
+  Use-Def Chain : 
+    (_T146, 55): [54]
+
+BASIC BLOCK 12 : 
+    59: _T147 = 4
+    60: _T148 = (_T147 * _T143)
+    61: _T149 = (_T147 + _T148)
+    62: parm _T149
+    63: _T150 =  call _Alloc
+    64: *(_T150 + 0) = _T143
+    65: _T151 = 0
+    66: _T150 = (_T150 + _T149)
+    67: END BY BRANCH, goto 13
+  Use-Def Chain : 
+    (_T143, 60): [50]
+    (_T147, 60): [59]
+    (_T147, 61): [59]
+    (_T148, 61): [60]
+    (_T149, 62): [61]
+    (_T143, 64): [50]
+    (_T150, 64): [63]
+    (_T149, 66): [61]
+    (_T150, 66): [63]
+
+BASIC BLOCK 13 : 
+    68: _T149 = (_T149 - _T147)
+    69: END BY BEQZ, if _T149 = 0 : goto 15; 1 : goto 14
+  Use-Def Chain : 
+    (_T147, 68): [59]
+    (_T149, 68): [61, 68]
+    (_T149, 69): [68]
+
+BASIC BLOCK 14 : 
+    70: _T150 = (_T150 - _T147)
+    71: *(_T150 + 0) = _T151
+    72: END BY BRANCH, goto 13
+  Use-Def Chain : 
+    (_T147, 70): [59]
+    (_T150, 70): [66, 70]
+    (_T150, 71): [70]
+    (_T151, 71): [65]
+
+BASIC BLOCK 15 : 
+    74: _T152 = 4
+    75: _T153 = (_T118 * _T152)
+    76: _T154 = (_T133 + _T153)
+    77: *(_T154 + 0) = _T150
+    78: _T155 = 1
+    79: _T156 = (_T118 + _T155)
+    80: _T118 = _T156
+    81: END BY BRANCH, goto 6
+  Use-Def Chain : 
+    (_T118, 75): [2, 80]
+    (_T152, 75): [74]
+    (_T133, 76): [33]
+    (_T153, 76): [75]
+    (_T150, 77): [66, 70]
+    (_T154, 77): [76]
+    (_T118, 79): [2, 80]
+    (_T155, 79): [78]
+    (_T156, 80): [79]
+
+BASIC BLOCK 16 : 
+    83: _T157 = 0
+    84: _T118 = _T157
+    85: END BY BRANCH, goto 17
+  Use-Def Chain : 
+    (_T157, 84): [83]
+
+BASIC BLOCK 17 : 
+    86: _T158 = 10
+    87: _T159 = (_T118 < _T158)
+    88: END BY BEQZ, if _T159 = 0 : goto 28; 1 : goto 18
+  Use-Def Chain : 
+    (_T118, 87): [84, 140]
+    (_T158, 87): [86]
+    (_T159, 88): [87]
+
+BASIC BLOCK 18 : 
+    89: _T160 = 0
+    90: _T119 = _T160
+    91: END BY BRANCH, goto 19
+  Use-Def Chain : 
+    (_T160, 90): [89]
+
+BASIC BLOCK 19 : 
+    92: _T161 = 10
+    93: _T162 = (_T119 < _T161)
+    94: END BY BEQZ, if _T162 = 0 : goto 27; 1 : goto 20
+  Use-Def Chain : 
+    (_T119, 93): [90, 135]
+    (_T161, 93): [92]
+    (_T162, 94): [93]
+
+BASIC BLOCK 20 : 
+    95: _T163 = *(_T10 + 4)
+    96: _T164 = *(_T163 - 4)
+    97: _T165 = (_T118 < _T164)
+    98: END BY BEQZ, if _T165 = 0 : goto 22; 1 : goto 21
+  Use-Def Chain : 
+    (_T10, 95): []
+    (_T163, 96): [95]
+    (_T118, 97): [84, 140]
+    (_T164, 97): [96]
+    (_T165, 98): [97]
+
+BASIC BLOCK 21 : 
+    99: _T166 = 0
+    100: _T167 = (_T118 < _T166)
+    101: END BY BEQZ, if _T167 = 0 : goto 23; 1 : goto 22
+  Use-Def Chain : 
+    (_T118, 100): [84, 140]
+    (_T166, 100): [99]
+    (_T167, 101): [100]
+
+BASIC BLOCK 22 : 
+    103: _T168 = "Decaf runtime error: Array subscript out of bounds\n"
+    104: parm _T168
+    105: call _PrintString
+    106: call _Halt
+    107: END BY BRANCH, goto 23
+  Use-Def Chain : 
+    (_T168, 104): [103]
+
+BASIC BLOCK 23 : 
+    108: _T169 = 4
+    109: _T170 = (_T118 * _T169)
+    110: _T171 = (_T163 + _T170)
+    111: _T172 = *(_T171 + 0)
+    112: _T173 = *(_T172 - 4)
+    113: _T174 = (_T119 < _T173)
+    114: END BY BEQZ, if _T174 = 0 : goto 25; 1 : goto 24
+  Use-Def Chain : 
+    (_T118, 109): [84, 140]
+    (_T169, 109): [108]
+    (_T163, 110): [95]
+    (_T170, 110): [109]
+    (_T171, 111): [110]
+    (_T172, 112): [111]
+    (_T119, 113): [90, 135]
+    (_T173, 113): [112]
+    (_T174, 114): [113]
+
+BASIC BLOCK 24 : 
+    115: _T175 = 0
+    116: _T176 = (_T119 < _T175)
+    117: END BY BEQZ, if _T176 = 0 : goto 26; 1 : goto 25
+  Use-Def Chain : 
+    (_T119, 116): [90, 135]
+    (_T175, 116): [115]
+    (_T176, 117): [116]
+
+BASIC BLOCK 25 : 
+    119: _T177 = "Decaf runtime error: Array subscript out of bounds\n"
+    120: parm _T177
+    121: call _PrintString
+    122: call _Halt
+    123: END BY BRANCH, goto 26
+  Use-Def Chain : 
+    (_T177, 120): [119]
+
+BASIC BLOCK 26 : 
+    124: _T178 = 4
+    125: _T179 = (_T119 * _T178)
+    126: _T180 = (_T172 + _T179)
+    127: _T181 = *(_T180 + 0)
+    128: _T182 = 0
+    129: _T183 = 4
+    130: _T184 = (_T119 * _T183)
+    131: _T185 = (_T172 + _T184)
+    132: *(_T185 + 0) = _T182
+    133: _T186 = 1
+    134: _T187 = (_T119 + _T186)
+    135: _T119 = _T187
+    136: END BY BRANCH, goto 19
+  Use-Def Chain : 
+    (_T119, 125): [90, 135]
+    (_T178, 125): [124]
+    (_T172, 126): [111]
+    (_T179, 126): [125]
+    (_T180, 127): [126]
+    (_T119, 130): [90, 135]
+    (_T183, 130): [129]
+    (_T172, 131): [111]
+    (_T184, 131): [130]
+    (_T182, 132): [128]
+    (_T185, 132): [131]
+    (_T119, 134): [90, 135]
+    (_T186, 134): [133]
+    (_T187, 135): [134]
+
+BASIC BLOCK 27 : 
+    138: _T188 = 1
+    139: _T189 = (_T118 + _T188)
+    140: _T118 = _T189
+    141: END BY BRANCH, goto 17
+  Use-Def Chain : 
+    (_T118, 139): [84, 140]
+    (_T188, 139): [138]
+    (_T189, 140): [139]
+
+BASIC BLOCK 28 : 
+    0: END BY RETURN, void result
+  Use-Def Chain : 
+
+
+FUNCTION _DenseMatrix.Set : 
+BASIC BLOCK 0 : 
+    1: _T190 = *(_T11 + 4)
+    2: _T191 = *(_T190 - 4)
+    3: _T192 = (_T12 < _T191)
+    4: END BY BEQZ, if _T192 = 0 : goto 2; 1 : goto 1
+  Use-Def Chain : 
+    (_T11, 1): []
+    (_T190, 2): [1]
+    (_T12, 3): []
+    (_T191, 3): [2]
+    (_T192, 4): [3]
+
+BASIC BLOCK 1 : 
+    5: _T193 = 0
+    6: _T194 = (_T12 < _T193)
+    7: END BY BEQZ, if _T194 = 0 : goto 3; 1 : goto 2
+  Use-Def Chain : 
+    (_T12, 6): []
+    (_T193, 6): [5]
+    (_T194, 7): [6]
+
+BASIC BLOCK 2 : 
+    9: _T195 = "Decaf runtime error: Array subscript out of bounds\n"
+    10: parm _T195
+    11: call _PrintString
+    12: call _Halt
+    13: END BY BRANCH, goto 3
+  Use-Def Chain : 
+    (_T195, 10): [9]
+
+BASIC BLOCK 3 : 
+    14: _T196 = 4
+    15: _T197 = (_T12 * _T196)
+    16: _T198 = (_T190 + _T197)
+    17: _T199 = *(_T198 + 0)
+    18: _T200 = *(_T199 - 4)
+    19: _T201 = (_T13 < _T200)
+    20: END BY BEQZ, if _T201 = 0 : goto 5; 1 : goto 4
+  Use-Def Chain : 
+    (_T12, 15): []
+    (_T196, 15): [14]
+    (_T190, 16): [1]
+    (_T197, 16): [15]
+    (_T198, 17): [16]
+    (_T199, 18): [17]
+    (_T13, 19): []
+    (_T200, 19): [18]
+    (_T201, 20): [19]
+
+BASIC BLOCK 4 : 
+    21: _T202 = 0
+    22: _T203 = (_T13 < _T202)
+    23: END BY BEQZ, if _T203 = 0 : goto 6; 1 : goto 5
+  Use-Def Chain : 
+    (_T13, 22): []
+    (_T202, 22): [21]
+    (_T203, 23): [22]
+
+BASIC BLOCK 5 : 
+    25: _T204 = "Decaf runtime error: Array subscript out of bounds\n"
+    26: parm _T204
+    27: call _PrintString
+    28: call _Halt
+    29: END BY BRANCH, goto 6
+  Use-Def Chain : 
+    (_T204, 26): [25]
+
+BASIC BLOCK 6 : 
+    30: _T205 = 4
+    31: _T206 = (_T13 * _T205)
+    32: _T207 = (_T199 + _T206)
+    33: _T208 = *(_T207 + 0)
+    34: _T209 = 4
+    35: _T210 = (_T13 * _T209)
+    36: _T211 = (_T199 + _T210)
+    37: *(_T211 + 0) = _T14
+    38: END BY RETURN, void result
+  Use-Def Chain : 
+    (_T13, 31): []
+    (_T205, 31): [30]
+    (_T199, 32): [17]
+    (_T206, 32): [31]
+    (_T207, 33): [32]
+    (_T13, 35): []
+    (_T209, 35): [34]
+    (_T199, 36): [17]
+    (_T210, 36): [35]
+    (_T14, 37): []
+    (_T211, 37): [36]
+
+
+FUNCTION _DenseMatrix.Get : 
+BASIC BLOCK 0 : 
+    1: _T212 = *(_T15 + 4)
+    2: _T213 = *(_T212 - 4)
+    3: _T214 = (_T16 < _T213)
+    4: END BY BEQZ, if _T214 = 0 : goto 2; 1 : goto 1
+  Use-Def Chain : 
+    (_T15, 1): []
+    (_T212, 2): [1]
+    (_T16, 3): []
+    (_T213, 3): [2]
+    (_T214, 4): [3]
+
+BASIC BLOCK 1 : 
+    5: _T215 = 0
+    6: _T216 = (_T16 < _T215)
+    7: END BY BEQZ, if _T216 = 0 : goto 3; 1 : goto 2
+  Use-Def Chain : 
+    (_T16, 6): []
+    (_T215, 6): [5]
+    (_T216, 7): [6]
+
+BASIC BLOCK 2 : 
+    9: _T217 = "Decaf runtime error: Array subscript out of bounds\n"
+    10: parm _T217
+    11: call _PrintString
+    12: call _Halt
+    13: END BY BRANCH, goto 3
+  Use-Def Chain : 
+    (_T217, 10): [9]
+
+BASIC BLOCK 3 : 
+    14: _T218 = 4
+    15: _T219 = (_T16 * _T218)
+    16: _T220 = (_T212 + _T219)
+    17: _T221 = *(_T220 + 0)
+    18: _T222 = *(_T221 - 4)
+    19: _T223 = (_T17 < _T222)
+    20: END BY BEQZ, if _T223 = 0 : goto 5; 1 : goto 4
+  Use-Def Chain : 
+    (_T16, 15): []
+    (_T218, 15): [14]
+    (_T212, 16): [1]
+    (_T219, 16): [15]
+    (_T220, 17): [16]
+    (_T221, 18): [17]
+    (_T17, 19): []
+    (_T222, 19): [18]
+    (_T223, 20): [19]
+
+BASIC BLOCK 4 : 
+    21: _T224 = 0
+    22: _T225 = (_T17 < _T224)
+    23: END BY BEQZ, if _T225 = 0 : goto 6; 1 : goto 5
+  Use-Def Chain : 
+    (_T17, 22): []
+    (_T224, 22): [21]
+    (_T225, 23): [22]
+
+BASIC BLOCK 5 : 
+    25: _T226 = "Decaf runtime error: Array subscript out of bounds\n"
+    26: parm _T226
+    27: call _PrintString
+    28: call _Halt
+    29: END BY BRANCH, goto 6
+  Use-Def Chain : 
+    (_T226, 26): [25]
+
+BASIC BLOCK 6 : 
+    30: _T227 = 4
+    31: _T228 = (_T17 * _T227)
+    32: _T229 = (_T221 + _T228)
+    33: _T230 = *(_T229 + 0)
+    34: END BY RETURN, result = _T230
+  Use-Def Chain : 
+    (_T17, 31): []
+    (_T227, 31): [30]
+    (_T221, 32): [17]
+    (_T228, 32): [31]
+    (_T229, 33): [32]
+    (_T230, 34): [33]
+
+
+FUNCTION _SparseItem.Init : 
+BASIC BLOCK 0 : 
+    1: _T231 = *(_T18 + 4)
+    2: *(_T18 + 4) = _T19
+    3: _T232 = *(_T18 + 8)
+    4: *(_T18 + 8) = _T20
+    5: _T233 = *(_T18 + 12)
+    6: *(_T18 + 12) = _T21
+    7: END BY RETURN, void result
+  Use-Def Chain : 
+    (_T18, 1): []
+    (_T18, 2): []
+    (_T19, 2): []
+    (_T18, 3): []
+    (_T18, 4): []
+    (_T20, 4): []
+    (_T18, 5): []
+    (_T18, 6): []
+    (_T21, 6): []
+
+
+FUNCTION _SparseItem.GetNext : 
+BASIC BLOCK 0 : 
+    1: _T234 = *(_T22 + 12)
+    2: END BY RETURN, result = _T234
+  Use-Def Chain : 
+    (_T22, 1): []
+    (_T234, 2): [1]
+
+
+FUNCTION _SparseItem.GetY : 
+BASIC BLOCK 0 : 
+    1: _T235 = *(_T23 + 8)
+    2: END BY RETURN, result = _T235
+  Use-Def Chain : 
+    (_T23, 1): []
+    (_T235, 2): [1]
+
+
+FUNCTION _SparseItem.GetData : 
+BASIC BLOCK 0 : 
+    1: _T236 = *(_T24 + 4)
+    2: END BY RETURN, result = _T236
+  Use-Def Chain : 
+    (_T24, 1): []
+    (_T236, 2): [1]
+
+
+FUNCTION _SparseItem.SetData : 
+BASIC BLOCK 0 : 
+    1: _T237 = *(_T25 + 4)
+    2: *(_T25 + 4) = _T26
+    3: END BY RETURN, void result
+  Use-Def Chain : 
+    (_T25, 1): []
+    (_T25, 2): []
+    (_T26, 2): []
+
+
+FUNCTION _SparseMatrix.Init : 
+BASIC BLOCK 0 : 
+    1: _T239 = 0
+    2: _T238 = _T239
+    3: _T240 = *(_T27 + 4)
+    4: _T241 = 10
+    5: _T242 = 0
+    6: _T243 = (_T241 < _T242)
+    7: END BY BEQZ, if _T243 = 0 : goto 2; 1 : goto 1
+  Use-Def Chain : 
+    (_T239, 2): [1]
+    (_T27, 3): []
+    (_T241, 6): [4]
+    (_T242, 6): [5]
+    (_T243, 7): [6]
+
+BASIC BLOCK 1 : 
+    8: _T244 = "Decaf runtime error: Cannot create negative-sized array\n"
+    9: parm _T244
+    10: call _PrintString
+    11: call _Halt
+    12: END BY BRANCH, goto 2
+  Use-Def Chain : 
+    (_T244, 9): [8]
+
+BASIC BLOCK 2 : 
+    13: _T245 = 4
+    14: _T246 = (_T245 * _T241)
+    15: _T247 = (_T245 + _T246)
+    16: parm _T247
+    17: _T248 =  call _Alloc
+    18: *(_T248 + 0) = _T241
+    19: _T249 = 0
+    20: _T248 = (_T248 + _T247)
+    21: END BY BRANCH, goto 3
+  Use-Def Chain : 
+    (_T241, 14): [4]
+    (_T245, 14): [13]
+    (_T245, 15): [13]
+    (_T246, 15): [14]
+    (_T247, 16): [15]
+    (_T241, 18): [4]
+    (_T248, 18): [17]
+    (_T247, 20): [15]
+    (_T248, 20): [17]
+
+BASIC BLOCK 3 : 
+    22: _T247 = (_T247 - _T245)
+    23: END BY BEQZ, if _T247 = 0 : goto 5; 1 : goto 4
+  Use-Def Chain : 
+    (_T245, 22): [13]
+    (_T247, 22): [15, 22]
+    (_T247, 23): [22]
+
+BASIC BLOCK 4 : 
+    24: _T248 = (_T248 - _T245)
+    25: *(_T248 + 0) = _T249
+    26: END BY BRANCH, goto 3
+  Use-Def Chain : 
+    (_T245, 24): [13]
+    (_T248, 24): [20, 24]
+    (_T248, 25): [24]
+    (_T249, 25): [19]
+
+BASIC BLOCK 5 : 
+    28: *(_T27 + 4) = _T248
+    29: END BY BRANCH, goto 6
+  Use-Def Chain : 
+    (_T27, 28): []
+    (_T248, 28): [20, 24]
+
+BASIC BLOCK 6 : 
+    30: _T250 = 10
+    31: _T251 = (_T238 < _T250)
+    32: END BY BEQZ, if _T251 = 0 : goto 11; 1 : goto 7
+  Use-Def Chain : 
+    (_T238, 31): [2, 57]
+    (_T250, 31): [30]
+    (_T251, 32): [31]
+
+BASIC BLOCK 7 : 
+    33: _T252 = *(_T27 + 4)
+    34: _T253 = *(_T252 - 4)
+    35: _T254 = (_T238 < _T253)
+    36: END BY BEQZ, if _T254 = 0 : goto 9; 1 : goto 8
+  Use-Def Chain : 
+    (_T27, 33): []
+    (_T252, 34): [33]
+    (_T238, 35): [2, 57]
+    (_T253, 35): [34]
+    (_T254, 36): [35]
+
+BASIC BLOCK 8 : 
+    37: _T255 = 0
+    38: _T256 = (_T238 < _T255)
+    39: END BY BEQZ, if _T256 = 0 : goto 10; 1 : goto 9
+  Use-Def Chain : 
+    (_T238, 38): [2, 57]
+    (_T255, 38): [37]
+    (_T256, 39): [38]
+
+BASIC BLOCK 9 : 
+    41: _T257 = "Decaf runtime error: Array subscript out of bounds\n"
+    42: parm _T257
+    43: call _PrintString
+    44: call _Halt
+    45: END BY BRANCH, goto 10
+  Use-Def Chain : 
+    (_T257, 42): [41]
+
+BASIC BLOCK 10 : 
+    46: _T258 = 4
+    47: _T259 = (_T238 * _T258)
+    48: _T260 = (_T252 + _T259)
+    49: _T261 = *(_T260 + 0)
+    50: _T262 = 0
+    51: _T263 = 4
+    52: _T264 = (_T238 * _T263)
+    53: _T265 = (_T252 + _T264)
+    54: *(_T265 + 0) = _T262
+    55: _T266 = 1
+    56: _T267 = (_T238 + _T266)
+    57: _T238 = _T267
+    58: END BY BRANCH, goto 6
+  Use-Def Chain : 
+    (_T238, 47): [2, 57]
+    (_T258, 47): [46]
+    (_T252, 48): [33]
+    (_T259, 48): [47]
+    (_T260, 49): [48]
+    (_T238, 52): [2, 57]
+    (_T263, 52): [51]
+    (_T252, 53): [33]
+    (_T264, 53): [52]
+    (_T262, 54): [50]
+    (_T265, 54): [53]
+    (_T238, 56): [2, 57]
+    (_T266, 56): [55]
+    (_T267, 57): [56]
+
+BASIC BLOCK 11 : 
+    0: END BY RETURN, void result
+  Use-Def Chain : 
+
+
+FUNCTION _SparseMatrix.Find : 
+BASIC BLOCK 0 : 
+    1: _T269 = *(_T28 + 4)
+    2: _T270 = *(_T269 - 4)
+    3: _T271 = (_T29 < _T270)
+    4: END BY BEQZ, if _T271 = 0 : goto 2; 1 : goto 1
+  Use-Def Chain : 
+    (_T28, 1): []
+    (_T269, 2): [1]
+    (_T29, 3): []
+    (_T270, 3): [2]
+    (_T271, 4): [3]
+
+BASIC BLOCK 1 : 
+    5: _T272 = 0
+    6: _T273 = (_T29 < _T272)
+    7: END BY BEQZ, if _T273 = 0 : goto 3; 1 : goto 2
+  Use-Def Chain : 
+    (_T29, 6): []
+    (_T272, 6): [5]
+    (_T273, 7): [6]
+
+BASIC BLOCK 2 : 
+    9: _T274 = "Decaf runtime error: Array subscript out of bounds\n"
+    10: parm _T274
+    11: call _PrintString
+    12: call _Halt
+    13: END BY BRANCH, goto 3
+  Use-Def Chain : 
+    (_T274, 10): [9]
+
+BASIC BLOCK 3 : 
+    14: _T275 = 4
+    15: _T276 = (_T29 * _T275)
+    16: _T277 = (_T269 + _T276)
+    17: _T278 = *(_T277 + 0)
+    18: _T268 = _T278
+    19: END BY BRANCH, goto 4
+  Use-Def Chain : 
+    (_T29, 15): []
+    (_T275, 15): [14]
+    (_T269, 16): [1]
+    (_T276, 16): [15]
+    (_T277, 17): [16]
+    (_T278, 18): [17]
+
+BASIC BLOCK 4 : 
+    20: _T279 = 0
+    21: _T280 = (_T268 != _T279)
+    22: END BY BEQZ, if _T280 = 0 : goto 8; 1 : goto 5
+  Use-Def Chain : 
+    (_T268, 21): [18, 35]
+    (_T279, 21): [20]
+    (_T280, 22): [21]
+
+BASIC BLOCK 5 : 
+    23: parm _T268
+    24: _T281 = *(_T268 + 0)
+    25: _T282 = *(_T281 + 16)
+    26: _T283 =  call _T282
+    27: _T284 = (_T283 == _T30)
+    28: END BY BEQZ, if _T284 = 0 : goto 7; 1 : goto 6
+  Use-Def Chain : 
+    (_T268, 23): [18, 35]
+    (_T268, 24): [18, 35]
+    (_T281, 25): [24]
+    (_T282, 26): [25]
+    (_T30, 27): []
+    (_T283, 27): [26]
+    (_T284, 28): [27]
+
+BASIC BLOCK 6 : 
+    0: END BY RETURN, result = _T268
+  Use-Def Chain : 
+    (_T268, 0): [18, 35]
+
+BASIC BLOCK 7 : 
+    31: parm _T268
+    32: _T285 = *(_T268 + 0)
+    33: _T286 = *(_T285 + 12)
+    34: _T287 =  call _T286
+    35: _T268 = _T287
+    36: END BY BRANCH, goto 4
+  Use-Def Chain : 
+    (_T268, 31): [18, 35]
+    (_T268, 32): [18, 35]
+    (_T285, 33): [32]
+    (_T286, 34): [33]
+    (_T287, 35): [34]
+
+BASIC BLOCK 8 : 
+    38: _T288 = 0
+    39: END BY RETURN, result = _T288
+  Use-Def Chain : 
+    (_T288, 39): [38]
+
+
+FUNCTION _SparseMatrix.Set : 
+BASIC BLOCK 0 : 
+    1: parm _T31
+    2: parm _T32
+    3: parm _T33
+    4: _T290 = *(_T31 + 0)
+    5: _T291 = *(_T290 + 28)
+    6: _T292 =  call _T291
+    7: _T289 = _T292
+    8: _T293 = 0
+    9: _T294 = (_T289 != _T293)
+    10: END BY BEQZ, if _T294 = 0 : goto 2; 1 : goto 1
+  Use-Def Chain : 
+    (_T31, 1): []
+    (_T32, 2): []
+    (_T33, 3): []
+    (_T31, 4): []
+    (_T290, 5): [4]
+    (_T291, 6): [5]
+    (_T292, 7): [6]
+    (_T289, 9): [7]
+    (_T293, 9): [8]
+    (_T294, 10): [9]
+
+BASIC BLOCK 1 : 
+    11: parm _T289
+    12: parm _T34
+    13: _T295 = *(_T289 + 0)
+    14: _T296 = *(_T295 + 24)
+    15: call _T296
+    16: END BY BRANCH, goto 9
+  Use-Def Chain : 
+    (_T289, 11): [7]
+    (_T34, 12): []
+    (_T289, 13): [7]
+    (_T295, 14): [13]
+    (_T296, 15): [14]
+
+BASIC BLOCK 2 : 
+    18: _T297 =  call _SparseItem_New
+    19: _T289 = _T297
+    20: _T298 = *(_T31 + 4)
+    21: _T299 = *(_T298 - 4)
+    22: _T300 = (_T32 < _T299)
+    23: END BY BEQZ, if _T300 = 0 : goto 4; 1 : goto 3
+  Use-Def Chain : 
+    (_T297, 19): [18]
+    (_T31, 20): []
+    (_T298, 21): [20]
+    (_T32, 22): []
+    (_T299, 22): [21]
+    (_T300, 23): [22]
+
+BASIC BLOCK 3 : 
+    24: _T301 = 0
+    25: _T302 = (_T32 < _T301)
+    26: END BY BEQZ, if _T302 = 0 : goto 5; 1 : goto 4
+  Use-Def Chain : 
+    (_T32, 25): []
+    (_T301, 25): [24]
+    (_T302, 26): [25]
+
+BASIC BLOCK 4 : 
+    28: _T303 = "Decaf runtime error: Array subscript out of bounds\n"
+    29: parm _T303
+    30: call _PrintString
+    31: call _Halt
+    32: END BY BRANCH, goto 5
+  Use-Def Chain : 
+    (_T303, 29): [28]
+
+BASIC BLOCK 5 : 
+    33: _T304 = 4
+    34: _T305 = (_T32 * _T304)
+    35: _T306 = (_T298 + _T305)
+    36: _T307 = *(_T306 + 0)
+    37: parm _T289
+    38: parm _T34
+    39: parm _T33
+    40: parm _T307
+    41: _T308 = *(_T289 + 0)
+    42: _T309 = *(_T308 + 8)
+    43: call _T309
+    44: _T310 = *(_T31 + 4)
+    45: _T311 = *(_T310 - 4)
+    46: _T312 = (_T32 < _T311)
+    47: END BY BEQZ, if _T312 = 0 : goto 7; 1 : goto 6
+  Use-Def Chain : 
+    (_T32, 34): []
+    (_T304, 34): [33]
+    (_T298, 35): [20]
+    (_T305, 35): [34]
+    (_T306, 36): [35]
+    (_T289, 37): [19]
+    (_T34, 38): []
+    (_T33, 39): []
+    (_T307, 40): [36]
+    (_T289, 41): [19]
+    (_T308, 42): [41]
+    (_T309, 43): [42]
+    (_T31, 44): []
+    (_T310, 45): [44]
+    (_T32, 46): []
+    (_T311, 46): [45]
+    (_T312, 47): [46]
+
+BASIC BLOCK 6 : 
+    48: _T313 = 0
+    49: _T314 = (_T32 < _T313)
+    50: END BY BEQZ, if _T314 = 0 : goto 8; 1 : goto 7
+  Use-Def Chain : 
+    (_T32, 49): []
+    (_T313, 49): [48]
+    (_T314, 50): [49]
+
+BASIC BLOCK 7 : 
+    52: _T315 = "Decaf runtime error: Array subscript out of bounds\n"
+    53: parm _T315
+    54: call _PrintString
+    55: call _Halt
+    56: END BY BRANCH, goto 8
+  Use-Def Chain : 
+    (_T315, 53): [52]
+
+BASIC BLOCK 8 : 
+    57: _T316 = 4
+    58: _T317 = (_T32 * _T316)
+    59: _T318 = (_T310 + _T317)
+    60: _T319 = *(_T318 + 0)
+    61: _T320 = 4
+    62: _T321 = (_T32 * _T320)
+    63: _T322 = (_T310 + _T321)
+    64: *(_T322 + 0) = _T289
+    65: END BY BRANCH, goto 9
+  Use-Def Chain : 
+    (_T32, 58): []
+    (_T316, 58): [57]
+    (_T310, 59): [44]
+    (_T317, 59): [58]
+    (_T318, 60): [59]
+    (_T32, 62): []
+    (_T320, 62): [61]
+    (_T310, 63): [44]
+    (_T321, 63): [62]
+    (_T289, 64): [19]
+    (_T322, 64): [63]
+
+BASIC BLOCK 9 : 
+    0: END BY RETURN, void result
+  Use-Def Chain : 
+
+
+FUNCTION _SparseMatrix.Get : 
+BASIC BLOCK 0 : 
+    1: parm _T35
+    2: parm _T36
+    3: parm _T37
+    4: _T324 = *(_T35 + 0)
+    5: _T325 = *(_T324 + 28)
+    6: _T326 =  call _T325
+    7: _T323 = _T326
+    8: _T327 = 0
+    9: _T328 = (_T323 != _T327)
+    10: END BY BEQZ, if _T328 = 0 : goto 2; 1 : goto 1
+  Use-Def Chain : 
+    (_T35, 1): []
+    (_T36, 2): []
+    (_T37, 3): []
+    (_T35, 4): []
+    (_T324, 5): [4]
+    (_T325, 6): [5]
+    (_T326, 7): [6]
+    (_T323, 9): [7]
+    (_T327, 9): [8]
+    (_T328, 10): [9]
+
+BASIC BLOCK 1 : 
+    11: parm _T323
+    12: _T329 = *(_T323 + 0)
+    13: _T330 = *(_T329 + 20)
+    14: _T331 =  call _T330
+    15: END BY RETURN, result = _T331
+  Use-Def Chain : 
+    (_T323, 11): [7]
+    (_T323, 12): [7]
+    (_T329, 13): [12]
+    (_T330, 14): [13]
+    (_T331, 15): [14]
+
+BASIC BLOCK 2 : 
+    18: _T332 = 0
+    19: END BY RETURN, result = _T332
+  Use-Def Chain : 
+    (_T332, 19): [18]
+
+BASIC BLOCK 3 : 
+    0: END BY RETURN, void result
+  Use-Def Chain : 
+
+
+FUNCTION main : 
+BASIC BLOCK 0 : 
+    1: _T334 = "Dense Rep \n"
+    2: parm _T334
+    3: call _PrintString
+    4: _T335 =  call _DenseMatrix_New
+    5: _T333 = _T335
+    6: parm _T333
+    7: _T336 = *(_T333 + 0)
+    8: _T337 = *(_T336 + 8)
+    9: call _T337
+    10: parm _T333
+    11: _T338 = *(_T333 + 0)
+    12: _T339 = *(_T338 + 24)
+    13: call _T339
+    14: parm _T333
+    15: _T340 = *(_T333 + 0)
+    16: _T341 = *(_T340 + 20)
+    17: call _T341
+    18: _T342 = "Sparse Rep \n"
+    19: parm _T342
+    20: call _PrintString
+    21: _T343 =  call _SparseMatrix_New
+    22: _T333 = _T343
+    23: parm _T333
+    24: _T344 = *(_T333 + 0)
+    25: _T345 = *(_T344 + 8)
+    26: call _T345
+    27: parm _T333
+    28: _T346 = *(_T333 + 0)
+    29: _T347 = *(_T346 + 24)
+    30: call _T347
+    31: parm _T333
+    32: _T348 = *(_T333 + 0)
+    33: _T349 = *(_T348 + 20)
+    34: call _T349
+    35: END BY RETURN, void result
+  Use-Def Chain : 
+    (_T334, 2): [1]
+    (_T335, 5): [4]
+    (_T333, 6): [5]
+    (_T333, 7): [5]
+    (_T336, 8): [7]
+    (_T337, 9): [8]
+    (_T333, 10): [5]
+    (_T333, 11): [5]
+    (_T338, 12): [11]
+    (_T339, 13): [12]
+    (_T333, 14): [5]
+    (_T333, 15): [5]
+    (_T340, 16): [15]
+    (_T341, 17): [16]
+    (_T342, 19): [18]
+    (_T343, 22): [21]
+    (_T333, 23): [22]
+    (_T333, 24): [22]
+    (_T344, 25): [24]
+    (_T345, 26): [25]
+    (_T333, 27): [22]
+    (_T333, 28): [22]
+    (_T346, 29): [28]
+    (_T347, 30): [29]
+    (_T333, 31): [22]
+    (_T333, 32): [22]
+    (_T348, 33): [32]
+    (_T349, 34): [33]
+
+
