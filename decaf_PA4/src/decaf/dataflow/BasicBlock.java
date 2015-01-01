@@ -2,6 +2,7 @@ package decaf.dataflow;
 
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
@@ -12,6 +13,34 @@ import decaf.machdesc.Register;
 import decaf.tac.Label;
 import decaf.tac.Tac;
 import decaf.tac.Temp;
+
+class DefRefPoint {
+	public Temp var;
+
+	public Integer globalNum;
+
+	public DefRefPoint(Temp var1, Integer globalNum1) {
+		var = var1;
+		globalNum = globalNum1;
+	}
+
+	public static final Comparator<DefRefPoint> COMPARATOR = new Comparator<DefRefPoint>() {
+
+		@Override
+		public int compare(DefRefPoint o1, DefRefPoint o2) {
+			int varCompare = Temp.ID_COMPARATOR.compare(o1.var, o2.var);
+			if (varCompare != 0) {
+				return varCompare;
+			} else {
+				return o1.globalNum > o2.globalNum ? 1 : o1.globalNum == o2.globalNum ? 0 : -1;
+			}
+		}
+	};
+	
+	public String toString() {
+		return "(" + var.name + ", " + globalNum.toString() + ")";
+	};
+}
 
 public class BasicBlock {
 	public int bbNum;
@@ -46,6 +75,14 @@ public class BasicBlock {
 
 	public Set<Temp> liveOut;
 
+	public Set<DefRefPoint> in;
+
+	public Set<DefRefPoint> out;
+
+	public Set<DefRefPoint> gen;
+
+	public Set<DefRefPoint> kill;
+
 	public Set<Temp> saves;
 
 	private List<Asm> asms;
@@ -55,6 +92,10 @@ public class BasicBlock {
 		liveUse = new TreeSet<Temp>(Temp.ID_COMPARATOR);
 		liveIn = new TreeSet<Temp>(Temp.ID_COMPARATOR);
 		liveOut = new TreeSet<Temp>(Temp.ID_COMPARATOR);
+		in = new TreeSet<DefRefPoint>(DefRefPoint.COMPARATOR);
+		out = new TreeSet<DefRefPoint>(DefRefPoint.COMPARATOR);
+		gen = new TreeSet<DefRefPoint>(DefRefPoint.COMPARATOR);
+		kill = new TreeSet<DefRefPoint>(DefRefPoint.COMPARATOR);
 		next = new int[2];
 		asms = new ArrayList<Asm>();
 	}
@@ -85,6 +126,7 @@ public class BasicBlock {
 					tac.op2.lastVisitedBB = bbNum;
 				}
 				if (tac.op0.lastVisitedBB != bbNum) {
+					gen.add(new DefRefPoint(tac.op0, tac.globalNum));
 					def.add (tac.op0);
 					tac.op0.lastVisitedBB = bbNum;
 				}
@@ -101,6 +143,7 @@ public class BasicBlock {
 				}
 				if (tac.op0 != null && tac.op0.lastVisitedBB != bbNum) {  // in INDIRECT_CALL with return type VOID,
 					// tac.op0 is null
+					gen.add(new DefRefPoint(tac.op0, tac.globalNum));
 					def.add (tac.op0);
 					tac.op0.lastVisitedBB = bbNum;
 				}
@@ -113,6 +156,7 @@ public class BasicBlock {
 				/* def op0 */
 				if (tac.op0 != null && tac.op0.lastVisitedBB != bbNum) {  // in DIRECT_CALL with return type VOID,
 					// tac.op0 is null
+					gen.add(new DefRefPoint(tac.op0, tac.globalNum));
 					def.add (tac.op0);
 					tac.op0.lastVisitedBB = bbNum;
 				}
@@ -147,6 +191,11 @@ public class BasicBlock {
 		liveIn.addAll (liveUse);
 	}
 
+	public void analyzeArriveDef() {
+		// System.out.println("--gen--");
+		// System.out.println(gen.toString());
+
+	}
 	public void analyzeLiveness() {
 		if (tacList == null)
 			return;

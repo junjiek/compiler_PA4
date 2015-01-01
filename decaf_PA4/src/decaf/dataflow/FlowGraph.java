@@ -25,8 +25,10 @@ public class FlowGraph implements Iterable<BasicBlock> {
 		gatherBasicBlocks(func.head);
 		simplify();
 		analyzeLiveness();
+		analyzeArriveDef();
 		for (BasicBlock bb : bbs) {
 			bb.analyzeLiveness();
+			bb.analyzeArriveDef();
 		}
 	}
 
@@ -50,9 +52,11 @@ public class FlowGraph implements Iterable<BasicBlock> {
 	private void markBasicBlocks(Tac t) {
 		int index = -1;
 		boolean atStart = false;
-
+		int globalIndex = 0;
 		for (; t != null; t = t.next) {
 			t.bbNum = index;
+			t.globalNum = globalIndex;
+			globalIndex ++;
 			switch (t.opc) {
 			case RETURN:
 			case BRANCH:
@@ -167,6 +171,9 @@ public class FlowGraph implements Iterable<BasicBlock> {
 
 	public int size() {
 		return bbs.size();
+	}
+	public void analyzeArriveDef() {
+
 	}
 
 	public void analyzeLiveness() {

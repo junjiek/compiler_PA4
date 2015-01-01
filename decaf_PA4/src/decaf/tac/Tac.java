@@ -33,6 +33,8 @@ public class Tac {
 
 	public int bbNum;
 
+	public int globalNum;
+
 	public Set<Temp> liveOut;
 	
 	public Set<Temp> saves;
