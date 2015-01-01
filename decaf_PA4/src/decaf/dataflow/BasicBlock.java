@@ -417,22 +417,27 @@ public class BasicBlock {
 		pw.println("  liveUse = " + toString(liveUse));
 		pw.println("  liveIn  = " + toString(liveIn));
 		pw.println("  liveOut = " + toString(liveOut));
-
+		pw.println("  Use-Def Chain : ");
+		pw.println(udChainToString());
+		int endNum = -1;
 		for (Tac t = tacList; t != null; t = t.next) {
-			pw.println("    " + t + " " + toString(t.liveOut));
+			pw.println("    " + t.globalNum + ": " + t + "    " + toString(t.liveOut));
+			endNum = t.globalNum;
 		}
+		endNum ++;
+		pw.print("    " + endNum + ": ");
 
 		switch (endKind) {
 		case BY_BRANCH:
 			pw.println("END BY BRANCH, goto " + next[0]);
 			break;
 		case BY_BEQZ:
-			pw.println("END BY BEQZ, if " + var.name + " = ");
-			pw.println("    0 : goto " + next[0] + "; 1 : goto " + next[1]);
+			pw.print("END BY BEQZ, if " + var.name + " = ");
+			pw.println("0 : goto " + next[0] + "; 1 : goto " + next[1]);
 			break;
 		case BY_BNEZ:
-			pw.println("END BY BGTZ, if " + var.name + " = ");
-			pw.println("    1 : goto " + next[0] + "; 0 : goto " + next[1]);
+			pw.print("END BY BGTZ, if " + var.name + " = ");
+			pw.println("1 : goto " + next[0] + "; 0 : goto " + next[1]);
 			break;
 		case BY_RETURN:
 			if (var != null) {

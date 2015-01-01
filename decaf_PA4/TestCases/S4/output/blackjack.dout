@@ -4,14 +4,22 @@ BASIC BLOCK 0 :
   liveUse = [ ]
   liveIn  = [ ]
   liveOut = [ ]
-    _T42 = 8 [ _T42 ]
-    parm _T42 [ ]
-    _T43 =  call _Alloc [ _T43 ]
-    _T44 = 0 [ _T43 _T44 ]
-    *(_T43 + 4) = _T44 [ _T43 ]
-    _T45 = VTBL <_rndModule> [ _T43 _T45 ]
-    *(_T43 + 0) = _T45 [ _T43 ]
-END BY RETURN, result = _T43
+  Use-Def Chain : 
+    (_T42, 2): [1]
+    (_T43, 5): [3]
+    (_T44, 5): [4]
+    (_T43, 7): [3]
+    (_T45, 7): [6]
+    (_T43, 8): [3]
+
+    1: _T42 = 8    [ _T42 ]
+    2: parm _T42    [ ]
+    3: _T43 =  call _Alloc    [ _T43 ]
+    4: _T44 = 0    [ _T43 _T44 ]
+    5: *(_T43 + 4) = _T44    [ _T43 ]
+    6: _T45 = VTBL <_rndModule>    [ _T43 _T45 ]
+    7: *(_T43 + 0) = _T45    [ _T43 ]
+    8: END BY RETURN, result = _T43
 
 FUNCTION _Deck_New : 
 BASIC BLOCK 0 : 
@@ -19,16 +27,28 @@ BASIC BLOCK 0 :
   liveUse = [ ]
   liveIn  = [ ]
   liveOut = [ ]
-    _T46 = 16 [ _T46 ]
-    parm _T46 [ ]
-    _T47 =  call _Alloc [ _T47 ]
-    _T48 = 0 [ _T48 _T47 ]
-    *(_T47 + 4) = _T48 [ _T48 _T47 ]
-    *(_T47 + 8) = _T48 [ _T48 _T47 ]
-    *(_T47 + 12) = _T48 [ _T47 ]
-    _T49 = VTBL <_Deck> [ _T49 _T47 ]
-    *(_T47 + 0) = _T49 [ _T47 ]
-END BY RETURN, result = _T47
+  Use-Def Chain : 
+    (_T46, 2): [1]
+    (_T47, 5): [3]
+    (_T48, 5): [4]
+    (_T47, 6): [3]
+    (_T48, 6): [4]
+    (_T47, 7): [3]
+    (_T48, 7): [4]
+    (_T47, 9): [3]
+    (_T49, 9): [8]
+    (_T47, 10): [3]
+
+    1: _T46 = 16    [ _T46 ]
+    2: parm _T46    [ ]
+    3: _T47 =  call _Alloc    [ _T47 ]
+    4: _T48 = 0    [ _T48 _T47 ]
+    5: *(_T47 + 4) = _T48    [ _T48 _T47 ]
+    6: *(_T47 + 8) = _T48    [ _T48 _T47 ]
+    7: *(_T47 + 12) = _T48    [ _T47 ]
+    8: _T49 = VTBL <_Deck>    [ _T49 _T47 ]
+    9: *(_T47 + 0) = _T49    [ _T47 ]
+    10: END BY RETURN, result = _T47
 
 FUNCTION _BJDeck_New : 
 BASIC BLOCK 0 : 
@@ -36,16 +56,28 @@ BASIC BLOCK 0 :
   liveUse = [ ]
   liveIn  = [ ]
   liveOut = [ ]
-    _T50 = 16 [ _T50 ]
-    parm _T50 [ ]
-    _T51 =  call _Alloc [ _T51 ]
-    _T52 = 0 [ _T51 _T52 ]
-    *(_T51 + 4) = _T52 [ _T51 _T52 ]
-    *(_T51 + 8) = _T52 [ _T51 _T52 ]
-    *(_T51 + 12) = _T52 [ _T51 ]
-    _T53 = VTBL <_BJDeck> [ _T51 _T53 ]
-    *(_T51 + 0) = _T53 [ _T51 ]
-END BY RETURN, result = _T51
+  Use-Def Chain : 
+    (_T50, 2): [1]
+    (_T51, 5): [3]
+    (_T52, 5): [4]
+    (_T51, 6): [3]
+    (_T52, 6): [4]
+    (_T51, 7): [3]
+    (_T52, 7): [4]
+    (_T51, 9): [3]
+    (_T53, 9): [8]
+    (_T51, 10): [3]
+
+    1: _T50 = 16    [ _T50 ]
+    2: parm _T50    [ ]
+    3: _T51 =  call _Alloc    [ _T51 ]
+    4: _T52 = 0    [ _T51 _T52 ]
+    5: *(_T51 + 4) = _T52    [ _T51 _T52 ]
+    6: *(_T51 + 8) = _T52    [ _T51 _T52 ]
+    7: *(_T51 + 12) = _T52    [ _T51 ]
+    8: _T53 = VTBL <_BJDeck>    [ _T51 _T53 ]
+    9: *(_T51 + 0) = _T53    [ _T51 ]
+    10: END BY RETURN, result = _T51
 
 FUNCTION _Player_New : 
 BASIC BLOCK 0 : 
@@ -53,39 +85,61 @@ BASIC BLOCK 0 :
   liveUse = [ ]
   liveIn  = [ ]
   liveOut = [ _T54 _T56 _T57 _T58 ]
-    _T54 = 28 [ _T54 ]
-    parm _T54 [ _T54 ]
-    _T55 =  call _Alloc [ _T54 _T55 ]
-    _T56 = 0 [ _T54 _T55 _T56 ]
-    _T57 = 4 [ _T54 _T55 _T56 _T57 ]
-    _T58 = (_T55 + _T54) [ _T54 _T56 _T57 _T58 ]
-END BY BRANCH, goto 1
+  Use-Def Chain : 
+    (_T54, 2): [1]
+    (_T54, 6): [1]
+    (_T55, 6): [3]
+
+    1: _T54 = 28    [ _T54 ]
+    2: parm _T54    [ _T54 ]
+    3: _T55 =  call _Alloc    [ _T54 _T55 ]
+    4: _T56 = 0    [ _T54 _T55 _T56 ]
+    5: _T57 = 4    [ _T54 _T55 _T56 _T57 ]
+    6: _T58 = (_T55 + _T54)    [ _T54 _T56 _T57 _T58 ]
+    7: END BY BRANCH, goto 1
 BASIC BLOCK 1 : 
   Def     = [ _T59 _T60 ]
   liveUse = [ _T54 _T57 _T58 ]
   liveIn  = [ _T54 _T56 _T57 _T58 ]
   liveOut = [ _T54 _T56 _T57 _T58 ]
-    _T59 = (_T58 - _T57) [ _T54 _T56 _T57 _T59 ]
-    _T58 = _T59 [ _T54 _T56 _T57 _T58 ]
-    _T60 = (_T54 - _T57) [ _T56 _T57 _T58 _T60 ]
-    _T54 = _T60 [ _T54 _T56 _T57 _T58 ]
-END BY BEQZ, if _T54 = 
-    0 : goto 3; 1 : goto 2
+  Use-Def Chain : 
+    (_T57, 8): [5]
+    (_T58, 8): [6, 9]
+    (_T59, 9): [8]
+    (_T54, 10): [1, 11]
+    (_T57, 10): [5]
+    (_T60, 11): [10]
+    (_T54, 12): [11]
+
+    8: _T59 = (_T58 - _T57)    [ _T54 _T56 _T57 _T59 ]
+    9: _T58 = _T59    [ _T54 _T56 _T57 _T58 ]
+    10: _T60 = (_T54 - _T57)    [ _T56 _T57 _T58 _T60 ]
+    11: _T54 = _T60    [ _T54 _T56 _T57 _T58 ]
+    12: END BY BEQZ, if _T54 = 0 : goto 3; 1 : goto 2
 BASIC BLOCK 2 : 
   Def     = [ ]
   liveUse = [ _T56 _T58 ]
   liveIn  = [ _T54 _T56 _T57 _T58 ]
   liveOut = [ _T54 _T56 _T57 _T58 ]
-    *(_T58 + 0) = _T56 [ _T54 _T56 _T57 _T58 ]
-END BY BRANCH, goto 1
+  Use-Def Chain : 
+    (_T56, 13): [4]
+    (_T58, 13): [9]
+
+    13: *(_T58 + 0) = _T56    [ _T54 _T56 _T57 _T58 ]
+    14: END BY BRANCH, goto 1
 BASIC BLOCK 3 : 
   Def     = [ _T61 ]
   liveUse = [ _T58 ]
   liveIn  = [ _T58 ]
   liveOut = [ ]
-    _T61 = VTBL <_Player> [ _T58 _T61 ]
-    *(_T58 + 0) = _T61 [ _T58 ]
-END BY RETURN, result = _T58
+  Use-Def Chain : 
+    (_T58, 17): [9]
+    (_T61, 17): [16]
+    (_T58, 18): [9]
+
+    16: _T61 = VTBL <_Player>    [ _T58 _T61 ]
+    17: *(_T58 + 0) = _T61    [ _T58 ]
+    18: END BY RETURN, result = _T58
 
 FUNCTION _Dealer_New : 
 BASIC BLOCK 0 : 
@@ -93,39 +147,61 @@ BASIC BLOCK 0 :
   liveUse = [ ]
   liveIn  = [ ]
   liveOut = [ _T62 _T64 _T65 _T66 ]
-    _T62 = 28 [ _T62 ]
-    parm _T62 [ _T62 ]
-    _T63 =  call _Alloc [ _T62 _T63 ]
-    _T64 = 0 [ _T64 _T62 _T63 ]
-    _T65 = 4 [ _T64 _T65 _T62 _T63 ]
-    _T66 = (_T63 + _T62) [ _T64 _T65 _T66 _T62 ]
-END BY BRANCH, goto 1
+  Use-Def Chain : 
+    (_T62, 2): [1]
+    (_T62, 6): [1]
+    (_T63, 6): [3]
+
+    1: _T62 = 28    [ _T62 ]
+    2: parm _T62    [ _T62 ]
+    3: _T63 =  call _Alloc    [ _T62 _T63 ]
+    4: _T64 = 0    [ _T64 _T62 _T63 ]
+    5: _T65 = 4    [ _T64 _T65 _T62 _T63 ]
+    6: _T66 = (_T63 + _T62)    [ _T64 _T65 _T66 _T62 ]
+    7: END BY BRANCH, goto 1
 BASIC BLOCK 1 : 
   Def     = [ _T67 _T68 ]
   liveUse = [ _T62 _T65 _T66 ]
   liveIn  = [ _T62 _T64 _T65 _T66 ]
   liveOut = [ _T62 _T64 _T65 _T66 ]
-    _T67 = (_T66 - _T65) [ _T64 _T65 _T67 _T62 ]
-    _T66 = _T67 [ _T64 _T65 _T66 _T62 ]
-    _T68 = (_T62 - _T65) [ _T64 _T65 _T66 _T68 ]
-    _T62 = _T68 [ _T64 _T65 _T66 _T62 ]
-END BY BEQZ, if _T62 = 
-    0 : goto 3; 1 : goto 2
+  Use-Def Chain : 
+    (_T65, 8): [5]
+    (_T66, 8): [6, 9]
+    (_T67, 9): [8]
+    (_T62, 10): [1, 11]
+    (_T65, 10): [5]
+    (_T68, 11): [10]
+    (_T62, 12): [11]
+
+    8: _T67 = (_T66 - _T65)    [ _T64 _T65 _T67 _T62 ]
+    9: _T66 = _T67    [ _T64 _T65 _T66 _T62 ]
+    10: _T68 = (_T62 - _T65)    [ _T64 _T65 _T66 _T68 ]
+    11: _T62 = _T68    [ _T64 _T65 _T66 _T62 ]
+    12: END BY BEQZ, if _T62 = 0 : goto 3; 1 : goto 2
 BASIC BLOCK 2 : 
   Def     = [ ]
   liveUse = [ _T64 _T66 ]
   liveIn  = [ _T62 _T64 _T65 _T66 ]
   liveOut = [ _T62 _T64 _T65 _T66 ]
-    *(_T66 + 0) = _T64 [ _T64 _T65 _T66 _T62 ]
-END BY BRANCH, goto 1
+  Use-Def Chain : 
+    (_T64, 13): [4]
+    (_T66, 13): [9]
+
+    13: *(_T66 + 0) = _T64    [ _T64 _T65 _T66 _T62 ]
+    14: END BY BRANCH, goto 1
 BASIC BLOCK 3 : 
   Def     = [ _T69 ]
   liveUse = [ _T66 ]
   liveIn  = [ _T66 ]
   liveOut = [ ]
-    _T69 = VTBL <_Dealer> [ _T66 _T69 ]
-    *(_T66 + 0) = _T69 [ _T66 ]
-END BY RETURN, result = _T66
+  Use-Def Chain : 
+    (_T66, 17): [9]
+    (_T69, 17): [16]
+    (_T66, 18): [9]
+
+    16: _T69 = VTBL <_Dealer>    [ _T66 _T69 ]
+    17: *(_T66 + 0) = _T69    [ _T66 ]
+    18: END BY RETURN, result = _T66
 
 FUNCTION _House_New : 
 BASIC BLOCK 0 : 
@@ -133,16 +209,28 @@ BASIC BLOCK 0 :
   liveUse = [ ]
   liveIn  = [ ]
   liveOut = [ ]
-    _T70 = 16 [ _T70 ]
-    parm _T70 [ ]
-    _T71 =  call _Alloc [ _T71 ]
-    _T72 = 0 [ _T71 _T72 ]
-    *(_T71 + 4) = _T72 [ _T71 _T72 ]
-    *(_T71 + 8) = _T72 [ _T71 _T72 ]
-    *(_T71 + 12) = _T72 [ _T71 ]
-    _T73 = VTBL <_House> [ _T71 _T73 ]
-    *(_T71 + 0) = _T73 [ _T71 ]
-END BY RETURN, result = _T71
+  Use-Def Chain : 
+    (_T70, 2): [1]
+    (_T71, 5): [3]
+    (_T72, 5): [4]
+    (_T71, 6): [3]
+    (_T72, 6): [4]
+    (_T71, 7): [3]
+    (_T72, 7): [4]
+    (_T71, 9): [3]
+    (_T73, 9): [8]
+    (_T71, 10): [3]
+
+    1: _T70 = 16    [ _T70 ]
+    2: parm _T70    [ ]
+    3: _T71 =  call _Alloc    [ _T71 ]
+    4: _T72 = 0    [ _T71 _T72 ]
+    5: *(_T71 + 4) = _T72    [ _T71 _T72 ]
+    6: *(_T71 + 8) = _T72    [ _T71 _T72 ]
+    7: *(_T71 + 12) = _T72    [ _T71 ]
+    8: _T73 = VTBL <_House>    [ _T71 _T73 ]
+    9: *(_T71 + 0) = _T73    [ _T71 ]
+    10: END BY RETURN, result = _T71
 
 FUNCTION _Main_New : 
 BASIC BLOCK 0 : 
@@ -150,12 +238,18 @@ BASIC BLOCK 0 :
   liveUse = [ ]
   liveIn  = [ ]
   liveOut = [ ]
-    _T74 = 4 [ _T74 ]
-    parm _T74 [ ]
-    _T75 =  call _Alloc [ _T75 ]
-    _T76 = VTBL <_Main> [ _T75 _T76 ]
-    *(_T75 + 0) = _T76 [ _T75 ]
-END BY RETURN, result = _T75
+  Use-Def Chain : 
+    (_T74, 2): [1]
+    (_T75, 5): [3]
+    (_T76, 5): [4]
+    (_T75, 6): [3]
+
+    1: _T74 = 4    [ _T74 ]
+    2: parm _T74    [ ]
+    3: _T75 =  call _Alloc    [ _T75 ]
+    4: _T76 = VTBL <_Main>    [ _T75 _T76 ]
+    5: *(_T75 + 0) = _T76    [ _T75 ]
+    6: END BY RETURN, result = _T75
 
 FUNCTION _rndModule.Init : 
 BASIC BLOCK 0 : 
@@ -163,9 +257,14 @@ BASIC BLOCK 0 :
   liveUse = [ _T0 _T1 ]
   liveIn  = [ _T0 _T1 ]
   liveOut = [ _T0 _T1 ]
-    _T77 = *(_T0 + 4) [ _T0 _T1 ]
-    *(_T0 + 4) = _T1 [ _T0 _T1 ]
-END BY RETURN, void result
+  Use-Def Chain : 
+    (_T0, 1): []
+    (_T0, 2): []
+    (_T1, 2): []
+
+    1: _T77 = *(_T0 + 4)    [ _T0 _T1 ]
+    2: *(_T0 + 4) = _T1    [ _T0 _T1 ]
+    3: END BY RETURN, void result
 
 FUNCTION _rndModule.Random : 
 BASIC BLOCK 0 : 
@@ -173,19 +272,35 @@ BASIC BLOCK 0 :
   liveUse = [ _T2 ]
   liveIn  = [ _T2 ]
   liveOut = [ _T2 ]
-    _T78 = *(_T2 + 4) [ _T2 ]
-    _T79 = 15625 [ _T2 _T79 ]
-    _T80 = *(_T2 + 4) [ _T80 _T2 _T79 ]
-    _T81 = 10000 [ _T80 _T81 _T2 _T79 ]
-    _T82 = (_T80 % _T81) [ _T2 _T82 _T79 ]
-    _T83 = (_T79 * _T82) [ _T2 _T83 ]
-    _T84 = 22221 [ _T2 _T83 _T84 ]
-    _T85 = (_T83 + _T84) [ _T2 _T85 ]
-    _T86 = 65536 [ _T2 _T85 _T86 ]
-    _T87 = (_T85 % _T86) [ _T2 _T87 ]
-    *(_T2 + 4) = _T87 [ _T2 ]
-    _T88 = *(_T2 + 4) [ _T2 _T88 ]
-END BY RETURN, result = _T88
+  Use-Def Chain : 
+    (_T2, 1): []
+    (_T2, 3): []
+    (_T80, 5): [3]
+    (_T81, 5): [4]
+    (_T79, 6): [2]
+    (_T82, 6): [5]
+    (_T83, 8): [6]
+    (_T84, 8): [7]
+    (_T85, 10): [8]
+    (_T86, 10): [9]
+    (_T2, 11): []
+    (_T87, 11): [10]
+    (_T2, 12): []
+    (_T88, 13): [12]
+
+    1: _T78 = *(_T2 + 4)    [ _T2 ]
+    2: _T79 = 15625    [ _T2 _T79 ]
+    3: _T80 = *(_T2 + 4)    [ _T80 _T2 _T79 ]
+    4: _T81 = 10000    [ _T80 _T81 _T2 _T79 ]
+    5: _T82 = (_T80 % _T81)    [ _T2 _T82 _T79 ]
+    6: _T83 = (_T79 * _T82)    [ _T2 _T83 ]
+    7: _T84 = 22221    [ _T2 _T83 _T84 ]
+    8: _T85 = (_T83 + _T84)    [ _T2 _T85 ]
+    9: _T86 = 65536    [ _T2 _T85 _T86 ]
+    10: _T87 = (_T85 % _T86)    [ _T2 _T87 ]
+    11: *(_T2 + 4) = _T87    [ _T2 ]
+    12: _T88 = *(_T2 + 4)    [ _T2 _T88 ]
+    13: END BY RETURN, result = _T88
 
 FUNCTION _rndModule.RndInt : 
 BASIC BLOCK 0 : 
@@ -193,12 +308,21 @@ BASIC BLOCK 0 :
   liveUse = [ _T3 _T4 ]
   liveIn  = [ _T3 _T4 ]
   liveOut = [ _T3 _T4 ]
-    parm _T3 [ _T3 _T4 ]
-    _T89 = *(_T3 + 0) [ _T3 _T4 _T89 ]
-    _T90 = *(_T89 + 12) [ _T3 _T4 _T90 ]
-    _T91 =  call _T90 [ _T3 _T4 _T91 ]
-    _T92 = (_T91 % _T4) [ _T3 _T4 _T92 ]
-END BY RETURN, result = _T92
+  Use-Def Chain : 
+    (_T3, 1): []
+    (_T3, 2): []
+    (_T89, 3): [2]
+    (_T90, 4): [3]
+    (_T4, 5): []
+    (_T91, 5): [4]
+    (_T92, 6): [5]
+
+    1: parm _T3    [ _T3 _T4 ]
+    2: _T89 = *(_T3 + 0)    [ _T3 _T4 _T89 ]
+    3: _T90 = *(_T89 + 12)    [ _T3 _T4 _T90 ]
+    4: _T91 =  call _T90    [ _T3 _T4 _T91 ]
+    5: _T92 = (_T91 % _T4)    [ _T3 _T4 _T92 ]
+    6: END BY RETURN, result = _T92
 
 FUNCTION _Deck.Init : 
 BASIC BLOCK 0 : 
@@ -206,61 +330,97 @@ BASIC BLOCK 0 :
   liveUse = [ _T5 ]
   liveIn  = [ _T5 _T6 ]
   liveOut = [ _T5 _T6 _T94 ]
-    _T93 = *(_T5 + 8) [ _T5 _T6 ]
-    _T94 = 52 [ _T5 _T6 _T94 ]
-    _T95 = 0 [ _T5 _T6 _T94 _T95 ]
-    _T96 = (_T94 < _T95) [ _T96 _T5 _T6 _T94 ]
-END BY BEQZ, if _T96 = 
-    0 : goto 2; 1 : goto 1
+  Use-Def Chain : 
+    (_T5, 1): []
+    (_T94, 4): [2]
+    (_T95, 4): [3]
+    (_T96, 5): [4]
+
+    1: _T93 = *(_T5 + 8)    [ _T5 _T6 ]
+    2: _T94 = 52    [ _T5 _T6 _T94 ]
+    3: _T95 = 0    [ _T5 _T6 _T94 _T95 ]
+    4: _T96 = (_T94 < _T95)    [ _T96 _T5 _T6 _T94 ]
+    5: END BY BEQZ, if _T96 = 0 : goto 2; 1 : goto 1
 BASIC BLOCK 1 : 
   Def     = [ _T97 ]
   liveUse = [ ]
   liveIn  = [ _T5 _T6 _T94 ]
   liveOut = [ _T5 _T6 _T94 ]
-    _T97 = "Decaf runtime error: Cannot create negative-sized array\n" [ _T97 _T5 _T6 _T94 ]
-    parm _T97 [ _T5 _T6 _T94 ]
-    call _PrintString [ _T5 _T6 _T94 ]
-    call _Halt [ _T5 _T6 _T94 ]
-END BY BRANCH, goto 2
+  Use-Def Chain : 
+    (_T97, 7): [6]
+
+    6: _T97 = "Decaf runtime error: Cannot create negative-sized array\n"    [ _T97 _T5 _T6 _T94 ]
+    7: parm _T97    [ _T5 _T6 _T94 ]
+    8: call _PrintString    [ _T5 _T6 _T94 ]
+    9: call _Halt    [ _T5 _T6 _T94 ]
+    10: END BY BRANCH, goto 2
 BASIC BLOCK 2 : 
   Def     = [ _T98 _T99 _T100 _T101 _T102 ]
   liveUse = [ _T94 ]
   liveIn  = [ _T5 _T6 _T94 ]
   liveOut = [ _T5 _T6 _T98 _T100 _T101 _T102 ]
-    _T98 = 4 [ _T98 _T5 _T6 _T94 ]
-    _T99 = (_T98 * _T94) [ _T98 _T99 _T5 _T6 _T94 ]
-    _T100 = (_T98 + _T99) [ _T98 _T100 _T5 _T6 _T94 ]
-    parm _T100 [ _T98 _T100 _T5 _T6 _T94 ]
-    _T101 =  call _Alloc [ _T98 _T100 _T5 _T101 _T6 _T94 ]
-    *(_T101 + 0) = _T94 [ _T98 _T100 _T5 _T101 _T6 ]
-    _T102 = 0 [ _T98 _T100 _T5 _T101 _T6 _T102 ]
-    _T101 = (_T101 + _T100) [ _T98 _T100 _T5 _T101 _T6 _T102 ]
-END BY BRANCH, goto 3
+  Use-Def Chain : 
+    (_T94, 12): [2]
+    (_T98, 12): [11]
+    (_T98, 13): [11]
+    (_T99, 13): [12]
+    (_T100, 14): [13]
+    (_T94, 16): [2]
+    (_T101, 16): [15]
+    (_T100, 18): [13]
+    (_T101, 18): [15]
+
+    11: _T98 = 4    [ _T98 _T5 _T6 _T94 ]
+    12: _T99 = (_T98 * _T94)    [ _T98 _T99 _T5 _T6 _T94 ]
+    13: _T100 = (_T98 + _T99)    [ _T98 _T100 _T5 _T6 _T94 ]
+    14: parm _T100    [ _T98 _T100 _T5 _T6 _T94 ]
+    15: _T101 =  call _Alloc    [ _T98 _T100 _T5 _T101 _T6 _T94 ]
+    16: *(_T101 + 0) = _T94    [ _T98 _T100 _T5 _T101 _T6 ]
+    17: _T102 = 0    [ _T98 _T100 _T5 _T101 _T6 _T102 ]
+    18: _T101 = (_T101 + _T100)    [ _T98 _T100 _T5 _T101 _T6 _T102 ]
+    19: END BY BRANCH, goto 3
 BASIC BLOCK 3 : 
   Def     = [ ]
   liveUse = [ _T98 _T100 ]
   liveIn  = [ _T5 _T6 _T98 _T100 _T101 _T102 ]
   liveOut = [ _T5 _T6 _T98 _T100 _T101 _T102 ]
-    _T100 = (_T100 - _T98) [ _T98 _T100 _T5 _T101 _T6 _T102 ]
-END BY BEQZ, if _T100 = 
-    0 : goto 5; 1 : goto 4
+  Use-Def Chain : 
+    (_T98, 20): [11]
+    (_T100, 20): [13, 20]
+    (_T100, 21): [20]
+
+    20: _T100 = (_T100 - _T98)    [ _T98 _T100 _T5 _T101 _T6 _T102 ]
+    21: END BY BEQZ, if _T100 = 0 : goto 5; 1 : goto 4
 BASIC BLOCK 4 : 
   Def     = [ ]
   liveUse = [ _T98 _T101 _T102 ]
   liveIn  = [ _T5 _T6 _T98 _T100 _T101 _T102 ]
   liveOut = [ _T5 _T6 _T98 _T100 _T101 _T102 ]
-    _T101 = (_T101 - _T98) [ _T98 _T100 _T5 _T101 _T6 _T102 ]
-    *(_T101 + 0) = _T102 [ _T98 _T100 _T5 _T101 _T6 _T102 ]
-END BY BRANCH, goto 3
+  Use-Def Chain : 
+    (_T98, 22): [11]
+    (_T101, 22): [18, 22]
+    (_T101, 23): [22]
+    (_T102, 23): [17]
+
+    22: _T101 = (_T101 - _T98)    [ _T98 _T100 _T5 _T101 _T6 _T102 ]
+    23: *(_T101 + 0) = _T102    [ _T98 _T100 _T5 _T101 _T6 _T102 ]
+    24: END BY BRANCH, goto 3
 BASIC BLOCK 5 : 
   Def     = [ _T103 ]
   liveUse = [ _T5 _T6 _T101 ]
   liveIn  = [ _T5 _T6 _T101 ]
   liveOut = [ _T5 _T6 ]
-    *(_T5 + 8) = _T101 [ _T5 _T6 ]
-    _T103 = *(_T5 + 12) [ _T5 _T6 ]
-    *(_T5 + 12) = _T6 [ _T5 _T6 ]
-END BY RETURN, void result
+  Use-Def Chain : 
+    (_T5, 26): []
+    (_T101, 26): [18, 22]
+    (_T5, 27): []
+    (_T5, 28): []
+    (_T6, 28): []
+
+    26: *(_T5 + 8) = _T101    [ _T5 _T6 ]
+    27: _T103 = *(_T5 + 12)    [ _T5 _T6 ]
+    28: *(_T5 + 12) = _T6    [ _T5 _T6 ]
+    29: END BY RETURN, void result
 
 FUNCTION _Deck.Shuffle : 
 BASIC BLOCK 0 : 
@@ -268,269 +428,437 @@ BASIC BLOCK 0 :
   liveUse = [ _T7 ]
   liveIn  = [ _T7 ]
   liveOut = [ _T7 ]
-    _T104 = *(_T7 + 4) [ _T7 ]
-    _T105 = 1 [ _T7 _T105 ]
-    *(_T7 + 4) = _T105 [ _T7 ]
-END BY BRANCH, goto 2
+  Use-Def Chain : 
+    (_T7, 1): []
+    (_T7, 3): []
+    (_T105, 3): [2]
+
+    1: _T104 = *(_T7 + 4)    [ _T7 ]
+    2: _T105 = 1    [ _T7 _T105 ]
+    3: *(_T7 + 4) = _T105    [ _T7 ]
+    4: END BY BRANCH, goto 2
 BASIC BLOCK 1 : 
   Def     = [ _T106 _T107 _T108 _T109 ]
   liveUse = [ _T7 ]
   liveIn  = [ _T7 ]
   liveOut = [ _T7 ]
-    _T106 = *(_T7 + 4) [ _T7 ]
-    _T107 = *(_T7 + 4) [ _T7 _T107 ]
-    _T108 = 1 [ _T7 _T107 _T108 ]
-    _T109 = (_T107 + _T108) [ _T7 _T109 ]
-    *(_T7 + 4) = _T109 [ _T7 ]
-END BY BRANCH, goto 2
+  Use-Def Chain : 
+    (_T7, 6): []
+    (_T7, 7): []
+    (_T107, 9): [7]
+    (_T108, 9): [8]
+    (_T7, 10): []
+    (_T109, 10): [9]
+
+    6: _T106 = *(_T7 + 4)    [ _T7 ]
+    7: _T107 = *(_T7 + 4)    [ _T7 _T107 ]
+    8: _T108 = 1    [ _T7 _T107 _T108 ]
+    9: _T109 = (_T107 + _T108)    [ _T7 _T109 ]
+    10: *(_T7 + 4) = _T109    [ _T7 ]
+    11: END BY BRANCH, goto 2
 BASIC BLOCK 2 : 
   Def     = [ _T110 _T111 _T112 ]
   liveUse = [ _T7 ]
   liveIn  = [ _T7 ]
   liveOut = [ _T7 ]
-    _T110 = *(_T7 + 4) [ _T7 _T110 ]
-    _T111 = 52 [ _T7 _T110 _T111 ]
-    _T112 = (_T110 <= _T111) [ _T112 _T7 ]
-END BY BEQZ, if _T112 = 
-    0 : goto 7; 1 : goto 3
+  Use-Def Chain : 
+    (_T7, 12): []
+    (_T110, 14): [12]
+    (_T111, 14): [13]
+    (_T112, 15): [14]
+
+    12: _T110 = *(_T7 + 4)    [ _T7 _T110 ]
+    13: _T111 = 52    [ _T7 _T110 _T111 ]
+    14: _T112 = (_T110 <= _T111)    [ _T112 _T7 ]
+    15: END BY BEQZ, if _T112 = 0 : goto 7; 1 : goto 3
 BASIC BLOCK 3 : 
   Def     = [ _T113 _T114 _T115 _T116 _T117 _T118 ]
   liveUse = [ _T7 ]
   liveIn  = [ _T7 ]
   liveOut = [ _T7 _T113 _T116 ]
-    _T113 = *(_T7 + 8) [ _T113 _T7 ]
-    _T114 = *(_T7 + 4) [ _T113 _T114 _T7 ]
-    _T115 = 1 [ _T113 _T114 _T115 _T7 ]
-    _T116 = (_T114 - _T115) [ _T113 _T116 _T7 ]
-    _T117 = *(_T113 - 4) [ _T113 _T116 _T117 _T7 ]
-    _T118 = (_T116 < _T117) [ _T113 _T116 _T118 _T7 ]
-END BY BEQZ, if _T118 = 
-    0 : goto 5; 1 : goto 4
+  Use-Def Chain : 
+    (_T7, 16): []
+    (_T7, 17): []
+    (_T114, 19): [17]
+    (_T115, 19): [18]
+    (_T113, 20): [16]
+    (_T116, 21): [19]
+    (_T117, 21): [20]
+    (_T118, 22): [21]
+
+    16: _T113 = *(_T7 + 8)    [ _T113 _T7 ]
+    17: _T114 = *(_T7 + 4)    [ _T113 _T114 _T7 ]
+    18: _T115 = 1    [ _T113 _T114 _T115 _T7 ]
+    19: _T116 = (_T114 - _T115)    [ _T113 _T116 _T7 ]
+    20: _T117 = *(_T113 - 4)    [ _T113 _T116 _T117 _T7 ]
+    21: _T118 = (_T116 < _T117)    [ _T113 _T116 _T118 _T7 ]
+    22: END BY BEQZ, if _T118 = 0 : goto 5; 1 : goto 4
 BASIC BLOCK 4 : 
   Def     = [ _T119 _T120 ]
   liveUse = [ _T116 ]
   liveIn  = [ _T7 _T113 _T116 ]
   liveOut = [ _T7 _T113 _T116 ]
-    _T119 = 0 [ _T113 _T116 _T7 _T119 ]
-    _T120 = (_T116 < _T119) [ _T113 _T116 _T7 _T120 ]
-END BY BEQZ, if _T120 = 
-    0 : goto 6; 1 : goto 5
+  Use-Def Chain : 
+    (_T116, 24): [19]
+    (_T119, 24): [23]
+    (_T120, 25): [24]
+
+    23: _T119 = 0    [ _T113 _T116 _T7 _T119 ]
+    24: _T120 = (_T116 < _T119)    [ _T113 _T116 _T7 _T120 ]
+    25: END BY BEQZ, if _T120 = 0 : goto 6; 1 : goto 5
 BASIC BLOCK 5 : 
   Def     = [ _T121 ]
   liveUse = [ ]
   liveIn  = [ _T7 _T113 _T116 ]
   liveOut = [ _T7 _T113 _T116 ]
-    _T121 = "Decaf runtime error: Array subscript out of bounds\n" [ _T113 _T116 _T7 _T121 ]
-    parm _T121 [ _T113 _T116 _T7 ]
-    call _PrintString [ _T113 _T116 _T7 ]
-    call _Halt [ _T113 _T116 _T7 ]
-END BY BRANCH, goto 6
+  Use-Def Chain : 
+    (_T121, 28): [27]
+
+    27: _T121 = "Decaf runtime error: Array subscript out of bounds\n"    [ _T113 _T116 _T7 _T121 ]
+    28: parm _T121    [ _T113 _T116 _T7 ]
+    29: call _PrintString    [ _T113 _T116 _T7 ]
+    30: call _Halt    [ _T113 _T116 _T7 ]
+    31: END BY BRANCH, goto 6
 BASIC BLOCK 6 : 
   Def     = [ _T122 _T123 _T124 _T125 _T126 _T127 _T128 _T129 _T130 _T131 ]
   liveUse = [ _T7 _T113 _T116 ]
   liveIn  = [ _T7 _T113 _T116 ]
   liveOut = [ _T7 ]
-    _T122 = 4 [ _T113 _T116 _T7 _T122 ]
-    _T123 = (_T116 * _T122) [ _T113 _T116 _T7 _T123 ]
-    _T124 = (_T113 + _T123) [ _T113 _T116 _T7 _T124 ]
-    _T125 = *(_T124 + 0) [ _T113 _T116 _T7 ]
-    _T126 = *(_T7 + 4) [ _T113 _T116 _T7 _T126 ]
-    _T127 = 13 [ _T113 _T116 _T7 _T126 _T127 ]
-    _T128 = (_T126 % _T127) [ _T128 _T113 _T116 _T7 ]
-    _T129 = 4 [ _T128 _T113 _T129 _T116 _T7 ]
-    _T130 = (_T116 * _T129) [ _T128 _T113 _T130 _T7 ]
-    _T131 = (_T113 + _T130) [ _T128 _T131 _T7 ]
-    *(_T131 + 0) = _T128 [ _T7 ]
-END BY BRANCH, goto 1
+  Use-Def Chain : 
+    (_T116, 33): [19]
+    (_T122, 33): [32]
+    (_T113, 34): [16]
+    (_T123, 34): [33]
+    (_T124, 35): [34]
+    (_T7, 36): []
+    (_T126, 38): [36]
+    (_T127, 38): [37]
+    (_T116, 40): [19]
+    (_T129, 40): [39]
+    (_T113, 41): [16]
+    (_T130, 41): [40]
+    (_T128, 42): [38]
+    (_T131, 42): [41]
+
+    32: _T122 = 4    [ _T113 _T116 _T7 _T122 ]
+    33: _T123 = (_T116 * _T122)    [ _T113 _T116 _T7 _T123 ]
+    34: _T124 = (_T113 + _T123)    [ _T113 _T116 _T7 _T124 ]
+    35: _T125 = *(_T124 + 0)    [ _T113 _T116 _T7 ]
+    36: _T126 = *(_T7 + 4)    [ _T113 _T116 _T7 _T126 ]
+    37: _T127 = 13    [ _T113 _T116 _T7 _T126 _T127 ]
+    38: _T128 = (_T126 % _T127)    [ _T128 _T113 _T116 _T7 ]
+    39: _T129 = 4    [ _T128 _T113 _T129 _T116 _T7 ]
+    40: _T130 = (_T116 * _T129)    [ _T128 _T113 _T130 _T7 ]
+    41: _T131 = (_T113 + _T130)    [ _T128 _T131 _T7 ]
+    42: *(_T131 + 0) = _T128    [ _T7 ]
+    43: END BY BRANCH, goto 1
 BASIC BLOCK 7 : 
   Def     = [ _T132 _T133 _T134 _T135 ]
   liveUse = [ _T7 ]
   liveIn  = [ _T7 ]
   liveOut = [ _T7 ]
-    _T132 = *(_T7 + 4) [ _T7 ]
-    _T133 = *(_T7 + 4) [ _T133 _T7 ]
-    _T134 = 1 [ _T133 _T134 _T7 ]
-    _T135 = (_T133 - _T134) [ _T7 _T135 ]
-    *(_T7 + 4) = _T135 [ _T7 ]
-END BY BRANCH, goto 8
+  Use-Def Chain : 
+    (_T7, 45): []
+    (_T7, 46): []
+    (_T133, 48): [46]
+    (_T134, 48): [47]
+    (_T7, 49): []
+    (_T135, 49): [48]
+
+    45: _T132 = *(_T7 + 4)    [ _T7 ]
+    46: _T133 = *(_T7 + 4)    [ _T133 _T7 ]
+    47: _T134 = 1    [ _T133 _T134 _T7 ]
+    48: _T135 = (_T133 - _T134)    [ _T7 _T135 ]
+    49: *(_T7 + 4) = _T135    [ _T7 ]
+    50: END BY BRANCH, goto 8
 BASIC BLOCK 8 : 
   Def     = [ _T136 _T137 _T138 ]
   liveUse = [ _T7 ]
   liveIn  = [ _T7 ]
   liveOut = [ _T7 ]
-    _T136 = *(_T7 + 4) [ _T7 _T136 ]
-    _T137 = 0 [ _T7 _T136 _T137 ]
-    _T138 = (_T136 > _T137) [ _T7 _T138 ]
-END BY BEQZ, if _T138 = 
-    0 : goto 22; 1 : goto 9
+  Use-Def Chain : 
+    (_T7, 51): []
+    (_T136, 53): [51]
+    (_T137, 53): [52]
+    (_T138, 54): [53]
+
+    51: _T136 = *(_T7 + 4)    [ _T7 _T136 ]
+    52: _T137 = 0    [ _T7 _T136 _T137 ]
+    53: _T138 = (_T136 > _T137)    [ _T7 _T138 ]
+    54: END BY BEQZ, if _T138 = 0 : goto 22; 1 : goto 9
 BASIC BLOCK 9 : 
   Def     = [ _T139 _T141 _T142 _T143 _T144 _T145 _T146 _T147 _T148 _T149 _T150 _T151 _T152 _T153 ]
   liveUse = [ _T7 ]
   liveIn  = [ _T7 ]
   liveOut = [ _T7 _T139 _T150 _T151 ]
-    _T141 = *(_T7 + 12) [ _T7 _T141 ]
-    _T142 = *(_T7 + 4) [ _T7 _T141 _T142 ]
-    parm _T141 [ _T7 _T141 _T142 ]
-    parm _T142 [ _T7 _T141 ]
-    _T143 = *(_T141 + 0) [ _T7 _T143 ]
-    _T144 = *(_T143 + 16) [ _T144 _T7 ]
-    _T145 =  call _T144 [ _T145 _T7 ]
-    _T139 = _T145 [ _T7 _T139 ]
-    _T146 = *(_T7 + 4) [ _T7 _T139 ]
-    _T147 = *(_T7 + 4) [ _T147 _T7 _T139 ]
-    _T148 = 1 [ _T147 _T148 _T7 _T139 ]
-    _T149 = (_T147 - _T148) [ _T149 _T7 _T139 ]
-    *(_T7 + 4) = _T149 [ _T7 _T139 ]
-    _T150 = *(_T7 + 8) [ _T150 _T7 _T139 ]
-    _T151 = *(_T7 + 4) [ _T150 _T7 _T151 _T139 ]
-    _T152 = *(_T150 - 4) [ _T150 _T7 _T151 _T152 _T139 ]
-    _T153 = (_T151 < _T152) [ _T150 _T7 _T151 _T153 _T139 ]
-END BY BEQZ, if _T153 = 
-    0 : goto 11; 1 : goto 10
+  Use-Def Chain : 
+    (_T7, 55): []
+    (_T7, 56): []
+    (_T141, 57): [55]
+    (_T142, 58): [56]
+    (_T141, 59): [55]
+    (_T143, 60): [59]
+    (_T144, 61): [60]
+    (_T145, 62): [61]
+    (_T7, 63): []
+    (_T7, 64): []
+    (_T147, 66): [64]
+    (_T148, 66): [65]
+    (_T7, 67): []
+    (_T149, 67): [66]
+    (_T7, 68): []
+    (_T7, 69): []
+    (_T150, 70): [68]
+    (_T151, 71): [69]
+    (_T152, 71): [70]
+    (_T153, 72): [71]
+
+    55: _T141 = *(_T7 + 12)    [ _T7 _T141 ]
+    56: _T142 = *(_T7 + 4)    [ _T7 _T141 _T142 ]
+    57: parm _T141    [ _T7 _T141 _T142 ]
+    58: parm _T142    [ _T7 _T141 ]
+    59: _T143 = *(_T141 + 0)    [ _T7 _T143 ]
+    60: _T144 = *(_T143 + 16)    [ _T144 _T7 ]
+    61: _T145 =  call _T144    [ _T145 _T7 ]
+    62: _T139 = _T145    [ _T7 _T139 ]
+    63: _T146 = *(_T7 + 4)    [ _T7 _T139 ]
+    64: _T147 = *(_T7 + 4)    [ _T147 _T7 _T139 ]
+    65: _T148 = 1    [ _T147 _T148 _T7 _T139 ]
+    66: _T149 = (_T147 - _T148)    [ _T149 _T7 _T139 ]
+    67: *(_T7 + 4) = _T149    [ _T7 _T139 ]
+    68: _T150 = *(_T7 + 8)    [ _T150 _T7 _T139 ]
+    69: _T151 = *(_T7 + 4)    [ _T150 _T7 _T151 _T139 ]
+    70: _T152 = *(_T150 - 4)    [ _T150 _T7 _T151 _T152 _T139 ]
+    71: _T153 = (_T151 < _T152)    [ _T150 _T7 _T151 _T153 _T139 ]
+    72: END BY BEQZ, if _T153 = 0 : goto 11; 1 : goto 10
 BASIC BLOCK 10 : 
   Def     = [ _T154 _T155 ]
   liveUse = [ _T151 ]
   liveIn  = [ _T7 _T139 _T150 _T151 ]
   liveOut = [ _T7 _T139 _T150 _T151 ]
-    _T154 = 0 [ _T150 _T7 _T151 _T154 _T139 ]
-    _T155 = (_T151 < _T154) [ _T150 _T7 _T151 _T139 _T155 ]
-END BY BEQZ, if _T155 = 
-    0 : goto 12; 1 : goto 11
+  Use-Def Chain : 
+    (_T151, 74): [69]
+    (_T154, 74): [73]
+    (_T155, 75): [74]
+
+    73: _T154 = 0    [ _T150 _T7 _T151 _T154 _T139 ]
+    74: _T155 = (_T151 < _T154)    [ _T150 _T7 _T151 _T139 _T155 ]
+    75: END BY BEQZ, if _T155 = 0 : goto 12; 1 : goto 11
 BASIC BLOCK 11 : 
   Def     = [ _T156 ]
   liveUse = [ ]
   liveIn  = [ _T7 _T139 _T150 _T151 ]
   liveOut = [ _T7 _T139 _T150 _T151 ]
-    _T156 = "Decaf runtime error: Array subscript out of bounds\n" [ _T150 _T7 _T151 _T139 _T156 ]
-    parm _T156 [ _T150 _T7 _T151 _T139 ]
-    call _PrintString [ _T150 _T7 _T151 _T139 ]
-    call _Halt [ _T150 _T7 _T151 _T139 ]
-END BY BRANCH, goto 12
+  Use-Def Chain : 
+    (_T156, 78): [77]
+
+    77: _T156 = "Decaf runtime error: Array subscript out of bounds\n"    [ _T150 _T7 _T151 _T139 _T156 ]
+    78: parm _T156    [ _T150 _T7 _T151 _T139 ]
+    79: call _PrintString    [ _T150 _T7 _T151 _T139 ]
+    80: call _Halt    [ _T150 _T7 _T151 _T139 ]
+    81: END BY BRANCH, goto 12
 BASIC BLOCK 12 : 
   Def     = [ _T140 _T157 _T158 _T159 _T160 _T161 _T162 _T163 _T164 ]
   liveUse = [ _T7 _T150 _T151 ]
   liveIn  = [ _T7 _T139 _T150 _T151 ]
   liveOut = [ _T7 _T139 _T140 _T161 _T162 ]
-    _T157 = 4 [ _T150 _T7 _T151 _T139 _T157 ]
-    _T158 = (_T151 * _T157) [ _T150 _T7 _T139 _T158 ]
-    _T159 = (_T150 + _T158) [ _T7 _T139 _T159 ]
-    _T160 = *(_T159 + 0) [ _T160 _T7 _T139 ]
-    _T140 = _T160 [ _T7 _T139 _T140 ]
-    _T161 = *(_T7 + 8) [ _T161 _T7 _T139 _T140 ]
-    _T162 = *(_T7 + 4) [ _T161 _T162 _T7 _T139 _T140 ]
-    _T163 = *(_T161 - 4) [ _T161 _T162 _T163 _T7 _T139 _T140 ]
-    _T164 = (_T162 < _T163) [ _T161 _T162 _T164 _T7 _T139 _T140 ]
-END BY BEQZ, if _T164 = 
-    0 : goto 14; 1 : goto 13
+  Use-Def Chain : 
+    (_T151, 83): [69]
+    (_T157, 83): [82]
+    (_T150, 84): [68]
+    (_T158, 84): [83]
+    (_T159, 85): [84]
+    (_T160, 86): [85]
+    (_T7, 87): []
+    (_T7, 88): []
+    (_T161, 89): [87]
+    (_T162, 90): [88]
+    (_T163, 90): [89]
+    (_T164, 91): [90]
+
+    82: _T157 = 4    [ _T150 _T7 _T151 _T139 _T157 ]
+    83: _T158 = (_T151 * _T157)    [ _T150 _T7 _T139 _T158 ]
+    84: _T159 = (_T150 + _T158)    [ _T7 _T139 _T159 ]
+    85: _T160 = *(_T159 + 0)    [ _T160 _T7 _T139 ]
+    86: _T140 = _T160    [ _T7 _T139 _T140 ]
+    87: _T161 = *(_T7 + 8)    [ _T161 _T7 _T139 _T140 ]
+    88: _T162 = *(_T7 + 4)    [ _T161 _T162 _T7 _T139 _T140 ]
+    89: _T163 = *(_T161 - 4)    [ _T161 _T162 _T163 _T7 _T139 _T140 ]
+    90: _T164 = (_T162 < _T163)    [ _T161 _T162 _T164 _T7 _T139 _T140 ]
+    91: END BY BEQZ, if _T164 = 0 : goto 14; 1 : goto 13
 BASIC BLOCK 13 : 
   Def     = [ _T165 _T166 ]
   liveUse = [ _T162 ]
   liveIn  = [ _T7 _T139 _T140 _T161 _T162 ]
   liveOut = [ _T7 _T139 _T140 _T161 _T162 ]
-    _T165 = 0 [ _T161 _T162 _T165 _T7 _T139 _T140 ]
-    _T166 = (_T162 < _T165) [ _T161 _T162 _T166 _T7 _T139 _T140 ]
-END BY BEQZ, if _T166 = 
-    0 : goto 15; 1 : goto 14
+  Use-Def Chain : 
+    (_T162, 93): [88]
+    (_T165, 93): [92]
+    (_T166, 94): [93]
+
+    92: _T165 = 0    [ _T161 _T162 _T165 _T7 _T139 _T140 ]
+    93: _T166 = (_T162 < _T165)    [ _T161 _T162 _T166 _T7 _T139 _T140 ]
+    94: END BY BEQZ, if _T166 = 0 : goto 15; 1 : goto 14
 BASIC BLOCK 14 : 
   Def     = [ _T167 ]
   liveUse = [ ]
   liveIn  = [ _T7 _T139 _T140 _T161 _T162 ]
   liveOut = [ _T7 _T139 _T140 _T161 _T162 ]
-    _T167 = "Decaf runtime error: Array subscript out of bounds\n" [ _T161 _T162 _T7 _T167 _T139 _T140 ]
-    parm _T167 [ _T161 _T162 _T7 _T139 _T140 ]
-    call _PrintString [ _T161 _T162 _T7 _T139 _T140 ]
-    call _Halt [ _T161 _T162 _T7 _T139 _T140 ]
-END BY BRANCH, goto 15
+  Use-Def Chain : 
+    (_T167, 97): [96]
+
+    96: _T167 = "Decaf runtime error: Array subscript out of bounds\n"    [ _T161 _T162 _T7 _T167 _T139 _T140 ]
+    97: parm _T167    [ _T161 _T162 _T7 _T139 _T140 ]
+    98: call _PrintString    [ _T161 _T162 _T7 _T139 _T140 ]
+    99: call _Halt    [ _T161 _T162 _T7 _T139 _T140 ]
+    100: END BY BRANCH, goto 15
 BASIC BLOCK 15 : 
   Def     = [ _T168 _T169 _T170 _T171 _T172 _T173 _T174 ]
   liveUse = [ _T7 _T139 _T161 _T162 ]
   liveIn  = [ _T7 _T139 _T140 _T161 _T162 ]
   liveOut = [ _T7 _T139 _T140 _T161 _T162 _T172 ]
-    _T168 = 4 [ _T161 _T162 _T7 _T168 _T139 _T140 ]
-    _T169 = (_T162 * _T168) [ _T161 _T162 _T7 _T169 _T139 _T140 ]
-    _T170 = (_T161 + _T169) [ _T161 _T162 _T7 _T170 _T139 _T140 ]
-    _T171 = *(_T170 + 0) [ _T161 _T162 _T7 _T139 _T140 ]
-    _T172 = *(_T7 + 8) [ _T161 _T162 _T7 _T139 _T140 _T172 ]
-    _T173 = *(_T172 - 4) [ _T161 _T162 _T7 _T139 _T140 _T172 _T173 ]
-    _T174 = (_T139 < _T173) [ _T161 _T162 _T7 _T139 _T140 _T172 _T174 ]
-END BY BEQZ, if _T174 = 
-    0 : goto 17; 1 : goto 16
+  Use-Def Chain : 
+    (_T162, 102): [88]
+    (_T168, 102): [101]
+    (_T161, 103): [87]
+    (_T169, 103): [102]
+    (_T170, 104): [103]
+    (_T7, 105): []
+    (_T172, 106): [105]
+    (_T139, 107): [62]
+    (_T173, 107): [106]
+    (_T174, 108): [107]
+
+    101: _T168 = 4    [ _T161 _T162 _T7 _T168 _T139 _T140 ]
+    102: _T169 = (_T162 * _T168)    [ _T161 _T162 _T7 _T169 _T139 _T140 ]
+    103: _T170 = (_T161 + _T169)    [ _T161 _T162 _T7 _T170 _T139 _T140 ]
+    104: _T171 = *(_T170 + 0)    [ _T161 _T162 _T7 _T139 _T140 ]
+    105: _T172 = *(_T7 + 8)    [ _T161 _T162 _T7 _T139 _T140 _T172 ]
+    106: _T173 = *(_T172 - 4)    [ _T161 _T162 _T7 _T139 _T140 _T172 _T173 ]
+    107: _T174 = (_T139 < _T173)    [ _T161 _T162 _T7 _T139 _T140 _T172 _T174 ]
+    108: END BY BEQZ, if _T174 = 0 : goto 17; 1 : goto 16
 BASIC BLOCK 16 : 
   Def     = [ _T175 _T176 ]
   liveUse = [ _T139 ]
   liveIn  = [ _T7 _T139 _T140 _T161 _T162 _T172 ]
   liveOut = [ _T7 _T139 _T140 _T161 _T162 _T172 ]
-    _T175 = 0 [ _T161 _T162 _T7 _T139 _T140 _T172 _T175 ]
-    _T176 = (_T139 < _T175) [ _T176 _T161 _T162 _T7 _T139 _T140 _T172 ]
-END BY BEQZ, if _T176 = 
-    0 : goto 18; 1 : goto 17
+  Use-Def Chain : 
+    (_T139, 110): [62]
+    (_T175, 110): [109]
+    (_T176, 111): [110]
+
+    109: _T175 = 0    [ _T161 _T162 _T7 _T139 _T140 _T172 _T175 ]
+    110: _T176 = (_T139 < _T175)    [ _T176 _T161 _T162 _T7 _T139 _T140 _T172 ]
+    111: END BY BEQZ, if _T176 = 0 : goto 18; 1 : goto 17
 BASIC BLOCK 17 : 
   Def     = [ _T177 ]
   liveUse = [ ]
   liveIn  = [ _T7 _T139 _T140 _T161 _T162 _T172 ]
   liveOut = [ _T7 _T139 _T140 _T161 _T162 _T172 ]
-    _T177 = "Decaf runtime error: Array subscript out of bounds\n" [ _T161 _T177 _T162 _T7 _T139 _T140 _T172 ]
-    parm _T177 [ _T161 _T162 _T7 _T139 _T140 _T172 ]
-    call _PrintString [ _T161 _T162 _T7 _T139 _T140 _T172 ]
-    call _Halt [ _T161 _T162 _T7 _T139 _T140 _T172 ]
-END BY BRANCH, goto 18
+  Use-Def Chain : 
+    (_T177, 114): [113]
+
+    113: _T177 = "Decaf runtime error: Array subscript out of bounds\n"    [ _T161 _T177 _T162 _T7 _T139 _T140 _T172 ]
+    114: parm _T177    [ _T161 _T162 _T7 _T139 _T140 _T172 ]
+    115: call _PrintString    [ _T161 _T162 _T7 _T139 _T140 _T172 ]
+    116: call _Halt    [ _T161 _T162 _T7 _T139 _T140 _T172 ]
+    117: END BY BRANCH, goto 18
 BASIC BLOCK 18 : 
   Def     = [ _T178 _T179 _T180 _T181 _T182 _T183 _T184 _T185 _T186 _T187 ]
   liveUse = [ _T7 _T139 _T161 _T162 _T172 ]
   liveIn  = [ _T7 _T139 _T140 _T161 _T162 _T172 ]
   liveOut = [ _T7 _T139 _T140 _T185 ]
-    _T178 = 4 [ _T161 _T162 _T178 _T7 _T139 _T140 _T172 ]
-    _T179 = (_T139 * _T178) [ _T161 _T162 _T179 _T7 _T139 _T140 _T172 ]
-    _T180 = (_T172 + _T179) [ _T161 _T162 _T180 _T7 _T139 _T140 ]
-    _T181 = *(_T180 + 0) [ _T161 _T162 _T181 _T7 _T139 _T140 ]
-    _T182 = 4 [ _T161 _T162 _T181 _T182 _T7 _T139 _T140 ]
-    _T183 = (_T162 * _T182) [ _T161 _T181 _T7 _T183 _T139 _T140 ]
-    _T184 = (_T161 + _T183) [ _T181 _T7 _T184 _T139 _T140 ]
-    *(_T184 + 0) = _T181 [ _T7 _T139 _T140 ]
-    _T185 = *(_T7 + 8) [ _T7 _T185 _T139 _T140 ]
-    _T186 = *(_T185 - 4) [ _T7 _T185 _T186 _T139 _T140 ]
-    _T187 = (_T139 < _T186) [ _T7 _T185 _T139 _T187 _T140 ]
-END BY BEQZ, if _T187 = 
-    0 : goto 20; 1 : goto 19
+  Use-Def Chain : 
+    (_T139, 119): [62]
+    (_T178, 119): [118]
+    (_T172, 120): [105]
+    (_T179, 120): [119]
+    (_T180, 121): [120]
+    (_T162, 123): [88]
+    (_T182, 123): [122]
+    (_T161, 124): [87]
+    (_T183, 124): [123]
+    (_T181, 125): [121]
+    (_T184, 125): [124]
+    (_T7, 126): []
+    (_T185, 127): [126]
+    (_T139, 128): [62]
+    (_T186, 128): [127]
+    (_T187, 129): [128]
+
+    118: _T178 = 4    [ _T161 _T162 _T178 _T7 _T139 _T140 _T172 ]
+    119: _T179 = (_T139 * _T178)    [ _T161 _T162 _T179 _T7 _T139 _T140 _T172 ]
+    120: _T180 = (_T172 + _T179)    [ _T161 _T162 _T180 _T7 _T139 _T140 ]
+    121: _T181 = *(_T180 + 0)    [ _T161 _T162 _T181 _T7 _T139 _T140 ]
+    122: _T182 = 4    [ _T161 _T162 _T181 _T182 _T7 _T139 _T140 ]
+    123: _T183 = (_T162 * _T182)    [ _T161 _T181 _T7 _T183 _T139 _T140 ]
+    124: _T184 = (_T161 + _T183)    [ _T181 _T7 _T184 _T139 _T140 ]
+    125: *(_T184 + 0) = _T181    [ _T7 _T139 _T140 ]
+    126: _T185 = *(_T7 + 8)    [ _T7 _T185 _T139 _T140 ]
+    127: _T186 = *(_T185 - 4)    [ _T7 _T185 _T186 _T139 _T140 ]
+    128: _T187 = (_T139 < _T186)    [ _T7 _T185 _T139 _T187 _T140 ]
+    129: END BY BEQZ, if _T187 = 0 : goto 20; 1 : goto 19
 BASIC BLOCK 19 : 
   Def     = [ _T188 _T189 ]
   liveUse = [ _T139 ]
   liveIn  = [ _T7 _T139 _T140 _T185 ]
   liveOut = [ _T7 _T139 _T140 _T185 ]
-    _T188 = 0 [ _T7 _T185 _T139 _T140 _T188 ]
-    _T189 = (_T139 < _T188) [ _T7 _T185 _T139 _T140 _T189 ]
-END BY BEQZ, if _T189 = 
-    0 : goto 21; 1 : goto 20
+  Use-Def Chain : 
+    (_T139, 131): [62]
+    (_T188, 131): [130]
+    (_T189, 132): [131]
+
+    130: _T188 = 0    [ _T7 _T185 _T139 _T140 _T188 ]
+    131: _T189 = (_T139 < _T188)    [ _T7 _T185 _T139 _T140 _T189 ]
+    132: END BY BEQZ, if _T189 = 0 : goto 21; 1 : goto 20
 BASIC BLOCK 20 : 
   Def     = [ _T190 ]
   liveUse = [ ]
   liveIn  = [ _T7 _T139 _T140 _T185 ]
   liveOut = [ _T7 _T139 _T140 _T185 ]
-    _T190 = "Decaf runtime error: Array subscript out of bounds\n" [ _T7 _T185 _T139 _T140 _T190 ]
-    parm _T190 [ _T7 _T185 _T139 _T140 ]
-    call _PrintString [ _T7 _T185 _T139 _T140 ]
-    call _Halt [ _T7 _T185 _T139 _T140 ]
-END BY BRANCH, goto 21
+  Use-Def Chain : 
+    (_T190, 135): [134]
+
+    134: _T190 = "Decaf runtime error: Array subscript out of bounds\n"    [ _T7 _T185 _T139 _T140 _T190 ]
+    135: parm _T190    [ _T7 _T185 _T139 _T140 ]
+    136: call _PrintString    [ _T7 _T185 _T139 _T140 ]
+    137: call _Halt    [ _T7 _T185 _T139 _T140 ]
+    138: END BY BRANCH, goto 21
 BASIC BLOCK 21 : 
   Def     = [ _T191 _T192 _T193 _T194 _T195 _T196 _T197 ]
   liveUse = [ _T139 _T140 _T185 ]
   liveIn  = [ _T7 _T139 _T140 _T185 ]
   liveOut = [ _T7 ]
-    _T191 = 4 [ _T7 _T185 _T139 _T140 _T191 ]
-    _T192 = (_T139 * _T191) [ _T192 _T7 _T185 _T139 _T140 ]
-    _T193 = (_T185 + _T192) [ _T193 _T7 _T185 _T139 _T140 ]
-    _T194 = *(_T193 + 0) [ _T7 _T185 _T139 _T140 ]
-    _T195 = 4 [ _T195 _T7 _T185 _T139 _T140 ]
-    _T196 = (_T139 * _T195) [ _T196 _T7 _T185 _T140 ]
-    _T197 = (_T185 + _T196) [ _T197 _T7 _T140 ]
-    *(_T197 + 0) = _T140 [ _T7 ]
-END BY BRANCH, goto 8
+  Use-Def Chain : 
+    (_T139, 140): [62]
+    (_T191, 140): [139]
+    (_T185, 141): [126]
+    (_T192, 141): [140]
+    (_T193, 142): [141]
+    (_T139, 144): [62]
+    (_T195, 144): [143]
+    (_T185, 145): [126]
+    (_T196, 145): [144]
+    (_T140, 146): [86]
+    (_T197, 146): [145]
+
+    139: _T191 = 4    [ _T7 _T185 _T139 _T140 _T191 ]
+    140: _T192 = (_T139 * _T191)    [ _T192 _T7 _T185 _T139 _T140 ]
+    141: _T193 = (_T185 + _T192)    [ _T193 _T7 _T185 _T139 _T140 ]
+    142: _T194 = *(_T193 + 0)    [ _T7 _T185 _T139 _T140 ]
+    143: _T195 = 4    [ _T195 _T7 _T185 _T139 _T140 ]
+    144: _T196 = (_T139 * _T195)    [ _T196 _T7 _T185 _T140 ]
+    145: _T197 = (_T185 + _T196)    [ _T197 _T7 _T140 ]
+    146: *(_T197 + 0) = _T140    [ _T7 ]
+    147: END BY BRANCH, goto 8
 BASIC BLOCK 22 : 
   Def     = [ ]
   liveUse = [ ]
   liveIn  = [ _T7 ]
   liveOut = [ _T7 ]
-END BY RETURN, void result
+  Use-Def Chain : 
+
+    0: END BY RETURN, void result
 
 FUNCTION _Deck.GetCard : 
 BASIC BLOCK 0 : 
@@ -538,64 +866,101 @@ BASIC BLOCK 0 :
   liveUse = [ _T8 ]
   liveIn  = [ _T8 ]
   liveOut = [ _T8 ]
-    _T199 = *(_T8 + 4) [ _T199 _T8 ]
-    _T200 = 52 [ _T199 _T8 _T200 ]
-    _T201 = (_T199 >= _T200) [ _T8 _T201 ]
-END BY BEQZ, if _T201 = 
-    0 : goto 2; 1 : goto 1
+  Use-Def Chain : 
+    (_T8, 1): []
+    (_T199, 3): [1]
+    (_T200, 3): [2]
+    (_T201, 4): [3]
+
+    1: _T199 = *(_T8 + 4)    [ _T199 _T8 ]
+    2: _T200 = 52    [ _T199 _T8 _T200 ]
+    3: _T201 = (_T199 >= _T200)    [ _T8 _T201 ]
+    4: END BY BEQZ, if _T201 = 0 : goto 2; 1 : goto 1
 BASIC BLOCK 1 : 
   Def     = [ _T202 ]
   liveUse = [ ]
   liveIn  = [ _T8 ]
   liveOut = [ _T8 ]
-    _T202 = 0 [ _T8 _T202 ]
-END BY RETURN, result = _T202
+  Use-Def Chain : 
+    (_T202, 6): [5]
+
+    5: _T202 = 0    [ _T8 _T202 ]
+    6: END BY RETURN, result = _T202
 BASIC BLOCK 2 : 
   Def     = [ _T203 _T204 _T205 _T206 ]
   liveUse = [ _T8 ]
   liveIn  = [ _T8 ]
   liveOut = [ _T8 _T203 _T204 ]
-    _T203 = *(_T8 + 8) [ _T8 _T203 ]
-    _T204 = *(_T8 + 4) [ _T8 _T203 _T204 ]
-    _T205 = *(_T203 - 4) [ _T8 _T203 _T204 _T205 ]
-    _T206 = (_T204 < _T205) [ _T8 _T203 _T204 _T206 ]
-END BY BEQZ, if _T206 = 
-    0 : goto 4; 1 : goto 3
+  Use-Def Chain : 
+    (_T8, 8): []
+    (_T8, 9): []
+    (_T203, 10): [8]
+    (_T204, 11): [9]
+    (_T205, 11): [10]
+    (_T206, 12): [11]
+
+    8: _T203 = *(_T8 + 8)    [ _T8 _T203 ]
+    9: _T204 = *(_T8 + 4)    [ _T8 _T203 _T204 ]
+    10: _T205 = *(_T203 - 4)    [ _T8 _T203 _T204 _T205 ]
+    11: _T206 = (_T204 < _T205)    [ _T8 _T203 _T204 _T206 ]
+    12: END BY BEQZ, if _T206 = 0 : goto 4; 1 : goto 3
 BASIC BLOCK 3 : 
   Def     = [ _T207 _T208 ]
   liveUse = [ _T204 ]
   liveIn  = [ _T8 _T203 _T204 ]
   liveOut = [ _T8 _T203 _T204 ]
-    _T207 = 0 [ _T8 _T203 _T204 _T207 ]
-    _T208 = (_T204 < _T207) [ _T208 _T8 _T203 _T204 ]
-END BY BEQZ, if _T208 = 
-    0 : goto 5; 1 : goto 4
+  Use-Def Chain : 
+    (_T204, 14): [9]
+    (_T207, 14): [13]
+    (_T208, 15): [14]
+
+    13: _T207 = 0    [ _T8 _T203 _T204 _T207 ]
+    14: _T208 = (_T204 < _T207)    [ _T208 _T8 _T203 _T204 ]
+    15: END BY BEQZ, if _T208 = 0 : goto 5; 1 : goto 4
 BASIC BLOCK 4 : 
   Def     = [ _T209 ]
   liveUse = [ ]
   liveIn  = [ _T8 _T203 _T204 ]
   liveOut = [ _T8 _T203 _T204 ]
-    _T209 = "Decaf runtime error: Array subscript out of bounds\n" [ _T209 _T8 _T203 _T204 ]
-    parm _T209 [ _T8 _T203 _T204 ]
-    call _PrintString [ _T8 _T203 _T204 ]
-    call _Halt [ _T8 _T203 _T204 ]
-END BY BRANCH, goto 5
+  Use-Def Chain : 
+    (_T209, 18): [17]
+
+    17: _T209 = "Decaf runtime error: Array subscript out of bounds\n"    [ _T209 _T8 _T203 _T204 ]
+    18: parm _T209    [ _T8 _T203 _T204 ]
+    19: call _PrintString    [ _T8 _T203 _T204 ]
+    20: call _Halt    [ _T8 _T203 _T204 ]
+    21: END BY BRANCH, goto 5
 BASIC BLOCK 5 : 
   Def     = [ _T198 _T210 _T211 _T212 _T213 _T214 _T215 _T216 _T217 ]
   liveUse = [ _T8 _T203 _T204 ]
   liveIn  = [ _T8 _T203 _T204 ]
   liveOut = [ _T8 ]
-    _T210 = 4 [ _T210 _T8 _T203 _T204 ]
-    _T211 = (_T204 * _T210) [ _T211 _T8 _T203 ]
-    _T212 = (_T203 + _T211) [ _T212 _T8 ]
-    _T213 = *(_T212 + 0) [ _T213 _T8 ]
-    _T198 = _T213 [ _T198 _T8 ]
-    _T214 = *(_T8 + 4) [ _T198 _T8 ]
-    _T215 = *(_T8 + 4) [ _T198 _T215 _T8 ]
-    _T216 = 1 [ _T198 _T215 _T8 _T216 ]
-    _T217 = (_T215 + _T216) [ _T198 _T8 _T217 ]
-    *(_T8 + 4) = _T217 [ _T198 _T8 ]
-END BY RETURN, result = _T198
+  Use-Def Chain : 
+    (_T204, 23): [9]
+    (_T210, 23): [22]
+    (_T203, 24): [8]
+    (_T211, 24): [23]
+    (_T212, 25): [24]
+    (_T213, 26): [25]
+    (_T8, 27): []
+    (_T8, 28): []
+    (_T215, 30): [28]
+    (_T216, 30): [29]
+    (_T8, 31): []
+    (_T217, 31): [30]
+    (_T198, 32): [26]
+
+    22: _T210 = 4    [ _T210 _T8 _T203 _T204 ]
+    23: _T211 = (_T204 * _T210)    [ _T211 _T8 _T203 ]
+    24: _T212 = (_T203 + _T211)    [ _T212 _T8 ]
+    25: _T213 = *(_T212 + 0)    [ _T213 _T8 ]
+    26: _T198 = _T213    [ _T198 _T8 ]
+    27: _T214 = *(_T8 + 4)    [ _T198 _T8 ]
+    28: _T215 = *(_T8 + 4)    [ _T198 _T215 _T8 ]
+    29: _T216 = 1    [ _T198 _T215 _T8 _T216 ]
+    30: _T217 = (_T215 + _T216)    [ _T198 _T8 _T217 ]
+    31: *(_T8 + 4) = _T217    [ _T198 _T8 ]
+    32: END BY RETURN, result = _T198
 
 FUNCTION _BJDeck.Init : 
 BASIC BLOCK 0 : 
@@ -603,169 +968,266 @@ BASIC BLOCK 0 :
   liveUse = [ _T9 ]
   liveIn  = [ _T9 _T10 ]
   liveOut = [ _T9 _T10 _T220 ]
-    _T219 = *(_T9 + 4) [ _T9 _T10 ]
-    _T220 = 8 [ _T9 _T10 _T220 ]
-    _T221 = 0 [ _T9 _T10 _T220 _T221 ]
-    _T222 = (_T220 < _T221) [ _T9 _T10 _T220 _T222 ]
-END BY BEQZ, if _T222 = 
-    0 : goto 2; 1 : goto 1
+  Use-Def Chain : 
+    (_T9, 1): []
+    (_T220, 4): [2]
+    (_T221, 4): [3]
+    (_T222, 5): [4]
+
+    1: _T219 = *(_T9 + 4)    [ _T9 _T10 ]
+    2: _T220 = 8    [ _T9 _T10 _T220 ]
+    3: _T221 = 0    [ _T9 _T10 _T220 _T221 ]
+    4: _T222 = (_T220 < _T221)    [ _T9 _T10 _T220 _T222 ]
+    5: END BY BEQZ, if _T222 = 0 : goto 2; 1 : goto 1
 BASIC BLOCK 1 : 
   Def     = [ _T223 ]
   liveUse = [ ]
   liveIn  = [ _T9 _T10 _T220 ]
   liveOut = [ _T9 _T10 _T220 ]
-    _T223 = "Decaf runtime error: Cannot create negative-sized array\n" [ _T9 _T10 _T220 _T223 ]
-    parm _T223 [ _T9 _T10 _T220 ]
-    call _PrintString [ _T9 _T10 _T220 ]
-    call _Halt [ _T9 _T10 _T220 ]
-END BY BRANCH, goto 2
+  Use-Def Chain : 
+    (_T223, 7): [6]
+
+    6: _T223 = "Decaf runtime error: Cannot create negative-sized array\n"    [ _T9 _T10 _T220 _T223 ]
+    7: parm _T223    [ _T9 _T10 _T220 ]
+    8: call _PrintString    [ _T9 _T10 _T220 ]
+    9: call _Halt    [ _T9 _T10 _T220 ]
+    10: END BY BRANCH, goto 2
 BASIC BLOCK 2 : 
   Def     = [ _T224 _T225 _T226 _T227 _T228 ]
   liveUse = [ _T220 ]
   liveIn  = [ _T9 _T10 _T220 ]
   liveOut = [ _T9 _T10 _T224 _T226 _T227 _T228 ]
-    _T224 = 4 [ _T224 _T9 _T10 _T220 ]
-    _T225 = (_T224 * _T220) [ _T224 _T225 _T9 _T10 _T220 ]
-    _T226 = (_T224 + _T225) [ _T224 _T226 _T9 _T10 _T220 ]
-    parm _T226 [ _T224 _T226 _T9 _T10 _T220 ]
-    _T227 =  call _Alloc [ _T224 _T226 _T227 _T9 _T10 _T220 ]
-    *(_T227 + 0) = _T220 [ _T224 _T226 _T227 _T9 _T10 ]
-    _T228 = 0 [ _T224 _T226 _T227 _T228 _T9 _T10 ]
-    _T227 = (_T227 + _T226) [ _T224 _T226 _T227 _T228 _T9 _T10 ]
-END BY BRANCH, goto 3
+  Use-Def Chain : 
+    (_T220, 12): [2]
+    (_T224, 12): [11]
+    (_T224, 13): [11]
+    (_T225, 13): [12]
+    (_T226, 14): [13]
+    (_T220, 16): [2]
+    (_T227, 16): [15]
+    (_T226, 18): [13]
+    (_T227, 18): [15]
+
+    11: _T224 = 4    [ _T224 _T9 _T10 _T220 ]
+    12: _T225 = (_T224 * _T220)    [ _T224 _T225 _T9 _T10 _T220 ]
+    13: _T226 = (_T224 + _T225)    [ _T224 _T226 _T9 _T10 _T220 ]
+    14: parm _T226    [ _T224 _T226 _T9 _T10 _T220 ]
+    15: _T227 =  call _Alloc    [ _T224 _T226 _T227 _T9 _T10 _T220 ]
+    16: *(_T227 + 0) = _T220    [ _T224 _T226 _T227 _T9 _T10 ]
+    17: _T228 = 0    [ _T224 _T226 _T227 _T228 _T9 _T10 ]
+    18: _T227 = (_T227 + _T226)    [ _T224 _T226 _T227 _T228 _T9 _T10 ]
+    19: END BY BRANCH, goto 3
 BASIC BLOCK 3 : 
   Def     = [ ]
   liveUse = [ _T224 _T226 ]
   liveIn  = [ _T9 _T10 _T224 _T226 _T227 _T228 ]
   liveOut = [ _T9 _T10 _T224 _T226 _T227 _T228 ]
-    _T226 = (_T226 - _T224) [ _T224 _T226 _T227 _T228 _T9 _T10 ]
-END BY BEQZ, if _T226 = 
-    0 : goto 5; 1 : goto 4
+  Use-Def Chain : 
+    (_T224, 20): [11]
+    (_T226, 20): [13, 20]
+    (_T226, 21): [20]
+
+    20: _T226 = (_T226 - _T224)    [ _T224 _T226 _T227 _T228 _T9 _T10 ]
+    21: END BY BEQZ, if _T226 = 0 : goto 5; 1 : goto 4
 BASIC BLOCK 4 : 
   Def     = [ ]
   liveUse = [ _T224 _T227 _T228 ]
   liveIn  = [ _T9 _T10 _T224 _T226 _T227 _T228 ]
   liveOut = [ _T9 _T10 _T224 _T226 _T227 _T228 ]
-    _T227 = (_T227 - _T224) [ _T224 _T226 _T227 _T228 _T9 _T10 ]
-    *(_T227 + 0) = _T228 [ _T224 _T226 _T227 _T228 _T9 _T10 ]
-END BY BRANCH, goto 3
+  Use-Def Chain : 
+    (_T224, 22): [11]
+    (_T227, 22): [18, 22]
+    (_T227, 23): [22]
+    (_T228, 23): [17]
+
+    22: _T227 = (_T227 - _T224)    [ _T224 _T226 _T227 _T228 _T9 _T10 ]
+    23: *(_T227 + 0) = _T228    [ _T224 _T226 _T227 _T228 _T9 _T10 ]
+    24: END BY BRANCH, goto 3
 BASIC BLOCK 5 : 
   Def     = [ _T218 _T229 ]
   liveUse = [ _T9 _T227 ]
   liveIn  = [ _T9 _T10 _T227 ]
   liveOut = [ _T9 _T10 _T218 ]
-    *(_T9 + 4) = _T227 [ _T9 _T10 ]
-    _T229 = 0 [ _T229 _T9 _T10 ]
-    _T218 = _T229 [ _T9 _T10 _T218 ]
-END BY BRANCH, goto 7
+  Use-Def Chain : 
+    (_T9, 26): []
+    (_T227, 26): [18, 22]
+    (_T229, 28): [27]
+
+    26: *(_T9 + 4) = _T227    [ _T9 _T10 ]
+    27: _T229 = 0    [ _T229 _T9 _T10 ]
+    28: _T218 = _T229    [ _T9 _T10 _T218 ]
+    29: END BY BRANCH, goto 7
 BASIC BLOCK 6 : 
   Def     = [ _T230 _T231 ]
   liveUse = [ _T218 ]
   liveIn  = [ _T9 _T10 _T218 ]
   liveOut = [ _T9 _T10 _T218 ]
-    _T230 = 1 [ _T230 _T9 _T10 _T218 ]
-    _T231 = (_T218 + _T230) [ _T231 _T9 _T10 ]
-    _T218 = _T231 [ _T9 _T10 _T218 ]
-END BY BRANCH, goto 7
+  Use-Def Chain : 
+    (_T218, 32): [28, 33]
+    (_T230, 32): [31]
+    (_T231, 33): [32]
+
+    31: _T230 = 1    [ _T230 _T9 _T10 _T218 ]
+    32: _T231 = (_T218 + _T230)    [ _T231 _T9 _T10 ]
+    33: _T218 = _T231    [ _T9 _T10 _T218 ]
+    34: END BY BRANCH, goto 7
 BASIC BLOCK 7 : 
   Def     = [ _T232 _T233 ]
   liveUse = [ _T218 ]
   liveIn  = [ _T9 _T10 _T218 ]
   liveOut = [ _T9 _T10 _T218 ]
-    _T232 = 8 [ _T232 _T9 _T10 _T218 ]
-    _T233 = (_T218 < _T232) [ _T9 _T233 _T10 _T218 ]
-END BY BEQZ, if _T233 = 
-    0 : goto 15; 1 : goto 8
+  Use-Def Chain : 
+    (_T218, 36): [28, 33]
+    (_T232, 36): [35]
+    (_T233, 37): [36]
+
+    35: _T232 = 8    [ _T232 _T9 _T10 _T218 ]
+    36: _T233 = (_T218 < _T232)    [ _T9 _T233 _T10 _T218 ]
+    37: END BY BEQZ, if _T233 = 0 : goto 15; 1 : goto 8
 BASIC BLOCK 8 : 
   Def     = [ _T234 _T235 _T236 ]
   liveUse = [ _T9 _T218 ]
   liveIn  = [ _T9 _T10 _T218 ]
   liveOut = [ _T9 _T10 _T218 _T234 ]
-    _T234 = *(_T9 + 4) [ _T9 _T10 _T218 _T234 ]
-    _T235 = *(_T234 - 4) [ _T9 _T10 _T218 _T234 _T235 ]
-    _T236 = (_T218 < _T235) [ _T9 _T10 _T218 _T234 _T236 ]
-END BY BEQZ, if _T236 = 
-    0 : goto 10; 1 : goto 9
+  Use-Def Chain : 
+    (_T9, 38): []
+    (_T234, 39): [38]
+    (_T218, 40): [28, 33]
+    (_T235, 40): [39]
+    (_T236, 41): [40]
+
+    38: _T234 = *(_T9 + 4)    [ _T9 _T10 _T218 _T234 ]
+    39: _T235 = *(_T234 - 4)    [ _T9 _T10 _T218 _T234 _T235 ]
+    40: _T236 = (_T218 < _T235)    [ _T9 _T10 _T218 _T234 _T236 ]
+    41: END BY BEQZ, if _T236 = 0 : goto 10; 1 : goto 9
 BASIC BLOCK 9 : 
   Def     = [ _T237 _T238 ]
   liveUse = [ _T218 ]
   liveIn  = [ _T9 _T10 _T218 _T234 ]
   liveOut = [ _T9 _T10 _T218 _T234 ]
-    _T237 = 0 [ _T9 _T10 _T218 _T234 _T237 ]
-    _T238 = (_T218 < _T237) [ _T9 _T10 _T218 _T234 _T238 ]
-END BY BEQZ, if _T238 = 
-    0 : goto 11; 1 : goto 10
+  Use-Def Chain : 
+    (_T218, 43): [28, 33]
+    (_T237, 43): [42]
+    (_T238, 44): [43]
+
+    42: _T237 = 0    [ _T9 _T10 _T218 _T234 _T237 ]
+    43: _T238 = (_T218 < _T237)    [ _T9 _T10 _T218 _T234 _T238 ]
+    44: END BY BEQZ, if _T238 = 0 : goto 11; 1 : goto 10
 BASIC BLOCK 10 : 
   Def     = [ _T239 ]
   liveUse = [ ]
   liveIn  = [ _T9 _T10 _T218 _T234 ]
   liveOut = [ _T9 _T10 _T218 _T234 ]
-    _T239 = "Decaf runtime error: Array subscript out of bounds\n" [ _T9 _T10 _T218 _T234 _T239 ]
-    parm _T239 [ _T9 _T10 _T218 _T234 ]
-    call _PrintString [ _T9 _T10 _T218 _T234 ]
-    call _Halt [ _T9 _T10 _T218 _T234 ]
-END BY BRANCH, goto 11
+  Use-Def Chain : 
+    (_T239, 47): [46]
+
+    46: _T239 = "Decaf runtime error: Array subscript out of bounds\n"    [ _T9 _T10 _T218 _T234 _T239 ]
+    47: parm _T239    [ _T9 _T10 _T218 _T234 ]
+    48: call _PrintString    [ _T9 _T10 _T218 _T234 ]
+    49: call _Halt    [ _T9 _T10 _T218 _T234 ]
+    50: END BY BRANCH, goto 11
 BASIC BLOCK 11 : 
   Def     = [ _T240 _T241 _T242 _T243 _T244 _T245 _T246 _T247 _T248 _T249 _T250 ]
   liveUse = [ _T9 _T218 _T234 ]
   liveIn  = [ _T9 _T10 _T218 _T234 ]
   liveOut = [ _T9 _T10 _T218 _T248 ]
-    _T240 = 4 [ _T240 _T9 _T10 _T218 _T234 ]
-    _T241 = (_T218 * _T240) [ _T241 _T9 _T10 _T218 _T234 ]
-    _T242 = (_T234 + _T241) [ _T242 _T9 _T10 _T218 _T234 ]
-    _T243 = *(_T242 + 0) [ _T9 _T10 _T218 _T234 ]
-    _T244 =  call _Deck_New [ _T244 _T9 _T10 _T218 _T234 ]
-    _T245 = 4 [ _T244 _T245 _T9 _T10 _T218 _T234 ]
-    _T246 = (_T218 * _T245) [ _T244 _T246 _T9 _T10 _T218 _T234 ]
-    _T247 = (_T234 + _T246) [ _T244 _T247 _T9 _T10 _T218 ]
-    *(_T247 + 0) = _T244 [ _T9 _T10 _T218 ]
-    _T248 = *(_T9 + 4) [ _T248 _T9 _T10 _T218 ]
-    _T249 = *(_T248 - 4) [ _T248 _T9 _T249 _T10 _T218 ]
-    _T250 = (_T218 < _T249) [ _T248 _T9 _T10 _T218 _T250 ]
-END BY BEQZ, if _T250 = 
-    0 : goto 13; 1 : goto 12
+  Use-Def Chain : 
+    (_T218, 52): [28, 33]
+    (_T240, 52): [51]
+    (_T234, 53): [38]
+    (_T241, 53): [52]
+    (_T242, 54): [53]
+    (_T218, 57): [28, 33]
+    (_T245, 57): [56]
+    (_T234, 58): [38]
+    (_T246, 58): [57]
+    (_T244, 59): [55]
+    (_T247, 59): [58]
+    (_T9, 60): []
+    (_T248, 61): [60]
+    (_T218, 62): [28, 33]
+    (_T249, 62): [61]
+    (_T250, 63): [62]
+
+    51: _T240 = 4    [ _T240 _T9 _T10 _T218 _T234 ]
+    52: _T241 = (_T218 * _T240)    [ _T241 _T9 _T10 _T218 _T234 ]
+    53: _T242 = (_T234 + _T241)    [ _T242 _T9 _T10 _T218 _T234 ]
+    54: _T243 = *(_T242 + 0)    [ _T9 _T10 _T218 _T234 ]
+    55: _T244 =  call _Deck_New    [ _T244 _T9 _T10 _T218 _T234 ]
+    56: _T245 = 4    [ _T244 _T245 _T9 _T10 _T218 _T234 ]
+    57: _T246 = (_T218 * _T245)    [ _T244 _T246 _T9 _T10 _T218 _T234 ]
+    58: _T247 = (_T234 + _T246)    [ _T244 _T247 _T9 _T10 _T218 ]
+    59: *(_T247 + 0) = _T244    [ _T9 _T10 _T218 ]
+    60: _T248 = *(_T9 + 4)    [ _T248 _T9 _T10 _T218 ]
+    61: _T249 = *(_T248 - 4)    [ _T248 _T9 _T249 _T10 _T218 ]
+    62: _T250 = (_T218 < _T249)    [ _T248 _T9 _T10 _T218 _T250 ]
+    63: END BY BEQZ, if _T250 = 0 : goto 13; 1 : goto 12
 BASIC BLOCK 12 : 
   Def     = [ _T251 _T252 ]
   liveUse = [ _T218 ]
   liveIn  = [ _T9 _T10 _T218 _T248 ]
   liveOut = [ _T9 _T10 _T218 _T248 ]
-    _T251 = 0 [ _T248 _T9 _T10 _T218 _T251 ]
-    _T252 = (_T218 < _T251) [ _T248 _T9 _T10 _T218 _T252 ]
-END BY BEQZ, if _T252 = 
-    0 : goto 14; 1 : goto 13
+  Use-Def Chain : 
+    (_T218, 65): [28, 33]
+    (_T251, 65): [64]
+    (_T252, 66): [65]
+
+    64: _T251 = 0    [ _T248 _T9 _T10 _T218 _T251 ]
+    65: _T252 = (_T218 < _T251)    [ _T248 _T9 _T10 _T218 _T252 ]
+    66: END BY BEQZ, if _T252 = 0 : goto 14; 1 : goto 13
 BASIC BLOCK 13 : 
   Def     = [ _T253 ]
   liveUse = [ ]
   liveIn  = [ _T9 _T10 _T218 _T248 ]
   liveOut = [ _T9 _T10 _T218 _T248 ]
-    _T253 = "Decaf runtime error: Array subscript out of bounds\n" [ _T248 _T9 _T10 _T218 _T253 ]
-    parm _T253 [ _T248 _T9 _T10 _T218 ]
-    call _PrintString [ _T248 _T9 _T10 _T218 ]
-    call _Halt [ _T248 _T9 _T10 _T218 ]
-END BY BRANCH, goto 14
+  Use-Def Chain : 
+    (_T253, 69): [68]
+
+    68: _T253 = "Decaf runtime error: Array subscript out of bounds\n"    [ _T248 _T9 _T10 _T218 _T253 ]
+    69: parm _T253    [ _T248 _T9 _T10 _T218 ]
+    70: call _PrintString    [ _T248 _T9 _T10 _T218 ]
+    71: call _Halt    [ _T248 _T9 _T10 _T218 ]
+    72: END BY BRANCH, goto 14
 BASIC BLOCK 14 : 
   Def     = [ _T254 _T255 _T256 _T257 _T258 _T259 ]
   liveUse = [ _T10 _T218 _T248 ]
   liveIn  = [ _T9 _T10 _T218 _T248 ]
   liveOut = [ _T9 _T10 _T218 ]
-    _T254 = 4 [ _T248 _T9 _T10 _T218 _T254 ]
-    _T255 = (_T218 * _T254) [ _T248 _T9 _T10 _T218 _T255 ]
-    _T256 = (_T248 + _T255) [ _T256 _T9 _T10 _T218 ]
-    _T257 = *(_T256 + 0) [ _T257 _T9 _T10 _T218 ]
-    parm _T257 [ _T257 _T9 _T10 _T218 ]
-    parm _T10 [ _T257 _T9 _T10 _T218 ]
-    _T258 = *(_T257 + 0) [ _T258 _T9 _T10 _T218 ]
-    _T259 = *(_T258 + 8) [ _T259 _T9 _T10 _T218 ]
-    call _T259 [ _T9 _T10 _T218 ]
-END BY BRANCH, goto 6
+  Use-Def Chain : 
+    (_T218, 74): [28, 33]
+    (_T254, 74): [73]
+    (_T248, 75): [60]
+    (_T255, 75): [74]
+    (_T256, 76): [75]
+    (_T257, 77): [76]
+    (_T10, 78): []
+    (_T257, 79): [76]
+    (_T258, 80): [79]
+    (_T259, 81): [80]
+
+    73: _T254 = 4    [ _T248 _T9 _T10 _T218 _T254 ]
+    74: _T255 = (_T218 * _T254)    [ _T248 _T9 _T10 _T218 _T255 ]
+    75: _T256 = (_T248 + _T255)    [ _T256 _T9 _T10 _T218 ]
+    76: _T257 = *(_T256 + 0)    [ _T257 _T9 _T10 _T218 ]
+    77: parm _T257    [ _T257 _T9 _T10 _T218 ]
+    78: parm _T10    [ _T257 _T9 _T10 _T218 ]
+    79: _T258 = *(_T257 + 0)    [ _T258 _T9 _T10 _T218 ]
+    80: _T259 = *(_T258 + 8)    [ _T259 _T9 _T10 _T218 ]
+    81: call _T259    [ _T9 _T10 _T218 ]
+    82: END BY BRANCH, goto 6
 BASIC BLOCK 15 : 
   Def     = [ _T260 ]
   liveUse = [ _T9 _T10 ]
   liveIn  = [ _T9 _T10 ]
   liveOut = [ _T9 _T10 ]
-    _T260 = *(_T9 + 12) [ _T9 _T10 ]
-    *(_T9 + 12) = _T10 [ _T9 _T10 ]
-END BY RETURN, void result
+  Use-Def Chain : 
+    (_T9, 84): []
+    (_T9, 85): []
+    (_T10, 85): []
+
+    84: _T260 = *(_T9 + 12)    [ _T9 _T10 ]
+    85: *(_T9 + 12) = _T10    [ _T9 _T10 ]
+    86: END BY RETURN, void result
 
 FUNCTION _BJDeck.DealCard : 
 BASIC BLOCK 0 : 
@@ -773,128 +1235,198 @@ BASIC BLOCK 0 :
   liveUse = [ _T11 ]
   liveIn  = [ _T11 ]
   liveOut = [ _T11 _T261 ]
-    _T262 = 0 [ _T262 _T11 ]
-    _T261 = _T262 [ _T261 _T11 ]
-    _T263 = *(_T11 + 8) [ _T261 _T263 _T11 ]
-    _T264 = 8 [ _T261 _T263 _T264 _T11 ]
-    _T265 = 52 [ _T261 _T263 _T264 _T265 _T11 ]
-    _T266 = (_T264 * _T265) [ _T261 _T263 _T266 _T11 ]
-    _T267 = (_T263 >= _T266) [ _T261 _T11 _T267 ]
-END BY BEQZ, if _T267 = 
-    0 : goto 2; 1 : goto 1
+  Use-Def Chain : 
+    (_T262, 2): [1]
+    (_T11, 3): []
+    (_T264, 6): [4]
+    (_T265, 6): [5]
+    (_T263, 7): [3]
+    (_T266, 7): [6]
+    (_T267, 8): [7]
+
+    1: _T262 = 0    [ _T262 _T11 ]
+    2: _T261 = _T262    [ _T261 _T11 ]
+    3: _T263 = *(_T11 + 8)    [ _T261 _T263 _T11 ]
+    4: _T264 = 8    [ _T261 _T263 _T264 _T11 ]
+    5: _T265 = 52    [ _T261 _T263 _T264 _T265 _T11 ]
+    6: _T266 = (_T264 * _T265)    [ _T261 _T263 _T266 _T11 ]
+    7: _T267 = (_T263 >= _T266)    [ _T261 _T11 _T267 ]
+    8: END BY BEQZ, if _T267 = 0 : goto 2; 1 : goto 1
 BASIC BLOCK 1 : 
   Def     = [ _T268 ]
   liveUse = [ ]
   liveIn  = [ _T11 ]
   liveOut = [ _T11 ]
-    _T268 = 11 [ _T11 _T268 ]
-END BY RETURN, result = _T268
+  Use-Def Chain : 
+    (_T268, 10): [9]
+
+    9: _T268 = 11    [ _T11 _T268 ]
+    10: END BY RETURN, result = _T268
 BASIC BLOCK 2 : 
   Def     = [ _T269 _T270 ]
   liveUse = [ _T261 ]
   liveIn  = [ _T11 _T261 ]
   liveOut = [ _T11 _T261 ]
-    _T269 = 0 [ _T261 _T11 _T269 ]
-    _T270 = (_T261 == _T269) [ _T261 _T11 _T270 ]
-END BY BEQZ, if _T270 = 
-    0 : goto 7; 1 : goto 3
+  Use-Def Chain : 
+    (_T261, 14): [2, 45]
+    (_T269, 14): [13]
+    (_T270, 15): [14]
+
+    13: _T269 = 0    [ _T261 _T11 _T269 ]
+    14: _T270 = (_T261 == _T269)    [ _T261 _T11 _T270 ]
+    15: END BY BEQZ, if _T270 = 0 : goto 7; 1 : goto 3
 BASIC BLOCK 3 : 
   Def     = [ _T271 _T272 _T273 _T274 _T275 _T276 _T277 _T278 _T279 ]
   liveUse = [ _T11 ]
   liveIn  = [ _T11 ]
   liveOut = [ _T11 _T271 _T277 ]
-    _T272 = *(_T11 + 12) [ _T272 _T11 ]
-    _T273 = 8 [ _T272 _T273 _T11 ]
-    parm _T272 [ _T272 _T273 _T11 ]
-    parm _T273 [ _T272 _T11 ]
-    _T274 = *(_T272 + 0) [ _T274 _T11 ]
-    _T275 = *(_T274 + 16) [ _T275 _T11 ]
-    _T276 =  call _T275 [ _T276 _T11 ]
-    _T271 = _T276 [ _T11 _T271 ]
-    _T277 = *(_T11 + 4) [ _T277 _T11 _T271 ]
-    _T278 = *(_T277 - 4) [ _T277 _T278 _T11 _T271 ]
-    _T279 = (_T271 < _T278) [ _T277 _T279 _T11 _T271 ]
-END BY BEQZ, if _T279 = 
-    0 : goto 5; 1 : goto 4
+  Use-Def Chain : 
+    (_T11, 16): []
+    (_T272, 18): [16]
+    (_T273, 19): [17]
+    (_T272, 20): [16]
+    (_T274, 21): [20]
+    (_T275, 22): [21]
+    (_T276, 23): [22]
+    (_T11, 24): []
+    (_T277, 25): [24]
+    (_T271, 26): [23]
+    (_T278, 26): [25]
+    (_T279, 27): [26]
+
+    16: _T272 = *(_T11 + 12)    [ _T272 _T11 ]
+    17: _T273 = 8    [ _T272 _T273 _T11 ]
+    18: parm _T272    [ _T272 _T273 _T11 ]
+    19: parm _T273    [ _T272 _T11 ]
+    20: _T274 = *(_T272 + 0)    [ _T274 _T11 ]
+    21: _T275 = *(_T274 + 16)    [ _T275 _T11 ]
+    22: _T276 =  call _T275    [ _T276 _T11 ]
+    23: _T271 = _T276    [ _T11 _T271 ]
+    24: _T277 = *(_T11 + 4)    [ _T277 _T11 _T271 ]
+    25: _T278 = *(_T277 - 4)    [ _T277 _T278 _T11 _T271 ]
+    26: _T279 = (_T271 < _T278)    [ _T277 _T279 _T11 _T271 ]
+    27: END BY BEQZ, if _T279 = 0 : goto 5; 1 : goto 4
 BASIC BLOCK 4 : 
   Def     = [ _T280 _T281 ]
   liveUse = [ _T271 ]
   liveIn  = [ _T11 _T271 _T277 ]
   liveOut = [ _T11 _T271 _T277 ]
-    _T280 = 0 [ _T277 _T280 _T11 _T271 ]
-    _T281 = (_T271 < _T280) [ _T277 _T281 _T11 _T271 ]
-END BY BEQZ, if _T281 = 
-    0 : goto 6; 1 : goto 5
+  Use-Def Chain : 
+    (_T271, 29): [23]
+    (_T280, 29): [28]
+    (_T281, 30): [29]
+
+    28: _T280 = 0    [ _T277 _T280 _T11 _T271 ]
+    29: _T281 = (_T271 < _T280)    [ _T277 _T281 _T11 _T271 ]
+    30: END BY BEQZ, if _T281 = 0 : goto 6; 1 : goto 5
 BASIC BLOCK 5 : 
   Def     = [ _T282 ]
   liveUse = [ ]
   liveIn  = [ _T11 _T271 _T277 ]
   liveOut = [ _T11 _T271 _T277 ]
-    _T282 = "Decaf runtime error: Array subscript out of bounds\n" [ _T277 _T282 _T11 _T271 ]
-    parm _T282 [ _T277 _T11 _T271 ]
-    call _PrintString [ _T277 _T11 _T271 ]
-    call _Halt [ _T277 _T11 _T271 ]
-END BY BRANCH, goto 6
+  Use-Def Chain : 
+    (_T282, 33): [32]
+
+    32: _T282 = "Decaf runtime error: Array subscript out of bounds\n"    [ _T277 _T282 _T11 _T271 ]
+    33: parm _T282    [ _T277 _T11 _T271 ]
+    34: call _PrintString    [ _T277 _T11 _T271 ]
+    35: call _Halt    [ _T277 _T11 _T271 ]
+    36: END BY BRANCH, goto 6
 BASIC BLOCK 6 : 
   Def     = [ _T261 _T283 _T284 _T285 _T286 _T287 _T288 _T289 ]
   liveUse = [ _T271 _T277 ]
   liveIn  = [ _T11 _T271 _T277 ]
   liveOut = [ _T11 _T261 ]
-    _T283 = 4 [ _T277 _T11 _T283 _T271 ]
-    _T284 = (_T271 * _T283) [ _T277 _T11 _T284 ]
-    _T285 = (_T277 + _T284) [ _T11 _T285 ]
-    _T286 = *(_T285 + 0) [ _T11 _T286 ]
-    parm _T286 [ _T11 _T286 ]
-    _T287 = *(_T286 + 0) [ _T11 _T287 ]
-    _T288 = *(_T287 + 16) [ _T288 _T11 ]
-    _T289 =  call _T288 [ _T289 _T11 ]
-    _T261 = _T289 [ _T261 _T11 ]
-END BY BRANCH, goto 2
+  Use-Def Chain : 
+    (_T271, 38): [23]
+    (_T283, 38): [37]
+    (_T277, 39): [24]
+    (_T284, 39): [38]
+    (_T285, 40): [39]
+    (_T286, 41): [40]
+    (_T286, 42): [40]
+    (_T287, 43): [42]
+    (_T288, 44): [43]
+    (_T289, 45): [44]
+
+    37: _T283 = 4    [ _T277 _T11 _T283 _T271 ]
+    38: _T284 = (_T271 * _T283)    [ _T277 _T11 _T284 ]
+    39: _T285 = (_T277 + _T284)    [ _T11 _T285 ]
+    40: _T286 = *(_T285 + 0)    [ _T11 _T286 ]
+    41: parm _T286    [ _T11 _T286 ]
+    42: _T287 = *(_T286 + 0)    [ _T11 _T287 ]
+    43: _T288 = *(_T287 + 16)    [ _T288 _T11 ]
+    44: _T289 =  call _T288    [ _T289 _T11 ]
+    45: _T261 = _T289    [ _T261 _T11 ]
+    46: END BY BRANCH, goto 2
 BASIC BLOCK 7 : 
   Def     = [ _T290 _T291 ]
   liveUse = [ _T261 ]
   liveIn  = [ _T11 _T261 ]
   liveOut = [ _T11 _T261 ]
-    _T290 = 10 [ _T290 _T261 _T11 ]
-    _T291 = (_T261 > _T290) [ _T291 _T261 _T11 ]
-END BY BEQZ, if _T291 = 
-    0 : goto 9; 1 : goto 8
+  Use-Def Chain : 
+    (_T261, 49): [2, 45]
+    (_T290, 49): [48]
+    (_T291, 50): [49]
+
+    48: _T290 = 10    [ _T290 _T261 _T11 ]
+    49: _T291 = (_T261 > _T290)    [ _T291 _T261 _T11 ]
+    50: END BY BEQZ, if _T291 = 0 : goto 9; 1 : goto 8
 BASIC BLOCK 8 : 
   Def     = [ _T261 _T292 ]
   liveUse = [ ]
   liveIn  = [ _T11 ]
   liveOut = [ _T11 _T261 ]
-    _T292 = 10 [ _T292 _T11 ]
-    _T261 = _T292 [ _T261 _T11 ]
-END BY BRANCH, goto 11
+  Use-Def Chain : 
+    (_T292, 52): [51]
+
+    51: _T292 = 10    [ _T292 _T11 ]
+    52: _T261 = _T292    [ _T261 _T11 ]
+    53: END BY BRANCH, goto 11
 BASIC BLOCK 9 : 
   Def     = [ _T293 _T294 ]
   liveUse = [ _T261 ]
   liveIn  = [ _T11 _T261 ]
   liveOut = [ _T11 _T261 ]
-    _T293 = 1 [ _T261 _T293 _T11 ]
-    _T294 = (_T261 == _T293) [ _T261 _T294 _T11 ]
-END BY BEQZ, if _T294 = 
-    0 : goto 11; 1 : goto 10
+  Use-Def Chain : 
+    (_T261, 56): [2, 45]
+    (_T293, 56): [55]
+    (_T294, 57): [56]
+
+    55: _T293 = 1    [ _T261 _T293 _T11 ]
+    56: _T294 = (_T261 == _T293)    [ _T261 _T294 _T11 ]
+    57: END BY BEQZ, if _T294 = 0 : goto 11; 1 : goto 10
 BASIC BLOCK 10 : 
   Def     = [ _T261 _T295 ]
   liveUse = [ ]
   liveIn  = [ _T11 ]
   liveOut = [ _T11 _T261 ]
-    _T295 = 11 [ _T295 _T11 ]
-    _T261 = _T295 [ _T261 _T11 ]
-END BY BRANCH, goto 11
+  Use-Def Chain : 
+    (_T295, 59): [58]
+
+    58: _T295 = 11    [ _T295 _T11 ]
+    59: _T261 = _T295    [ _T261 _T11 ]
+    60: END BY BRANCH, goto 11
 BASIC BLOCK 11 : 
   Def     = [ _T296 _T297 _T298 _T299 ]
   liveUse = [ _T11 _T261 ]
   liveIn  = [ _T11 _T261 ]
   liveOut = [ _T11 ]
-    _T296 = *(_T11 + 8) [ _T261 _T11 ]
-    _T297 = *(_T11 + 8) [ _T261 _T297 _T11 ]
-    _T298 = 1 [ _T261 _T297 _T298 _T11 ]
-    _T299 = (_T297 + _T298) [ _T261 _T11 _T299 ]
-    *(_T11 + 8) = _T299 [ _T261 _T11 ]
-END BY RETURN, result = _T261
+  Use-Def Chain : 
+    (_T11, 62): []
+    (_T11, 63): []
+    (_T297, 65): [63]
+    (_T298, 65): [64]
+    (_T11, 66): []
+    (_T299, 66): [65]
+    (_T261, 67): [2, 45, 52, 59]
+
+    62: _T296 = *(_T11 + 8)    [ _T261 _T11 ]
+    63: _T297 = *(_T11 + 8)    [ _T261 _T297 _T11 ]
+    64: _T298 = 1    [ _T261 _T297 _T298 _T11 ]
+    65: _T299 = (_T297 + _T298)    [ _T261 _T11 _T299 ]
+    66: *(_T11 + 8) = _T299    [ _T261 _T11 ]
+    67: END BY RETURN, result = _T261
 
 FUNCTION _BJDeck.Shuffle : 
 BASIC BLOCK 0 : 
@@ -902,85 +1434,128 @@ BASIC BLOCK 0 :
   liveUse = [ ]
   liveIn  = [ _T12 ]
   liveOut = [ _T12 _T300 ]
-    _T301 = "Shuffling..." [ _T12 _T301 ]
-    parm _T301 [ _T12 ]
-    call _PrintString [ _T12 ]
-    _T302 = 0 [ _T12 _T302 ]
-    _T300 = _T302 [ _T12 _T300 ]
-END BY BRANCH, goto 2
+  Use-Def Chain : 
+    (_T301, 2): [1]
+    (_T302, 5): [4]
+
+    1: _T301 = "Shuffling..."    [ _T12 _T301 ]
+    2: parm _T301    [ _T12 ]
+    3: call _PrintString    [ _T12 ]
+    4: _T302 = 0    [ _T12 _T302 ]
+    5: _T300 = _T302    [ _T12 _T300 ]
+    6: END BY BRANCH, goto 2
 BASIC BLOCK 1 : 
   Def     = [ _T303 _T304 ]
   liveUse = [ _T300 ]
   liveIn  = [ _T12 _T300 ]
   liveOut = [ _T12 _T300 ]
-    _T303 = 1 [ _T12 _T300 _T303 ]
-    _T304 = (_T300 + _T303) [ _T304 _T12 ]
-    _T300 = _T304 [ _T12 _T300 ]
-END BY BRANCH, goto 2
+  Use-Def Chain : 
+    (_T300, 9): [5, 10]
+    (_T303, 9): [8]
+    (_T304, 10): [9]
+
+    8: _T303 = 1    [ _T12 _T300 _T303 ]
+    9: _T304 = (_T300 + _T303)    [ _T304 _T12 ]
+    10: _T300 = _T304    [ _T12 _T300 ]
+    11: END BY BRANCH, goto 2
 BASIC BLOCK 2 : 
   Def     = [ _T305 _T306 ]
   liveUse = [ _T300 ]
   liveIn  = [ _T12 _T300 ]
   liveOut = [ _T12 _T300 ]
-    _T305 = 8 [ _T305 _T12 _T300 ]
-    _T306 = (_T300 < _T305) [ _T306 _T12 _T300 ]
-END BY BEQZ, if _T306 = 
-    0 : goto 7; 1 : goto 3
+  Use-Def Chain : 
+    (_T300, 13): [5, 10]
+    (_T305, 13): [12]
+    (_T306, 14): [13]
+
+    12: _T305 = 8    [ _T305 _T12 _T300 ]
+    13: _T306 = (_T300 < _T305)    [ _T306 _T12 _T300 ]
+    14: END BY BEQZ, if _T306 = 0 : goto 7; 1 : goto 3
 BASIC BLOCK 3 : 
   Def     = [ _T307 _T308 _T309 ]
   liveUse = [ _T12 _T300 ]
   liveIn  = [ _T12 _T300 ]
   liveOut = [ _T12 _T300 _T307 ]
-    _T307 = *(_T12 + 4) [ _T307 _T12 _T300 ]
-    _T308 = *(_T307 - 4) [ _T307 _T308 _T12 _T300 ]
-    _T309 = (_T300 < _T308) [ _T307 _T309 _T12 _T300 ]
-END BY BEQZ, if _T309 = 
-    0 : goto 5; 1 : goto 4
+  Use-Def Chain : 
+    (_T12, 15): []
+    (_T307, 16): [15]
+    (_T300, 17): [5, 10]
+    (_T308, 17): [16]
+    (_T309, 18): [17]
+
+    15: _T307 = *(_T12 + 4)    [ _T307 _T12 _T300 ]
+    16: _T308 = *(_T307 - 4)    [ _T307 _T308 _T12 _T300 ]
+    17: _T309 = (_T300 < _T308)    [ _T307 _T309 _T12 _T300 ]
+    18: END BY BEQZ, if _T309 = 0 : goto 5; 1 : goto 4
 BASIC BLOCK 4 : 
   Def     = [ _T310 _T311 ]
   liveUse = [ _T300 ]
   liveIn  = [ _T12 _T300 _T307 ]
   liveOut = [ _T12 _T300 _T307 ]
-    _T310 = 0 [ _T307 _T310 _T12 _T300 ]
-    _T311 = (_T300 < _T310) [ _T307 _T311 _T12 _T300 ]
-END BY BEQZ, if _T311 = 
-    0 : goto 6; 1 : goto 5
+  Use-Def Chain : 
+    (_T300, 20): [5, 10]
+    (_T310, 20): [19]
+    (_T311, 21): [20]
+
+    19: _T310 = 0    [ _T307 _T310 _T12 _T300 ]
+    20: _T311 = (_T300 < _T310)    [ _T307 _T311 _T12 _T300 ]
+    21: END BY BEQZ, if _T311 = 0 : goto 6; 1 : goto 5
 BASIC BLOCK 5 : 
   Def     = [ _T312 ]
   liveUse = [ ]
   liveIn  = [ _T12 _T300 _T307 ]
   liveOut = [ _T12 _T300 _T307 ]
-    _T312 = "Decaf runtime error: Array subscript out of bounds\n" [ _T307 _T312 _T12 _T300 ]
-    parm _T312 [ _T307 _T12 _T300 ]
-    call _PrintString [ _T307 _T12 _T300 ]
-    call _Halt [ _T307 _T12 _T300 ]
-END BY BRANCH, goto 6
+  Use-Def Chain : 
+    (_T312, 24): [23]
+
+    23: _T312 = "Decaf runtime error: Array subscript out of bounds\n"    [ _T307 _T312 _T12 _T300 ]
+    24: parm _T312    [ _T307 _T12 _T300 ]
+    25: call _PrintString    [ _T307 _T12 _T300 ]
+    26: call _Halt    [ _T307 _T12 _T300 ]
+    27: END BY BRANCH, goto 6
 BASIC BLOCK 6 : 
   Def     = [ _T313 _T314 _T315 _T316 _T317 _T318 ]
   liveUse = [ _T300 _T307 ]
   liveIn  = [ _T12 _T300 _T307 ]
   liveOut = [ _T12 _T300 ]
-    _T313 = 4 [ _T307 _T313 _T12 _T300 ]
-    _T314 = (_T300 * _T313) [ _T307 _T314 _T12 _T300 ]
-    _T315 = (_T307 + _T314) [ _T315 _T12 _T300 ]
-    _T316 = *(_T315 + 0) [ _T12 _T300 _T316 ]
-    parm _T316 [ _T12 _T300 _T316 ]
-    _T317 = *(_T316 + 0) [ _T12 _T300 _T317 ]
-    _T318 = *(_T317 + 12) [ _T12 _T300 _T318 ]
-    call _T318 [ _T12 _T300 ]
-END BY BRANCH, goto 1
+  Use-Def Chain : 
+    (_T300, 29): [5, 10]
+    (_T313, 29): [28]
+    (_T307, 30): [15]
+    (_T314, 30): [29]
+    (_T315, 31): [30]
+    (_T316, 32): [31]
+    (_T316, 33): [31]
+    (_T317, 34): [33]
+    (_T318, 35): [34]
+
+    28: _T313 = 4    [ _T307 _T313 _T12 _T300 ]
+    29: _T314 = (_T300 * _T313)    [ _T307 _T314 _T12 _T300 ]
+    30: _T315 = (_T307 + _T314)    [ _T315 _T12 _T300 ]
+    31: _T316 = *(_T315 + 0)    [ _T12 _T300 _T316 ]
+    32: parm _T316    [ _T12 _T300 _T316 ]
+    33: _T317 = *(_T316 + 0)    [ _T12 _T300 _T317 ]
+    34: _T318 = *(_T317 + 12)    [ _T12 _T300 _T318 ]
+    35: call _T318    [ _T12 _T300 ]
+    36: END BY BRANCH, goto 1
 BASIC BLOCK 7 : 
   Def     = [ _T319 _T320 _T321 ]
   liveUse = [ _T12 ]
   liveIn  = [ _T12 ]
   liveOut = [ _T12 ]
-    _T319 = *(_T12 + 8) [ _T12 ]
-    _T320 = 0 [ _T320 _T12 ]
-    *(_T12 + 8) = _T320 [ _T12 ]
-    _T321 = "done.\n" [ _T321 _T12 ]
-    parm _T321 [ _T12 ]
-    call _PrintString [ _T12 ]
-END BY RETURN, void result
+  Use-Def Chain : 
+    (_T12, 38): []
+    (_T12, 40): []
+    (_T320, 40): [39]
+    (_T321, 42): [41]
+
+    38: _T319 = *(_T12 + 8)    [ _T12 ]
+    39: _T320 = 0    [ _T320 _T12 ]
+    40: *(_T12 + 8) = _T320    [ _T12 ]
+    41: _T321 = "done.\n"    [ _T321 _T12 ]
+    42: parm _T321    [ _T12 ]
+    43: call _PrintString    [ _T12 ]
+    44: END BY RETURN, void result
 
 FUNCTION _BJDeck.NumCardsRemaining : 
 BASIC BLOCK 0 : 
@@ -988,12 +1563,20 @@ BASIC BLOCK 0 :
   liveUse = [ _T13 ]
   liveIn  = [ _T13 ]
   liveOut = [ _T13 ]
-    _T322 = 8 [ _T322 _T13 ]
-    _T323 = 52 [ _T322 _T323 _T13 ]
-    _T324 = (_T322 * _T323) [ _T324 _T13 ]
-    _T325 = *(_T13 + 8) [ _T324 _T325 _T13 ]
-    _T326 = (_T324 - _T325) [ _T326 _T13 ]
-END BY RETURN, result = _T326
+  Use-Def Chain : 
+    (_T322, 3): [1]
+    (_T323, 3): [2]
+    (_T13, 4): []
+    (_T324, 5): [3]
+    (_T325, 5): [4]
+    (_T326, 6): [5]
+
+    1: _T322 = 8    [ _T322 _T13 ]
+    2: _T323 = 52    [ _T322 _T323 _T13 ]
+    3: _T324 = (_T322 * _T323)    [ _T324 _T13 ]
+    4: _T325 = *(_T13 + 8)    [ _T324 _T325 _T13 ]
+    5: _T326 = (_T324 - _T325)    [ _T326 _T13 ]
+    6: END BY RETURN, result = _T326
 
 FUNCTION _Player.Init : 
 BASIC BLOCK 0 : 
@@ -1001,21 +1584,32 @@ BASIC BLOCK 0 :
   liveUse = [ _T14 _T15 ]
   liveIn  = [ _T14 _T15 ]
   liveOut = [ _T14 _T15 ]
-    _T327 = *(_T14 + 20) [ _T14 _T15 ]
-    _T328 = 1000 [ _T328 _T14 _T15 ]
-    *(_T14 + 20) = _T328 [ _T14 _T15 ]
-    _T329 = "What is the name of player #" [ _T329 _T14 _T15 ]
-    parm _T329 [ _T14 _T15 ]
-    call _PrintString [ _T14 _T15 ]
-    parm _T15 [ _T14 _T15 ]
-    call _PrintInt [ _T14 _T15 ]
-    _T330 = "? " [ _T330 _T14 _T15 ]
-    parm _T330 [ _T14 _T15 ]
-    call _PrintString [ _T14 _T15 ]
-    _T331 = *(_T14 + 24) [ _T14 _T15 ]
-    _T332 =  call _ReadLine [ _T332 _T14 _T15 ]
-    *(_T14 + 24) = _T332 [ _T14 _T15 ]
-END BY RETURN, void result
+  Use-Def Chain : 
+    (_T14, 1): []
+    (_T14, 3): []
+    (_T328, 3): [2]
+    (_T329, 5): [4]
+    (_T15, 7): []
+    (_T330, 10): [9]
+    (_T14, 12): []
+    (_T14, 14): []
+    (_T332, 14): [13]
+
+    1: _T327 = *(_T14 + 20)    [ _T14 _T15 ]
+    2: _T328 = 1000    [ _T328 _T14 _T15 ]
+    3: *(_T14 + 20) = _T328    [ _T14 _T15 ]
+    4: _T329 = "What is the name of player #"    [ _T329 _T14 _T15 ]
+    5: parm _T329    [ _T14 _T15 ]
+    6: call _PrintString    [ _T14 _T15 ]
+    7: parm _T15    [ _T14 _T15 ]
+    8: call _PrintInt    [ _T14 _T15 ]
+    9: _T330 = "? "    [ _T330 _T14 _T15 ]
+    10: parm _T330    [ _T14 _T15 ]
+    11: call _PrintString    [ _T14 _T15 ]
+    12: _T331 = *(_T14 + 24)    [ _T14 _T15 ]
+    13: _T332 =  call _ReadLine    [ _T332 _T14 _T15 ]
+    14: *(_T14 + 24) = _T332    [ _T14 _T15 ]
+    15: END BY RETURN, void result
 
 FUNCTION _Player.Hit : 
 BASIC BLOCK 0 : 
@@ -1023,82 +1617,142 @@ BASIC BLOCK 0 :
   liveUse = [ _T16 _T17 ]
   liveIn  = [ _T16 _T17 ]
   liveOut = [ _T16 _T17 ]
-    parm _T17 [ _T16 _T17 ]
-    _T334 = *(_T17 + 0) [ _T16 _T17 _T334 ]
-    _T335 = *(_T334 + 12) [ _T16 _T17 _T335 ]
-    _T336 =  call _T335 [ _T16 _T336 _T17 ]
-    _T333 = _T336 [ _T16 _T17 _T333 ]
-    _T337 = *(_T16 + 24) [ _T16 _T17 _T337 _T333 ]
-    parm _T337 [ _T16 _T17 _T333 ]
-    call _PrintString [ _T16 _T17 _T333 ]
-    _T338 = " was dealt a " [ _T16 _T17 _T338 _T333 ]
-    parm _T338 [ _T16 _T17 _T333 ]
-    call _PrintString [ _T16 _T17 _T333 ]
-    parm _T333 [ _T16 _T17 _T333 ]
-    call _PrintInt [ _T16 _T17 _T333 ]
-    _T339 = ".\n" [ _T16 _T17 _T339 _T333 ]
-    parm _T339 [ _T16 _T17 _T333 ]
-    call _PrintString [ _T16 _T17 _T333 ]
-    _T340 = *(_T16 + 4) [ _T16 _T17 _T333 ]
-    _T341 = *(_T16 + 4) [ _T16 _T17 _T341 _T333 ]
-    _T342 = (_T341 + _T333) [ _T16 _T17 _T342 _T333 ]
-    *(_T16 + 4) = _T342 [ _T16 _T17 _T333 ]
-    _T343 = *(_T16 + 12) [ _T16 _T17 _T333 ]
-    _T344 = *(_T16 + 12) [ _T16 _T17 _T344 _T333 ]
-    _T345 = 1 [ _T16 _T17 _T344 _T345 _T333 ]
-    _T346 = (_T344 + _T345) [ _T16 _T17 _T346 _T333 ]
-    *(_T16 + 12) = _T346 [ _T16 _T17 _T333 ]
-    _T347 = 11 [ _T16 _T17 _T347 _T333 ]
-    _T348 = (_T333 == _T347) [ _T16 _T17 _T348 ]
-END BY BEQZ, if _T348 = 
-    0 : goto 2; 1 : goto 1
+  Use-Def Chain : 
+    (_T17, 1): []
+    (_T17, 2): []
+    (_T334, 3): [2]
+    (_T335, 4): [3]
+    (_T336, 5): [4]
+    (_T16, 6): []
+    (_T337, 7): [6]
+    (_T338, 10): [9]
+    (_T333, 12): [5]
+    (_T339, 15): [14]
+    (_T16, 17): []
+    (_T16, 18): []
+    (_T333, 19): [5]
+    (_T341, 19): [18]
+    (_T16, 20): []
+    (_T342, 20): [19]
+    (_T16, 21): []
+    (_T16, 22): []
+    (_T344, 24): [22]
+    (_T345, 24): [23]
+    (_T16, 25): []
+    (_T346, 25): [24]
+    (_T333, 27): [5]
+    (_T347, 27): [26]
+    (_T348, 28): [27]
+
+    1: parm _T17    [ _T16 _T17 ]
+    2: _T334 = *(_T17 + 0)    [ _T16 _T17 _T334 ]
+    3: _T335 = *(_T334 + 12)    [ _T16 _T17 _T335 ]
+    4: _T336 =  call _T335    [ _T16 _T336 _T17 ]
+    5: _T333 = _T336    [ _T16 _T17 _T333 ]
+    6: _T337 = *(_T16 + 24)    [ _T16 _T17 _T337 _T333 ]
+    7: parm _T337    [ _T16 _T17 _T333 ]
+    8: call _PrintString    [ _T16 _T17 _T333 ]
+    9: _T338 = " was dealt a "    [ _T16 _T17 _T338 _T333 ]
+    10: parm _T338    [ _T16 _T17 _T333 ]
+    11: call _PrintString    [ _T16 _T17 _T333 ]
+    12: parm _T333    [ _T16 _T17 _T333 ]
+    13: call _PrintInt    [ _T16 _T17 _T333 ]
+    14: _T339 = ".\n"    [ _T16 _T17 _T339 _T333 ]
+    15: parm _T339    [ _T16 _T17 _T333 ]
+    16: call _PrintString    [ _T16 _T17 _T333 ]
+    17: _T340 = *(_T16 + 4)    [ _T16 _T17 _T333 ]
+    18: _T341 = *(_T16 + 4)    [ _T16 _T17 _T341 _T333 ]
+    19: _T342 = (_T341 + _T333)    [ _T16 _T17 _T342 _T333 ]
+    20: *(_T16 + 4) = _T342    [ _T16 _T17 _T333 ]
+    21: _T343 = *(_T16 + 12)    [ _T16 _T17 _T333 ]
+    22: _T344 = *(_T16 + 12)    [ _T16 _T17 _T344 _T333 ]
+    23: _T345 = 1    [ _T16 _T17 _T344 _T345 _T333 ]
+    24: _T346 = (_T344 + _T345)    [ _T16 _T17 _T346 _T333 ]
+    25: *(_T16 + 12) = _T346    [ _T16 _T17 _T333 ]
+    26: _T347 = 11    [ _T16 _T17 _T347 _T333 ]
+    27: _T348 = (_T333 == _T347)    [ _T16 _T17 _T348 ]
+    28: END BY BEQZ, if _T348 = 0 : goto 2; 1 : goto 1
 BASIC BLOCK 1 : 
   Def     = [ _T349 _T350 _T351 _T352 ]
   liveUse = [ _T16 ]
   liveIn  = [ _T16 _T17 ]
   liveOut = [ _T16 _T17 ]
-    _T349 = *(_T16 + 8) [ _T16 _T17 ]
-    _T350 = *(_T16 + 8) [ _T16 _T17 _T350 ]
-    _T351 = 1 [ _T16 _T17 _T350 _T351 ]
-    _T352 = (_T350 + _T351) [ _T16 _T352 _T17 ]
-    *(_T16 + 8) = _T352 [ _T16 _T17 ]
-END BY BRANCH, goto 2
+  Use-Def Chain : 
+    (_T16, 29): []
+    (_T16, 30): []
+    (_T350, 32): [30]
+    (_T351, 32): [31]
+    (_T16, 33): []
+    (_T352, 33): [32]
+
+    29: _T349 = *(_T16 + 8)    [ _T16 _T17 ]
+    30: _T350 = *(_T16 + 8)    [ _T16 _T17 _T350 ]
+    31: _T351 = 1    [ _T16 _T17 _T350 _T351 ]
+    32: _T352 = (_T350 + _T351)    [ _T16 _T352 _T17 ]
+    33: *(_T16 + 8) = _T352    [ _T16 _T17 ]
+    34: END BY BRANCH, goto 2
 BASIC BLOCK 2 : 
   Def     = [ _T353 _T354 _T355 _T356 _T357 _T358 _T359 ]
   liveUse = [ _T16 ]
   liveIn  = [ _T16 _T17 ]
   liveOut = [ _T16 _T17 ]
-    _T353 = *(_T16 + 4) [ _T16 _T17 _T353 ]
-    _T354 = 21 [ _T16 _T17 _T353 _T354 ]
-    _T355 = (_T353 > _T354) [ _T16 _T17 _T355 ]
-    _T356 = *(_T16 + 8) [ _T16 _T17 _T355 _T356 ]
-    _T357 = 0 [ _T16 _T17 _T355 _T356 _T357 ]
-    _T358 = (_T356 > _T357) [ _T16 _T17 _T355 _T358 ]
-    _T359 = (_T355 && _T358) [ _T16 _T17 _T359 ]
-END BY BEQZ, if _T359 = 
-    0 : goto 4; 1 : goto 3
+  Use-Def Chain : 
+    (_T16, 36): []
+    (_T353, 38): [36]
+    (_T354, 38): [37]
+    (_T16, 39): []
+    (_T356, 41): [39]
+    (_T357, 41): [40]
+    (_T355, 42): [38]
+    (_T358, 42): [41]
+    (_T359, 43): [42]
+
+    36: _T353 = *(_T16 + 4)    [ _T16 _T17 _T353 ]
+    37: _T354 = 21    [ _T16 _T17 _T353 _T354 ]
+    38: _T355 = (_T353 > _T354)    [ _T16 _T17 _T355 ]
+    39: _T356 = *(_T16 + 8)    [ _T16 _T17 _T355 _T356 ]
+    40: _T357 = 0    [ _T16 _T17 _T355 _T356 _T357 ]
+    41: _T358 = (_T356 > _T357)    [ _T16 _T17 _T355 _T358 ]
+    42: _T359 = (_T355 && _T358)    [ _T16 _T17 _T359 ]
+    43: END BY BEQZ, if _T359 = 0 : goto 4; 1 : goto 3
 BASIC BLOCK 3 : 
   Def     = [ _T360 _T361 _T362 _T363 _T364 _T365 _T366 _T367 ]
   liveUse = [ _T16 ]
   liveIn  = [ _T16 _T17 ]
   liveOut = [ _T16 _T17 ]
-    _T360 = *(_T16 + 4) [ _T16 _T17 ]
-    _T361 = *(_T16 + 4) [ _T16 _T17 _T361 ]
-    _T362 = 10 [ _T16 _T17 _T361 _T362 ]
-    _T363 = (_T361 - _T362) [ _T16 _T17 _T363 ]
-    *(_T16 + 4) = _T363 [ _T16 _T17 ]
-    _T364 = *(_T16 + 8) [ _T16 _T17 ]
-    _T365 = *(_T16 + 8) [ _T16 _T17 _T365 ]
-    _T366 = 1 [ _T16 _T17 _T365 _T366 ]
-    _T367 = (_T365 - _T366) [ _T16 _T17 _T367 ]
-    *(_T16 + 8) = _T367 [ _T16 _T17 ]
-END BY BRANCH, goto 2
+  Use-Def Chain : 
+    (_T16, 44): []
+    (_T16, 45): []
+    (_T361, 47): [45]
+    (_T362, 47): [46]
+    (_T16, 48): []
+    (_T363, 48): [47]
+    (_T16, 49): []
+    (_T16, 50): []
+    (_T365, 52): [50]
+    (_T366, 52): [51]
+    (_T16, 53): []
+    (_T367, 53): [52]
+
+    44: _T360 = *(_T16 + 4)    [ _T16 _T17 ]
+    45: _T361 = *(_T16 + 4)    [ _T16 _T17 _T361 ]
+    46: _T362 = 10    [ _T16 _T17 _T361 _T362 ]
+    47: _T363 = (_T361 - _T362)    [ _T16 _T17 _T363 ]
+    48: *(_T16 + 4) = _T363    [ _T16 _T17 ]
+    49: _T364 = *(_T16 + 8)    [ _T16 _T17 ]
+    50: _T365 = *(_T16 + 8)    [ _T16 _T17 _T365 ]
+    51: _T366 = 1    [ _T16 _T17 _T365 _T366 ]
+    52: _T367 = (_T365 - _T366)    [ _T16 _T17 _T367 ]
+    53: *(_T16 + 8) = _T367    [ _T16 _T17 ]
+    54: END BY BRANCH, goto 2
 BASIC BLOCK 4 : 
   Def     = [ ]
   liveUse = [ ]
   liveIn  = [ _T16 _T17 ]
   liveOut = [ _T16 _T17 ]
-END BY RETURN, void result
+  Use-Def Chain : 
+
+    0: END BY RETURN, void result
 
 FUNCTION _Player.DoubleDown : 
 BASIC BLOCK 0 : 
@@ -1106,77 +1760,122 @@ BASIC BLOCK 0 :
   liveUse = [ _T18 ]
   liveIn  = [ _T18 _T19 ]
   liveOut = [ _T18 _T19 ]
-    _T369 = *(_T18 + 4) [ _T369 _T18 _T19 ]
-    _T370 = 10 [ _T369 _T18 _T370 _T19 ]
-    _T371 = (_T369 != _T370) [ _T18 _T19 _T371 ]
-    _T372 = *(_T18 + 4) [ _T18 _T19 _T371 _T372 ]
-    _T373 = 11 [ _T18 _T19 _T371 _T372 _T373 ]
-    _T374 = (_T372 != _T373) [ _T18 _T19 _T371 _T374 ]
-    _T375 = (_T371 && _T374) [ _T18 _T19 _T375 ]
-END BY BEQZ, if _T375 = 
-    0 : goto 2; 1 : goto 1
+  Use-Def Chain : 
+    (_T18, 1): []
+    (_T369, 3): [1]
+    (_T370, 3): [2]
+    (_T18, 4): []
+    (_T372, 6): [4]
+    (_T373, 6): [5]
+    (_T371, 7): [3]
+    (_T374, 7): [6]
+    (_T375, 8): [7]
+
+    1: _T369 = *(_T18 + 4)    [ _T369 _T18 _T19 ]
+    2: _T370 = 10    [ _T369 _T18 _T370 _T19 ]
+    3: _T371 = (_T369 != _T370)    [ _T18 _T19 _T371 ]
+    4: _T372 = *(_T18 + 4)    [ _T18 _T19 _T371 _T372 ]
+    5: _T373 = 11    [ _T18 _T19 _T371 _T372 _T373 ]
+    6: _T374 = (_T372 != _T373)    [ _T18 _T19 _T371 _T374 ]
+    7: _T375 = (_T371 && _T374)    [ _T18 _T19 _T375 ]
+    8: END BY BEQZ, if _T375 = 0 : goto 2; 1 : goto 1
 BASIC BLOCK 1 : 
   Def     = [ _T376 ]
   liveUse = [ ]
   liveIn  = [ _T18 _T19 ]
   liveOut = [ _T18 _T19 ]
-    _T376 = 0 [ _T18 _T19 _T376 ]
-END BY RETURN, result = _T376
+  Use-Def Chain : 
+    (_T376, 10): [9]
+
+    9: _T376 = 0    [ _T18 _T19 _T376 ]
+    10: END BY RETURN, result = _T376
 BASIC BLOCK 2 : 
   Def     = [ _T377 _T378 _T379 _T380 ]
   liveUse = [ _T18 ]
   liveIn  = [ _T18 _T19 ]
   liveOut = [ _T18 _T19 ]
-    _T377 = "Would you like to double down?" [ _T18 _T19 _T377 ]
-    parm _T18 [ _T18 _T19 _T377 ]
-    parm _T377 [ _T18 _T19 ]
-    _T378 = *(_T18 + 0) [ _T18 _T19 _T378 ]
-    _T379 = *(_T378 + 44) [ _T18 _T19 _T379 ]
-    _T380 =  call _T379 [ _T18 _T19 _T380 ]
-END BY BEQZ, if _T380 = 
-    0 : goto 4; 1 : goto 3
+  Use-Def Chain : 
+    (_T18, 13): []
+    (_T377, 14): [12]
+    (_T18, 15): []
+    (_T378, 16): [15]
+    (_T379, 17): [16]
+    (_T380, 18): [17]
+
+    12: _T377 = "Would you like to double down?"    [ _T18 _T19 _T377 ]
+    13: parm _T18    [ _T18 _T19 _T377 ]
+    14: parm _T377    [ _T18 _T19 ]
+    15: _T378 = *(_T18 + 0)    [ _T18 _T19 _T378 ]
+    16: _T379 = *(_T378 + 44)    [ _T18 _T19 _T379 ]
+    17: _T380 =  call _T379    [ _T18 _T19 _T380 ]
+    18: END BY BEQZ, if _T380 = 0 : goto 4; 1 : goto 3
 BASIC BLOCK 3 : 
   Def     = [ _T381 _T382 _T383 _T384 _T385 _T386 _T387 _T388 _T389 _T390 _T391 ]
   liveUse = [ _T18 _T19 ]
   liveIn  = [ _T18 _T19 ]
   liveOut = [ _T18 _T19 ]
-    _T381 = *(_T18 + 16) [ _T18 _T19 ]
-    _T382 = *(_T18 + 16) [ _T18 _T19 _T382 ]
-    _T383 = 2 [ _T18 _T19 _T382 _T383 ]
-    _T384 = (_T382 * _T383) [ _T384 _T18 _T19 ]
-    *(_T18 + 16) = _T384 [ _T18 _T19 ]
-    parm _T18 [ _T18 _T19 ]
-    parm _T19 [ _T18 _T19 ]
-    _T385 = *(_T18 + 0) [ _T385 _T18 _T19 ]
-    _T386 = *(_T385 + 12) [ _T18 _T386 _T19 ]
-    call _T386 [ _T18 _T19 ]
-    _T387 = *(_T18 + 24) [ _T18 _T19 _T387 ]
-    parm _T387 [ _T18 _T19 ]
-    call _PrintString [ _T18 _T19 ]
-    _T388 = ", your total is " [ _T18 _T19 _T388 ]
-    parm _T388 [ _T18 _T19 ]
-    call _PrintString [ _T18 _T19 ]
-    _T389 = *(_T18 + 4) [ _T18 _T19 _T389 ]
-    parm _T389 [ _T18 _T19 ]
-    call _PrintInt [ _T18 _T19 ]
-    _T390 = ".\n" [ _T18 _T19 _T390 ]
-    parm _T390 [ _T18 _T19 ]
-    call _PrintString [ _T18 _T19 ]
-    _T391 = 1 [ _T18 _T19 _T391 ]
-END BY RETURN, result = _T391
+  Use-Def Chain : 
+    (_T18, 19): []
+    (_T18, 20): []
+    (_T382, 22): [20]
+    (_T383, 22): [21]
+    (_T18, 23): []
+    (_T384, 23): [22]
+    (_T18, 24): []
+    (_T19, 25): []
+    (_T18, 26): []
+    (_T385, 27): [26]
+    (_T386, 28): [27]
+    (_T18, 29): []
+    (_T387, 30): [29]
+    (_T388, 33): [32]
+    (_T18, 35): []
+    (_T389, 36): [35]
+    (_T390, 39): [38]
+    (_T391, 42): [41]
+
+    19: _T381 = *(_T18 + 16)    [ _T18 _T19 ]
+    20: _T382 = *(_T18 + 16)    [ _T18 _T19 _T382 ]
+    21: _T383 = 2    [ _T18 _T19 _T382 _T383 ]
+    22: _T384 = (_T382 * _T383)    [ _T384 _T18 _T19 ]
+    23: *(_T18 + 16) = _T384    [ _T18 _T19 ]
+    24: parm _T18    [ _T18 _T19 ]
+    25: parm _T19    [ _T18 _T19 ]
+    26: _T385 = *(_T18 + 0)    [ _T385 _T18 _T19 ]
+    27: _T386 = *(_T385 + 12)    [ _T18 _T386 _T19 ]
+    28: call _T386    [ _T18 _T19 ]
+    29: _T387 = *(_T18 + 24)    [ _T18 _T19 _T387 ]
+    30: parm _T387    [ _T18 _T19 ]
+    31: call _PrintString    [ _T18 _T19 ]
+    32: _T388 = ", your total is "    [ _T18 _T19 _T388 ]
+    33: parm _T388    [ _T18 _T19 ]
+    34: call _PrintString    [ _T18 _T19 ]
+    35: _T389 = *(_T18 + 4)    [ _T18 _T19 _T389 ]
+    36: parm _T389    [ _T18 _T19 ]
+    37: call _PrintInt    [ _T18 _T19 ]
+    38: _T390 = ".\n"    [ _T18 _T19 _T390 ]
+    39: parm _T390    [ _T18 _T19 ]
+    40: call _PrintString    [ _T18 _T19 ]
+    41: _T391 = 1    [ _T18 _T19 _T391 ]
+    42: END BY RETURN, result = _T391
 BASIC BLOCK 4 : 
   Def     = [ _T392 ]
   liveUse = [ ]
   liveIn  = [ _T18 _T19 ]
   liveOut = [ _T18 _T19 ]
-    _T392 = 0 [ _T18 _T19 _T392 ]
-END BY RETURN, result = _T392
+  Use-Def Chain : 
+    (_T392, 46): [45]
+
+    45: _T392 = 0    [ _T18 _T19 _T392 ]
+    46: END BY RETURN, result = _T392
 BASIC BLOCK 5 : 
   Def     = [ ]
   liveUse = [ ]
   liveIn  = [ _T18 _T19 ]
   liveOut = [ _T18 _T19 ]
-END BY RETURN, void result
+  Use-Def Chain : 
+
+    0: END BY RETURN, void result
 
 FUNCTION _Player.TakeTurn : 
 BASIC BLOCK 0 : 
@@ -1184,150 +1883,235 @@ BASIC BLOCK 0 :
   liveUse = [ _T20 _T21 ]
   liveIn  = [ _T20 _T21 ]
   liveOut = [ _T20 _T21 ]
-    _T394 = "\n" [ _T20 _T21 _T394 ]
-    parm _T394 [ _T20 _T21 ]
-    call _PrintString [ _T20 _T21 ]
-    _T395 = *(_T20 + 24) [ _T20 _T21 _T395 ]
-    parm _T395 [ _T20 _T21 ]
-    call _PrintString [ _T20 _T21 ]
-    _T396 = "'s turn.\n" [ _T20 _T21 _T396 ]
-    parm _T396 [ _T20 _T21 ]
-    call _PrintString [ _T20 _T21 ]
-    _T397 = *(_T20 + 4) [ _T20 _T21 ]
-    _T398 = 0 [ _T20 _T21 _T398 ]
-    *(_T20 + 4) = _T398 [ _T20 _T21 ]
-    _T399 = *(_T20 + 8) [ _T20 _T21 ]
-    _T400 = 0 [ _T400 _T20 _T21 ]
-    *(_T20 + 8) = _T400 [ _T20 _T21 ]
-    _T401 = *(_T20 + 12) [ _T20 _T21 ]
-    _T402 = 0 [ _T402 _T20 _T21 ]
-    *(_T20 + 12) = _T402 [ _T20 _T21 ]
-    parm _T20 [ _T20 _T21 ]
-    parm _T21 [ _T20 _T21 ]
-    _T403 = *(_T20 + 0) [ _T403 _T20 _T21 ]
-    _T404 = *(_T403 + 12) [ _T20 _T404 _T21 ]
-    call _T404 [ _T20 _T21 ]
-    parm _T20 [ _T20 _T21 ]
-    parm _T21 [ _T20 _T21 ]
-    _T405 = *(_T20 + 0) [ _T20 _T21 _T405 ]
-    _T406 = *(_T405 + 12) [ _T20 _T21 _T406 ]
-    call _T406 [ _T20 _T21 ]
-    parm _T20 [ _T20 _T21 ]
-    parm _T21 [ _T20 _T21 ]
-    _T407 = *(_T20 + 0) [ _T20 _T21 _T407 ]
-    _T408 = *(_T407 + 16) [ _T20 _T21 _T408 ]
-    _T409 =  call _T408 [ _T20 _T21 _T409 ]
-    _T410 = ! _T409 [ _T20 _T21 _T410 ]
-END BY BEQZ, if _T410 = 
-    0 : goto 5; 1 : goto 1
+  Use-Def Chain : 
+    (_T394, 2): [1]
+    (_T20, 4): []
+    (_T395, 5): [4]
+    (_T396, 8): [7]
+    (_T20, 10): []
+    (_T20, 12): []
+    (_T398, 12): [11]
+    (_T20, 13): []
+    (_T20, 15): []
+    (_T400, 15): [14]
+    (_T20, 16): []
+    (_T20, 18): []
+    (_T402, 18): [17]
+    (_T20, 19): []
+    (_T21, 20): []
+    (_T20, 21): []
+    (_T403, 22): [21]
+    (_T404, 23): [22]
+    (_T20, 24): []
+    (_T21, 25): []
+    (_T20, 26): []
+    (_T405, 27): [26]
+    (_T406, 28): [27]
+    (_T20, 29): []
+    (_T21, 30): []
+    (_T20, 31): []
+    (_T407, 32): [31]
+    (_T408, 33): [32]
+    (_T409, 34): [33]
+    (_T410, 35): [34]
+
+    1: _T394 = "\n"    [ _T20 _T21 _T394 ]
+    2: parm _T394    [ _T20 _T21 ]
+    3: call _PrintString    [ _T20 _T21 ]
+    4: _T395 = *(_T20 + 24)    [ _T20 _T21 _T395 ]
+    5: parm _T395    [ _T20 _T21 ]
+    6: call _PrintString    [ _T20 _T21 ]
+    7: _T396 = "'s turn.\n"    [ _T20 _T21 _T396 ]
+    8: parm _T396    [ _T20 _T21 ]
+    9: call _PrintString    [ _T20 _T21 ]
+    10: _T397 = *(_T20 + 4)    [ _T20 _T21 ]
+    11: _T398 = 0    [ _T20 _T21 _T398 ]
+    12: *(_T20 + 4) = _T398    [ _T20 _T21 ]
+    13: _T399 = *(_T20 + 8)    [ _T20 _T21 ]
+    14: _T400 = 0    [ _T400 _T20 _T21 ]
+    15: *(_T20 + 8) = _T400    [ _T20 _T21 ]
+    16: _T401 = *(_T20 + 12)    [ _T20 _T21 ]
+    17: _T402 = 0    [ _T402 _T20 _T21 ]
+    18: *(_T20 + 12) = _T402    [ _T20 _T21 ]
+    19: parm _T20    [ _T20 _T21 ]
+    20: parm _T21    [ _T20 _T21 ]
+    21: _T403 = *(_T20 + 0)    [ _T403 _T20 _T21 ]
+    22: _T404 = *(_T403 + 12)    [ _T20 _T404 _T21 ]
+    23: call _T404    [ _T20 _T21 ]
+    24: parm _T20    [ _T20 _T21 ]
+    25: parm _T21    [ _T20 _T21 ]
+    26: _T405 = *(_T20 + 0)    [ _T20 _T21 _T405 ]
+    27: _T406 = *(_T405 + 12)    [ _T20 _T21 _T406 ]
+    28: call _T406    [ _T20 _T21 ]
+    29: parm _T20    [ _T20 _T21 ]
+    30: parm _T21    [ _T20 _T21 ]
+    31: _T407 = *(_T20 + 0)    [ _T20 _T21 _T407 ]
+    32: _T408 = *(_T407 + 16)    [ _T20 _T21 _T408 ]
+    33: _T409 =  call _T408    [ _T20 _T21 _T409 ]
+    34: _T410 = ! _T409    [ _T20 _T21 _T410 ]
+    35: END BY BEQZ, if _T410 = 0 : goto 5; 1 : goto 1
 BASIC BLOCK 1 : 
   Def     = [ _T393 _T411 ]
   liveUse = [ ]
   liveIn  = [ _T20 _T21 ]
   liveOut = [ _T20 _T21 _T393 ]
-    _T411 = 1 [ _T20 _T21 _T411 ]
-    _T393 = _T411 [ _T20 _T21 _T393 ]
-END BY BRANCH, goto 2
+  Use-Def Chain : 
+    (_T411, 37): [36]
+
+    36: _T411 = 1    [ _T20 _T21 _T411 ]
+    37: _T393 = _T411    [ _T20 _T21 _T393 ]
+    38: END BY BRANCH, goto 2
 BASIC BLOCK 2 : 
   Def     = [ _T412 _T413 _T414 _T415 ]
   liveUse = [ _T20 _T393 ]
   liveIn  = [ _T20 _T21 _T393 ]
   liveOut = [ _T20 _T21 ]
-    _T412 = *(_T20 + 4) [ _T20 _T21 _T393 _T412 ]
-    _T413 = 21 [ _T20 _T21 _T393 _T412 _T413 ]
-    _T414 = (_T412 <= _T413) [ _T20 _T21 _T393 _T414 ]
-    _T415 = (_T414 && _T393) [ _T20 _T21 _T415 ]
-END BY BEQZ, if _T415 = 
-    0 : goto 5; 1 : goto 3
+  Use-Def Chain : 
+    (_T20, 39): []
+    (_T412, 41): [39]
+    (_T413, 41): [40]
+    (_T393, 42): [37, 62]
+    (_T414, 42): [41]
+    (_T415, 43): [42]
+
+    39: _T412 = *(_T20 + 4)    [ _T20 _T21 _T393 _T412 ]
+    40: _T413 = 21    [ _T20 _T21 _T393 _T412 _T413 ]
+    41: _T414 = (_T412 <= _T413)    [ _T20 _T21 _T393 _T414 ]
+    42: _T415 = (_T414 && _T393)    [ _T20 _T21 _T415 ]
+    43: END BY BEQZ, if _T415 = 0 : goto 5; 1 : goto 3
 BASIC BLOCK 3 : 
   Def     = [ _T393 _T416 _T417 _T418 _T419 _T420 _T421 _T422 _T423 ]
   liveUse = [ _T20 ]
   liveIn  = [ _T20 _T21 ]
   liveOut = [ _T20 _T21 _T393 ]
-    _T416 = *(_T20 + 24) [ _T416 _T20 _T21 ]
-    parm _T416 [ _T20 _T21 ]
-    call _PrintString [ _T20 _T21 ]
-    _T417 = ", your total is " [ _T417 _T20 _T21 ]
-    parm _T417 [ _T20 _T21 ]
-    call _PrintString [ _T20 _T21 ]
-    _T418 = *(_T20 + 4) [ _T418 _T20 _T21 ]
-    parm _T418 [ _T20 _T21 ]
-    call _PrintInt [ _T20 _T21 ]
-    _T419 = ".\n" [ _T419 _T20 _T21 ]
-    parm _T419 [ _T20 _T21 ]
-    call _PrintString [ _T20 _T21 ]
-    _T420 = "Would you like a hit?" [ _T20 _T420 _T21 ]
-    parm _T20 [ _T20 _T420 _T21 ]
-    parm _T420 [ _T20 _T21 ]
-    _T421 = *(_T20 + 0) [ _T20 _T21 _T421 ]
-    _T422 = *(_T421 + 44) [ _T20 _T21 _T422 ]
-    _T423 =  call _T422 [ _T20 _T21 _T423 ]
-    _T393 = _T423 [ _T20 _T21 _T393 ]
-END BY BEQZ, if _T393 = 
-    0 : goto 2; 1 : goto 4
+  Use-Def Chain : 
+    (_T20, 44): []
+    (_T416, 45): [44]
+    (_T417, 48): [47]
+    (_T20, 50): []
+    (_T418, 51): [50]
+    (_T419, 54): [53]
+    (_T20, 57): []
+    (_T420, 58): [56]
+    (_T20, 59): []
+    (_T421, 60): [59]
+    (_T422, 61): [60]
+    (_T423, 62): [61]
+    (_T393, 63): [62]
+
+    44: _T416 = *(_T20 + 24)    [ _T416 _T20 _T21 ]
+    45: parm _T416    [ _T20 _T21 ]
+    46: call _PrintString    [ _T20 _T21 ]
+    47: _T417 = ", your total is "    [ _T417 _T20 _T21 ]
+    48: parm _T417    [ _T20 _T21 ]
+    49: call _PrintString    [ _T20 _T21 ]
+    50: _T418 = *(_T20 + 4)    [ _T418 _T20 _T21 ]
+    51: parm _T418    [ _T20 _T21 ]
+    52: call _PrintInt    [ _T20 _T21 ]
+    53: _T419 = ".\n"    [ _T419 _T20 _T21 ]
+    54: parm _T419    [ _T20 _T21 ]
+    55: call _PrintString    [ _T20 _T21 ]
+    56: _T420 = "Would you like a hit?"    [ _T20 _T420 _T21 ]
+    57: parm _T20    [ _T20 _T420 _T21 ]
+    58: parm _T420    [ _T20 _T21 ]
+    59: _T421 = *(_T20 + 0)    [ _T20 _T21 _T421 ]
+    60: _T422 = *(_T421 + 44)    [ _T20 _T21 _T422 ]
+    61: _T423 =  call _T422    [ _T20 _T21 _T423 ]
+    62: _T393 = _T423    [ _T20 _T21 _T393 ]
+    63: END BY BEQZ, if _T393 = 0 : goto 2; 1 : goto 4
 BASIC BLOCK 4 : 
   Def     = [ _T424 _T425 ]
   liveUse = [ _T20 _T21 ]
   liveIn  = [ _T20 _T21 _T393 ]
   liveOut = [ _T20 _T21 _T393 ]
-    parm _T20 [ _T20 _T21 _T393 ]
-    parm _T21 [ _T20 _T21 _T393 ]
-    _T424 = *(_T20 + 0) [ _T20 _T21 _T424 _T393 ]
-    _T425 = *(_T424 + 12) [ _T20 _T21 _T393 _T425 ]
-    call _T425 [ _T20 _T21 _T393 ]
-END BY BRANCH, goto 2
+  Use-Def Chain : 
+    (_T20, 64): []
+    (_T21, 65): []
+    (_T20, 66): []
+    (_T424, 67): [66]
+    (_T425, 68): [67]
+
+    64: parm _T20    [ _T20 _T21 _T393 ]
+    65: parm _T21    [ _T20 _T21 _T393 ]
+    66: _T424 = *(_T20 + 0)    [ _T20 _T21 _T424 _T393 ]
+    67: _T425 = *(_T424 + 12)    [ _T20 _T21 _T393 _T425 ]
+    68: call _T425    [ _T20 _T21 _T393 ]
+    69: END BY BRANCH, goto 2
 BASIC BLOCK 5 : 
   Def     = [ _T426 _T427 _T428 ]
   liveUse = [ _T20 ]
   liveIn  = [ _T20 _T21 ]
   liveOut = [ _T20 _T21 ]
-    _T426 = *(_T20 + 4) [ _T20 _T21 _T426 ]
-    _T427 = 21 [ _T20 _T21 _T426 _T427 ]
-    _T428 = (_T426 > _T427) [ _T20 _T21 _T428 ]
-END BY BEQZ, if _T428 = 
-    0 : goto 7; 1 : goto 6
+  Use-Def Chain : 
+    (_T20, 73): []
+    (_T426, 75): [73]
+    (_T427, 75): [74]
+    (_T428, 76): [75]
+
+    73: _T426 = *(_T20 + 4)    [ _T20 _T21 _T426 ]
+    74: _T427 = 21    [ _T20 _T21 _T426 _T427 ]
+    75: _T428 = (_T426 > _T427)    [ _T20 _T21 _T428 ]
+    76: END BY BEQZ, if _T428 = 0 : goto 7; 1 : goto 6
 BASIC BLOCK 6 : 
   Def     = [ _T429 _T430 _T431 _T432 ]
   liveUse = [ _T20 ]
   liveIn  = [ _T20 _T21 ]
   liveOut = [ _T20 _T21 ]
-    _T429 = *(_T20 + 24) [ _T20 _T21 _T429 ]
-    parm _T429 [ _T20 _T21 ]
-    call _PrintString [ _T20 _T21 ]
-    _T430 = " busts with the big " [ _T20 _T21 _T430 ]
-    parm _T430 [ _T20 _T21 ]
-    call _PrintString [ _T20 _T21 ]
-    _T431 = *(_T20 + 4) [ _T20 _T21 _T431 ]
-    parm _T431 [ _T20 _T21 ]
-    call _PrintInt [ _T20 _T21 ]
-    _T432 = "!\n" [ _T432 _T20 _T21 ]
-    parm _T432 [ _T20 _T21 ]
-    call _PrintString [ _T20 _T21 ]
-END BY BRANCH, goto 8
+  Use-Def Chain : 
+    (_T20, 77): []
+    (_T429, 78): [77]
+    (_T430, 81): [80]
+    (_T20, 83): []
+    (_T431, 84): [83]
+    (_T432, 87): [86]
+
+    77: _T429 = *(_T20 + 24)    [ _T20 _T21 _T429 ]
+    78: parm _T429    [ _T20 _T21 ]
+    79: call _PrintString    [ _T20 _T21 ]
+    80: _T430 = " busts with the big "    [ _T20 _T21 _T430 ]
+    81: parm _T430    [ _T20 _T21 ]
+    82: call _PrintString    [ _T20 _T21 ]
+    83: _T431 = *(_T20 + 4)    [ _T20 _T21 _T431 ]
+    84: parm _T431    [ _T20 _T21 ]
+    85: call _PrintInt    [ _T20 _T21 ]
+    86: _T432 = "!\n"    [ _T432 _T20 _T21 ]
+    87: parm _T432    [ _T20 _T21 ]
+    88: call _PrintString    [ _T20 _T21 ]
+    89: END BY BRANCH, goto 8
 BASIC BLOCK 7 : 
   Def     = [ _T433 _T434 _T435 _T436 ]
   liveUse = [ _T20 ]
   liveIn  = [ _T20 _T21 ]
   liveOut = [ _T20 _T21 ]
-    _T433 = *(_T20 + 24) [ _T433 _T20 _T21 ]
-    parm _T433 [ _T20 _T21 ]
-    call _PrintString [ _T20 _T21 ]
-    _T434 = " stays at " [ _T434 _T20 _T21 ]
-    parm _T434 [ _T20 _T21 ]
-    call _PrintString [ _T20 _T21 ]
-    _T435 = *(_T20 + 4) [ _T435 _T20 _T21 ]
-    parm _T435 [ _T20 _T21 ]
-    call _PrintInt [ _T20 _T21 ]
-    _T436 = ".\n" [ _T20 _T436 _T21 ]
-    parm _T436 [ _T20 _T21 ]
-    call _PrintString [ _T20 _T21 ]
-END BY BRANCH, goto 8
+  Use-Def Chain : 
+    (_T20, 91): []
+    (_T433, 92): [91]
+    (_T434, 95): [94]
+    (_T20, 97): []
+    (_T435, 98): [97]
+    (_T436, 101): [100]
+
+    91: _T433 = *(_T20 + 24)    [ _T433 _T20 _T21 ]
+    92: parm _T433    [ _T20 _T21 ]
+    93: call _PrintString    [ _T20 _T21 ]
+    94: _T434 = " stays at "    [ _T434 _T20 _T21 ]
+    95: parm _T434    [ _T20 _T21 ]
+    96: call _PrintString    [ _T20 _T21 ]
+    97: _T435 = *(_T20 + 4)    [ _T435 _T20 _T21 ]
+    98: parm _T435    [ _T20 _T21 ]
+    99: call _PrintInt    [ _T20 _T21 ]
+    100: _T436 = ".\n"    [ _T20 _T436 _T21 ]
+    101: parm _T436    [ _T20 _T21 ]
+    102: call _PrintString    [ _T20 _T21 ]
+    103: END BY BRANCH, goto 8
 BASIC BLOCK 8 : 
   Def     = [ ]
   liveUse = [ ]
   liveIn  = [ _T20 _T21 ]
   liveOut = [ _T20 _T21 ]
-END BY RETURN, void result
+  Use-Def Chain : 
+
+    0: END BY RETURN, void result
 
 FUNCTION _Player.HasMoney : 
 BASIC BLOCK 0 : 
@@ -1335,10 +2119,16 @@ BASIC BLOCK 0 :
   liveUse = [ _T22 ]
   liveIn  = [ _T22 ]
   liveOut = [ _T22 ]
-    _T437 = *(_T22 + 20) [ _T437 _T22 ]
-    _T438 = 0 [ _T437 _T22 _T438 ]
-    _T439 = (_T437 > _T438) [ _T22 _T439 ]
-END BY RETURN, result = _T439
+  Use-Def Chain : 
+    (_T22, 1): []
+    (_T437, 3): [1]
+    (_T438, 3): [2]
+    (_T439, 4): [3]
+
+    1: _T437 = *(_T22 + 20)    [ _T437 _T22 ]
+    2: _T438 = 0    [ _T437 _T22 _T438 ]
+    3: _T439 = (_T437 > _T438)    [ _T22 _T439 ]
+    4: END BY RETURN, result = _T439
 
 FUNCTION _Player.PrintMoney : 
 BASIC BLOCK 0 : 
@@ -1346,19 +2136,27 @@ BASIC BLOCK 0 :
   liveUse = [ _T23 ]
   liveIn  = [ _T23 ]
   liveOut = [ _T23 ]
-    _T440 = *(_T23 + 24) [ _T23 _T440 ]
-    parm _T440 [ _T23 ]
-    call _PrintString [ _T23 ]
-    _T441 = ", you have $" [ _T23 _T441 ]
-    parm _T441 [ _T23 ]
-    call _PrintString [ _T23 ]
-    _T442 = *(_T23 + 20) [ _T23 _T442 ]
-    parm _T442 [ _T23 ]
-    call _PrintInt [ _T23 ]
-    _T443 = ".\n" [ _T23 _T443 ]
-    parm _T443 [ _T23 ]
-    call _PrintString [ _T23 ]
-END BY RETURN, void result
+  Use-Def Chain : 
+    (_T23, 1): []
+    (_T440, 2): [1]
+    (_T441, 5): [4]
+    (_T23, 7): []
+    (_T442, 8): [7]
+    (_T443, 11): [10]
+
+    1: _T440 = *(_T23 + 24)    [ _T23 _T440 ]
+    2: parm _T440    [ _T23 ]
+    3: call _PrintString    [ _T23 ]
+    4: _T441 = ", you have $"    [ _T23 _T441 ]
+    5: parm _T441    [ _T23 ]
+    6: call _PrintString    [ _T23 ]
+    7: _T442 = *(_T23 + 20)    [ _T23 _T442 ]
+    8: parm _T442    [ _T23 ]
+    9: call _PrintInt    [ _T23 ]
+    10: _T443 = ".\n"    [ _T23 _T443 ]
+    11: parm _T443    [ _T23 ]
+    12: call _PrintString    [ _T23 ]
+    13: END BY RETURN, void result
 
 FUNCTION _Player.PlaceBet : 
 BASIC BLOCK 0 : 
@@ -1366,46 +2164,74 @@ BASIC BLOCK 0 :
   liveUse = [ _T24 ]
   liveIn  = [ _T24 ]
   liveOut = [ _T24 ]
-    _T444 = *(_T24 + 16) [ _T24 ]
-    _T445 = 0 [ _T24 _T445 ]
-    *(_T24 + 16) = _T445 [ _T24 ]
-    parm _T24 [ _T24 ]
-    _T446 = *(_T24 + 0) [ _T24 _T446 ]
-    _T447 = *(_T446 + 28) [ _T24 _T447 ]
-    call _T447 [ _T24 ]
-END BY BRANCH, goto 1
+  Use-Def Chain : 
+    (_T24, 1): []
+    (_T24, 3): []
+    (_T445, 3): [2]
+    (_T24, 4): []
+    (_T24, 5): []
+    (_T446, 6): [5]
+    (_T447, 7): [6]
+
+    1: _T444 = *(_T24 + 16)    [ _T24 ]
+    2: _T445 = 0    [ _T24 _T445 ]
+    3: *(_T24 + 16) = _T445    [ _T24 ]
+    4: parm _T24    [ _T24 ]
+    5: _T446 = *(_T24 + 0)    [ _T24 _T446 ]
+    6: _T447 = *(_T446 + 28)    [ _T24 _T447 ]
+    7: call _T447    [ _T24 ]
+    8: END BY BRANCH, goto 1
 BASIC BLOCK 1 : 
   Def     = [ _T448 _T449 _T450 _T451 _T452 _T453 _T454 ]
   liveUse = [ _T24 ]
   liveIn  = [ _T24 ]
   liveOut = [ _T24 ]
-    _T448 = *(_T24 + 16) [ _T448 _T24 ]
-    _T449 = 0 [ _T448 _T449 _T24 ]
-    _T450 = (_T448 <= _T449) [ _T450 _T24 ]
-    _T451 = *(_T24 + 16) [ _T450 _T451 _T24 ]
-    _T452 = *(_T24 + 20) [ _T450 _T451 _T452 _T24 ]
-    _T453 = (_T451 > _T452) [ _T450 _T453 _T24 ]
-    _T454 = (_T450 || _T453) [ _T454 _T24 ]
-END BY BEQZ, if _T454 = 
-    0 : goto 3; 1 : goto 2
+  Use-Def Chain : 
+    (_T24, 9): []
+    (_T448, 11): [9]
+    (_T449, 11): [10]
+    (_T24, 12): []
+    (_T24, 13): []
+    (_T451, 14): [12]
+    (_T452, 14): [13]
+    (_T450, 15): [11]
+    (_T453, 15): [14]
+    (_T454, 16): [15]
+
+    9: _T448 = *(_T24 + 16)    [ _T448 _T24 ]
+    10: _T449 = 0    [ _T448 _T449 _T24 ]
+    11: _T450 = (_T448 <= _T449)    [ _T450 _T24 ]
+    12: _T451 = *(_T24 + 16)    [ _T450 _T451 _T24 ]
+    13: _T452 = *(_T24 + 20)    [ _T450 _T451 _T452 _T24 ]
+    14: _T453 = (_T451 > _T452)    [ _T450 _T453 _T24 ]
+    15: _T454 = (_T450 || _T453)    [ _T454 _T24 ]
+    16: END BY BEQZ, if _T454 = 0 : goto 3; 1 : goto 2
 BASIC BLOCK 2 : 
   Def     = [ _T455 _T456 _T457 ]
   liveUse = [ _T24 ]
   liveIn  = [ _T24 ]
   liveOut = [ _T24 ]
-    _T455 = "How much would you like to bet? " [ _T455 _T24 ]
-    parm _T455 [ _T24 ]
-    call _PrintString [ _T24 ]
-    _T456 = *(_T24 + 16) [ _T24 ]
-    _T457 =  call _ReadInteger [ _T24 _T457 ]
-    *(_T24 + 16) = _T457 [ _T24 ]
-END BY BRANCH, goto 1
+  Use-Def Chain : 
+    (_T455, 18): [17]
+    (_T24, 20): []
+    (_T24, 22): []
+    (_T457, 22): [21]
+
+    17: _T455 = "How much would you like to bet? "    [ _T455 _T24 ]
+    18: parm _T455    [ _T24 ]
+    19: call _PrintString    [ _T24 ]
+    20: _T456 = *(_T24 + 16)    [ _T24 ]
+    21: _T457 =  call _ReadInteger    [ _T24 _T457 ]
+    22: *(_T24 + 16) = _T457    [ _T24 ]
+    23: END BY BRANCH, goto 1
 BASIC BLOCK 3 : 
   Def     = [ ]
   liveUse = [ ]
   liveIn  = [ _T24 ]
   liveOut = [ _T24 ]
-END BY RETURN, void result
+  Use-Def Chain : 
+
+    0: END BY RETURN, void result
 
 FUNCTION _Player.GetTotal : 
 BASIC BLOCK 0 : 
@@ -1413,8 +2239,12 @@ BASIC BLOCK 0 :
   liveUse = [ _T25 ]
   liveIn  = [ _T25 ]
   liveOut = [ _T25 ]
-    _T458 = *(_T25 + 4) [ _T25 _T458 ]
-END BY RETURN, result = _T458
+  Use-Def Chain : 
+    (_T25, 1): []
+    (_T458, 2): [1]
+
+    1: _T458 = *(_T25 + 4)    [ _T25 _T458 ]
+    2: END BY RETURN, result = _T458
 
 FUNCTION _Player.Resolve : 
 BASIC BLOCK 0 : 
@@ -1422,179 +2252,272 @@ BASIC BLOCK 0 :
   liveUse = [ _T26 ]
   liveIn  = [ _T26 _T27 ]
   liveOut = [ _T26 _T27 _T459 _T460 ]
-    _T461 = 0 [ _T26 _T27 _T461 ]
-    _T459 = _T461 [ _T26 _T27 _T459 ]
-    _T462 = 0 [ _T26 _T27 _T459 _T462 ]
-    _T460 = _T462 [ _T26 _T27 _T459 _T460 ]
-    _T463 = *(_T26 + 4) [ _T26 _T27 _T459 _T460 _T463 ]
-    _T464 = 21 [ _T464 _T26 _T27 _T459 _T460 _T463 ]
-    _T465 = (_T463 == _T464) [ _T465 _T26 _T27 _T459 _T460 ]
-    _T466 = *(_T26 + 12) [ _T465 _T466 _T26 _T27 _T459 _T460 ]
-    _T467 = 2 [ _T465 _T466 _T467 _T26 _T27 _T459 _T460 ]
-    _T468 = (_T466 == _T467) [ _T465 _T468 _T26 _T27 _T459 _T460 ]
-    _T469 = (_T465 && _T468) [ _T469 _T26 _T27 _T459 _T460 ]
-END BY BEQZ, if _T469 = 
-    0 : goto 2; 1 : goto 1
+  Use-Def Chain : 
+    (_T461, 2): [1]
+    (_T462, 4): [3]
+    (_T26, 5): []
+    (_T463, 7): [5]
+    (_T464, 7): [6]
+    (_T26, 8): []
+    (_T466, 10): [8]
+    (_T467, 10): [9]
+    (_T465, 11): [7]
+    (_T468, 11): [10]
+    (_T469, 12): [11]
+
+    1: _T461 = 0    [ _T26 _T27 _T461 ]
+    2: _T459 = _T461    [ _T26 _T27 _T459 ]
+    3: _T462 = 0    [ _T26 _T27 _T459 _T462 ]
+    4: _T460 = _T462    [ _T26 _T27 _T459 _T460 ]
+    5: _T463 = *(_T26 + 4)    [ _T26 _T27 _T459 _T460 _T463 ]
+    6: _T464 = 21    [ _T464 _T26 _T27 _T459 _T460 _T463 ]
+    7: _T465 = (_T463 == _T464)    [ _T465 _T26 _T27 _T459 _T460 ]
+    8: _T466 = *(_T26 + 12)    [ _T465 _T466 _T26 _T27 _T459 _T460 ]
+    9: _T467 = 2    [ _T465 _T466 _T467 _T26 _T27 _T459 _T460 ]
+    10: _T468 = (_T466 == _T467)    [ _T465 _T468 _T26 _T27 _T459 _T460 ]
+    11: _T469 = (_T465 && _T468)    [ _T469 _T26 _T27 _T459 _T460 ]
+    12: END BY BEQZ, if _T469 = 0 : goto 2; 1 : goto 1
 BASIC BLOCK 1 : 
   Def     = [ _T459 _T470 ]
   liveUse = [ ]
   liveIn  = [ _T26 _T27 _T460 ]
   liveOut = [ _T26 _T27 _T459 _T460 ]
-    _T470 = 2 [ _T470 _T26 _T27 _T460 ]
-    _T459 = _T470 [ _T26 _T27 _T459 _T460 ]
-END BY BRANCH, goto 10
+  Use-Def Chain : 
+    (_T470, 14): [13]
+
+    13: _T470 = 2    [ _T470 _T26 _T27 _T460 ]
+    14: _T459 = _T470    [ _T26 _T27 _T459 _T460 ]
+    15: END BY BRANCH, goto 10
 BASIC BLOCK 2 : 
   Def     = [ _T471 _T472 _T473 ]
   liveUse = [ _T26 ]
   liveIn  = [ _T26 _T27 _T459 _T460 ]
   liveOut = [ _T26 _T27 _T459 _T460 ]
-    _T471 = *(_T26 + 4) [ _T471 _T26 _T27 _T459 _T460 ]
-    _T472 = 21 [ _T471 _T472 _T26 _T27 _T459 _T460 ]
-    _T473 = (_T471 > _T472) [ _T473 _T26 _T27 _T459 _T460 ]
-END BY BEQZ, if _T473 = 
-    0 : goto 4; 1 : goto 3
+  Use-Def Chain : 
+    (_T26, 17): []
+    (_T471, 19): [17]
+    (_T472, 19): [18]
+    (_T473, 20): [19]
+
+    17: _T471 = *(_T26 + 4)    [ _T471 _T26 _T27 _T459 _T460 ]
+    18: _T472 = 21    [ _T471 _T472 _T26 _T27 _T459 _T460 ]
+    19: _T473 = (_T471 > _T472)    [ _T473 _T26 _T27 _T459 _T460 ]
+    20: END BY BEQZ, if _T473 = 0 : goto 4; 1 : goto 3
 BASIC BLOCK 3 : 
   Def     = [ _T460 _T474 ]
   liveUse = [ ]
   liveIn  = [ _T26 _T27 _T459 ]
   liveOut = [ _T26 _T27 _T459 _T460 ]
-    _T474 = 1 [ _T26 _T474 _T27 _T459 ]
-    _T460 = _T474 [ _T26 _T27 _T459 _T460 ]
-END BY BRANCH, goto 10
+  Use-Def Chain : 
+    (_T474, 22): [21]
+
+    21: _T474 = 1    [ _T26 _T474 _T27 _T459 ]
+    22: _T460 = _T474    [ _T26 _T27 _T459 _T460 ]
+    23: END BY BRANCH, goto 10
 BASIC BLOCK 4 : 
   Def     = [ _T475 _T476 ]
   liveUse = [ _T27 ]
   liveIn  = [ _T26 _T27 _T459 _T460 ]
   liveOut = [ _T26 _T27 _T459 _T460 ]
-    _T475 = 21 [ _T26 _T27 _T459 _T475 _T460 ]
-    _T476 = (_T27 > _T475) [ _T26 _T27 _T459 _T460 _T476 ]
-END BY BEQZ, if _T476 = 
-    0 : goto 6; 1 : goto 5
+  Use-Def Chain : 
+    (_T27, 26): []
+    (_T475, 26): [25]
+    (_T476, 27): [26]
+
+    25: _T475 = 21    [ _T26 _T27 _T459 _T475 _T460 ]
+    26: _T476 = (_T27 > _T475)    [ _T26 _T27 _T459 _T460 _T476 ]
+    27: END BY BEQZ, if _T476 = 0 : goto 6; 1 : goto 5
 BASIC BLOCK 5 : 
   Def     = [ _T459 _T477 ]
   liveUse = [ ]
   liveIn  = [ _T26 _T27 _T460 ]
   liveOut = [ _T26 _T27 _T459 _T460 ]
-    _T477 = 1 [ _T26 _T27 _T460 _T477 ]
-    _T459 = _T477 [ _T26 _T27 _T459 _T460 ]
-END BY BRANCH, goto 10
+  Use-Def Chain : 
+    (_T477, 29): [28]
+
+    28: _T477 = 1    [ _T26 _T27 _T460 _T477 ]
+    29: _T459 = _T477    [ _T26 _T27 _T459 _T460 ]
+    30: END BY BRANCH, goto 10
 BASIC BLOCK 6 : 
   Def     = [ _T478 _T479 ]
   liveUse = [ _T26 _T27 ]
   liveIn  = [ _T26 _T27 _T459 _T460 ]
   liveOut = [ _T26 _T27 _T459 _T460 ]
-    _T478 = *(_T26 + 4) [ _T26 _T27 _T459 _T460 _T478 ]
-    _T479 = (_T478 > _T27) [ _T26 _T27 _T459 _T460 _T479 ]
-END BY BEQZ, if _T479 = 
-    0 : goto 8; 1 : goto 7
+  Use-Def Chain : 
+    (_T26, 32): []
+    (_T27, 33): []
+    (_T478, 33): [32]
+    (_T479, 34): [33]
+
+    32: _T478 = *(_T26 + 4)    [ _T26 _T27 _T459 _T460 _T478 ]
+    33: _T479 = (_T478 > _T27)    [ _T26 _T27 _T459 _T460 _T479 ]
+    34: END BY BEQZ, if _T479 = 0 : goto 8; 1 : goto 7
 BASIC BLOCK 7 : 
   Def     = [ _T459 _T480 ]
   liveUse = [ ]
   liveIn  = [ _T26 _T27 _T460 ]
   liveOut = [ _T26 _T27 _T459 _T460 ]
-    _T480 = 1 [ _T480 _T26 _T27 _T460 ]
-    _T459 = _T480 [ _T26 _T27 _T459 _T460 ]
-END BY BRANCH, goto 10
+  Use-Def Chain : 
+    (_T480, 36): [35]
+
+    35: _T480 = 1    [ _T480 _T26 _T27 _T460 ]
+    36: _T459 = _T480    [ _T26 _T27 _T459 _T460 ]
+    37: END BY BRANCH, goto 10
 BASIC BLOCK 8 : 
   Def     = [ _T481 _T482 ]
   liveUse = [ _T26 _T27 ]
   liveIn  = [ _T26 _T27 _T459 _T460 ]
   liveOut = [ _T26 _T27 _T459 _T460 ]
-    _T481 = *(_T26 + 4) [ _T481 _T26 _T27 _T459 _T460 ]
-    _T482 = (_T27 > _T481) [ _T482 _T26 _T27 _T459 _T460 ]
-END BY BEQZ, if _T482 = 
-    0 : goto 10; 1 : goto 9
+  Use-Def Chain : 
+    (_T26, 39): []
+    (_T27, 40): []
+    (_T481, 40): [39]
+    (_T482, 41): [40]
+
+    39: _T481 = *(_T26 + 4)    [ _T481 _T26 _T27 _T459 _T460 ]
+    40: _T482 = (_T27 > _T481)    [ _T482 _T26 _T27 _T459 _T460 ]
+    41: END BY BEQZ, if _T482 = 0 : goto 10; 1 : goto 9
 BASIC BLOCK 9 : 
   Def     = [ _T460 _T483 ]
   liveUse = [ ]
   liveIn  = [ _T26 _T27 _T459 ]
   liveOut = [ _T26 _T27 _T459 _T460 ]
-    _T483 = 1 [ _T483 _T26 _T27 _T459 ]
-    _T460 = _T483 [ _T26 _T27 _T459 _T460 ]
-END BY BRANCH, goto 10
+  Use-Def Chain : 
+    (_T483, 43): [42]
+
+    42: _T483 = 1    [ _T483 _T26 _T27 _T459 ]
+    43: _T460 = _T483    [ _T26 _T27 _T459 _T460 ]
+    44: END BY BRANCH, goto 10
 BASIC BLOCK 10 : 
   Def     = [ _T484 _T485 ]
   liveUse = [ _T459 ]
   liveIn  = [ _T26 _T27 _T459 _T460 ]
   liveOut = [ _T26 _T27 _T459 _T460 ]
-    _T484 = 1 [ _T484 _T26 _T27 _T459 _T460 ]
-    _T485 = (_T459 >= _T484) [ _T485 _T26 _T27 _T459 _T460 ]
-END BY BEQZ, if _T485 = 
-    0 : goto 12; 1 : goto 11
+  Use-Def Chain : 
+    (_T459, 50): [2, 14, 29, 36]
+    (_T484, 50): [49]
+    (_T485, 51): [50]
+
+    49: _T484 = 1    [ _T484 _T26 _T27 _T459 _T460 ]
+    50: _T485 = (_T459 >= _T484)    [ _T485 _T26 _T27 _T459 _T460 ]
+    51: END BY BEQZ, if _T485 = 0 : goto 12; 1 : goto 11
 BASIC BLOCK 11 : 
   Def     = [ _T486 _T487 _T488 _T489 ]
   liveUse = [ _T26 ]
   liveIn  = [ _T26 _T27 _T459 _T460 ]
   liveOut = [ _T26 _T27 _T459 _T460 ]
-    _T486 = *(_T26 + 24) [ _T486 _T26 _T27 _T459 _T460 ]
-    parm _T486 [ _T26 _T27 _T459 _T460 ]
-    call _PrintString [ _T26 _T27 _T459 _T460 ]
-    _T487 = ", you won $" [ _T487 _T26 _T27 _T459 _T460 ]
-    parm _T487 [ _T26 _T27 _T459 _T460 ]
-    call _PrintString [ _T26 _T27 _T459 _T460 ]
-    _T488 = *(_T26 + 16) [ _T488 _T26 _T27 _T459 _T460 ]
-    parm _T488 [ _T26 _T27 _T459 _T460 ]
-    call _PrintInt [ _T26 _T27 _T459 _T460 ]
-    _T489 = ".\n" [ _T489 _T26 _T27 _T459 _T460 ]
-    parm _T489 [ _T26 _T27 _T459 _T460 ]
-    call _PrintString [ _T26 _T27 _T459 _T460 ]
-END BY BRANCH, goto 15
+  Use-Def Chain : 
+    (_T26, 52): []
+    (_T486, 53): [52]
+    (_T487, 56): [55]
+    (_T26, 58): []
+    (_T488, 59): [58]
+    (_T489, 62): [61]
+
+    52: _T486 = *(_T26 + 24)    [ _T486 _T26 _T27 _T459 _T460 ]
+    53: parm _T486    [ _T26 _T27 _T459 _T460 ]
+    54: call _PrintString    [ _T26 _T27 _T459 _T460 ]
+    55: _T487 = ", you won $"    [ _T487 _T26 _T27 _T459 _T460 ]
+    56: parm _T487    [ _T26 _T27 _T459 _T460 ]
+    57: call _PrintString    [ _T26 _T27 _T459 _T460 ]
+    58: _T488 = *(_T26 + 16)    [ _T488 _T26 _T27 _T459 _T460 ]
+    59: parm _T488    [ _T26 _T27 _T459 _T460 ]
+    60: call _PrintInt    [ _T26 _T27 _T459 _T460 ]
+    61: _T489 = ".\n"    [ _T489 _T26 _T27 _T459 _T460 ]
+    62: parm _T489    [ _T26 _T27 _T459 _T460 ]
+    63: call _PrintString    [ _T26 _T27 _T459 _T460 ]
+    64: END BY BRANCH, goto 15
 BASIC BLOCK 12 : 
   Def     = [ _T490 _T491 ]
   liveUse = [ _T460 ]
   liveIn  = [ _T26 _T27 _T459 _T460 ]
   liveOut = [ _T26 _T27 _T459 _T460 ]
-    _T490 = 1 [ _T26 _T490 _T27 _T459 _T460 ]
-    _T491 = (_T460 >= _T490) [ _T26 _T27 _T459 _T491 _T460 ]
-END BY BEQZ, if _T491 = 
-    0 : goto 14; 1 : goto 13
+  Use-Def Chain : 
+    (_T460, 67): [4, 22, 43]
+    (_T490, 67): [66]
+    (_T491, 68): [67]
+
+    66: _T490 = 1    [ _T26 _T490 _T27 _T459 _T460 ]
+    67: _T491 = (_T460 >= _T490)    [ _T26 _T27 _T459 _T491 _T460 ]
+    68: END BY BEQZ, if _T491 = 0 : goto 14; 1 : goto 13
 BASIC BLOCK 13 : 
   Def     = [ _T492 _T493 _T494 _T495 ]
   liveUse = [ _T26 ]
   liveIn  = [ _T26 _T27 _T459 _T460 ]
   liveOut = [ _T26 _T27 _T459 _T460 ]
-    _T492 = *(_T26 + 24) [ _T26 _T27 _T459 _T460 _T492 ]
-    parm _T492 [ _T26 _T27 _T459 _T460 ]
-    call _PrintString [ _T26 _T27 _T459 _T460 ]
-    _T493 = ", you lost $" [ _T26 _T27 _T459 _T460 _T493 ]
-    parm _T493 [ _T26 _T27 _T459 _T460 ]
-    call _PrintString [ _T26 _T27 _T459 _T460 ]
-    _T494 = *(_T26 + 16) [ _T26 _T27 _T459 _T460 _T494 ]
-    parm _T494 [ _T26 _T27 _T459 _T460 ]
-    call _PrintInt [ _T26 _T27 _T459 _T460 ]
-    _T495 = ".\n" [ _T26 _T27 _T459 _T460 _T495 ]
-    parm _T495 [ _T26 _T27 _T459 _T460 ]
-    call _PrintString [ _T26 _T27 _T459 _T460 ]
-END BY BRANCH, goto 15
+  Use-Def Chain : 
+    (_T26, 69): []
+    (_T492, 70): [69]
+    (_T493, 73): [72]
+    (_T26, 75): []
+    (_T494, 76): [75]
+    (_T495, 79): [78]
+
+    69: _T492 = *(_T26 + 24)    [ _T26 _T27 _T459 _T460 _T492 ]
+    70: parm _T492    [ _T26 _T27 _T459 _T460 ]
+    71: call _PrintString    [ _T26 _T27 _T459 _T460 ]
+    72: _T493 = ", you lost $"    [ _T26 _T27 _T459 _T460 _T493 ]
+    73: parm _T493    [ _T26 _T27 _T459 _T460 ]
+    74: call _PrintString    [ _T26 _T27 _T459 _T460 ]
+    75: _T494 = *(_T26 + 16)    [ _T26 _T27 _T459 _T460 _T494 ]
+    76: parm _T494    [ _T26 _T27 _T459 _T460 ]
+    77: call _PrintInt    [ _T26 _T27 _T459 _T460 ]
+    78: _T495 = ".\n"    [ _T26 _T27 _T459 _T460 _T495 ]
+    79: parm _T495    [ _T26 _T27 _T459 _T460 ]
+    80: call _PrintString    [ _T26 _T27 _T459 _T460 ]
+    81: END BY BRANCH, goto 15
 BASIC BLOCK 14 : 
   Def     = [ _T496 _T497 ]
   liveUse = [ _T26 ]
   liveIn  = [ _T26 _T27 _T459 _T460 ]
   liveOut = [ _T26 _T27 _T459 _T460 ]
-    _T496 = *(_T26 + 24) [ _T496 _T26 _T27 _T459 _T460 ]
-    parm _T496 [ _T26 _T27 _T459 _T460 ]
-    call _PrintString [ _T26 _T27 _T459 _T460 ]
-    _T497 = ", you push!\n" [ _T497 _T26 _T27 _T459 _T460 ]
-    parm _T497 [ _T26 _T27 _T459 _T460 ]
-    call _PrintString [ _T26 _T27 _T459 _T460 ]
-END BY BRANCH, goto 15
+  Use-Def Chain : 
+    (_T26, 83): []
+    (_T496, 84): [83]
+    (_T497, 87): [86]
+
+    83: _T496 = *(_T26 + 24)    [ _T496 _T26 _T27 _T459 _T460 ]
+    84: parm _T496    [ _T26 _T27 _T459 _T460 ]
+    85: call _PrintString    [ _T26 _T27 _T459 _T460 ]
+    86: _T497 = ", you push!\n"    [ _T497 _T26 _T27 _T459 _T460 ]
+    87: parm _T497    [ _T26 _T27 _T459 _T460 ]
+    88: call _PrintString    [ _T26 _T27 _T459 _T460 ]
+    89: END BY BRANCH, goto 15
 BASIC BLOCK 15 : 
   Def     = [ _T498 _T499 _T500 _T501 _T502 _T503 _T504 _T505 ]
   liveUse = [ _T26 _T459 _T460 ]
   liveIn  = [ _T26 _T27 _T459 _T460 ]
   liveOut = [ _T26 _T27 ]
-    _T498 = *(_T26 + 16) [ _T498 _T26 _T27 _T459 _T460 ]
-    _T499 = (_T459 * _T498) [ _T499 _T26 _T27 _T460 ]
-    _T459 = _T499 [ _T26 _T27 _T459 _T460 ]
-    _T500 = *(_T26 + 16) [ _T500 _T26 _T27 _T459 _T460 ]
-    _T501 = (_T460 * _T500) [ _T501 _T26 _T27 _T459 ]
-    _T460 = _T501 [ _T26 _T27 _T459 _T460 ]
-    _T502 = *(_T26 + 20) [ _T26 _T27 _T459 _T460 ]
-    _T503 = *(_T26 + 20) [ _T503 _T26 _T27 _T459 _T460 ]
-    _T504 = (_T503 + _T459) [ _T504 _T26 _T27 _T460 ]
-    _T505 = (_T504 - _T460) [ _T505 _T26 _T27 ]
-    *(_T26 + 20) = _T505 [ _T26 _T27 ]
-END BY RETURN, void result
+  Use-Def Chain : 
+    (_T26, 91): []
+    (_T459, 92): [2, 14, 29, 36]
+    (_T498, 92): [91]
+    (_T499, 93): [92]
+    (_T26, 94): []
+    (_T460, 95): [4, 22, 43]
+    (_T500, 95): [94]
+    (_T501, 96): [95]
+    (_T26, 97): []
+    (_T26, 98): []
+    (_T459, 99): [93]
+    (_T503, 99): [98]
+    (_T460, 100): [96]
+    (_T504, 100): [99]
+    (_T26, 101): []
+    (_T505, 101): [100]
+
+    91: _T498 = *(_T26 + 16)    [ _T498 _T26 _T27 _T459 _T460 ]
+    92: _T499 = (_T459 * _T498)    [ _T499 _T26 _T27 _T460 ]
+    93: _T459 = _T499    [ _T26 _T27 _T459 _T460 ]
+    94: _T500 = *(_T26 + 16)    [ _T500 _T26 _T27 _T459 _T460 ]
+    95: _T501 = (_T460 * _T500)    [ _T501 _T26 _T27 _T459 ]
+    96: _T460 = _T501    [ _T26 _T27 _T459 _T460 ]
+    97: _T502 = *(_T26 + 20)    [ _T26 _T27 _T459 _T460 ]
+    98: _T503 = *(_T26 + 20)    [ _T503 _T26 _T27 _T459 _T460 ]
+    99: _T504 = (_T503 + _T459)    [ _T504 _T26 _T27 _T460 ]
+    100: _T505 = (_T504 - _T460)    [ _T505 _T26 _T27 ]
+    101: *(_T26 + 20) = _T505    [ _T26 _T27 ]
+    102: END BY RETURN, void result
 
 FUNCTION _Player.GetYesOrNo : 
 BASIC BLOCK 0 : 
@@ -1602,15 +2525,22 @@ BASIC BLOCK 0 :
   liveUse = [ _T29 ]
   liveIn  = [ _T29 ]
   liveOut = [ _T29 ]
-    parm _T29 [ _T29 ]
-    call _PrintString [ _T29 ]
-    _T506 = " (0=No/1=Yes) " [ _T506 _T29 ]
-    parm _T506 [ _T29 ]
-    call _PrintString [ _T29 ]
-    _T507 =  call _ReadInteger [ _T507 _T29 ]
-    _T508 = 0 [ _T507 _T508 _T29 ]
-    _T509 = (_T507 != _T508) [ _T29 _T509 ]
-END BY RETURN, result = _T509
+  Use-Def Chain : 
+    (_T29, 1): []
+    (_T506, 4): [3]
+    (_T507, 8): [6]
+    (_T508, 8): [7]
+    (_T509, 9): [8]
+
+    1: parm _T29    [ _T29 ]
+    2: call _PrintString    [ _T29 ]
+    3: _T506 = " (0=No/1=Yes) "    [ _T506 _T29 ]
+    4: parm _T506    [ _T29 ]
+    5: call _PrintString    [ _T29 ]
+    6: _T507 =  call _ReadInteger    [ _T507 _T29 ]
+    7: _T508 = 0    [ _T507 _T508 _T29 ]
+    8: _T509 = (_T507 != _T508)    [ _T29 _T509 ]
+    9: END BY RETURN, result = _T509
 
 FUNCTION _Dealer.Init : 
 BASIC BLOCK 0 : 
@@ -1618,20 +2548,35 @@ BASIC BLOCK 0 :
   liveUse = [ _T30 ]
   liveIn  = [ _T30 ]
   liveOut = [ _T30 ]
-    _T511 = *(_T30 + 4) [ _T30 ]
-    _T512 = 0 [ _T512 _T30 ]
-    *(_T30 + 4) = _T512 [ _T30 ]
-    _T513 = *(_T30 + 8) [ _T30 ]
-    _T514 = 0 [ _T514 _T30 ]
-    *(_T30 + 8) = _T514 [ _T30 ]
-    _T515 = *(_T30 + 12) [ _T30 ]
-    _T516 = 0 [ _T516 _T30 ]
-    *(_T30 + 12) = _T516 [ _T30 ]
-    _T517 = "Dealer" [ _T517 _T30 ]
-    _T510 = _T517 [ _T30 _T510 ]
-    _T518 = *(_T30 + 24) [ _T30 _T510 ]
-    *(_T30 + 24) = _T510 [ _T30 ]
-END BY RETURN, void result
+  Use-Def Chain : 
+    (_T30, 1): []
+    (_T30, 3): []
+    (_T512, 3): [2]
+    (_T30, 4): []
+    (_T30, 6): []
+    (_T514, 6): [5]
+    (_T30, 7): []
+    (_T30, 9): []
+    (_T516, 9): [8]
+    (_T517, 11): [10]
+    (_T30, 12): []
+    (_T30, 13): []
+    (_T510, 13): [11]
+
+    1: _T511 = *(_T30 + 4)    [ _T30 ]
+    2: _T512 = 0    [ _T512 _T30 ]
+    3: *(_T30 + 4) = _T512    [ _T30 ]
+    4: _T513 = *(_T30 + 8)    [ _T30 ]
+    5: _T514 = 0    [ _T514 _T30 ]
+    6: *(_T30 + 8) = _T514    [ _T30 ]
+    7: _T515 = *(_T30 + 12)    [ _T30 ]
+    8: _T516 = 0    [ _T516 _T30 ]
+    9: *(_T30 + 12) = _T516    [ _T30 ]
+    10: _T517 = "Dealer"    [ _T517 _T30 ]
+    11: _T510 = _T517    [ _T30 _T510 ]
+    12: _T518 = *(_T30 + 24)    [ _T30 _T510 ]
+    13: *(_T30 + 24) = _T510    [ _T30 ]
+    14: END BY RETURN, void result
 
 FUNCTION _Dealer.TakeTurn : 
 BASIC BLOCK 0 : 
@@ -1639,89 +2584,130 @@ BASIC BLOCK 0 :
   liveUse = [ _T32 ]
   liveIn  = [ _T32 _T33 ]
   liveOut = [ _T32 _T33 ]
-    _T519 = "\n" [ _T32 _T33 _T519 ]
-    parm _T519 [ _T32 _T33 ]
-    call _PrintString [ _T32 _T33 ]
-    _T520 = *(_T32 + 24) [ _T32 _T33 _T520 ]
-    parm _T520 [ _T32 _T33 ]
-    call _PrintString [ _T32 _T33 ]
-    _T521 = "'s turn.\n" [ _T32 _T33 _T521 ]
-    parm _T521 [ _T32 _T33 ]
-    call _PrintString [ _T32 _T33 ]
-END BY BRANCH, goto 1
+  Use-Def Chain : 
+    (_T519, 2): [1]
+    (_T32, 4): []
+    (_T520, 5): [4]
+    (_T521, 8): [7]
+
+    1: _T519 = "\n"    [ _T32 _T33 _T519 ]
+    2: parm _T519    [ _T32 _T33 ]
+    3: call _PrintString    [ _T32 _T33 ]
+    4: _T520 = *(_T32 + 24)    [ _T32 _T33 _T520 ]
+    5: parm _T520    [ _T32 _T33 ]
+    6: call _PrintString    [ _T32 _T33 ]
+    7: _T521 = "'s turn.\n"    [ _T32 _T33 _T521 ]
+    8: parm _T521    [ _T32 _T33 ]
+    9: call _PrintString    [ _T32 _T33 ]
+    10: END BY BRANCH, goto 1
 BASIC BLOCK 1 : 
   Def     = [ _T522 _T523 _T524 ]
   liveUse = [ _T32 ]
   liveIn  = [ _T32 _T33 ]
   liveOut = [ _T32 _T33 ]
-    _T522 = *(_T32 + 4) [ _T32 _T33 _T522 ]
-    _T523 = 16 [ _T32 _T33 _T522 _T523 ]
-    _T524 = (_T522 <= _T523) [ _T32 _T33 _T524 ]
-END BY BEQZ, if _T524 = 
-    0 : goto 3; 1 : goto 2
+  Use-Def Chain : 
+    (_T32, 11): []
+    (_T522, 13): [11]
+    (_T523, 13): [12]
+    (_T524, 14): [13]
+
+    11: _T522 = *(_T32 + 4)    [ _T32 _T33 _T522 ]
+    12: _T523 = 16    [ _T32 _T33 _T522 _T523 ]
+    13: _T524 = (_T522 <= _T523)    [ _T32 _T33 _T524 ]
+    14: END BY BEQZ, if _T524 = 0 : goto 3; 1 : goto 2
 BASIC BLOCK 2 : 
   Def     = [ _T525 _T526 ]
   liveUse = [ _T32 _T33 ]
   liveIn  = [ _T32 _T33 ]
   liveOut = [ _T32 _T33 ]
-    parm _T32 [ _T32 _T33 ]
-    parm _T33 [ _T32 _T33 ]
-    _T525 = *(_T32 + 0) [ _T32 _T33 _T525 ]
-    _T526 = *(_T525 + 12) [ _T32 _T33 _T526 ]
-    call _T526 [ _T32 _T33 ]
-END BY BRANCH, goto 1
+  Use-Def Chain : 
+    (_T32, 15): []
+    (_T33, 16): []
+    (_T32, 17): []
+    (_T525, 18): [17]
+    (_T526, 19): [18]
+
+    15: parm _T32    [ _T32 _T33 ]
+    16: parm _T33    [ _T32 _T33 ]
+    17: _T525 = *(_T32 + 0)    [ _T32 _T33 _T525 ]
+    18: _T526 = *(_T525 + 12)    [ _T32 _T33 _T526 ]
+    19: call _T526    [ _T32 _T33 ]
+    20: END BY BRANCH, goto 1
 BASIC BLOCK 3 : 
   Def     = [ _T527 _T528 _T529 ]
   liveUse = [ _T32 ]
   liveIn  = [ _T32 _T33 ]
   liveOut = [ _T32 _T33 ]
-    _T527 = *(_T32 + 4) [ _T32 _T33 _T527 ]
-    _T528 = 21 [ _T32 _T528 _T33 _T527 ]
-    _T529 = (_T527 > _T528) [ _T32 _T33 _T529 ]
-END BY BEQZ, if _T529 = 
-    0 : goto 5; 1 : goto 4
+  Use-Def Chain : 
+    (_T32, 22): []
+    (_T527, 24): [22]
+    (_T528, 24): [23]
+    (_T529, 25): [24]
+
+    22: _T527 = *(_T32 + 4)    [ _T32 _T33 _T527 ]
+    23: _T528 = 21    [ _T32 _T528 _T33 _T527 ]
+    24: _T529 = (_T527 > _T528)    [ _T32 _T33 _T529 ]
+    25: END BY BEQZ, if _T529 = 0 : goto 5; 1 : goto 4
 BASIC BLOCK 4 : 
   Def     = [ _T530 _T531 _T532 _T533 ]
   liveUse = [ _T32 ]
   liveIn  = [ _T32 _T33 ]
   liveOut = [ _T32 _T33 ]
-    _T530 = *(_T32 + 24) [ _T32 _T33 _T530 ]
-    parm _T530 [ _T32 _T33 ]
-    call _PrintString [ _T32 _T33 ]
-    _T531 = " busts with the big " [ _T32 _T33 _T531 ]
-    parm _T531 [ _T32 _T33 ]
-    call _PrintString [ _T32 _T33 ]
-    _T532 = *(_T32 + 4) [ _T32 _T33 _T532 ]
-    parm _T532 [ _T32 _T33 ]
-    call _PrintInt [ _T32 _T33 ]
-    _T533 = "!\n" [ _T32 _T33 _T533 ]
-    parm _T533 [ _T32 _T33 ]
-    call _PrintString [ _T32 _T33 ]
-END BY BRANCH, goto 6
+  Use-Def Chain : 
+    (_T32, 26): []
+    (_T530, 27): [26]
+    (_T531, 30): [29]
+    (_T32, 32): []
+    (_T532, 33): [32]
+    (_T533, 36): [35]
+
+    26: _T530 = *(_T32 + 24)    [ _T32 _T33 _T530 ]
+    27: parm _T530    [ _T32 _T33 ]
+    28: call _PrintString    [ _T32 _T33 ]
+    29: _T531 = " busts with the big "    [ _T32 _T33 _T531 ]
+    30: parm _T531    [ _T32 _T33 ]
+    31: call _PrintString    [ _T32 _T33 ]
+    32: _T532 = *(_T32 + 4)    [ _T32 _T33 _T532 ]
+    33: parm _T532    [ _T32 _T33 ]
+    34: call _PrintInt    [ _T32 _T33 ]
+    35: _T533 = "!\n"    [ _T32 _T33 _T533 ]
+    36: parm _T533    [ _T32 _T33 ]
+    37: call _PrintString    [ _T32 _T33 ]
+    38: END BY BRANCH, goto 6
 BASIC BLOCK 5 : 
   Def     = [ _T534 _T535 _T536 _T537 ]
   liveUse = [ _T32 ]
   liveIn  = [ _T32 _T33 ]
   liveOut = [ _T32 _T33 ]
-    _T534 = *(_T32 + 24) [ _T32 _T33 _T534 ]
-    parm _T534 [ _T32 _T33 ]
-    call _PrintString [ _T32 _T33 ]
-    _T535 = " stays at " [ _T32 _T33 _T535 ]
-    parm _T535 [ _T32 _T33 ]
-    call _PrintString [ _T32 _T33 ]
-    _T536 = *(_T32 + 4) [ _T32 _T33 _T536 ]
-    parm _T536 [ _T32 _T33 ]
-    call _PrintInt [ _T32 _T33 ]
-    _T537 = ".\n" [ _T32 _T33 _T537 ]
-    parm _T537 [ _T32 _T33 ]
-    call _PrintString [ _T32 _T33 ]
-END BY BRANCH, goto 6
+  Use-Def Chain : 
+    (_T32, 40): []
+    (_T534, 41): [40]
+    (_T535, 44): [43]
+    (_T32, 46): []
+    (_T536, 47): [46]
+    (_T537, 50): [49]
+
+    40: _T534 = *(_T32 + 24)    [ _T32 _T33 _T534 ]
+    41: parm _T534    [ _T32 _T33 ]
+    42: call _PrintString    [ _T32 _T33 ]
+    43: _T535 = " stays at "    [ _T32 _T33 _T535 ]
+    44: parm _T535    [ _T32 _T33 ]
+    45: call _PrintString    [ _T32 _T33 ]
+    46: _T536 = *(_T32 + 4)    [ _T32 _T33 _T536 ]
+    47: parm _T536    [ _T32 _T33 ]
+    48: call _PrintInt    [ _T32 _T33 ]
+    49: _T537 = ".\n"    [ _T32 _T33 _T537 ]
+    50: parm _T537    [ _T32 _T33 ]
+    51: call _PrintString    [ _T32 _T33 ]
+    52: END BY BRANCH, goto 6
 BASIC BLOCK 6 : 
   Def     = [ ]
   liveUse = [ ]
   liveIn  = [ _T32 _T33 ]
   liveOut = [ _T32 _T33 ]
-END BY RETURN, void result
+  Use-Def Chain : 
+
+    0: END BY RETURN, void result
 
 FUNCTION _House.SetupGame : 
 BASIC BLOCK 0 : 
@@ -1729,41 +2715,69 @@ BASIC BLOCK 0 :
   liveUse = [ _T34 ]
   liveIn  = [ _T34 ]
   liveOut = [ _T34 ]
-    _T538 = "\nWelcome to CS143 BlackJack!\n" [ _T34 _T538 ]
-    parm _T538 [ _T34 ]
-    call _PrintString [ _T34 ]
-    _T539 = "---------------------------\n" [ _T34 _T539 ]
-    parm _T539 [ _T34 ]
-    call _PrintString [ _T34 ]
-    _T541 =  call _rndModule_New [ _T34 _T541 ]
-    _T540 = _T541 [ _T34 _T540 ]
-    _T542 = "Please enter a random number seed: " [ _T34 _T540 _T542 ]
-    parm _T542 [ _T34 _T540 ]
-    call _PrintString [ _T34 _T540 ]
-    _T543 =  call _ReadInteger [ _T34 _T540 _T543 ]
-    parm _T540 [ _T34 _T540 _T543 ]
-    parm _T543 [ _T34 _T540 ]
-    _T544 = *(_T540 + 0) [ _T544 _T34 _T540 ]
-    _T545 = *(_T544 + 8) [ _T545 _T34 _T540 ]
-    call _T545 [ _T34 _T540 ]
-    _T546 = *(_T34 + 12) [ _T34 _T540 ]
-    _T547 =  call _BJDeck_New [ _T34 _T547 _T540 ]
-    *(_T34 + 12) = _T547 [ _T34 _T540 ]
-    _T548 = *(_T34 + 8) [ _T34 _T540 ]
-    _T549 =  call _Dealer_New [ _T34 _T549 _T540 ]
-    *(_T34 + 8) = _T549 [ _T34 _T540 ]
-    _T550 = *(_T34 + 12) [ _T34 _T550 _T540 ]
-    parm _T550 [ _T34 _T550 _T540 ]
-    parm _T540 [ _T34 _T550 ]
-    _T551 = *(_T550 + 0) [ _T34 _T551 ]
-    _T552 = *(_T551 + 8) [ _T34 _T552 ]
-    call _T552 [ _T34 ]
-    _T553 = *(_T34 + 12) [ _T34 _T553 ]
-    parm _T553 [ _T34 _T553 ]
-    _T554 = *(_T553 + 0) [ _T34 _T554 ]
-    _T555 = *(_T554 + 16) [ _T34 _T555 ]
-    call _T555 [ _T34 ]
-END BY RETURN, void result
+  Use-Def Chain : 
+    (_T538, 2): [1]
+    (_T539, 5): [4]
+    (_T541, 8): [7]
+    (_T542, 10): [9]
+    (_T540, 13): [8]
+    (_T543, 14): [12]
+    (_T540, 15): [8]
+    (_T544, 16): [15]
+    (_T545, 17): [16]
+    (_T34, 18): []
+    (_T34, 20): []
+    (_T547, 20): [19]
+    (_T34, 21): []
+    (_T34, 23): []
+    (_T549, 23): [22]
+    (_T34, 24): []
+    (_T550, 25): [24]
+    (_T540, 26): [8]
+    (_T550, 27): [24]
+    (_T551, 28): [27]
+    (_T552, 29): [28]
+    (_T34, 30): []
+    (_T553, 31): [30]
+    (_T553, 32): [30]
+    (_T554, 33): [32]
+    (_T555, 34): [33]
+
+    1: _T538 = "\nWelcome to CS143 BlackJack!\n"    [ _T34 _T538 ]
+    2: parm _T538    [ _T34 ]
+    3: call _PrintString    [ _T34 ]
+    4: _T539 = "---------------------------\n"    [ _T34 _T539 ]
+    5: parm _T539    [ _T34 ]
+    6: call _PrintString    [ _T34 ]
+    7: _T541 =  call _rndModule_New    [ _T34 _T541 ]
+    8: _T540 = _T541    [ _T34 _T540 ]
+    9: _T542 = "Please enter a random number seed: "    [ _T34 _T540 _T542 ]
+    10: parm _T542    [ _T34 _T540 ]
+    11: call _PrintString    [ _T34 _T540 ]
+    12: _T543 =  call _ReadInteger    [ _T34 _T540 _T543 ]
+    13: parm _T540    [ _T34 _T540 _T543 ]
+    14: parm _T543    [ _T34 _T540 ]
+    15: _T544 = *(_T540 + 0)    [ _T544 _T34 _T540 ]
+    16: _T545 = *(_T544 + 8)    [ _T545 _T34 _T540 ]
+    17: call _T545    [ _T34 _T540 ]
+    18: _T546 = *(_T34 + 12)    [ _T34 _T540 ]
+    19: _T547 =  call _BJDeck_New    [ _T34 _T547 _T540 ]
+    20: *(_T34 + 12) = _T547    [ _T34 _T540 ]
+    21: _T548 = *(_T34 + 8)    [ _T34 _T540 ]
+    22: _T549 =  call _Dealer_New    [ _T34 _T549 _T540 ]
+    23: *(_T34 + 8) = _T549    [ _T34 _T540 ]
+    24: _T550 = *(_T34 + 12)    [ _T34 _T550 _T540 ]
+    25: parm _T550    [ _T34 _T550 _T540 ]
+    26: parm _T540    [ _T34 _T550 ]
+    27: _T551 = *(_T550 + 0)    [ _T34 _T551 ]
+    28: _T552 = *(_T551 + 8)    [ _T34 _T552 ]
+    29: call _T552    [ _T34 ]
+    30: _T553 = *(_T34 + 12)    [ _T34 _T553 ]
+    31: parm _T553    [ _T34 _T553 ]
+    32: _T554 = *(_T553 + 0)    [ _T34 _T554 ]
+    33: _T555 = *(_T554 + 16)    [ _T34 _T555 ]
+    34: call _T555    [ _T34 ]
+    35: END BY RETURN, void result
 
 FUNCTION _House.SetupPlayers : 
 BASIC BLOCK 0 : 
@@ -1771,174 +2785,274 @@ BASIC BLOCK 0 :
   liveUse = [ _T35 ]
   liveIn  = [ _T35 ]
   liveOut = [ _T35 _T557 ]
-    _T558 = "How many players do we have today? " [ _T35 _T558 ]
-    parm _T558 [ _T35 ]
-    call _PrintString [ _T35 ]
-    _T559 =  call _ReadInteger [ _T35 _T559 ]
-    _T557 = _T559 [ _T35 _T557 ]
-    _T560 = *(_T35 + 4) [ _T35 _T557 ]
-    _T561 = 0 [ _T561 _T35 _T557 ]
-    _T562 = (_T557 < _T561) [ _T562 _T35 _T557 ]
-END BY BEQZ, if _T562 = 
-    0 : goto 2; 1 : goto 1
+  Use-Def Chain : 
+    (_T558, 2): [1]
+    (_T559, 5): [4]
+    (_T35, 6): []
+    (_T557, 8): [5]
+    (_T561, 8): [7]
+    (_T562, 9): [8]
+
+    1: _T558 = "How many players do we have today? "    [ _T35 _T558 ]
+    2: parm _T558    [ _T35 ]
+    3: call _PrintString    [ _T35 ]
+    4: _T559 =  call _ReadInteger    [ _T35 _T559 ]
+    5: _T557 = _T559    [ _T35 _T557 ]
+    6: _T560 = *(_T35 + 4)    [ _T35 _T557 ]
+    7: _T561 = 0    [ _T561 _T35 _T557 ]
+    8: _T562 = (_T557 < _T561)    [ _T562 _T35 _T557 ]
+    9: END BY BEQZ, if _T562 = 0 : goto 2; 1 : goto 1
 BASIC BLOCK 1 : 
   Def     = [ _T563 ]
   liveUse = [ ]
   liveIn  = [ _T35 _T557 ]
   liveOut = [ _T35 _T557 ]
-    _T563 = "Decaf runtime error: Cannot create negative-sized array\n" [ _T35 _T563 _T557 ]
-    parm _T563 [ _T35 _T557 ]
-    call _PrintString [ _T35 _T557 ]
-    call _Halt [ _T35 _T557 ]
-END BY BRANCH, goto 2
+  Use-Def Chain : 
+    (_T563, 11): [10]
+
+    10: _T563 = "Decaf runtime error: Cannot create negative-sized array\n"    [ _T35 _T563 _T557 ]
+    11: parm _T563    [ _T35 _T557 ]
+    12: call _PrintString    [ _T35 _T557 ]
+    13: call _Halt    [ _T35 _T557 ]
+    14: END BY BRANCH, goto 2
 BASIC BLOCK 2 : 
   Def     = [ _T564 _T565 _T566 _T567 _T568 ]
   liveUse = [ _T557 ]
   liveIn  = [ _T35 _T557 ]
   liveOut = [ _T35 _T564 _T566 _T567 _T568 ]
-    _T564 = 4 [ _T35 _T564 _T557 ]
-    _T565 = (_T564 * _T557) [ _T35 _T564 _T565 _T557 ]
-    _T566 = (_T564 + _T565) [ _T35 _T564 _T566 _T557 ]
-    parm _T566 [ _T35 _T564 _T566 _T557 ]
-    _T567 =  call _Alloc [ _T35 _T564 _T566 _T567 _T557 ]
-    *(_T567 + 0) = _T557 [ _T35 _T564 _T566 _T567 ]
-    _T568 = 0 [ _T35 _T564 _T566 _T567 _T568 ]
-    _T567 = (_T567 + _T566) [ _T35 _T564 _T566 _T567 _T568 ]
-END BY BRANCH, goto 3
+  Use-Def Chain : 
+    (_T557, 16): [5]
+    (_T564, 16): [15]
+    (_T564, 17): [15]
+    (_T565, 17): [16]
+    (_T566, 18): [17]
+    (_T557, 20): [5]
+    (_T567, 20): [19]
+    (_T566, 22): [17]
+    (_T567, 22): [19]
+
+    15: _T564 = 4    [ _T35 _T564 _T557 ]
+    16: _T565 = (_T564 * _T557)    [ _T35 _T564 _T565 _T557 ]
+    17: _T566 = (_T564 + _T565)    [ _T35 _T564 _T566 _T557 ]
+    18: parm _T566    [ _T35 _T564 _T566 _T557 ]
+    19: _T567 =  call _Alloc    [ _T35 _T564 _T566 _T567 _T557 ]
+    20: *(_T567 + 0) = _T557    [ _T35 _T564 _T566 _T567 ]
+    21: _T568 = 0    [ _T35 _T564 _T566 _T567 _T568 ]
+    22: _T567 = (_T567 + _T566)    [ _T35 _T564 _T566 _T567 _T568 ]
+    23: END BY BRANCH, goto 3
 BASIC BLOCK 3 : 
   Def     = [ ]
   liveUse = [ _T564 _T566 ]
   liveIn  = [ _T35 _T564 _T566 _T567 _T568 ]
   liveOut = [ _T35 _T564 _T566 _T567 _T568 ]
-    _T566 = (_T566 - _T564) [ _T35 _T564 _T566 _T567 _T568 ]
-END BY BEQZ, if _T566 = 
-    0 : goto 5; 1 : goto 4
+  Use-Def Chain : 
+    (_T564, 24): [15]
+    (_T566, 24): [17, 24]
+    (_T566, 25): [24]
+
+    24: _T566 = (_T566 - _T564)    [ _T35 _T564 _T566 _T567 _T568 ]
+    25: END BY BEQZ, if _T566 = 0 : goto 5; 1 : goto 4
 BASIC BLOCK 4 : 
   Def     = [ ]
   liveUse = [ _T564 _T567 _T568 ]
   liveIn  = [ _T35 _T564 _T566 _T567 _T568 ]
   liveOut = [ _T35 _T564 _T566 _T567 _T568 ]
-    _T567 = (_T567 - _T564) [ _T35 _T564 _T566 _T567 _T568 ]
-    *(_T567 + 0) = _T568 [ _T35 _T564 _T566 _T567 _T568 ]
-END BY BRANCH, goto 3
+  Use-Def Chain : 
+    (_T564, 26): [15]
+    (_T567, 26): [22, 26]
+    (_T567, 27): [26]
+    (_T568, 27): [21]
+
+    26: _T567 = (_T567 - _T564)    [ _T35 _T564 _T566 _T567 _T568 ]
+    27: *(_T567 + 0) = _T568    [ _T35 _T564 _T566 _T567 _T568 ]
+    28: END BY BRANCH, goto 3
 BASIC BLOCK 5 : 
   Def     = [ _T556 _T569 ]
   liveUse = [ _T35 _T567 ]
   liveIn  = [ _T35 _T567 ]
   liveOut = [ _T35 _T556 ]
-    *(_T35 + 4) = _T567 [ _T35 ]
-    _T569 = 0 [ _T35 _T569 ]
-    _T556 = _T569 [ _T35 _T556 ]
-END BY BRANCH, goto 7
+  Use-Def Chain : 
+    (_T35, 30): []
+    (_T567, 30): [22, 26]
+    (_T569, 32): [31]
+
+    30: *(_T35 + 4) = _T567    [ _T35 ]
+    31: _T569 = 0    [ _T35 _T569 ]
+    32: _T556 = _T569    [ _T35 _T556 ]
+    33: END BY BRANCH, goto 7
 BASIC BLOCK 6 : 
   Def     = [ _T570 _T571 ]
   liveUse = [ _T556 ]
   liveIn  = [ _T35 _T556 ]
   liveOut = [ _T35 _T556 ]
-    _T570 = 1 [ _T35 _T570 _T556 ]
-    _T571 = (_T556 + _T570) [ _T35 _T571 ]
-    _T556 = _T571 [ _T35 _T556 ]
-END BY BRANCH, goto 7
+  Use-Def Chain : 
+    (_T556, 36): [32, 37]
+    (_T570, 36): [35]
+    (_T571, 37): [36]
+
+    35: _T570 = 1    [ _T35 _T570 _T556 ]
+    36: _T571 = (_T556 + _T570)    [ _T35 _T571 ]
+    37: _T556 = _T571    [ _T35 _T556 ]
+    38: END BY BRANCH, goto 7
 BASIC BLOCK 7 : 
   Def     = [ _T572 _T573 _T574 ]
   liveUse = [ _T35 _T556 ]
   liveIn  = [ _T35 _T556 ]
   liveOut = [ _T35 _T556 ]
-    _T572 = *(_T35 + 4) [ _T35 _T556 _T572 ]
-    _T573 = *(_T572 - 4) [ _T35 _T556 _T573 ]
-    _T574 = (_T556 < _T573) [ _T35 _T556 _T574 ]
-END BY BEQZ, if _T574 = 
-    0 : goto 15; 1 : goto 8
+  Use-Def Chain : 
+    (_T35, 39): []
+    (_T572, 40): [39]
+    (_T556, 41): [32, 37]
+    (_T573, 41): [40]
+    (_T574, 42): [41]
+
+    39: _T572 = *(_T35 + 4)    [ _T35 _T556 _T572 ]
+    40: _T573 = *(_T572 - 4)    [ _T35 _T556 _T573 ]
+    41: _T574 = (_T556 < _T573)    [ _T35 _T556 _T574 ]
+    42: END BY BEQZ, if _T574 = 0 : goto 15; 1 : goto 8
 BASIC BLOCK 8 : 
   Def     = [ _T575 _T576 _T577 ]
   liveUse = [ _T35 _T556 ]
   liveIn  = [ _T35 _T556 ]
   liveOut = [ _T35 _T556 _T575 ]
-    _T575 = *(_T35 + 4) [ _T35 _T556 _T575 ]
-    _T576 = *(_T575 - 4) [ _T576 _T35 _T556 _T575 ]
-    _T577 = (_T556 < _T576) [ _T577 _T35 _T556 _T575 ]
-END BY BEQZ, if _T577 = 
-    0 : goto 10; 1 : goto 9
+  Use-Def Chain : 
+    (_T35, 43): []
+    (_T575, 44): [43]
+    (_T556, 45): [32, 37]
+    (_T576, 45): [44]
+    (_T577, 46): [45]
+
+    43: _T575 = *(_T35 + 4)    [ _T35 _T556 _T575 ]
+    44: _T576 = *(_T575 - 4)    [ _T576 _T35 _T556 _T575 ]
+    45: _T577 = (_T556 < _T576)    [ _T577 _T35 _T556 _T575 ]
+    46: END BY BEQZ, if _T577 = 0 : goto 10; 1 : goto 9
 BASIC BLOCK 9 : 
   Def     = [ _T578 _T579 ]
   liveUse = [ _T556 ]
   liveIn  = [ _T35 _T556 _T575 ]
   liveOut = [ _T35 _T556 _T575 ]
-    _T578 = 0 [ _T578 _T35 _T556 _T575 ]
-    _T579 = (_T556 < _T578) [ _T35 _T579 _T556 _T575 ]
-END BY BEQZ, if _T579 = 
-    0 : goto 11; 1 : goto 10
+  Use-Def Chain : 
+    (_T556, 48): [32, 37]
+    (_T578, 48): [47]
+    (_T579, 49): [48]
+
+    47: _T578 = 0    [ _T578 _T35 _T556 _T575 ]
+    48: _T579 = (_T556 < _T578)    [ _T35 _T579 _T556 _T575 ]
+    49: END BY BEQZ, if _T579 = 0 : goto 11; 1 : goto 10
 BASIC BLOCK 10 : 
   Def     = [ _T580 ]
   liveUse = [ ]
   liveIn  = [ _T35 _T556 _T575 ]
   liveOut = [ _T35 _T556 _T575 ]
-    _T580 = "Decaf runtime error: Array subscript out of bounds\n" [ _T35 _T580 _T556 _T575 ]
-    parm _T580 [ _T35 _T556 _T575 ]
-    call _PrintString [ _T35 _T556 _T575 ]
-    call _Halt [ _T35 _T556 _T575 ]
-END BY BRANCH, goto 11
+  Use-Def Chain : 
+    (_T580, 52): [51]
+
+    51: _T580 = "Decaf runtime error: Array subscript out of bounds\n"    [ _T35 _T580 _T556 _T575 ]
+    52: parm _T580    [ _T35 _T556 _T575 ]
+    53: call _PrintString    [ _T35 _T556 _T575 ]
+    54: call _Halt    [ _T35 _T556 _T575 ]
+    55: END BY BRANCH, goto 11
 BASIC BLOCK 11 : 
   Def     = [ _T581 _T582 _T583 _T584 _T585 _T586 _T587 _T588 _T589 _T590 _T591 ]
   liveUse = [ _T35 _T556 _T575 ]
   liveIn  = [ _T35 _T556 _T575 ]
   liveOut = [ _T35 _T556 _T589 ]
-    _T581 = 4 [ _T35 _T581 _T556 _T575 ]
-    _T582 = (_T556 * _T581) [ _T35 _T582 _T556 _T575 ]
-    _T583 = (_T575 + _T582) [ _T35 _T583 _T556 _T575 ]
-    _T584 = *(_T583 + 0) [ _T35 _T556 _T575 ]
-    _T585 =  call _Player_New [ _T35 _T585 _T556 _T575 ]
-    _T586 = 4 [ _T35 _T585 _T586 _T556 _T575 ]
-    _T587 = (_T556 * _T586) [ _T35 _T585 _T587 _T556 _T575 ]
-    _T588 = (_T575 + _T587) [ _T35 _T585 _T556 _T588 ]
-    *(_T588 + 0) = _T585 [ _T35 _T556 ]
-    _T589 = *(_T35 + 4) [ _T35 _T556 _T589 ]
-    _T590 = *(_T589 - 4) [ _T35 _T556 _T589 _T590 ]
-    _T591 = (_T556 < _T590) [ _T35 _T556 _T589 _T591 ]
-END BY BEQZ, if _T591 = 
-    0 : goto 13; 1 : goto 12
+  Use-Def Chain : 
+    (_T556, 57): [32, 37]
+    (_T581, 57): [56]
+    (_T575, 58): [43]
+    (_T582, 58): [57]
+    (_T583, 59): [58]
+    (_T556, 62): [32, 37]
+    (_T586, 62): [61]
+    (_T575, 63): [43]
+    (_T587, 63): [62]
+    (_T585, 64): [60]
+    (_T588, 64): [63]
+    (_T35, 65): []
+    (_T589, 66): [65]
+    (_T556, 67): [32, 37]
+    (_T590, 67): [66]
+    (_T591, 68): [67]
+
+    56: _T581 = 4    [ _T35 _T581 _T556 _T575 ]
+    57: _T582 = (_T556 * _T581)    [ _T35 _T582 _T556 _T575 ]
+    58: _T583 = (_T575 + _T582)    [ _T35 _T583 _T556 _T575 ]
+    59: _T584 = *(_T583 + 0)    [ _T35 _T556 _T575 ]
+    60: _T585 =  call _Player_New    [ _T35 _T585 _T556 _T575 ]
+    61: _T586 = 4    [ _T35 _T585 _T586 _T556 _T575 ]
+    62: _T587 = (_T556 * _T586)    [ _T35 _T585 _T587 _T556 _T575 ]
+    63: _T588 = (_T575 + _T587)    [ _T35 _T585 _T556 _T588 ]
+    64: *(_T588 + 0) = _T585    [ _T35 _T556 ]
+    65: _T589 = *(_T35 + 4)    [ _T35 _T556 _T589 ]
+    66: _T590 = *(_T589 - 4)    [ _T35 _T556 _T589 _T590 ]
+    67: _T591 = (_T556 < _T590)    [ _T35 _T556 _T589 _T591 ]
+    68: END BY BEQZ, if _T591 = 0 : goto 13; 1 : goto 12
 BASIC BLOCK 12 : 
   Def     = [ _T592 _T593 ]
   liveUse = [ _T556 ]
   liveIn  = [ _T35 _T556 _T589 ]
   liveOut = [ _T35 _T556 _T589 ]
-    _T592 = 0 [ _T592 _T35 _T556 _T589 ]
-    _T593 = (_T556 < _T592) [ _T593 _T35 _T556 _T589 ]
-END BY BEQZ, if _T593 = 
-    0 : goto 14; 1 : goto 13
+  Use-Def Chain : 
+    (_T556, 70): [32, 37]
+    (_T592, 70): [69]
+    (_T593, 71): [70]
+
+    69: _T592 = 0    [ _T592 _T35 _T556 _T589 ]
+    70: _T593 = (_T556 < _T592)    [ _T593 _T35 _T556 _T589 ]
+    71: END BY BEQZ, if _T593 = 0 : goto 14; 1 : goto 13
 BASIC BLOCK 13 : 
   Def     = [ _T594 ]
   liveUse = [ ]
   liveIn  = [ _T35 _T556 _T589 ]
   liveOut = [ _T35 _T556 _T589 ]
-    _T594 = "Decaf runtime error: Array subscript out of bounds\n" [ _T594 _T35 _T556 _T589 ]
-    parm _T594 [ _T35 _T556 _T589 ]
-    call _PrintString [ _T35 _T556 _T589 ]
-    call _Halt [ _T35 _T556 _T589 ]
-END BY BRANCH, goto 14
+  Use-Def Chain : 
+    (_T594, 74): [73]
+
+    73: _T594 = "Decaf runtime error: Array subscript out of bounds\n"    [ _T594 _T35 _T556 _T589 ]
+    74: parm _T594    [ _T35 _T556 _T589 ]
+    75: call _PrintString    [ _T35 _T556 _T589 ]
+    76: call _Halt    [ _T35 _T556 _T589 ]
+    77: END BY BRANCH, goto 14
 BASIC BLOCK 14 : 
   Def     = [ _T595 _T596 _T597 _T598 _T599 _T600 _T601 _T602 ]
   liveUse = [ _T556 _T589 ]
   liveIn  = [ _T35 _T556 _T589 ]
   liveOut = [ _T35 _T556 ]
-    _T595 = 4 [ _T35 _T595 _T556 _T589 ]
-    _T596 = (_T556 * _T595) [ _T35 _T596 _T556 _T589 ]
-    _T597 = (_T589 + _T596) [ _T35 _T597 _T556 ]
-    _T598 = *(_T597 + 0) [ _T35 _T598 _T556 ]
-    _T599 = 1 [ _T35 _T598 _T599 _T556 ]
-    _T600 = (_T556 + _T599) [ _T35 _T598 _T600 _T556 ]
-    parm _T598 [ _T35 _T598 _T600 _T556 ]
-    parm _T600 [ _T35 _T598 _T556 ]
-    _T601 = *(_T598 + 0) [ _T35 _T601 _T556 ]
-    _T602 = *(_T601 + 8) [ _T35 _T602 _T556 ]
-    call _T602 [ _T35 _T556 ]
-END BY BRANCH, goto 6
+  Use-Def Chain : 
+    (_T556, 79): [32, 37]
+    (_T595, 79): [78]
+    (_T589, 80): [65]
+    (_T596, 80): [79]
+    (_T597, 81): [80]
+    (_T556, 83): [32, 37]
+    (_T599, 83): [82]
+    (_T598, 84): [81]
+    (_T600, 85): [83]
+    (_T598, 86): [81]
+    (_T601, 87): [86]
+    (_T602, 88): [87]
+
+    78: _T595 = 4    [ _T35 _T595 _T556 _T589 ]
+    79: _T596 = (_T556 * _T595)    [ _T35 _T596 _T556 _T589 ]
+    80: _T597 = (_T589 + _T596)    [ _T35 _T597 _T556 ]
+    81: _T598 = *(_T597 + 0)    [ _T35 _T598 _T556 ]
+    82: _T599 = 1    [ _T35 _T598 _T599 _T556 ]
+    83: _T600 = (_T556 + _T599)    [ _T35 _T598 _T600 _T556 ]
+    84: parm _T598    [ _T35 _T598 _T600 _T556 ]
+    85: parm _T600    [ _T35 _T598 _T556 ]
+    86: _T601 = *(_T598 + 0)    [ _T35 _T601 _T556 ]
+    87: _T602 = *(_T601 + 8)    [ _T35 _T602 _T556 ]
+    88: call _T602    [ _T35 _T556 ]
+    89: END BY BRANCH, goto 6
 BASIC BLOCK 15 : 
   Def     = [ ]
   liveUse = [ ]
   liveIn  = [ _T35 ]
   liveOut = [ _T35 ]
-END BY RETURN, void result
+  Use-Def Chain : 
+
+    0: END BY RETURN, void result
 
 FUNCTION _House.TakeAllBets : 
 BASIC BLOCK 0 : 
@@ -1946,124 +3060,189 @@ BASIC BLOCK 0 :
   liveUse = [ ]
   liveIn  = [ _T36 ]
   liveOut = [ _T36 _T603 ]
-    _T604 = "\nFirst, let's take bets.\n" [ _T36 _T604 ]
-    parm _T604 [ _T36 ]
-    call _PrintString [ _T36 ]
-    _T605 = 0 [ _T36 _T605 ]
-    _T603 = _T605 [ _T36 _T603 ]
-END BY BRANCH, goto 2
+  Use-Def Chain : 
+    (_T604, 2): [1]
+    (_T605, 5): [4]
+
+    1: _T604 = "\nFirst, let's take bets.\n"    [ _T36 _T604 ]
+    2: parm _T604    [ _T36 ]
+    3: call _PrintString    [ _T36 ]
+    4: _T605 = 0    [ _T36 _T605 ]
+    5: _T603 = _T605    [ _T36 _T603 ]
+    6: END BY BRANCH, goto 2
 BASIC BLOCK 1 : 
   Def     = [ _T606 _T607 ]
   liveUse = [ _T603 ]
   liveIn  = [ _T36 _T603 ]
   liveOut = [ _T36 _T603 ]
-    _T606 = 1 [ _T36 _T603 _T606 ]
-    _T607 = (_T603 + _T606) [ _T36 _T607 ]
-    _T603 = _T607 [ _T36 _T603 ]
-END BY BRANCH, goto 2
+  Use-Def Chain : 
+    (_T603, 9): [5, 10]
+    (_T606, 9): [8]
+    (_T607, 10): [9]
+
+    8: _T606 = 1    [ _T36 _T603 _T606 ]
+    9: _T607 = (_T603 + _T606)    [ _T36 _T607 ]
+    10: _T603 = _T607    [ _T36 _T603 ]
+    11: END BY BRANCH, goto 2
 BASIC BLOCK 2 : 
   Def     = [ _T608 _T609 _T610 ]
   liveUse = [ _T36 _T603 ]
   liveIn  = [ _T36 _T603 ]
   liveOut = [ _T36 _T603 ]
-    _T608 = *(_T36 + 4) [ _T608 _T36 _T603 ]
-    _T609 = *(_T608 - 4) [ _T609 _T36 _T603 ]
-    _T610 = (_T603 < _T609) [ _T610 _T36 _T603 ]
-END BY BEQZ, if _T610 = 
-    0 : goto 11; 1 : goto 3
+  Use-Def Chain : 
+    (_T36, 12): []
+    (_T608, 13): [12]
+    (_T603, 14): [5, 10]
+    (_T609, 14): [13]
+    (_T610, 15): [14]
+
+    12: _T608 = *(_T36 + 4)    [ _T608 _T36 _T603 ]
+    13: _T609 = *(_T608 - 4)    [ _T609 _T36 _T603 ]
+    14: _T610 = (_T603 < _T609)    [ _T610 _T36 _T603 ]
+    15: END BY BEQZ, if _T610 = 0 : goto 11; 1 : goto 3
 BASIC BLOCK 3 : 
   Def     = [ _T611 _T612 _T613 ]
   liveUse = [ _T36 _T603 ]
   liveIn  = [ _T36 _T603 ]
   liveOut = [ _T36 _T603 _T611 ]
-    _T611 = *(_T36 + 4) [ _T611 _T36 _T603 ]
-    _T612 = *(_T611 - 4) [ _T611 _T36 _T612 _T603 ]
-    _T613 = (_T603 < _T612) [ _T611 _T36 _T613 _T603 ]
-END BY BEQZ, if _T613 = 
-    0 : goto 5; 1 : goto 4
+  Use-Def Chain : 
+    (_T36, 16): []
+    (_T611, 17): [16]
+    (_T603, 18): [5, 10]
+    (_T612, 18): [17]
+    (_T613, 19): [18]
+
+    16: _T611 = *(_T36 + 4)    [ _T611 _T36 _T603 ]
+    17: _T612 = *(_T611 - 4)    [ _T611 _T36 _T612 _T603 ]
+    18: _T613 = (_T603 < _T612)    [ _T611 _T36 _T613 _T603 ]
+    19: END BY BEQZ, if _T613 = 0 : goto 5; 1 : goto 4
 BASIC BLOCK 4 : 
   Def     = [ _T614 _T615 ]
   liveUse = [ _T603 ]
   liveIn  = [ _T36 _T603 _T611 ]
   liveOut = [ _T36 _T603 _T611 ]
-    _T614 = 0 [ _T611 _T36 _T614 _T603 ]
-    _T615 = (_T603 < _T614) [ _T611 _T36 _T615 _T603 ]
-END BY BEQZ, if _T615 = 
-    0 : goto 6; 1 : goto 5
+  Use-Def Chain : 
+    (_T603, 21): [5, 10]
+    (_T614, 21): [20]
+    (_T615, 22): [21]
+
+    20: _T614 = 0    [ _T611 _T36 _T614 _T603 ]
+    21: _T615 = (_T603 < _T614)    [ _T611 _T36 _T615 _T603 ]
+    22: END BY BEQZ, if _T615 = 0 : goto 6; 1 : goto 5
 BASIC BLOCK 5 : 
   Def     = [ _T616 ]
   liveUse = [ ]
   liveIn  = [ _T36 _T603 _T611 ]
   liveOut = [ _T36 _T603 _T611 ]
-    _T616 = "Decaf runtime error: Array subscript out of bounds\n" [ _T611 _T36 _T616 _T603 ]
-    parm _T616 [ _T611 _T36 _T603 ]
-    call _PrintString [ _T611 _T36 _T603 ]
-    call _Halt [ _T611 _T36 _T603 ]
-END BY BRANCH, goto 6
+  Use-Def Chain : 
+    (_T616, 25): [24]
+
+    24: _T616 = "Decaf runtime error: Array subscript out of bounds\n"    [ _T611 _T36 _T616 _T603 ]
+    25: parm _T616    [ _T611 _T36 _T603 ]
+    26: call _PrintString    [ _T611 _T36 _T603 ]
+    27: call _Halt    [ _T611 _T36 _T603 ]
+    28: END BY BRANCH, goto 6
 BASIC BLOCK 6 : 
   Def     = [ _T617 _T618 _T619 _T620 _T621 _T622 _T623 ]
   liveUse = [ _T603 _T611 ]
   liveIn  = [ _T36 _T603 _T611 ]
   liveOut = [ _T36 _T603 ]
-    _T617 = 4 [ _T611 _T36 _T617 _T603 ]
-    _T618 = (_T603 * _T617) [ _T611 _T36 _T618 _T603 ]
-    _T619 = (_T611 + _T618) [ _T36 _T603 _T619 ]
-    _T620 = *(_T619 + 0) [ _T36 _T603 _T620 ]
-    parm _T620 [ _T36 _T603 _T620 ]
-    _T621 = *(_T620 + 0) [ _T36 _T603 _T621 ]
-    _T622 = *(_T621 + 24) [ _T36 _T603 _T622 ]
-    _T623 =  call _T622 [ _T36 _T603 _T623 ]
-END BY BEQZ, if _T623 = 
-    0 : goto 1; 1 : goto 7
+  Use-Def Chain : 
+    (_T603, 30): [5, 10]
+    (_T617, 30): [29]
+    (_T611, 31): [16]
+    (_T618, 31): [30]
+    (_T619, 32): [31]
+    (_T620, 33): [32]
+    (_T620, 34): [32]
+    (_T621, 35): [34]
+    (_T622, 36): [35]
+    (_T623, 37): [36]
+
+    29: _T617 = 4    [ _T611 _T36 _T617 _T603 ]
+    30: _T618 = (_T603 * _T617)    [ _T611 _T36 _T618 _T603 ]
+    31: _T619 = (_T611 + _T618)    [ _T36 _T603 _T619 ]
+    32: _T620 = *(_T619 + 0)    [ _T36 _T603 _T620 ]
+    33: parm _T620    [ _T36 _T603 _T620 ]
+    34: _T621 = *(_T620 + 0)    [ _T36 _T603 _T621 ]
+    35: _T622 = *(_T621 + 24)    [ _T36 _T603 _T622 ]
+    36: _T623 =  call _T622    [ _T36 _T603 _T623 ]
+    37: END BY BEQZ, if _T623 = 0 : goto 1; 1 : goto 7
 BASIC BLOCK 7 : 
   Def     = [ _T624 _T625 _T626 ]
   liveUse = [ _T36 _T603 ]
   liveIn  = [ _T36 _T603 ]
   liveOut = [ _T36 _T603 _T624 ]
-    _T624 = *(_T36 + 4) [ _T624 _T36 _T603 ]
-    _T625 = *(_T624 - 4) [ _T624 _T625 _T36 _T603 ]
-    _T626 = (_T603 < _T625) [ _T624 _T626 _T36 _T603 ]
-END BY BEQZ, if _T626 = 
-    0 : goto 9; 1 : goto 8
+  Use-Def Chain : 
+    (_T36, 38): []
+    (_T624, 39): [38]
+    (_T603, 40): [5, 10]
+    (_T625, 40): [39]
+    (_T626, 41): [40]
+
+    38: _T624 = *(_T36 + 4)    [ _T624 _T36 _T603 ]
+    39: _T625 = *(_T624 - 4)    [ _T624 _T625 _T36 _T603 ]
+    40: _T626 = (_T603 < _T625)    [ _T624 _T626 _T36 _T603 ]
+    41: END BY BEQZ, if _T626 = 0 : goto 9; 1 : goto 8
 BASIC BLOCK 8 : 
   Def     = [ _T627 _T628 ]
   liveUse = [ _T603 ]
   liveIn  = [ _T36 _T603 _T624 ]
   liveOut = [ _T36 _T603 _T624 ]
-    _T627 = 0 [ _T624 _T627 _T36 _T603 ]
-    _T628 = (_T603 < _T627) [ _T624 _T36 _T628 _T603 ]
-END BY BEQZ, if _T628 = 
-    0 : goto 10; 1 : goto 9
+  Use-Def Chain : 
+    (_T603, 43): [5, 10]
+    (_T627, 43): [42]
+    (_T628, 44): [43]
+
+    42: _T627 = 0    [ _T624 _T627 _T36 _T603 ]
+    43: _T628 = (_T603 < _T627)    [ _T624 _T36 _T628 _T603 ]
+    44: END BY BEQZ, if _T628 = 0 : goto 10; 1 : goto 9
 BASIC BLOCK 9 : 
   Def     = [ _T629 ]
   liveUse = [ ]
   liveIn  = [ _T36 _T603 _T624 ]
   liveOut = [ _T36 _T603 _T624 ]
-    _T629 = "Decaf runtime error: Array subscript out of bounds\n" [ _T624 _T36 _T629 _T603 ]
-    parm _T629 [ _T624 _T36 _T603 ]
-    call _PrintString [ _T624 _T36 _T603 ]
-    call _Halt [ _T624 _T36 _T603 ]
-END BY BRANCH, goto 10
+  Use-Def Chain : 
+    (_T629, 47): [46]
+
+    46: _T629 = "Decaf runtime error: Array subscript out of bounds\n"    [ _T624 _T36 _T629 _T603 ]
+    47: parm _T629    [ _T624 _T36 _T603 ]
+    48: call _PrintString    [ _T624 _T36 _T603 ]
+    49: call _Halt    [ _T624 _T36 _T603 ]
+    50: END BY BRANCH, goto 10
 BASIC BLOCK 10 : 
   Def     = [ _T630 _T631 _T632 _T633 _T634 _T635 ]
   liveUse = [ _T603 _T624 ]
   liveIn  = [ _T36 _T603 _T624 ]
   liveOut = [ _T36 _T603 ]
-    _T630 = 4 [ _T624 _T36 _T630 _T603 ]
-    _T631 = (_T603 * _T630) [ _T624 _T36 _T631 _T603 ]
-    _T632 = (_T624 + _T631) [ _T36 _T632 _T603 ]
-    _T633 = *(_T632 + 0) [ _T36 _T633 _T603 ]
-    parm _T633 [ _T36 _T633 _T603 ]
-    _T634 = *(_T633 + 0) [ _T36 _T634 _T603 ]
-    _T635 = *(_T634 + 32) [ _T36 _T603 _T635 ]
-    call _T635 [ _T36 _T603 ]
-END BY BRANCH, goto 1
+  Use-Def Chain : 
+    (_T603, 52): [5, 10]
+    (_T630, 52): [51]
+    (_T624, 53): [38]
+    (_T631, 53): [52]
+    (_T632, 54): [53]
+    (_T633, 55): [54]
+    (_T633, 56): [54]
+    (_T634, 57): [56]
+    (_T635, 58): [57]
+
+    51: _T630 = 4    [ _T624 _T36 _T630 _T603 ]
+    52: _T631 = (_T603 * _T630)    [ _T624 _T36 _T631 _T603 ]
+    53: _T632 = (_T624 + _T631)    [ _T36 _T632 _T603 ]
+    54: _T633 = *(_T632 + 0)    [ _T36 _T633 _T603 ]
+    55: parm _T633    [ _T36 _T633 _T603 ]
+    56: _T634 = *(_T633 + 0)    [ _T36 _T634 _T603 ]
+    57: _T635 = *(_T634 + 32)    [ _T36 _T603 _T635 ]
+    58: call _T635    [ _T36 _T603 ]
+    59: END BY BRANCH, goto 1
 BASIC BLOCK 11 : 
   Def     = [ ]
   liveUse = [ ]
   liveIn  = [ _T36 ]
   liveOut = [ _T36 ]
-END BY RETURN, void result
+  Use-Def Chain : 
+
+    0: END BY RETURN, void result
 
 FUNCTION _House.TakeAllTurns : 
 BASIC BLOCK 0 : 
@@ -2071,123 +3250,189 @@ BASIC BLOCK 0 :
   liveUse = [ ]
   liveIn  = [ _T37 ]
   liveOut = [ _T37 _T636 ]
-    _T637 = 0 [ _T37 _T637 ]
-    _T636 = _T637 [ _T37 _T636 ]
-END BY BRANCH, goto 2
+  Use-Def Chain : 
+    (_T637, 2): [1]
+
+    1: _T637 = 0    [ _T37 _T637 ]
+    2: _T636 = _T637    [ _T37 _T636 ]
+    3: END BY BRANCH, goto 2
 BASIC BLOCK 1 : 
   Def     = [ _T638 _T639 ]
   liveUse = [ _T636 ]
   liveIn  = [ _T37 _T636 ]
   liveOut = [ _T37 _T636 ]
-    _T638 = 1 [ _T37 _T636 _T638 ]
-    _T639 = (_T636 + _T638) [ _T37 _T639 ]
-    _T636 = _T639 [ _T37 _T636 ]
-END BY BRANCH, goto 2
+  Use-Def Chain : 
+    (_T636, 6): [2, 7]
+    (_T638, 6): [5]
+    (_T639, 7): [6]
+
+    5: _T638 = 1    [ _T37 _T636 _T638 ]
+    6: _T639 = (_T636 + _T638)    [ _T37 _T639 ]
+    7: _T636 = _T639    [ _T37 _T636 ]
+    8: END BY BRANCH, goto 2
 BASIC BLOCK 2 : 
   Def     = [ _T640 _T641 _T642 ]
   liveUse = [ _T37 _T636 ]
   liveIn  = [ _T37 _T636 ]
   liveOut = [ _T37 _T636 ]
-    _T640 = *(_T37 + 4) [ _T640 _T37 _T636 ]
-    _T641 = *(_T640 - 4) [ _T641 _T37 _T636 ]
-    _T642 = (_T636 < _T641) [ _T642 _T37 _T636 ]
-END BY BEQZ, if _T642 = 
-    0 : goto 11; 1 : goto 3
+  Use-Def Chain : 
+    (_T37, 9): []
+    (_T640, 10): [9]
+    (_T636, 11): [2, 7]
+    (_T641, 11): [10]
+    (_T642, 12): [11]
+
+    9: _T640 = *(_T37 + 4)    [ _T640 _T37 _T636 ]
+    10: _T641 = *(_T640 - 4)    [ _T641 _T37 _T636 ]
+    11: _T642 = (_T636 < _T641)    [ _T642 _T37 _T636 ]
+    12: END BY BEQZ, if _T642 = 0 : goto 11; 1 : goto 3
 BASIC BLOCK 3 : 
   Def     = [ _T643 _T644 _T645 ]
   liveUse = [ _T37 _T636 ]
   liveIn  = [ _T37 _T636 ]
   liveOut = [ _T37 _T636 _T643 ]
-    _T643 = *(_T37 + 4) [ _T643 _T37 _T636 ]
-    _T644 = *(_T643 - 4) [ _T643 _T644 _T37 _T636 ]
-    _T645 = (_T636 < _T644) [ _T643 _T37 _T645 _T636 ]
-END BY BEQZ, if _T645 = 
-    0 : goto 5; 1 : goto 4
+  Use-Def Chain : 
+    (_T37, 13): []
+    (_T643, 14): [13]
+    (_T636, 15): [2, 7]
+    (_T644, 15): [14]
+    (_T645, 16): [15]
+
+    13: _T643 = *(_T37 + 4)    [ _T643 _T37 _T636 ]
+    14: _T644 = *(_T643 - 4)    [ _T643 _T644 _T37 _T636 ]
+    15: _T645 = (_T636 < _T644)    [ _T643 _T37 _T645 _T636 ]
+    16: END BY BEQZ, if _T645 = 0 : goto 5; 1 : goto 4
 BASIC BLOCK 4 : 
   Def     = [ _T646 _T647 ]
   liveUse = [ _T636 ]
   liveIn  = [ _T37 _T636 _T643 ]
   liveOut = [ _T37 _T636 _T643 ]
-    _T646 = 0 [ _T643 _T37 _T646 _T636 ]
-    _T647 = (_T636 < _T646) [ _T643 _T37 _T647 _T636 ]
-END BY BEQZ, if _T647 = 
-    0 : goto 6; 1 : goto 5
+  Use-Def Chain : 
+    (_T636, 18): [2, 7]
+    (_T646, 18): [17]
+    (_T647, 19): [18]
+
+    17: _T646 = 0    [ _T643 _T37 _T646 _T636 ]
+    18: _T647 = (_T636 < _T646)    [ _T643 _T37 _T647 _T636 ]
+    19: END BY BEQZ, if _T647 = 0 : goto 6; 1 : goto 5
 BASIC BLOCK 5 : 
   Def     = [ _T648 ]
   liveUse = [ ]
   liveIn  = [ _T37 _T636 _T643 ]
   liveOut = [ _T37 _T636 _T643 ]
-    _T648 = "Decaf runtime error: Array subscript out of bounds\n" [ _T643 _T37 _T648 _T636 ]
-    parm _T648 [ _T643 _T37 _T636 ]
-    call _PrintString [ _T643 _T37 _T636 ]
-    call _Halt [ _T643 _T37 _T636 ]
-END BY BRANCH, goto 6
+  Use-Def Chain : 
+    (_T648, 22): [21]
+
+    21: _T648 = "Decaf runtime error: Array subscript out of bounds\n"    [ _T643 _T37 _T648 _T636 ]
+    22: parm _T648    [ _T643 _T37 _T636 ]
+    23: call _PrintString    [ _T643 _T37 _T636 ]
+    24: call _Halt    [ _T643 _T37 _T636 ]
+    25: END BY BRANCH, goto 6
 BASIC BLOCK 6 : 
   Def     = [ _T649 _T650 _T651 _T652 _T653 _T654 _T655 ]
   liveUse = [ _T636 _T643 ]
   liveIn  = [ _T37 _T636 _T643 ]
   liveOut = [ _T37 _T636 ]
-    _T649 = 4 [ _T643 _T37 _T649 _T636 ]
-    _T650 = (_T636 * _T649) [ _T643 _T37 _T650 _T636 ]
-    _T651 = (_T643 + _T650) [ _T37 _T651 _T636 ]
-    _T652 = *(_T651 + 0) [ _T37 _T636 _T652 ]
-    parm _T652 [ _T37 _T636 _T652 ]
-    _T653 = *(_T652 + 0) [ _T37 _T636 _T653 ]
-    _T654 = *(_T653 + 24) [ _T37 _T636 _T654 ]
-    _T655 =  call _T654 [ _T37 _T636 _T655 ]
-END BY BEQZ, if _T655 = 
-    0 : goto 1; 1 : goto 7
+  Use-Def Chain : 
+    (_T636, 27): [2, 7]
+    (_T649, 27): [26]
+    (_T643, 28): [13]
+    (_T650, 28): [27]
+    (_T651, 29): [28]
+    (_T652, 30): [29]
+    (_T652, 31): [29]
+    (_T653, 32): [31]
+    (_T654, 33): [32]
+    (_T655, 34): [33]
+
+    26: _T649 = 4    [ _T643 _T37 _T649 _T636 ]
+    27: _T650 = (_T636 * _T649)    [ _T643 _T37 _T650 _T636 ]
+    28: _T651 = (_T643 + _T650)    [ _T37 _T651 _T636 ]
+    29: _T652 = *(_T651 + 0)    [ _T37 _T636 _T652 ]
+    30: parm _T652    [ _T37 _T636 _T652 ]
+    31: _T653 = *(_T652 + 0)    [ _T37 _T636 _T653 ]
+    32: _T654 = *(_T653 + 24)    [ _T37 _T636 _T654 ]
+    33: _T655 =  call _T654    [ _T37 _T636 _T655 ]
+    34: END BY BEQZ, if _T655 = 0 : goto 1; 1 : goto 7
 BASIC BLOCK 7 : 
   Def     = [ _T656 _T657 _T658 ]
   liveUse = [ _T37 _T636 ]
   liveIn  = [ _T37 _T636 ]
   liveOut = [ _T37 _T636 _T656 ]
-    _T656 = *(_T37 + 4) [ _T656 _T37 _T636 ]
-    _T657 = *(_T656 - 4) [ _T656 _T657 _T37 _T636 ]
-    _T658 = (_T636 < _T657) [ _T656 _T658 _T37 _T636 ]
-END BY BEQZ, if _T658 = 
-    0 : goto 9; 1 : goto 8
+  Use-Def Chain : 
+    (_T37, 35): []
+    (_T656, 36): [35]
+    (_T636, 37): [2, 7]
+    (_T657, 37): [36]
+    (_T658, 38): [37]
+
+    35: _T656 = *(_T37 + 4)    [ _T656 _T37 _T636 ]
+    36: _T657 = *(_T656 - 4)    [ _T656 _T657 _T37 _T636 ]
+    37: _T658 = (_T636 < _T657)    [ _T656 _T658 _T37 _T636 ]
+    38: END BY BEQZ, if _T658 = 0 : goto 9; 1 : goto 8
 BASIC BLOCK 8 : 
   Def     = [ _T659 _T660 ]
   liveUse = [ _T636 ]
   liveIn  = [ _T37 _T636 _T656 ]
   liveOut = [ _T37 _T636 _T656 ]
-    _T659 = 0 [ _T656 _T659 _T37 _T636 ]
-    _T660 = (_T636 < _T659) [ _T656 _T660 _T37 _T636 ]
-END BY BEQZ, if _T660 = 
-    0 : goto 10; 1 : goto 9
+  Use-Def Chain : 
+    (_T636, 40): [2, 7]
+    (_T659, 40): [39]
+    (_T660, 41): [40]
+
+    39: _T659 = 0    [ _T656 _T659 _T37 _T636 ]
+    40: _T660 = (_T636 < _T659)    [ _T656 _T660 _T37 _T636 ]
+    41: END BY BEQZ, if _T660 = 0 : goto 10; 1 : goto 9
 BASIC BLOCK 9 : 
   Def     = [ _T661 ]
   liveUse = [ ]
   liveIn  = [ _T37 _T636 _T656 ]
   liveOut = [ _T37 _T636 _T656 ]
-    _T661 = "Decaf runtime error: Array subscript out of bounds\n" [ _T656 _T37 _T661 _T636 ]
-    parm _T661 [ _T656 _T37 _T636 ]
-    call _PrintString [ _T656 _T37 _T636 ]
-    call _Halt [ _T656 _T37 _T636 ]
-END BY BRANCH, goto 10
+  Use-Def Chain : 
+    (_T661, 44): [43]
+
+    43: _T661 = "Decaf runtime error: Array subscript out of bounds\n"    [ _T656 _T37 _T661 _T636 ]
+    44: parm _T661    [ _T656 _T37 _T636 ]
+    45: call _PrintString    [ _T656 _T37 _T636 ]
+    46: call _Halt    [ _T656 _T37 _T636 ]
+    47: END BY BRANCH, goto 10
 BASIC BLOCK 10 : 
   Def     = [ _T662 _T663 _T664 _T665 _T666 _T667 _T668 ]
   liveUse = [ _T37 _T636 _T656 ]
   liveIn  = [ _T37 _T636 _T656 ]
   liveOut = [ _T37 _T636 ]
-    _T662 = 4 [ _T656 _T37 _T662 _T636 ]
-    _T663 = (_T636 * _T662) [ _T656 _T37 _T663 _T636 ]
-    _T664 = (_T656 + _T663) [ _T37 _T664 _T636 ]
-    _T665 = *(_T664 + 0) [ _T37 _T665 _T636 ]
-    _T666 = *(_T37 + 12) [ _T37 _T665 _T666 _T636 ]
-    parm _T665 [ _T37 _T665 _T666 _T636 ]
-    parm _T666 [ _T37 _T665 _T636 ]
-    _T667 = *(_T665 + 0) [ _T37 _T667 _T636 ]
-    _T668 = *(_T667 + 20) [ _T37 _T636 _T668 ]
-    call _T668 [ _T37 _T636 ]
-END BY BRANCH, goto 1
+  Use-Def Chain : 
+    (_T636, 49): [2, 7]
+    (_T662, 49): [48]
+    (_T656, 50): [35]
+    (_T663, 50): [49]
+    (_T664, 51): [50]
+    (_T37, 52): []
+    (_T665, 53): [51]
+    (_T666, 54): [52]
+    (_T665, 55): [51]
+    (_T667, 56): [55]
+    (_T668, 57): [56]
+
+    48: _T662 = 4    [ _T656 _T37 _T662 _T636 ]
+    49: _T663 = (_T636 * _T662)    [ _T656 _T37 _T663 _T636 ]
+    50: _T664 = (_T656 + _T663)    [ _T37 _T664 _T636 ]
+    51: _T665 = *(_T664 + 0)    [ _T37 _T665 _T636 ]
+    52: _T666 = *(_T37 + 12)    [ _T37 _T665 _T666 _T636 ]
+    53: parm _T665    [ _T37 _T665 _T666 _T636 ]
+    54: parm _T666    [ _T37 _T665 _T636 ]
+    55: _T667 = *(_T665 + 0)    [ _T37 _T667 _T636 ]
+    56: _T668 = *(_T667 + 20)    [ _T37 _T636 _T668 ]
+    57: call _T668    [ _T37 _T636 ]
+    58: END BY BRANCH, goto 1
 BASIC BLOCK 11 : 
   Def     = [ ]
   liveUse = [ ]
   liveIn  = [ _T37 ]
   liveOut = [ _T37 ]
-END BY RETURN, void result
+  Use-Def Chain : 
+
+    0: END BY RETURN, void result
 
 FUNCTION _House.ResolveAllPlayers : 
 BASIC BLOCK 0 : 
@@ -2195,130 +3440,201 @@ BASIC BLOCK 0 :
   liveUse = [ ]
   liveIn  = [ _T38 ]
   liveOut = [ _T38 _T669 ]
-    _T670 = "\nTime to resolve bets.\n" [ _T38 _T670 ]
-    parm _T670 [ _T38 ]
-    call _PrintString [ _T38 ]
-    _T671 = 0 [ _T38 _T671 ]
-    _T669 = _T671 [ _T38 _T669 ]
-END BY BRANCH, goto 2
+  Use-Def Chain : 
+    (_T670, 2): [1]
+    (_T671, 5): [4]
+
+    1: _T670 = "\nTime to resolve bets.\n"    [ _T38 _T670 ]
+    2: parm _T670    [ _T38 ]
+    3: call _PrintString    [ _T38 ]
+    4: _T671 = 0    [ _T38 _T671 ]
+    5: _T669 = _T671    [ _T38 _T669 ]
+    6: END BY BRANCH, goto 2
 BASIC BLOCK 1 : 
   Def     = [ _T672 _T673 ]
   liveUse = [ _T669 ]
   liveIn  = [ _T38 _T669 ]
   liveOut = [ _T38 _T669 ]
-    _T672 = 1 [ _T672 _T38 _T669 ]
-    _T673 = (_T669 + _T672) [ _T673 _T38 ]
-    _T669 = _T673 [ _T38 _T669 ]
-END BY BRANCH, goto 2
+  Use-Def Chain : 
+    (_T669, 9): [5, 10]
+    (_T672, 9): [8]
+    (_T673, 10): [9]
+
+    8: _T672 = 1    [ _T672 _T38 _T669 ]
+    9: _T673 = (_T669 + _T672)    [ _T673 _T38 ]
+    10: _T669 = _T673    [ _T38 _T669 ]
+    11: END BY BRANCH, goto 2
 BASIC BLOCK 2 : 
   Def     = [ _T674 _T675 _T676 ]
   liveUse = [ _T38 _T669 ]
   liveIn  = [ _T38 _T669 ]
   liveOut = [ _T38 _T669 ]
-    _T674 = *(_T38 + 4) [ _T674 _T38 _T669 ]
-    _T675 = *(_T674 - 4) [ _T675 _T38 _T669 ]
-    _T676 = (_T669 < _T675) [ _T676 _T38 _T669 ]
-END BY BEQZ, if _T676 = 
-    0 : goto 11; 1 : goto 3
+  Use-Def Chain : 
+    (_T38, 12): []
+    (_T674, 13): [12]
+    (_T669, 14): [5, 10]
+    (_T675, 14): [13]
+    (_T676, 15): [14]
+
+    12: _T674 = *(_T38 + 4)    [ _T674 _T38 _T669 ]
+    13: _T675 = *(_T674 - 4)    [ _T675 _T38 _T669 ]
+    14: _T676 = (_T669 < _T675)    [ _T676 _T38 _T669 ]
+    15: END BY BEQZ, if _T676 = 0 : goto 11; 1 : goto 3
 BASIC BLOCK 3 : 
   Def     = [ _T677 _T678 _T679 ]
   liveUse = [ _T38 _T669 ]
   liveIn  = [ _T38 _T669 ]
   liveOut = [ _T38 _T669 _T677 ]
-    _T677 = *(_T38 + 4) [ _T677 _T38 _T669 ]
-    _T678 = *(_T677 - 4) [ _T677 _T38 _T678 _T669 ]
-    _T679 = (_T669 < _T678) [ _T677 _T38 _T679 _T669 ]
-END BY BEQZ, if _T679 = 
-    0 : goto 5; 1 : goto 4
+  Use-Def Chain : 
+    (_T38, 16): []
+    (_T677, 17): [16]
+    (_T669, 18): [5, 10]
+    (_T678, 18): [17]
+    (_T679, 19): [18]
+
+    16: _T677 = *(_T38 + 4)    [ _T677 _T38 _T669 ]
+    17: _T678 = *(_T677 - 4)    [ _T677 _T38 _T678 _T669 ]
+    18: _T679 = (_T669 < _T678)    [ _T677 _T38 _T679 _T669 ]
+    19: END BY BEQZ, if _T679 = 0 : goto 5; 1 : goto 4
 BASIC BLOCK 4 : 
   Def     = [ _T680 _T681 ]
   liveUse = [ _T669 ]
   liveIn  = [ _T38 _T669 _T677 ]
   liveOut = [ _T38 _T669 _T677 ]
-    _T680 = 0 [ _T677 _T38 _T680 _T669 ]
-    _T681 = (_T669 < _T680) [ _T677 _T38 _T681 _T669 ]
-END BY BEQZ, if _T681 = 
-    0 : goto 6; 1 : goto 5
+  Use-Def Chain : 
+    (_T669, 21): [5, 10]
+    (_T680, 21): [20]
+    (_T681, 22): [21]
+
+    20: _T680 = 0    [ _T677 _T38 _T680 _T669 ]
+    21: _T681 = (_T669 < _T680)    [ _T677 _T38 _T681 _T669 ]
+    22: END BY BEQZ, if _T681 = 0 : goto 6; 1 : goto 5
 BASIC BLOCK 5 : 
   Def     = [ _T682 ]
   liveUse = [ ]
   liveIn  = [ _T38 _T669 _T677 ]
   liveOut = [ _T38 _T669 _T677 ]
-    _T682 = "Decaf runtime error: Array subscript out of bounds\n" [ _T677 _T38 _T682 _T669 ]
-    parm _T682 [ _T677 _T38 _T669 ]
-    call _PrintString [ _T677 _T38 _T669 ]
-    call _Halt [ _T677 _T38 _T669 ]
-END BY BRANCH, goto 6
+  Use-Def Chain : 
+    (_T682, 25): [24]
+
+    24: _T682 = "Decaf runtime error: Array subscript out of bounds\n"    [ _T677 _T38 _T682 _T669 ]
+    25: parm _T682    [ _T677 _T38 _T669 ]
+    26: call _PrintString    [ _T677 _T38 _T669 ]
+    27: call _Halt    [ _T677 _T38 _T669 ]
+    28: END BY BRANCH, goto 6
 BASIC BLOCK 6 : 
   Def     = [ _T683 _T684 _T685 _T686 _T687 _T688 _T689 ]
   liveUse = [ _T669 _T677 ]
   liveIn  = [ _T38 _T669 _T677 ]
   liveOut = [ _T38 _T669 ]
-    _T683 = 4 [ _T677 _T38 _T683 _T669 ]
-    _T684 = (_T669 * _T683) [ _T677 _T38 _T684 _T669 ]
-    _T685 = (_T677 + _T684) [ _T38 _T669 _T685 ]
-    _T686 = *(_T685 + 0) [ _T38 _T669 _T686 ]
-    parm _T686 [ _T38 _T669 _T686 ]
-    _T687 = *(_T686 + 0) [ _T38 _T669 _T687 ]
-    _T688 = *(_T687 + 24) [ _T688 _T38 _T669 ]
-    _T689 =  call _T688 [ _T689 _T38 _T669 ]
-END BY BEQZ, if _T689 = 
-    0 : goto 1; 1 : goto 7
+  Use-Def Chain : 
+    (_T669, 30): [5, 10]
+    (_T683, 30): [29]
+    (_T677, 31): [16]
+    (_T684, 31): [30]
+    (_T685, 32): [31]
+    (_T686, 33): [32]
+    (_T686, 34): [32]
+    (_T687, 35): [34]
+    (_T688, 36): [35]
+    (_T689, 37): [36]
+
+    29: _T683 = 4    [ _T677 _T38 _T683 _T669 ]
+    30: _T684 = (_T669 * _T683)    [ _T677 _T38 _T684 _T669 ]
+    31: _T685 = (_T677 + _T684)    [ _T38 _T669 _T685 ]
+    32: _T686 = *(_T685 + 0)    [ _T38 _T669 _T686 ]
+    33: parm _T686    [ _T38 _T669 _T686 ]
+    34: _T687 = *(_T686 + 0)    [ _T38 _T669 _T687 ]
+    35: _T688 = *(_T687 + 24)    [ _T688 _T38 _T669 ]
+    36: _T689 =  call _T688    [ _T689 _T38 _T669 ]
+    37: END BY BEQZ, if _T689 = 0 : goto 1; 1 : goto 7
 BASIC BLOCK 7 : 
   Def     = [ _T690 _T691 _T692 ]
   liveUse = [ _T38 _T669 ]
   liveIn  = [ _T38 _T669 ]
   liveOut = [ _T38 _T669 _T690 ]
-    _T690 = *(_T38 + 4) [ _T690 _T38 _T669 ]
-    _T691 = *(_T690 - 4) [ _T690 _T691 _T38 _T669 ]
-    _T692 = (_T669 < _T691) [ _T690 _T692 _T38 _T669 ]
-END BY BEQZ, if _T692 = 
-    0 : goto 9; 1 : goto 8
+  Use-Def Chain : 
+    (_T38, 38): []
+    (_T690, 39): [38]
+    (_T669, 40): [5, 10]
+    (_T691, 40): [39]
+    (_T692, 41): [40]
+
+    38: _T690 = *(_T38 + 4)    [ _T690 _T38 _T669 ]
+    39: _T691 = *(_T690 - 4)    [ _T690 _T691 _T38 _T669 ]
+    40: _T692 = (_T669 < _T691)    [ _T690 _T692 _T38 _T669 ]
+    41: END BY BEQZ, if _T692 = 0 : goto 9; 1 : goto 8
 BASIC BLOCK 8 : 
   Def     = [ _T693 _T694 ]
   liveUse = [ _T669 ]
   liveIn  = [ _T38 _T669 _T690 ]
   liveOut = [ _T38 _T669 _T690 ]
-    _T693 = 0 [ _T690 _T693 _T38 _T669 ]
-    _T694 = (_T669 < _T693) [ _T690 _T38 _T694 _T669 ]
-END BY BEQZ, if _T694 = 
-    0 : goto 10; 1 : goto 9
+  Use-Def Chain : 
+    (_T669, 43): [5, 10]
+    (_T693, 43): [42]
+    (_T694, 44): [43]
+
+    42: _T693 = 0    [ _T690 _T693 _T38 _T669 ]
+    43: _T694 = (_T669 < _T693)    [ _T690 _T38 _T694 _T669 ]
+    44: END BY BEQZ, if _T694 = 0 : goto 10; 1 : goto 9
 BASIC BLOCK 9 : 
   Def     = [ _T695 ]
   liveUse = [ ]
   liveIn  = [ _T38 _T669 _T690 ]
   liveOut = [ _T38 _T669 _T690 ]
-    _T695 = "Decaf runtime error: Array subscript out of bounds\n" [ _T690 _T38 _T695 _T669 ]
-    parm _T695 [ _T690 _T38 _T669 ]
-    call _PrintString [ _T690 _T38 _T669 ]
-    call _Halt [ _T690 _T38 _T669 ]
-END BY BRANCH, goto 10
+  Use-Def Chain : 
+    (_T695, 47): [46]
+
+    46: _T695 = "Decaf runtime error: Array subscript out of bounds\n"    [ _T690 _T38 _T695 _T669 ]
+    47: parm _T695    [ _T690 _T38 _T669 ]
+    48: call _PrintString    [ _T690 _T38 _T669 ]
+    49: call _Halt    [ _T690 _T38 _T669 ]
+    50: END BY BRANCH, goto 10
 BASIC BLOCK 10 : 
   Def     = [ _T696 _T697 _T698 _T699 _T700 _T701 _T702 _T703 _T704 _T705 ]
   liveUse = [ _T38 _T669 _T690 ]
   liveIn  = [ _T38 _T669 _T690 ]
   liveOut = [ _T38 _T669 ]
-    _T696 = 4 [ _T690 _T38 _T696 _T669 ]
-    _T697 = (_T669 * _T696) [ _T690 _T38 _T697 _T669 ]
-    _T698 = (_T690 + _T697) [ _T38 _T698 _T669 ]
-    _T699 = *(_T698 + 0) [ _T38 _T699 _T669 ]
-    _T700 = *(_T38 + 8) [ _T38 _T699 _T700 _T669 ]
-    parm _T700 [ _T38 _T699 _T700 _T669 ]
-    _T701 = *(_T700 + 0) [ _T38 _T699 _T669 _T701 ]
-    _T702 = *(_T701 + 36) [ _T38 _T699 _T669 _T702 ]
-    _T703 =  call _T702 [ _T38 _T699 _T669 _T703 ]
-    parm _T699 [ _T38 _T699 _T669 _T703 ]
-    parm _T703 [ _T38 _T699 _T669 ]
-    _T704 = *(_T699 + 0) [ _T704 _T38 _T669 ]
-    _T705 = *(_T704 + 40) [ _T705 _T38 _T669 ]
-    call _T705 [ _T38 _T669 ]
-END BY BRANCH, goto 1
+  Use-Def Chain : 
+    (_T669, 52): [5, 10]
+    (_T696, 52): [51]
+    (_T690, 53): [38]
+    (_T697, 53): [52]
+    (_T698, 54): [53]
+    (_T38, 55): []
+    (_T700, 56): [55]
+    (_T700, 57): [55]
+    (_T701, 58): [57]
+    (_T702, 59): [58]
+    (_T699, 60): [54]
+    (_T703, 61): [59]
+    (_T699, 62): [54]
+    (_T704, 63): [62]
+    (_T705, 64): [63]
+
+    51: _T696 = 4    [ _T690 _T38 _T696 _T669 ]
+    52: _T697 = (_T669 * _T696)    [ _T690 _T38 _T697 _T669 ]
+    53: _T698 = (_T690 + _T697)    [ _T38 _T698 _T669 ]
+    54: _T699 = *(_T698 + 0)    [ _T38 _T699 _T669 ]
+    55: _T700 = *(_T38 + 8)    [ _T38 _T699 _T700 _T669 ]
+    56: parm _T700    [ _T38 _T699 _T700 _T669 ]
+    57: _T701 = *(_T700 + 0)    [ _T38 _T699 _T669 _T701 ]
+    58: _T702 = *(_T701 + 36)    [ _T38 _T699 _T669 _T702 ]
+    59: _T703 =  call _T702    [ _T38 _T699 _T669 _T703 ]
+    60: parm _T699    [ _T38 _T699 _T669 _T703 ]
+    61: parm _T703    [ _T38 _T699 _T669 ]
+    62: _T704 = *(_T699 + 0)    [ _T704 _T38 _T669 ]
+    63: _T705 = *(_T704 + 40)    [ _T705 _T38 _T669 ]
+    64: call _T705    [ _T38 _T669 ]
+    65: END BY BRANCH, goto 1
 BASIC BLOCK 11 : 
   Def     = [ ]
   liveUse = [ ]
   liveIn  = [ _T38 ]
   liveOut = [ _T38 ]
-END BY RETURN, void result
+  Use-Def Chain : 
+
+    0: END BY RETURN, void result
 
 FUNCTION _House.PrintAllMoney : 
 BASIC BLOCK 0 : 
@@ -2326,77 +3642,117 @@ BASIC BLOCK 0 :
   liveUse = [ ]
   liveIn  = [ _T39 ]
   liveOut = [ _T39 _T706 ]
-    _T707 = 0 [ _T707 _T39 ]
-    _T706 = _T707 [ _T706 _T39 ]
-END BY BRANCH, goto 2
+  Use-Def Chain : 
+    (_T707, 2): [1]
+
+    1: _T707 = 0    [ _T707 _T39 ]
+    2: _T706 = _T707    [ _T706 _T39 ]
+    3: END BY BRANCH, goto 2
 BASIC BLOCK 1 : 
   Def     = [ _T708 _T709 ]
   liveUse = [ _T706 ]
   liveIn  = [ _T39 _T706 ]
   liveOut = [ _T39 _T706 ]
-    _T708 = 1 [ _T706 _T708 _T39 ]
-    _T709 = (_T706 + _T708) [ _T709 _T39 ]
-    _T706 = _T709 [ _T706 _T39 ]
-END BY BRANCH, goto 2
+  Use-Def Chain : 
+    (_T706, 6): [2, 7]
+    (_T708, 6): [5]
+    (_T709, 7): [6]
+
+    5: _T708 = 1    [ _T706 _T708 _T39 ]
+    6: _T709 = (_T706 + _T708)    [ _T709 _T39 ]
+    7: _T706 = _T709    [ _T706 _T39 ]
+    8: END BY BRANCH, goto 2
 BASIC BLOCK 2 : 
   Def     = [ _T710 _T711 _T712 ]
   liveUse = [ _T39 _T706 ]
   liveIn  = [ _T39 _T706 ]
   liveOut = [ _T39 _T706 ]
-    _T710 = *(_T39 + 4) [ _T706 _T710 _T39 ]
-    _T711 = *(_T710 - 4) [ _T706 _T39 _T711 ]
-    _T712 = (_T706 < _T711) [ _T706 _T39 _T712 ]
-END BY BEQZ, if _T712 = 
-    0 : goto 7; 1 : goto 3
+  Use-Def Chain : 
+    (_T39, 9): []
+    (_T710, 10): [9]
+    (_T706, 11): [2, 7]
+    (_T711, 11): [10]
+    (_T712, 12): [11]
+
+    9: _T710 = *(_T39 + 4)    [ _T706 _T710 _T39 ]
+    10: _T711 = *(_T710 - 4)    [ _T706 _T39 _T711 ]
+    11: _T712 = (_T706 < _T711)    [ _T706 _T39 _T712 ]
+    12: END BY BEQZ, if _T712 = 0 : goto 7; 1 : goto 3
 BASIC BLOCK 3 : 
   Def     = [ _T713 _T714 _T715 ]
   liveUse = [ _T39 _T706 ]
   liveIn  = [ _T39 _T706 ]
   liveOut = [ _T39 _T706 _T713 ]
-    _T713 = *(_T39 + 4) [ _T706 _T39 _T713 ]
-    _T714 = *(_T713 - 4) [ _T706 _T39 _T713 _T714 ]
-    _T715 = (_T706 < _T714) [ _T706 _T39 _T713 _T715 ]
-END BY BEQZ, if _T715 = 
-    0 : goto 5; 1 : goto 4
+  Use-Def Chain : 
+    (_T39, 13): []
+    (_T713, 14): [13]
+    (_T706, 15): [2, 7]
+    (_T714, 15): [14]
+    (_T715, 16): [15]
+
+    13: _T713 = *(_T39 + 4)    [ _T706 _T39 _T713 ]
+    14: _T714 = *(_T713 - 4)    [ _T706 _T39 _T713 _T714 ]
+    15: _T715 = (_T706 < _T714)    [ _T706 _T39 _T713 _T715 ]
+    16: END BY BEQZ, if _T715 = 0 : goto 5; 1 : goto 4
 BASIC BLOCK 4 : 
   Def     = [ _T716 _T717 ]
   liveUse = [ _T706 ]
   liveIn  = [ _T39 _T706 _T713 ]
   liveOut = [ _T39 _T706 _T713 ]
-    _T716 = 0 [ _T706 _T39 _T713 _T716 ]
-    _T717 = (_T706 < _T716) [ _T706 _T39 _T713 _T717 ]
-END BY BEQZ, if _T717 = 
-    0 : goto 6; 1 : goto 5
+  Use-Def Chain : 
+    (_T706, 18): [2, 7]
+    (_T716, 18): [17]
+    (_T717, 19): [18]
+
+    17: _T716 = 0    [ _T706 _T39 _T713 _T716 ]
+    18: _T717 = (_T706 < _T716)    [ _T706 _T39 _T713 _T717 ]
+    19: END BY BEQZ, if _T717 = 0 : goto 6; 1 : goto 5
 BASIC BLOCK 5 : 
   Def     = [ _T718 ]
   liveUse = [ ]
   liveIn  = [ _T39 _T706 _T713 ]
   liveOut = [ _T39 _T706 _T713 ]
-    _T718 = "Decaf runtime error: Array subscript out of bounds\n" [ _T706 _T39 _T713 _T718 ]
-    parm _T718 [ _T706 _T39 _T713 ]
-    call _PrintString [ _T706 _T39 _T713 ]
-    call _Halt [ _T706 _T39 _T713 ]
-END BY BRANCH, goto 6
+  Use-Def Chain : 
+    (_T718, 22): [21]
+
+    21: _T718 = "Decaf runtime error: Array subscript out of bounds\n"    [ _T706 _T39 _T713 _T718 ]
+    22: parm _T718    [ _T706 _T39 _T713 ]
+    23: call _PrintString    [ _T706 _T39 _T713 ]
+    24: call _Halt    [ _T706 _T39 _T713 ]
+    25: END BY BRANCH, goto 6
 BASIC BLOCK 6 : 
   Def     = [ _T719 _T720 _T721 _T722 _T723 _T724 ]
   liveUse = [ _T706 _T713 ]
   liveIn  = [ _T39 _T706 _T713 ]
   liveOut = [ _T39 _T706 ]
-    _T719 = 4 [ _T706 _T39 _T713 _T719 ]
-    _T720 = (_T706 * _T719) [ _T720 _T706 _T39 _T713 ]
-    _T721 = (_T713 + _T720) [ _T721 _T706 _T39 ]
-    _T722 = *(_T721 + 0) [ _T706 _T722 _T39 ]
-    parm _T722 [ _T706 _T722 _T39 ]
-    _T723 = *(_T722 + 0) [ _T706 _T723 _T39 ]
-    _T724 = *(_T723 + 28) [ _T706 _T724 _T39 ]
-    call _T724 [ _T706 _T39 ]
-END BY BRANCH, goto 1
+  Use-Def Chain : 
+    (_T706, 27): [2, 7]
+    (_T719, 27): [26]
+    (_T713, 28): [13]
+    (_T720, 28): [27]
+    (_T721, 29): [28]
+    (_T722, 30): [29]
+    (_T722, 31): [29]
+    (_T723, 32): [31]
+    (_T724, 33): [32]
+
+    26: _T719 = 4    [ _T706 _T39 _T713 _T719 ]
+    27: _T720 = (_T706 * _T719)    [ _T720 _T706 _T39 _T713 ]
+    28: _T721 = (_T713 + _T720)    [ _T721 _T706 _T39 ]
+    29: _T722 = *(_T721 + 0)    [ _T706 _T722 _T39 ]
+    30: parm _T722    [ _T706 _T722 _T39 ]
+    31: _T723 = *(_T722 + 0)    [ _T706 _T723 _T39 ]
+    32: _T724 = *(_T723 + 28)    [ _T706 _T724 _T39 ]
+    33: call _T724    [ _T706 _T39 ]
+    34: END BY BRANCH, goto 1
 BASIC BLOCK 7 : 
   Def     = [ ]
   liveUse = [ ]
   liveIn  = [ _T39 ]
   liveOut = [ _T39 ]
-END BY RETURN, void result
+  Use-Def Chain : 
+
+    0: END BY RETURN, void result
 
 FUNCTION _House.PlayOneGame : 
 BASIC BLOCK 0 : 
@@ -2404,68 +3760,119 @@ BASIC BLOCK 0 :
   liveUse = [ _T40 ]
   liveIn  = [ _T40 ]
   liveOut = [ _T40 ]
-    _T725 = *(_T40 + 12) [ _T725 _T40 ]
-    parm _T725 [ _T725 _T40 ]
-    _T726 = *(_T725 + 0) [ _T726 _T40 ]
-    _T727 = *(_T726 + 20) [ _T727 _T40 ]
-    _T728 =  call _T727 [ _T40 _T728 ]
-    _T729 = 26 [ _T40 _T728 _T729 ]
-    _T730 = (_T728 < _T729) [ _T40 _T730 ]
-END BY BEQZ, if _T730 = 
-    0 : goto 2; 1 : goto 1
+  Use-Def Chain : 
+    (_T40, 1): []
+    (_T725, 2): [1]
+    (_T725, 3): [1]
+    (_T726, 4): [3]
+    (_T727, 5): [4]
+    (_T728, 7): [5]
+    (_T729, 7): [6]
+    (_T730, 8): [7]
+
+    1: _T725 = *(_T40 + 12)    [ _T725 _T40 ]
+    2: parm _T725    [ _T725 _T40 ]
+    3: _T726 = *(_T725 + 0)    [ _T726 _T40 ]
+    4: _T727 = *(_T726 + 20)    [ _T727 _T40 ]
+    5: _T728 =  call _T727    [ _T40 _T728 ]
+    6: _T729 = 26    [ _T40 _T728 _T729 ]
+    7: _T730 = (_T728 < _T729)    [ _T40 _T730 ]
+    8: END BY BEQZ, if _T730 = 0 : goto 2; 1 : goto 1
 BASIC BLOCK 1 : 
   Def     = [ _T731 _T732 _T733 ]
   liveUse = [ _T40 ]
   liveIn  = [ _T40 ]
   liveOut = [ _T40 ]
-    _T731 = *(_T40 + 12) [ _T40 _T731 ]
-    parm _T731 [ _T40 _T731 ]
-    _T732 = *(_T731 + 0) [ _T40 _T732 ]
-    _T733 = *(_T732 + 16) [ _T40 _T733 ]
-    call _T733 [ _T40 ]
-END BY BRANCH, goto 2
+  Use-Def Chain : 
+    (_T40, 9): []
+    (_T731, 10): [9]
+    (_T731, 11): [9]
+    (_T732, 12): [11]
+    (_T733, 13): [12]
+
+    9: _T731 = *(_T40 + 12)    [ _T40 _T731 ]
+    10: parm _T731    [ _T40 _T731 ]
+    11: _T732 = *(_T731 + 0)    [ _T40 _T732 ]
+    12: _T733 = *(_T732 + 16)    [ _T40 _T733 ]
+    13: call _T733    [ _T40 ]
+    14: END BY BRANCH, goto 2
 BASIC BLOCK 2 : 
   Def     = [ _T734 _T735 _T736 _T737 _T738 _T739 _T740 _T741 _T742 _T743 _T744 _T745 _T746 _T747 _T748 _T749 _T750 _T751 _T752 ]
   liveUse = [ _T40 ]
   liveIn  = [ _T40 ]
   liveOut = [ _T40 ]
-    parm _T40 [ _T40 ]
-    _T734 = *(_T40 + 0) [ _T40 _T734 ]
-    _T735 = *(_T734 + 16) [ _T40 _T735 ]
-    call _T735 [ _T40 ]
-    _T736 = "\nDealer starts. " [ _T736 _T40 ]
-    parm _T736 [ _T40 ]
-    call _PrintString [ _T40 ]
-    _T737 = *(_T40 + 8) [ _T737 _T40 ]
-    _T738 = 0 [ _T737 _T738 _T40 ]
-    parm _T737 [ _T737 _T738 _T40 ]
-    parm _T738 [ _T737 _T40 ]
-    _T739 = *(_T737 + 0) [ _T739 _T40 ]
-    _T740 = *(_T739 + 8) [ _T740 _T40 ]
-    call _T740 [ _T40 ]
-    _T741 = *(_T40 + 8) [ _T741 _T40 ]
-    _T742 = *(_T40 + 12) [ _T741 _T742 _T40 ]
-    parm _T741 [ _T741 _T742 _T40 ]
-    parm _T742 [ _T741 _T40 ]
-    _T743 = *(_T741 + 0) [ _T743 _T40 ]
-    _T744 = *(_T743 + 12) [ _T40 _T744 ]
-    call _T744 [ _T40 ]
-    parm _T40 [ _T40 ]
-    _T745 = *(_T40 + 0) [ _T40 _T745 ]
-    _T746 = *(_T745 + 20) [ _T40 _T746 ]
-    call _T746 [ _T40 ]
-    _T747 = *(_T40 + 8) [ _T40 _T747 ]
-    _T748 = *(_T40 + 12) [ _T40 _T747 _T748 ]
-    parm _T747 [ _T40 _T747 _T748 ]
-    parm _T748 [ _T40 _T747 ]
-    _T749 = *(_T747 + 0) [ _T40 _T749 ]
-    _T750 = *(_T749 + 20) [ _T40 _T750 ]
-    call _T750 [ _T40 ]
-    parm _T40 [ _T40 ]
-    _T751 = *(_T40 + 0) [ _T40 _T751 ]
-    _T752 = *(_T751 + 24) [ _T752 _T40 ]
-    call _T752 [ _T40 ]
-END BY RETURN, void result
+  Use-Def Chain : 
+    (_T40, 15): []
+    (_T40, 16): []
+    (_T734, 17): [16]
+    (_T735, 18): [17]
+    (_T736, 20): [19]
+    (_T40, 22): []
+    (_T737, 24): [22]
+    (_T738, 25): [23]
+    (_T737, 26): [22]
+    (_T739, 27): [26]
+    (_T740, 28): [27]
+    (_T40, 29): []
+    (_T40, 30): []
+    (_T741, 31): [29]
+    (_T742, 32): [30]
+    (_T741, 33): [29]
+    (_T743, 34): [33]
+    (_T744, 35): [34]
+    (_T40, 36): []
+    (_T40, 37): []
+    (_T745, 38): [37]
+    (_T746, 39): [38]
+    (_T40, 40): []
+    (_T40, 41): []
+    (_T747, 42): [40]
+    (_T748, 43): [41]
+    (_T747, 44): [40]
+    (_T749, 45): [44]
+    (_T750, 46): [45]
+    (_T40, 47): []
+    (_T40, 48): []
+    (_T751, 49): [48]
+    (_T752, 50): [49]
+
+    15: parm _T40    [ _T40 ]
+    16: _T734 = *(_T40 + 0)    [ _T40 _T734 ]
+    17: _T735 = *(_T734 + 16)    [ _T40 _T735 ]
+    18: call _T735    [ _T40 ]
+    19: _T736 = "\nDealer starts. "    [ _T736 _T40 ]
+    20: parm _T736    [ _T40 ]
+    21: call _PrintString    [ _T40 ]
+    22: _T737 = *(_T40 + 8)    [ _T737 _T40 ]
+    23: _T738 = 0    [ _T737 _T738 _T40 ]
+    24: parm _T737    [ _T737 _T738 _T40 ]
+    25: parm _T738    [ _T737 _T40 ]
+    26: _T739 = *(_T737 + 0)    [ _T739 _T40 ]
+    27: _T740 = *(_T739 + 8)    [ _T740 _T40 ]
+    28: call _T740    [ _T40 ]
+    29: _T741 = *(_T40 + 8)    [ _T741 _T40 ]
+    30: _T742 = *(_T40 + 12)    [ _T741 _T742 _T40 ]
+    31: parm _T741    [ _T741 _T742 _T40 ]
+    32: parm _T742    [ _T741 _T40 ]
+    33: _T743 = *(_T741 + 0)    [ _T743 _T40 ]
+    34: _T744 = *(_T743 + 12)    [ _T40 _T744 ]
+    35: call _T744    [ _T40 ]
+    36: parm _T40    [ _T40 ]
+    37: _T745 = *(_T40 + 0)    [ _T40 _T745 ]
+    38: _T746 = *(_T745 + 20)    [ _T40 _T746 ]
+    39: call _T746    [ _T40 ]
+    40: _T747 = *(_T40 + 8)    [ _T40 _T747 ]
+    41: _T748 = *(_T40 + 12)    [ _T40 _T747 _T748 ]
+    42: parm _T747    [ _T40 _T747 _T748 ]
+    43: parm _T748    [ _T40 _T747 ]
+    44: _T749 = *(_T747 + 0)    [ _T40 _T749 ]
+    45: _T750 = *(_T749 + 20)    [ _T40 _T750 ]
+    46: call _T750    [ _T40 ]
+    47: parm _T40    [ _T40 ]
+    48: _T751 = *(_T40 + 0)    [ _T40 _T751 ]
+    49: _T752 = *(_T751 + 24)    [ _T752 _T40 ]
+    50: call _T752    [ _T40 ]
+    51: END BY RETURN, void result
 
 FUNCTION main : 
 BASIC BLOCK 0 : 
@@ -2473,59 +3880,90 @@ BASIC BLOCK 0 :
   liveUse = [ ]
   liveIn  = [ ]
   liveOut = [ _T753 _T755 ]
-    _T754 = 1 [ _T754 ]
-    _T753 = _T754 [ _T753 ]
-    _T756 =  call _House_New [ _T753 _T756 ]
-    _T755 = _T756 [ _T753 _T755 ]
-    parm _T755 [ _T753 _T755 ]
-    _T757 = *(_T755 + 0) [ _T753 _T755 _T757 ]
-    _T758 = *(_T757 + 8) [ _T753 _T755 _T758 ]
-    call _T758 [ _T753 _T755 ]
-    parm _T755 [ _T753 _T755 ]
-    _T759 = *(_T755 + 0) [ _T753 _T755 _T759 ]
-    _T760 = *(_T759 + 12) [ _T753 _T755 _T760 ]
-    call _T760 [ _T753 _T755 ]
-END BY BRANCH, goto 1
+  Use-Def Chain : 
+    (_T754, 2): [1]
+    (_T756, 4): [3]
+    (_T755, 5): [4]
+    (_T755, 6): [4]
+    (_T757, 7): [6]
+    (_T758, 8): [7]
+    (_T755, 9): [4]
+    (_T755, 10): [4]
+    (_T759, 11): [10]
+    (_T760, 12): [11]
+
+    1: _T754 = 1    [ _T754 ]
+    2: _T753 = _T754    [ _T753 ]
+    3: _T756 =  call _House_New    [ _T753 _T756 ]
+    4: _T755 = _T756    [ _T753 _T755 ]
+    5: parm _T755    [ _T753 _T755 ]
+    6: _T757 = *(_T755 + 0)    [ _T753 _T755 _T757 ]
+    7: _T758 = *(_T757 + 8)    [ _T753 _T755 _T758 ]
+    8: call _T758    [ _T753 _T755 ]
+    9: parm _T755    [ _T753 _T755 ]
+    10: _T759 = *(_T755 + 0)    [ _T753 _T755 _T759 ]
+    11: _T760 = *(_T759 + 12)    [ _T753 _T755 _T760 ]
+    12: call _T760    [ _T753 _T755 ]
+    13: END BY BRANCH, goto 1
 BASIC BLOCK 1 : 
   Def     = [ ]
   liveUse = [ _T753 ]
   liveIn  = [ _T753 _T755 ]
   liveOut = [ _T755 ]
-END BY BEQZ, if _T753 = 
-    0 : goto 3; 1 : goto 2
+  Use-Def Chain : 
+    (_T753, 0): [2, 22]
+
+    0: END BY BEQZ, if _T753 = 0 : goto 3; 1 : goto 2
 BASIC BLOCK 2 : 
   Def     = [ _T753 _T761 _T762 _T763 _T764 ]
   liveUse = [ _T755 ]
   liveIn  = [ _T755 ]
   liveOut = [ _T753 _T755 ]
-    parm _T755 [ _T755 ]
-    _T761 = *(_T755 + 0) [ _T755 _T761 ]
-    _T762 = *(_T761 + 32) [ _T755 _T762 ]
-    call _T762 [ _T755 ]
-    _T763 = "\nDo you want to play another hand?" [ _T755 _T763 ]
-    parm _T763 [ _T755 ]
-    _T764 =  call _Main.GetYesOrNo [ _T755 _T764 ]
-    _T753 = _T764 [ _T753 _T755 ]
-END BY BRANCH, goto 1
+  Use-Def Chain : 
+    (_T755, 15): [4]
+    (_T755, 16): [4]
+    (_T761, 17): [16]
+    (_T762, 18): [17]
+    (_T763, 20): [19]
+    (_T764, 22): [21]
+
+    15: parm _T755    [ _T755 ]
+    16: _T761 = *(_T755 + 0)    [ _T755 _T761 ]
+    17: _T762 = *(_T761 + 32)    [ _T755 _T762 ]
+    18: call _T762    [ _T755 ]
+    19: _T763 = "\nDo you want to play another hand?"    [ _T755 _T763 ]
+    20: parm _T763    [ _T755 ]
+    21: _T764 =  call _Main.GetYesOrNo    [ _T755 _T764 ]
+    22: _T753 = _T764    [ _T753 _T755 ]
+    23: END BY BRANCH, goto 1
 BASIC BLOCK 3 : 
   Def     = [ _T765 _T766 _T767 _T768 _T769 ]
   liveUse = [ _T755 ]
   liveIn  = [ _T755 ]
   liveOut = [ ]
-    parm _T755 [ _T755 ]
-    _T765 = *(_T755 + 0) [ _T765 ]
-    _T766 = *(_T765 + 28) [ _T766 ]
-    call _T766 [ ]
-    _T767 = "Thank you for playing...come again soon.\n" [ _T767 ]
-    parm _T767 [ ]
-    call _PrintString [ ]
-    _T768 = "\nCS143 BlackJack Copyright (c) 1999 by Peter Mork.\n" [ _T768 ]
-    parm _T768 [ ]
-    call _PrintString [ ]
-    _T769 = "(2001 mods by jdz)\n" [ _T769 ]
-    parm _T769 [ ]
-    call _PrintString [ ]
-END BY RETURN, void result
+  Use-Def Chain : 
+    (_T755, 25): [4]
+    (_T755, 26): [4]
+    (_T765, 27): [26]
+    (_T766, 28): [27]
+    (_T767, 30): [29]
+    (_T768, 33): [32]
+    (_T769, 36): [35]
+
+    25: parm _T755    [ _T755 ]
+    26: _T765 = *(_T755 + 0)    [ _T765 ]
+    27: _T766 = *(_T765 + 28)    [ _T766 ]
+    28: call _T766    [ ]
+    29: _T767 = "Thank you for playing...come again soon.\n"    [ _T767 ]
+    30: parm _T767    [ ]
+    31: call _PrintString    [ ]
+    32: _T768 = "\nCS143 BlackJack Copyright (c) 1999 by Peter Mork.\n"    [ _T768 ]
+    33: parm _T768    [ ]
+    34: call _PrintString    [ ]
+    35: _T769 = "(2001 mods by jdz)\n"    [ _T769 ]
+    36: parm _T769    [ ]
+    37: call _PrintString    [ ]
+    38: END BY RETURN, void result
 
 FUNCTION _Main.GetYesOrNo : 
 BASIC BLOCK 0 : 
@@ -2533,13 +3971,20 @@ BASIC BLOCK 0 :
   liveUse = [ _T41 ]
   liveIn  = [ _T41 ]
   liveOut = [ _T41 ]
-    parm _T41 [ _T41 ]
-    call _PrintString [ _T41 ]
-    _T770 = " (0=No/1=Yes) " [ _T770 _T41 ]
-    parm _T770 [ _T41 ]
-    call _PrintString [ _T41 ]
-    _T771 =  call _ReadInteger [ _T771 _T41 ]
-    _T772 = 0 [ _T771 _T772 _T41 ]
-    _T773 = (_T771 != _T772) [ _T773 _T41 ]
-END BY RETURN, result = _T773
+  Use-Def Chain : 
+    (_T41, 1): []
+    (_T770, 4): [3]
+    (_T771, 8): [6]
+    (_T772, 8): [7]
+    (_T773, 9): [8]
+
+    1: parm _T41    [ _T41 ]
+    2: call _PrintString    [ _T41 ]
+    3: _T770 = " (0=No/1=Yes) "    [ _T770 _T41 ]
+    4: parm _T770    [ _T41 ]
+    5: call _PrintString    [ _T41 ]
+    6: _T771 =  call _ReadInteger    [ _T771 _T41 ]
+    7: _T772 = 0    [ _T771 _T772 _T41 ]
+    8: _T773 = (_T771 != _T772)    [ _T773 _T41 ]
+    9: END BY RETURN, result = _T773
 

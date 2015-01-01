@@ -4,12 +4,18 @@ BASIC BLOCK 0 :
   liveUse = [ ]
   liveIn  = [ ]
   liveOut = [ ]
-    _T0 = 4 [ _T0 ]
-    parm _T0 [ ]
-    _T1 =  call _Alloc [ _T1 ]
-    _T2 = VTBL <_Main> [ _T1 _T2 ]
-    *(_T1 + 0) = _T2 [ _T1 ]
-END BY RETURN, result = _T1
+  Use-Def Chain : 
+    (_T0, 2): [1]
+    (_T1, 5): [3]
+    (_T2, 5): [4]
+    (_T1, 6): [3]
+
+    1: _T0 = 4    [ _T0 ]
+    2: parm _T0    [ ]
+    3: _T1 =  call _Alloc    [ _T1 ]
+    4: _T2 = VTBL <_Main>    [ _T1 _T2 ]
+    5: *(_T1 + 0) = _T2    [ _T1 ]
+    6: END BY RETURN, result = _T1
 
 FUNCTION main : 
 BASIC BLOCK 0 : 
@@ -17,8 +23,11 @@ BASIC BLOCK 0 :
   liveUse = [ ]
   liveIn  = [ ]
   liveOut = [ ]
-    _T3 = "hello world" [ _T3 ]
-    parm _T3 [ ]
-    call _PrintString [ ]
-END BY RETURN, void result
+  Use-Def Chain : 
+    (_T3, 2): [1]
+
+    1: _T3 = "hello world"    [ _T3 ]
+    2: parm _T3    [ ]
+    3: call _PrintString    [ ]
+    4: END BY RETURN, void result
 

@@ -10,7 +10,7 @@ import java.io.PrintStream;
 public final class Option {
 
 	public enum Level {
-		LEVEL0, LEVEL1, LEVEL2, LEVEL3, LEVEL4, LEVEL5
+		LEVEL0, LEVEL1, LEVEL2, LEVEL3, LEVEL4
 	}
 
 	private String srcFileName;
