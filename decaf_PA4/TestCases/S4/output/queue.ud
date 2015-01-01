@@ -1,0 +1,520 @@
+FUNCTION _QueueItem_New : 
+BASIC BLOCK 0 : 
+    1: _T15 = 16
+    2: parm _T15
+    3: _T16 =  call _Alloc
+    4: _T17 = 0
+    5: *(_T16 + 4) = _T17
+    6: *(_T16 + 8) = _T17
+    7: *(_T16 + 12) = _T17
+    8: _T18 = VTBL <_QueueItem>
+    9: *(_T16 + 0) = _T18
+    10: END BY RETURN, result = _T16
+  Use-Def Chain : 
+    (_T15, 2): [1]
+    (_T16, 5): [3]
+    (_T17, 5): [4]
+    (_T16, 6): [3]
+    (_T17, 6): [4]
+    (_T16, 7): [3]
+    (_T17, 7): [4]
+    (_T16, 9): [3]
+    (_T18, 9): [8]
+    (_T16, 10): [3]
+
+
+FUNCTION _Queue_New : 
+BASIC BLOCK 0 : 
+    1: _T19 = 12
+    2: parm _T19
+    3: _T20 =  call _Alloc
+    4: _T21 = 0
+    5: *(_T20 + 4) = _T21
+    6: *(_T20 + 8) = _T21
+    7: _T22 = VTBL <_Queue>
+    8: *(_T20 + 0) = _T22
+    9: END BY RETURN, result = _T20
+  Use-Def Chain : 
+    (_T19, 2): [1]
+    (_T20, 5): [3]
+    (_T21, 5): [4]
+    (_T20, 6): [3]
+    (_T21, 6): [4]
+    (_T20, 8): [3]
+    (_T22, 8): [7]
+    (_T20, 9): [3]
+
+
+FUNCTION _Main_New : 
+BASIC BLOCK 0 : 
+    1: _T23 = 4
+    2: parm _T23
+    3: _T24 =  call _Alloc
+    4: _T25 = VTBL <_Main>
+    5: *(_T24 + 0) = _T25
+    6: END BY RETURN, result = _T24
+  Use-Def Chain : 
+    (_T23, 2): [1]
+    (_T24, 5): [3]
+    (_T25, 5): [4]
+    (_T24, 6): [3]
+
+
+FUNCTION _QueueItem.Init : 
+BASIC BLOCK 0 : 
+    1: _T26 = *(_T0 + 4)
+    2: *(_T0 + 4) = _T1
+    3: _T27 = *(_T0 + 8)
+    4: *(_T0 + 8) = _T2
+    5: _T28 = *(_T2 + 12)
+    6: *(_T2 + 12) = _T0
+    7: _T29 = *(_T0 + 12)
+    8: *(_T0 + 12) = _T3
+    9: _T30 = *(_T3 + 8)
+    10: *(_T3 + 8) = _T0
+    11: END BY RETURN, void result
+  Use-Def Chain : 
+    (_T0, 1): []
+    (_T0, 2): []
+    (_T1, 2): []
+    (_T0, 3): []
+    (_T0, 4): []
+    (_T2, 4): []
+    (_T2, 5): []
+    (_T0, 6): []
+    (_T2, 6): []
+    (_T0, 7): []
+    (_T0, 8): []
+    (_T3, 8): []
+    (_T3, 9): []
+    (_T0, 10): []
+    (_T3, 10): []
+
+
+FUNCTION _QueueItem.GetData : 
+BASIC BLOCK 0 : 
+    1: _T31 = *(_T4 + 4)
+    2: END BY RETURN, result = _T31
+  Use-Def Chain : 
+    (_T4, 1): []
+    (_T31, 2): [1]
+
+
+FUNCTION _QueueItem.GetNext : 
+BASIC BLOCK 0 : 
+    1: _T32 = *(_T5 + 8)
+    2: END BY RETURN, result = _T32
+  Use-Def Chain : 
+    (_T5, 1): []
+    (_T32, 2): [1]
+
+
+FUNCTION _QueueItem.GetPrev : 
+BASIC BLOCK 0 : 
+    1: _T33 = *(_T6 + 12)
+    2: END BY RETURN, result = _T33
+  Use-Def Chain : 
+    (_T6, 1): []
+    (_T33, 2): [1]
+
+
+FUNCTION _QueueItem.SetNext : 
+BASIC BLOCK 0 : 
+    1: _T34 = *(_T7 + 8)
+    2: *(_T7 + 8) = _T8
+    3: END BY RETURN, void result
+  Use-Def Chain : 
+    (_T7, 1): []
+    (_T7, 2): []
+    (_T8, 2): []
+
+
+FUNCTION _QueueItem.SetPrev : 
+BASIC BLOCK 0 : 
+    1: _T35 = *(_T9 + 12)
+    2: *(_T9 + 12) = _T10
+    3: END BY RETURN, void result
+  Use-Def Chain : 
+    (_T9, 1): []
+    (_T9, 2): []
+    (_T10, 2): []
+
+
+FUNCTION _Queue.Init : 
+BASIC BLOCK 0 : 
+    1: _T36 = *(_T11 + 8)
+    2: _T37 =  call _QueueItem_New
+    3: *(_T11 + 8) = _T37
+    4: _T38 = *(_T11 + 8)
+    5: _T39 = 0
+    6: _T40 = *(_T11 + 8)
+    7: _T41 = *(_T11 + 8)
+    8: parm _T38
+    9: parm _T39
+    10: parm _T40
+    11: parm _T41
+    12: _T42 = *(_T38 + 0)
+    13: _T43 = *(_T42 + 8)
+    14: call _T43
+    15: END BY RETURN, void result
+  Use-Def Chain : 
+    (_T11, 1): []
+    (_T11, 3): []
+    (_T37, 3): [2]
+    (_T11, 4): []
+    (_T11, 6): []
+    (_T11, 7): []
+    (_T38, 8): [4]
+    (_T39, 9): [5]
+    (_T40, 10): [6]
+    (_T41, 11): [7]
+    (_T38, 12): [4]
+    (_T42, 13): [12]
+    (_T43, 14): [13]
+
+
+FUNCTION _Queue.EnQueue : 
+BASIC BLOCK 0 : 
+    1: _T45 =  call _QueueItem_New
+    2: _T44 = _T45
+    3: _T46 = *(_T12 + 8)
+    4: parm _T46
+    5: _T47 = *(_T46 + 0)
+    6: _T48 = *(_T47 + 16)
+    7: _T49 =  call _T48
+    8: _T50 = *(_T12 + 8)
+    9: parm _T44
+    10: parm _T13
+    11: parm _T49
+    12: parm _T50
+    13: _T51 = *(_T44 + 0)
+    14: _T52 = *(_T51 + 8)
+    15: call _T52
+    16: END BY RETURN, void result
+  Use-Def Chain : 
+    (_T45, 2): [1]
+    (_T12, 3): []
+    (_T46, 4): [3]
+    (_T46, 5): [3]
+    (_T47, 6): [5]
+    (_T48, 7): [6]
+    (_T12, 8): []
+    (_T44, 9): [2]
+    (_T13, 10): []
+    (_T49, 11): [7]
+    (_T50, 12): [8]
+    (_T44, 13): [2]
+    (_T51, 14): [13]
+    (_T52, 15): [14]
+
+
+FUNCTION _Queue.DeQueue : 
+BASIC BLOCK 0 : 
+    1: _T54 = *(_T14 + 8)
+    2: parm _T54
+    3: _T55 = *(_T54 + 0)
+    4: _T56 = *(_T55 + 20)
+    5: _T57 =  call _T56
+    6: _T58 = *(_T14 + 8)
+    7: _T59 = (_T57 == _T58)
+    8: END BY BEQZ, if _T59 = 0 : goto 2; 1 : goto 1
+  Use-Def Chain : 
+    (_T14, 1): []
+    (_T54, 2): [1]
+    (_T54, 3): [1]
+    (_T55, 4): [3]
+    (_T56, 5): [4]
+    (_T14, 6): []
+    (_T57, 7): [5]
+    (_T58, 7): [6]
+    (_T59, 8): [7]
+
+BASIC BLOCK 1 : 
+    9: _T60 = "Queue Is Empty"
+    10: parm _T60
+    11: call _PrintString
+    12: _T61 = 0
+    13: END BY RETURN, result = _T61
+  Use-Def Chain : 
+    (_T60, 10): [9]
+    (_T61, 13): [12]
+
+BASIC BLOCK 2 : 
+    16: _T63 = *(_T14 + 8)
+    17: parm _T63
+    18: _T64 = *(_T63 + 0)
+    19: _T65 = *(_T64 + 20)
+    20: _T66 =  call _T65
+    21: _T62 = _T66
+    22: parm _T62
+    23: _T67 = *(_T62 + 0)
+    24: _T68 = *(_T67 + 12)
+    25: _T69 =  call _T68
+    26: _T53 = _T69
+    27: parm _T62
+    28: _T70 = *(_T62 + 0)
+    29: _T71 = *(_T70 + 20)
+    30: _T72 =  call _T71
+    31: parm _T62
+    32: _T73 = *(_T62 + 0)
+    33: _T74 = *(_T73 + 16)
+    34: _T75 =  call _T74
+    35: parm _T72
+    36: parm _T75
+    37: _T76 = *(_T72 + 0)
+    38: _T77 = *(_T76 + 24)
+    39: call _T77
+    40: parm _T62
+    41: _T78 = *(_T62 + 0)
+    42: _T79 = *(_T78 + 16)
+    43: _T80 =  call _T79
+    44: parm _T62
+    45: _T81 = *(_T62 + 0)
+    46: _T82 = *(_T81 + 20)
+    47: _T83 =  call _T82
+    48: parm _T80
+    49: parm _T83
+    50: _T84 = *(_T80 + 0)
+    51: _T85 = *(_T84 + 28)
+    52: call _T85
+    53: END BY BRANCH, goto 3
+  Use-Def Chain : 
+    (_T14, 16): []
+    (_T63, 17): [16]
+    (_T63, 18): [16]
+    (_T64, 19): [18]
+    (_T65, 20): [19]
+    (_T66, 21): [20]
+    (_T62, 22): [21]
+    (_T62, 23): [21]
+    (_T67, 24): [23]
+    (_T68, 25): [24]
+    (_T69, 26): [25]
+    (_T62, 27): [21]
+    (_T62, 28): [21]
+    (_T70, 29): [28]
+    (_T71, 30): [29]
+    (_T62, 31): [21]
+    (_T62, 32): [21]
+    (_T73, 33): [32]
+    (_T74, 34): [33]
+    (_T72, 35): [30]
+    (_T75, 36): [34]
+    (_T72, 37): [30]
+    (_T76, 38): [37]
+    (_T77, 39): [38]
+    (_T62, 40): [21]
+    (_T62, 41): [21]
+    (_T78, 42): [41]
+    (_T79, 43): [42]
+    (_T62, 44): [21]
+    (_T62, 45): [21]
+    (_T81, 46): [45]
+    (_T82, 47): [46]
+    (_T80, 48): [43]
+    (_T83, 49): [47]
+    (_T80, 50): [43]
+    (_T84, 51): [50]
+    (_T85, 52): [51]
+
+BASIC BLOCK 3 : 
+    0: END BY RETURN, result = _T53
+  Use-Def Chain : 
+    (_T53, 0): [26]
+
+
+FUNCTION main : 
+BASIC BLOCK 0 : 
+    1: _T88 =  call _Queue_New
+    2: _T86 = _T88
+    3: parm _T86
+    4: _T89 = *(_T86 + 0)
+    5: _T90 = *(_T89 + 8)
+    6: call _T90
+    7: _T91 = 0
+    8: _T87 = _T91
+    9: END BY BRANCH, goto 2
+  Use-Def Chain : 
+    (_T88, 2): [1]
+    (_T86, 3): [2]
+    (_T86, 4): [2]
+    (_T89, 5): [4]
+    (_T90, 6): [5]
+    (_T91, 8): [7]
+
+BASIC BLOCK 1 : 
+    11: _T92 = 1
+    12: _T93 = (_T87 + _T92)
+    13: _T87 = _T93
+    14: END BY BRANCH, goto 2
+  Use-Def Chain : 
+    (_T87, 12): [8, 13]
+    (_T92, 12): [11]
+    (_T93, 13): [12]
+
+BASIC BLOCK 2 : 
+    15: _T94 = 10
+    16: _T95 = (_T87 < _T94)
+    17: END BY BEQZ, if _T95 = 0 : goto 4; 1 : goto 3
+  Use-Def Chain : 
+    (_T87, 16): [8, 13]
+    (_T94, 16): [15]
+    (_T95, 17): [16]
+
+BASIC BLOCK 3 : 
+    18: parm _T86
+    19: parm _T87
+    20: _T96 = *(_T86 + 0)
+    21: _T97 = *(_T96 + 12)
+    22: call _T97
+    23: END BY BRANCH, goto 1
+  Use-Def Chain : 
+    (_T86, 18): [2]
+    (_T87, 19): [8, 13]
+    (_T86, 20): [2]
+    (_T96, 21): [20]
+    (_T97, 22): [21]
+
+BASIC BLOCK 4 : 
+    25: _T98 = 0
+    26: _T87 = _T98
+    27: END BY BRANCH, goto 6
+  Use-Def Chain : 
+    (_T98, 26): [25]
+
+BASIC BLOCK 5 : 
+    29: _T99 = 1
+    30: _T100 = (_T87 + _T99)
+    31: _T87 = _T100
+    32: END BY BRANCH, goto 6
+  Use-Def Chain : 
+    (_T87, 30): [26, 31]
+    (_T99, 30): [29]
+    (_T100, 31): [30]
+
+BASIC BLOCK 6 : 
+    33: _T101 = 4
+    34: _T102 = (_T87 < _T101)
+    35: END BY BEQZ, if _T102 = 0 : goto 8; 1 : goto 7
+  Use-Def Chain : 
+    (_T87, 34): [26, 31]
+    (_T101, 34): [33]
+    (_T102, 35): [34]
+
+BASIC BLOCK 7 : 
+    36: parm _T86
+    37: _T103 = *(_T86 + 0)
+    38: _T104 = *(_T103 + 16)
+    39: _T105 =  call _T104
+    40: parm _T105
+    41: call _PrintInt
+    42: _T106 = " "
+    43: parm _T106
+    44: call _PrintString
+    45: END BY BRANCH, goto 5
+  Use-Def Chain : 
+    (_T86, 36): [2]
+    (_T86, 37): [2]
+    (_T103, 38): [37]
+    (_T104, 39): [38]
+    (_T105, 40): [39]
+    (_T106, 43): [42]
+
+BASIC BLOCK 8 : 
+    47: _T107 = "\n"
+    48: parm _T107
+    49: call _PrintString
+    50: _T108 = 0
+    51: _T87 = _T108
+    52: END BY BRANCH, goto 10
+  Use-Def Chain : 
+    (_T107, 48): [47]
+    (_T108, 51): [50]
+
+BASIC BLOCK 9 : 
+    54: _T109 = 1
+    55: _T110 = (_T87 + _T109)
+    56: _T87 = _T110
+    57: END BY BRANCH, goto 10
+  Use-Def Chain : 
+    (_T87, 55): [51, 56]
+    (_T109, 55): [54]
+    (_T110, 56): [55]
+
+BASIC BLOCK 10 : 
+    58: _T111 = 10
+    59: _T112 = (_T87 < _T111)
+    60: END BY BEQZ, if _T112 = 0 : goto 12; 1 : goto 11
+  Use-Def Chain : 
+    (_T87, 59): [51, 56]
+    (_T111, 59): [58]
+    (_T112, 60): [59]
+
+BASIC BLOCK 11 : 
+    61: parm _T86
+    62: parm _T87
+    63: _T113 = *(_T86 + 0)
+    64: _T114 = *(_T113 + 12)
+    65: call _T114
+    66: END BY BRANCH, goto 9
+  Use-Def Chain : 
+    (_T86, 61): [2]
+    (_T87, 62): [51, 56]
+    (_T86, 63): [2]
+    (_T113, 64): [63]
+    (_T114, 65): [64]
+
+BASIC BLOCK 12 : 
+    68: _T115 = 0
+    69: _T87 = _T115
+    70: END BY BRANCH, goto 14
+  Use-Def Chain : 
+    (_T115, 69): [68]
+
+BASIC BLOCK 13 : 
+    72: _T116 = 1
+    73: _T117 = (_T87 + _T116)
+    74: _T87 = _T117
+    75: END BY BRANCH, goto 14
+  Use-Def Chain : 
+    (_T87, 73): [69, 74]
+    (_T116, 73): [72]
+    (_T117, 74): [73]
+
+BASIC BLOCK 14 : 
+    76: _T118 = 17
+    77: _T119 = (_T87 < _T118)
+    78: END BY BEQZ, if _T119 = 0 : goto 16; 1 : goto 15
+  Use-Def Chain : 
+    (_T87, 77): [69, 74]
+    (_T118, 77): [76]
+    (_T119, 78): [77]
+
+BASIC BLOCK 15 : 
+    79: parm _T86
+    80: _T120 = *(_T86 + 0)
+    81: _T121 = *(_T120 + 16)
+    82: _T122 =  call _T121
+    83: parm _T122
+    84: call _PrintInt
+    85: _T123 = " "
+    86: parm _T123
+    87: call _PrintString
+    88: END BY BRANCH, goto 13
+  Use-Def Chain : 
+    (_T86, 79): [2]
+    (_T86, 80): [2]
+    (_T120, 81): [80]
+    (_T121, 82): [81]
+    (_T122, 83): [82]
+    (_T123, 86): [85]
+
+BASIC BLOCK 16 : 
+    90: _T124 = "\n"
+    91: parm _T124
+    92: call _PrintString
+    93: END BY RETURN, void result
+  Use-Def Chain : 
+    (_T124, 91): [90]
+
+

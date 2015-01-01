@@ -1,0 +1,125 @@
+FUNCTION _Computer_New : 
+BASIC BLOCK 0 : 
+    1: _T4 = 8
+    2: parm _T4
+    3: _T5 =  call _Alloc
+    4: _T6 = 0
+    5: *(_T5 + 4) = _T6
+    6: _T7 = VTBL <_Computer>
+    7: *(_T5 + 0) = _T7
+    8: END BY RETURN, result = _T5
+  Use-Def Chain : 
+    (_T4, 2): [1]
+    (_T5, 5): [3]
+    (_T6, 5): [4]
+    (_T5, 7): [3]
+    (_T7, 7): [6]
+    (_T5, 8): [3]
+
+
+FUNCTION _Mac_New : 
+BASIC BLOCK 0 : 
+    1: _T8 = 12
+    2: parm _T8
+    3: _T9 =  call _Alloc
+    4: _T10 = 0
+    5: *(_T9 + 4) = _T10
+    6: *(_T9 + 8) = _T10
+    7: _T11 = VTBL <_Mac>
+    8: *(_T9 + 0) = _T11
+    9: END BY RETURN, result = _T9
+  Use-Def Chain : 
+    (_T8, 2): [1]
+    (_T9, 5): [3]
+    (_T10, 5): [4]
+    (_T9, 6): [3]
+    (_T10, 6): [4]
+    (_T9, 8): [3]
+    (_T11, 8): [7]
+    (_T9, 9): [3]
+
+
+FUNCTION _Main_New : 
+BASIC BLOCK 0 : 
+    1: _T12 = 4
+    2: parm _T12
+    3: _T13 =  call _Alloc
+    4: _T14 = VTBL <_Main>
+    5: *(_T13 + 0) = _T14
+    6: END BY RETURN, result = _T13
+  Use-Def Chain : 
+    (_T12, 2): [1]
+    (_T13, 5): [3]
+    (_T14, 5): [4]
+    (_T13, 6): [3]
+
+
+FUNCTION _Computer.Crash : 
+BASIC BLOCK 0 : 
+    1: _T16 = 0
+    2: _T15 = _T16
+    3: END BY BRANCH, goto 2
+  Use-Def Chain : 
+    (_T16, 2): [1]
+
+BASIC BLOCK 1 : 
+    5: _T17 = 1
+    6: _T18 = (_T15 + _T17)
+    7: _T15 = _T18
+    8: END BY BRANCH, goto 2
+  Use-Def Chain : 
+    (_T15, 6): [2, 7]
+    (_T17, 6): [5]
+    (_T18, 7): [6]
+
+BASIC BLOCK 2 : 
+    9: _T19 = (_T15 < _T1)
+    10: END BY BEQZ, if _T19 = 0 : goto 4; 1 : goto 3
+  Use-Def Chain : 
+    (_T1, 9): []
+    (_T15, 9): [2, 7]
+    (_T19, 10): [9]
+
+BASIC BLOCK 3 : 
+    11: _T20 = "sad\n"
+    12: parm _T20
+    13: call _PrintString
+    14: END BY BRANCH, goto 1
+  Use-Def Chain : 
+    (_T20, 12): [11]
+
+BASIC BLOCK 4 : 
+    0: END BY RETURN, void result
+  Use-Def Chain : 
+
+
+FUNCTION _Mac.Crash : 
+BASIC BLOCK 0 : 
+    1: _T21 = "ack!"
+    2: parm _T21
+    3: call _PrintString
+    4: END BY RETURN, void result
+  Use-Def Chain : 
+    (_T21, 2): [1]
+
+
+FUNCTION main : 
+BASIC BLOCK 0 : 
+    1: _T23 =  call _Mac_New
+    2: _T22 = _T23
+    3: _T24 = 2
+    4: parm _T22
+    5: parm _T24
+    6: _T25 = *(_T22 + 0)
+    7: _T26 = *(_T25 + 8)
+    8: call _T26
+    9: END BY RETURN, void result
+  Use-Def Chain : 
+    (_T23, 2): [1]
+    (_T22, 4): [2]
+    (_T24, 5): [3]
+    (_T22, 6): [2]
+    (_T25, 7): [6]
+    (_T26, 8): [7]
+
+

@@ -1,0 +1,107 @@
+FUNCTION _Main_New : 
+BASIC BLOCK 0 : 
+    1: _T2 = 8
+    2: parm _T2
+    3: _T3 =  call _Alloc
+    4: _T4 = 0
+    5: *(_T3 + 4) = _T4
+    6: _T5 = VTBL <_Main>
+    7: *(_T3 + 0) = _T5
+    8: END BY RETURN, result = _T3
+  Use-Def Chain : 
+    (_T2, 2): [1]
+    (_T3, 5): [3]
+    (_T4, 5): [4]
+    (_T3, 7): [3]
+    (_T5, 7): [6]
+    (_T3, 8): [3]
+
+
+FUNCTION main : 
+BASIC BLOCK 0 : 
+    1: _T6 =  call _Main_New
+    2: _T7 = 1
+    3: _T8 = - _T7
+    4: parm _T6
+    5: parm _T8
+    6: _T9 = *(_T6 + 0)
+    7: _T10 = *(_T9 + 8)
+    8: call _T10
+    9: END BY RETURN, void result
+  Use-Def Chain : 
+    (_T7, 3): [2]
+    (_T6, 4): [1]
+    (_T8, 5): [3]
+    (_T6, 6): [1]
+    (_T9, 7): [6]
+    (_T10, 8): [7]
+
+
+FUNCTION _Main.create : 
+BASIC BLOCK 0 : 
+    1: _T11 = *(_T0 + 4)
+    2: _T12 = 0
+    3: _T13 = (_T1 < _T12)
+    4: END BY BEQZ, if _T13 = 0 : goto 2; 1 : goto 1
+  Use-Def Chain : 
+    (_T0, 1): []
+    (_T1, 3): []
+    (_T12, 3): [2]
+    (_T13, 4): [3]
+
+BASIC BLOCK 1 : 
+    5: _T14 = "Decaf runtime error: Cannot create negative-sized array\n"
+    6: parm _T14
+    7: call _PrintString
+    8: call _Halt
+    9: END BY BRANCH, goto 2
+  Use-Def Chain : 
+    (_T14, 6): [5]
+
+BASIC BLOCK 2 : 
+    10: _T15 = 4
+    11: _T16 = (_T15 * _T1)
+    12: _T17 = (_T15 + _T16)
+    13: parm _T17
+    14: _T18 =  call _Alloc
+    15: *(_T18 + 0) = _T1
+    16: _T19 = 0
+    17: _T18 = (_T18 + _T17)
+    18: END BY BRANCH, goto 3
+  Use-Def Chain : 
+    (_T1, 11): []
+    (_T15, 11): [10]
+    (_T15, 12): [10]
+    (_T16, 12): [11]
+    (_T17, 13): [12]
+    (_T1, 15): []
+    (_T18, 15): [14]
+    (_T17, 17): [12]
+    (_T18, 17): [14]
+
+BASIC BLOCK 3 : 
+    19: _T17 = (_T17 - _T15)
+    20: END BY BEQZ, if _T17 = 0 : goto 5; 1 : goto 4
+  Use-Def Chain : 
+    (_T15, 19): [10]
+    (_T17, 19): [12, 19]
+    (_T17, 20): [19]
+
+BASIC BLOCK 4 : 
+    21: _T18 = (_T18 - _T15)
+    22: *(_T18 + 0) = _T19
+    23: END BY BRANCH, goto 3
+  Use-Def Chain : 
+    (_T15, 21): [10]
+    (_T18, 21): [17, 21]
+    (_T18, 22): [21]
+    (_T19, 22): [16]
+
+BASIC BLOCK 5 : 
+    25: *(_T0 + 4) = _T18
+    26: END BY RETURN, void result
+  Use-Def Chain : 
+    (_T0, 25): []
+    (_T18, 25): [17, 21]
+
+

@@ -49,9 +49,13 @@ if __name__ == '__main__':
 
         cmd = ['java', '-jar', decaf_jar, '-l', '4', name]
         code = subprocess.call(cmd,
-                stdout = open(os.path.join('output', bname+'.s'), 'w'),
+                stdout = open(os.path.join('output', bname+'.ud'), 'w'),
                 stderr = subprocess.STDOUT)
 
+        cmd = ['java', '-jar', decaf_jar, '-l', '5', name]
+        code = subprocess.call(cmd,
+                stdout = open(os.path.join('output', bname+'.s'), 'w'),
+                stderr = subprocess.STDOUT)
         if name == 'blackjack.decaf':
             continue
 

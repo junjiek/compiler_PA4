@@ -1,0 +1,49 @@
+FUNCTION _Main_New : 
+BASIC BLOCK 0 : 
+    1: _T2 = 4
+    2: parm _T2
+    3: _T3 =  call _Alloc
+    4: _T4 = VTBL <_Main>
+    5: *(_T3 + 0) = _T4
+    6: END BY RETURN, result = _T3
+  Use-Def Chain : 
+    (_T2, 2): [1]
+    (_T3, 5): [3]
+    (_T4, 5): [4]
+    (_T3, 6): [3]
+
+
+FUNCTION main : 
+BASIC BLOCK 0 : 
+    1: _T7 = "hello"
+    2: _T6 = _T7
+    3: _T8 = 4
+    4: _T9 = 5
+    5: parm _T8
+    6: parm _T9
+    7: _T10 =  call _Main.test
+    8: _T5 = _T10
+    9: parm _T5
+    10: call _PrintInt
+    11: parm _T6
+    12: call _PrintString
+    13: END BY RETURN, void result
+  Use-Def Chain : 
+    (_T7, 2): [1]
+    (_T8, 5): [3]
+    (_T9, 6): [4]
+    (_T10, 8): [7]
+    (_T5, 9): [8]
+    (_T6, 11): [2]
+
+
+FUNCTION _Main.test : 
+BASIC BLOCK 0 : 
+    1: _T11 = (_T0 + _T1)
+    2: END BY RETURN, result = _T11
+  Use-Def Chain : 
+    (_T0, 1): []
+    (_T1, 1): []
+    (_T11, 2): [1]
+
+

@@ -1,0 +1,194 @@
+FUNCTION _Animal_New : 
+BASIC BLOCK 0 : 
+    1: _T10 = 12
+    2: parm _T10
+    3: _T11 =  call _Alloc
+    4: _T12 = 0
+    5: *(_T11 + 4) = _T12
+    6: *(_T11 + 8) = _T12
+    7: _T13 = VTBL <_Animal>
+    8: *(_T11 + 0) = _T13
+    9: END BY RETURN, result = _T11
+  Use-Def Chain : 
+    (_T10, 2): [1]
+    (_T11, 5): [3]
+    (_T12, 5): [4]
+    (_T11, 6): [3]
+    (_T12, 6): [4]
+    (_T11, 8): [3]
+    (_T13, 8): [7]
+    (_T11, 9): [3]
+
+
+FUNCTION _Cow_New : 
+BASIC BLOCK 0 : 
+    1: _T14 = 16
+    2: parm _T14
+    3: _T15 =  call _Alloc
+    4: _T16 = 0
+    5: *(_T15 + 4) = _T16
+    6: *(_T15 + 8) = _T16
+    7: *(_T15 + 12) = _T16
+    8: _T17 = VTBL <_Cow>
+    9: *(_T15 + 0) = _T17
+    10: END BY RETURN, result = _T15
+  Use-Def Chain : 
+    (_T14, 2): [1]
+    (_T15, 5): [3]
+    (_T16, 5): [4]
+    (_T15, 6): [3]
+    (_T16, 6): [4]
+    (_T15, 7): [3]
+    (_T16, 7): [4]
+    (_T15, 9): [3]
+    (_T17, 9): [8]
+    (_T15, 10): [3]
+
+
+FUNCTION _Main_New : 
+BASIC BLOCK 0 : 
+    1: _T18 = 4
+    2: parm _T18
+    3: _T19 =  call _Alloc
+    4: _T20 = VTBL <_Main>
+    5: *(_T19 + 0) = _T20
+    6: END BY RETURN, result = _T19
+  Use-Def Chain : 
+    (_T18, 2): [1]
+    (_T19, 5): [3]
+    (_T20, 5): [4]
+    (_T19, 6): [3]
+
+
+FUNCTION _Animal.InitAnimal : 
+BASIC BLOCK 0 : 
+    1: _T21 = *(_T0 + 4)
+    2: *(_T0 + 4) = _T1
+    3: _T22 = *(_T0 + 8)
+    4: *(_T0 + 8) = _T2
+    5: END BY RETURN, void result
+  Use-Def Chain : 
+    (_T0, 1): []
+    (_T0, 2): []
+    (_T1, 2): []
+    (_T0, 3): []
+    (_T0, 4): []
+    (_T2, 4): []
+
+
+FUNCTION _Animal.GetHeight : 
+BASIC BLOCK 0 : 
+    1: _T23 = *(_T3 + 4)
+    2: END BY RETURN, result = _T23
+  Use-Def Chain : 
+    (_T3, 1): []
+    (_T23, 2): [1]
+
+
+FUNCTION _Animal.GetMom : 
+BASIC BLOCK 0 : 
+    1: _T24 = *(_T4 + 8)
+    2: END BY RETURN, result = _T24
+  Use-Def Chain : 
+    (_T4, 1): []
+    (_T24, 2): [1]
+
+
+FUNCTION _Cow.InitCow : 
+BASIC BLOCK 0 : 
+    1: _T25 = *(_T5 + 12)
+    2: *(_T5 + 12) = _T8
+    3: parm _T5
+    4: parm _T6
+    5: parm _T7
+    6: _T26 = *(_T5 + 0)
+    7: _T27 = *(_T26 + 8)
+    8: call _T27
+    9: END BY RETURN, void result
+  Use-Def Chain : 
+    (_T5, 1): []
+    (_T5, 2): []
+    (_T8, 2): []
+    (_T5, 3): []
+    (_T6, 4): []
+    (_T7, 5): []
+    (_T5, 6): []
+    (_T26, 7): [6]
+    (_T27, 8): [7]
+
+
+FUNCTION _Cow.IsSpottedCow : 
+BASIC BLOCK 0 : 
+    1: _T28 = *(_T9 + 12)
+    2: END BY RETURN, result = _T28
+  Use-Def Chain : 
+    (_T9, 1): []
+    (_T28, 2): [1]
+
+
+FUNCTION main : 
+BASIC BLOCK 0 : 
+    1: _T31 =  call _Cow_New
+    2: _T29 = _T31
+    3: _T32 = 5
+    4: _T33 = 0
+    5: _T34 = 1
+    6: parm _T29
+    7: parm _T32
+    8: parm _T33
+    9: parm _T34
+    10: _T35 = *(_T29 + 0)
+    11: _T36 = *(_T35 + 20)
+    12: call _T36
+    13: _T30 = _T29
+    14: parm _T30
+    15: _T37 = *(_T30 + 0)
+    16: _T38 = *(_T37 + 16)
+    17: _T39 =  call _T38
+    18: _T40 = "spots: "
+    19: parm _T40
+    20: call _PrintString
+    21: parm _T29
+    22: _T41 = *(_T29 + 0)
+    23: _T42 = *(_T41 + 24)
+    24: _T43 =  call _T42
+    25: parm _T43
+    26: call _PrintBool
+    27: _T44 = "    height: "
+    28: parm _T44
+    29: call _PrintString
+    30: parm _T30
+    31: _T45 = *(_T30 + 0)
+    32: _T46 = *(_T45 + 12)
+    33: _T47 =  call _T46
+    34: parm _T47
+    35: call _PrintInt
+    36: END BY RETURN, void result
+  Use-Def Chain : 
+    (_T31, 2): [1]
+    (_T29, 6): [2]
+    (_T32, 7): [3]
+    (_T33, 8): [4]
+    (_T34, 9): [5]
+    (_T29, 10): [2]
+    (_T35, 11): [10]
+    (_T36, 12): [11]
+    (_T29, 13): [2]
+    (_T30, 14): [13]
+    (_T30, 15): [13]
+    (_T37, 16): [15]
+    (_T38, 17): [16]
+    (_T40, 19): [18]
+    (_T29, 21): [2]
+    (_T29, 22): [2]
+    (_T41, 23): [22]
+    (_T42, 24): [23]
+    (_T43, 25): [24]
+    (_T44, 28): [27]
+    (_T30, 30): [13]
+    (_T30, 31): [13]
+    (_T45, 32): [31]
+    (_T46, 33): [32]
+    (_T47, 34): [33]
+
+

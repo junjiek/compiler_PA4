@@ -1,0 +1,108 @@
+FUNCTION _Cow_New : 
+BASIC BLOCK 0 : 
+    1: _T4 = 12
+    2: parm _T4
+    3: _T5 =  call _Alloc
+    4: _T6 = 0
+    5: *(_T5 + 4) = _T6
+    6: *(_T5 + 8) = _T6
+    7: _T7 = VTBL <_Cow>
+    8: *(_T5 + 0) = _T7
+    9: END BY RETURN, result = _T5
+  Use-Def Chain : 
+    (_T4, 2): [1]
+    (_T5, 5): [3]
+    (_T6, 5): [4]
+    (_T5, 6): [3]
+    (_T6, 6): [4]
+    (_T5, 8): [3]
+    (_T7, 8): [7]
+    (_T5, 9): [3]
+
+
+FUNCTION _Main_New : 
+BASIC BLOCK 0 : 
+    1: _T8 = 4
+    2: parm _T8
+    3: _T9 =  call _Alloc
+    4: _T10 = VTBL <_Main>
+    5: *(_T9 + 0) = _T10
+    6: END BY RETURN, result = _T9
+  Use-Def Chain : 
+    (_T8, 2): [1]
+    (_T9, 5): [3]
+    (_T10, 5): [4]
+    (_T9, 6): [3]
+
+
+FUNCTION _Cow.Init : 
+BASIC BLOCK 0 : 
+    1: _T11 = *(_T0 + 8)
+    2: *(_T0 + 8) = _T1
+    3: _T12 = *(_T0 + 4)
+    4: *(_T0 + 4) = _T2
+    5: END BY RETURN, void result
+  Use-Def Chain : 
+    (_T0, 1): []
+    (_T0, 2): []
+    (_T1, 2): []
+    (_T0, 3): []
+    (_T0, 4): []
+    (_T2, 4): []
+
+
+FUNCTION _Cow.Moo : 
+BASIC BLOCK 0 : 
+    1: _T13 = *(_T3 + 4)
+    2: parm _T13
+    3: call _PrintInt
+    4: _T14 = " "
+    5: parm _T14
+    6: call _PrintString
+    7: _T15 = *(_T3 + 8)
+    8: parm _T15
+    9: call _PrintInt
+    10: _T16 = "\n"
+    11: parm _T16
+    12: call _PrintString
+    13: END BY RETURN, void result
+  Use-Def Chain : 
+    (_T3, 1): []
+    (_T13, 2): [1]
+    (_T14, 5): [4]
+    (_T3, 7): []
+    (_T15, 8): [7]
+    (_T16, 11): [10]
+
+
+FUNCTION main : 
+BASIC BLOCK 0 : 
+    1: _T18 =  call _Cow_New
+    2: _T17 = _T18
+    3: _T19 = 100
+    4: _T20 = 122
+    5: parm _T17
+    6: parm _T19
+    7: parm _T20
+    8: _T21 = *(_T17 + 0)
+    9: _T22 = *(_T21 + 8)
+    10: call _T22
+    11: parm _T17
+    12: _T23 = *(_T17 + 0)
+    13: _T24 = *(_T23 + 12)
+    14: call _T24
+    15: END BY RETURN, void result
+  Use-Def Chain : 
+    (_T18, 2): [1]
+    (_T17, 5): [2]
+    (_T19, 6): [3]
+    (_T20, 7): [4]
+    (_T17, 8): [2]
+    (_T21, 9): [8]
+    (_T22, 10): [9]
+    (_T17, 11): [2]
+    (_T17, 12): [2]
+    (_T23, 13): [12]
+    (_T24, 14): [13]
+
+

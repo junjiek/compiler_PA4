@@ -1,0 +1,277 @@
+FUNCTION _Math_New : 
+BASIC BLOCK 0 : 
+    1: _T8 = 4
+    2: parm _T8
+    3: _T9 =  call _Alloc
+    4: _T10 = VTBL <_Math>
+    5: *(_T9 + 0) = _T10
+    6: END BY RETURN, result = _T9
+  Use-Def Chain : 
+    (_T8, 2): [1]
+    (_T9, 5): [3]
+    (_T10, 5): [4]
+    (_T9, 6): [3]
+
+
+FUNCTION _Main_New : 
+BASIC BLOCK 0 : 
+    1: _T11 = 4
+    2: parm _T11
+    3: _T12 =  call _Alloc
+    4: _T13 = VTBL <_Main>
+    5: *(_T12 + 0) = _T13
+    6: END BY RETURN, result = _T12
+  Use-Def Chain : 
+    (_T11, 2): [1]
+    (_T12, 5): [3]
+    (_T13, 5): [4]
+    (_T12, 6): [3]
+
+
+FUNCTION _Math.abs : 
+BASIC BLOCK 0 : 
+    1: _T14 = 0
+    2: _T15 = (_T0 >= _T14)
+    3: END BY BEQZ, if _T15 = 0 : goto 2; 1 : goto 1
+  Use-Def Chain : 
+    (_T0, 2): []
+    (_T14, 2): [1]
+    (_T15, 3): [2]
+
+BASIC BLOCK 1 : 
+    0: END BY RETURN, result = _T0
+  Use-Def Chain : 
+    (_T0, 0): []
+
+BASIC BLOCK 2 : 
+    7: _T16 = - _T0
+    8: END BY RETURN, result = _T16
+  Use-Def Chain : 
+    (_T0, 7): []
+    (_T16, 8): [7]
+
+BASIC BLOCK 3 : 
+    0: END BY RETURN, void result
+  Use-Def Chain : 
+
+
+FUNCTION _Math.pow : 
+BASIC BLOCK 0 : 
+    1: _T19 = 1
+    2: _T18 = _T19
+    3: _T20 = 0
+    4: _T17 = _T20
+    5: END BY BRANCH, goto 2
+  Use-Def Chain : 
+    (_T19, 2): [1]
+    (_T20, 4): [3]
+
+BASIC BLOCK 1 : 
+    7: _T21 = 1
+    8: _T22 = (_T17 + _T21)
+    9: _T17 = _T22
+    10: END BY BRANCH, goto 2
+  Use-Def Chain : 
+    (_T17, 8): [4, 9]
+    (_T21, 8): [7]
+    (_T22, 9): [8]
+
+BASIC BLOCK 2 : 
+    11: _T23 = (_T17 < _T2)
+    12: END BY BEQZ, if _T23 = 0 : goto 4; 1 : goto 3
+  Use-Def Chain : 
+    (_T2, 11): []
+    (_T17, 11): [4, 9]
+    (_T23, 12): [11]
+
+BASIC BLOCK 3 : 
+    13: _T24 = (_T18 * _T1)
+    14: _T18 = _T24
+    15: END BY BRANCH, goto 1
+  Use-Def Chain : 
+    (_T1, 13): []
+    (_T18, 13): [2, 14]
+    (_T24, 14): [13]
+
+BASIC BLOCK 4 : 
+    0: END BY RETURN, result = _T18
+  Use-Def Chain : 
+    (_T18, 0): [2, 14]
+
+
+FUNCTION _Math.log : 
+BASIC BLOCK 0 : 
+    1: _T25 = 1
+    2: _T26 = (_T3 < _T25)
+    3: END BY BEQZ, if _T26 = 0 : goto 2; 1 : goto 1
+  Use-Def Chain : 
+    (_T3, 2): []
+    (_T25, 2): [1]
+    (_T26, 3): [2]
+
+BASIC BLOCK 1 : 
+    4: _T27 = 1
+    5: _T28 = - _T27
+    6: END BY RETURN, result = _T28
+  Use-Def Chain : 
+    (_T27, 5): [4]
+    (_T28, 6): [5]
+
+BASIC BLOCK 2 : 
+    8: _T30 = 0
+    9: _T29 = _T30
+    10: END BY BRANCH, goto 3
+  Use-Def Chain : 
+    (_T30, 9): [8]
+
+BASIC BLOCK 3 : 
+    11: _T31 = 1
+    12: _T32 = (_T3 > _T31)
+    13: END BY BEQZ, if _T32 = 0 : goto 5; 1 : goto 4
+  Use-Def Chain : 
+    (_T3, 12): [19]
+    (_T31, 12): [11]
+    (_T32, 13): [12]
+
+BASIC BLOCK 4 : 
+    14: _T33 = 1
+    15: _T34 = (_T29 + _T33)
+    16: _T29 = _T34
+    17: _T35 = 2
+    18: _T36 = (_T3 / _T35)
+    19: _T3 = _T36
+    20: END BY BRANCH, goto 3
+  Use-Def Chain : 
+    (_T29, 15): [9, 16]
+    (_T33, 15): [14]
+    (_T34, 16): [15]
+    (_T3, 18): [19]
+    (_T35, 18): [17]
+    (_T36, 19): [18]
+
+BASIC BLOCK 5 : 
+    0: END BY RETURN, result = _T29
+  Use-Def Chain : 
+    (_T29, 0): [9, 16]
+
+
+FUNCTION _Math.max : 
+BASIC BLOCK 0 : 
+    1: _T37 = (_T4 > _T5)
+    2: END BY BEQZ, if _T37 = 0 : goto 2; 1 : goto 1
+  Use-Def Chain : 
+    (_T4, 1): []
+    (_T5, 1): []
+    (_T37, 2): [1]
+
+BASIC BLOCK 1 : 
+    0: END BY RETURN, result = _T4
+  Use-Def Chain : 
+    (_T4, 0): []
+
+BASIC BLOCK 2 : 
+    0: END BY RETURN, result = _T5
+  Use-Def Chain : 
+    (_T5, 0): []
+
+BASIC BLOCK 3 : 
+    0: END BY RETURN, void result
+  Use-Def Chain : 
+
+
+FUNCTION _Math.min : 
+BASIC BLOCK 0 : 
+    1: _T38 = (_T6 < _T7)
+    2: END BY BEQZ, if _T38 = 0 : goto 2; 1 : goto 1
+  Use-Def Chain : 
+    (_T6, 1): []
+    (_T7, 1): []
+    (_T38, 2): [1]
+
+BASIC BLOCK 1 : 
+    0: END BY RETURN, result = _T6
+  Use-Def Chain : 
+    (_T6, 0): []
+
+BASIC BLOCK 2 : 
+    0: END BY RETURN, result = _T7
+  Use-Def Chain : 
+    (_T7, 0): []
+
+BASIC BLOCK 3 : 
+    0: END BY RETURN, void result
+  Use-Def Chain : 
+
+
+FUNCTION main : 
+BASIC BLOCK 0 : 
+    1: _T39 = 1
+    2: _T40 = - _T39
+    3: parm _T40
+    4: _T41 =  call _Math.abs
+    5: parm _T41
+    6: call _PrintInt
+    7: _T42 = "\n"
+    8: parm _T42
+    9: call _PrintString
+    10: _T43 = 2
+    11: _T44 = 3
+    12: parm _T43
+    13: parm _T44
+    14: _T45 =  call _Math.pow
+    15: parm _T45
+    16: call _PrintInt
+    17: _T46 = "\n"
+    18: parm _T46
+    19: call _PrintString
+    20: _T47 = 16
+    21: parm _T47
+    22: _T48 =  call _Math.log
+    23: parm _T48
+    24: call _PrintInt
+    25: _T49 = "\n"
+    26: parm _T49
+    27: call _PrintString
+    28: _T50 = 1
+    29: _T51 = 2
+    30: parm _T50
+    31: parm _T51
+    32: _T52 =  call _Math.max
+    33: parm _T52
+    34: call _PrintInt
+    35: _T53 = "\n"
+    36: parm _T53
+    37: call _PrintString
+    38: _T54 = 1
+    39: _T55 = 2
+    40: parm _T54
+    41: parm _T55
+    42: _T56 =  call _Math.min
+    43: parm _T56
+    44: call _PrintInt
+    45: _T57 = "\n"
+    46: parm _T57
+    47: call _PrintString
+    48: END BY RETURN, void result
+  Use-Def Chain : 
+    (_T39, 2): [1]
+    (_T40, 3): [2]
+    (_T41, 5): [4]
+    (_T42, 8): [7]
+    (_T43, 12): [10]
+    (_T44, 13): [11]
+    (_T45, 15): [14]
+    (_T46, 18): [17]
+    (_T47, 21): [20]
+    (_T48, 23): [22]
+    (_T49, 26): [25]
+    (_T50, 30): [28]
+    (_T51, 31): [29]
+    (_T52, 33): [32]
+    (_T53, 36): [35]
+    (_T54, 40): [38]
+    (_T55, 41): [39]
+    (_T56, 43): [42]
+    (_T57, 46): [45]
+
+

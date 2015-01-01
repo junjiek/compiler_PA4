@@ -1,0 +1,93 @@
+FUNCTION _Main_New : 
+BASIC BLOCK 0 : 
+    1: _T0 = 4
+    2: parm _T0
+    3: _T1 =  call _Alloc
+    4: _T2 = VTBL <_Main>
+    5: *(_T1 + 0) = _T2
+    6: END BY RETURN, result = _T1
+  Use-Def Chain : 
+    (_T0, 2): [1]
+    (_T1, 5): [3]
+    (_T2, 5): [4]
+    (_T1, 6): [3]
+
+
+FUNCTION _A_New : 
+BASIC BLOCK 0 : 
+    1: _T3 = 4
+    2: parm _T3
+    3: _T4 =  call _Alloc
+    4: _T5 = VTBL <_A>
+    5: *(_T4 + 0) = _T5
+    6: END BY RETURN, result = _T4
+  Use-Def Chain : 
+    (_T3, 2): [1]
+    (_T4, 5): [3]
+    (_T5, 5): [4]
+    (_T4, 6): [3]
+
+
+FUNCTION main : 
+BASIC BLOCK 0 : 
+    1: _T7 =  call _Main_New
+    2: _T6 = _T7
+    3: _T10 = VTBL <_A>
+    4: _T11 = *(_T6 + 0)
+    5: END BY BRANCH, goto 1
+  Use-Def Chain : 
+    (_T7, 2): [1]
+    (_T6, 4): [2]
+
+BASIC BLOCK 1 : 
+    6: _T9 = (_T10 == _T11)
+    7: END BY BGTZ, if _T9 = 1 : goto 4; 0 : goto 2
+  Use-Def Chain : 
+    (_T10, 6): [3]
+    (_T11, 6): [4, 8]
+    (_T9, 7): [6]
+
+BASIC BLOCK 2 : 
+    8: _T11 = *(_T11 + 0)
+    9: END BY BGTZ, if _T11 = 1 : goto 1; 0 : goto 3
+  Use-Def Chain : 
+    (_T11, 8): [4, 8]
+    (_T11, 9): [8]
+
+BASIC BLOCK 3 : 
+    10: _T12 = "Decaf runtime error: "
+    11: parm _T12
+    12: call _PrintString
+    13: _T13 = *(_T6 + 0)
+    14: _T14 = *(_T13 + 4)
+    15: parm _T14
+    16: call _PrintString
+    17: _T15 = " cannot be cast to "
+    18: parm _T15
+    19: call _PrintString
+    20: _T16 = VTBL <_A>
+    21: _T17 = *(_T16 + 4)
+    22: parm _T17
+    23: call _PrintString
+    24: _T18 = "\n"
+    25: parm _T18
+    26: call _PrintString
+    27: call _Halt
+    28: END BY BRANCH, goto 4
+  Use-Def Chain : 
+    (_T12, 11): [10]
+    (_T6, 13): [2]
+    (_T13, 14): [13]
+    (_T14, 15): [14]
+    (_T15, 18): [17]
+    (_T16, 21): [20]
+    (_T17, 22): [21]
+    (_T18, 25): [24]
+
+BASIC BLOCK 4 : 
+    29: _T8 = _T6
+    30: END BY RETURN, void result
+  Use-Def Chain : 
+    (_T6, 29): [2]
+
+

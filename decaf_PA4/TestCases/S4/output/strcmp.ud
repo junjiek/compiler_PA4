@@ -1,0 +1,124 @@
+FUNCTION _Main_New : 
+BASIC BLOCK 0 : 
+    1: _T4 = 4
+    2: parm _T4
+    3: _T5 =  call _Alloc
+    4: _T6 = VTBL <_Main>
+    5: *(_T5 + 0) = _T6
+    6: END BY RETURN, result = _T5
+  Use-Def Chain : 
+    (_T4, 2): [1]
+    (_T5, 5): [3]
+    (_T6, 5): [4]
+    (_T5, 6): [3]
+
+
+FUNCTION _Main.compareString : 
+BASIC BLOCK 0 : 
+    1: parm _T0
+    2: parm _T1
+    3: _T7 =  call _StringEqual
+    4: END BY BEQZ, if _T7 = 0 : goto 2; 1 : goto 1
+  Use-Def Chain : 
+    (_T0, 1): []
+    (_T1, 2): []
+    (_T7, 4): [3]
+
+BASIC BLOCK 1 : 
+    5: _T8 = "Equal"
+    6: END BY RETURN, result = _T8
+  Use-Def Chain : 
+    (_T8, 6): [5]
+
+BASIC BLOCK 2 : 
+    9: parm _T0
+    10: parm _T1
+    11: _T9 =  call _StringEqual
+    12: _T10 = ! _T9
+    13: END BY BEQZ, if _T10 = 0 : goto 4; 1 : goto 3
+  Use-Def Chain : 
+    (_T0, 9): []
+    (_T1, 10): []
+    (_T9, 12): [11]
+    (_T10, 13): [12]
+
+BASIC BLOCK 3 : 
+    14: _T11 = "Unequal"
+    15: END BY RETURN, result = _T11
+  Use-Def Chain : 
+    (_T11, 15): [14]
+
+BASIC BLOCK 4 : 
+    18: _T12 = "The impossible happens!"
+    19: END BY RETURN, result = _T12
+  Use-Def Chain : 
+    (_T12, 19): [18]
+
+BASIC BLOCK 5 : 
+    0: END BY RETURN, void result
+  Use-Def Chain : 
+
+
+FUNCTION _Main.printCompareString : 
+BASIC BLOCK 0 : 
+    1: _T13 = "\""
+    2: parm _T13
+    3: call _PrintString
+    4: parm _T2
+    5: call _PrintString
+    6: _T14 = "\" and \""
+    7: parm _T14
+    8: call _PrintString
+    9: parm _T3
+    10: call _PrintString
+    11: _T15 = "\": "
+    12: parm _T15
+    13: call _PrintString
+    14: parm _T2
+    15: parm _T3
+    16: _T16 =  call _Main.compareString
+    17: parm _T16
+    18: call _PrintString
+    19: _T17 = "\n"
+    20: parm _T17
+    21: call _PrintString
+    22: END BY RETURN, void result
+  Use-Def Chain : 
+    (_T13, 2): [1]
+    (_T2, 4): []
+    (_T14, 7): [6]
+    (_T3, 9): []
+    (_T15, 12): [11]
+    (_T2, 14): []
+    (_T3, 15): []
+    (_T16, 17): [16]
+    (_T17, 20): [19]
+
+
+FUNCTION main : 
+BASIC BLOCK 0 : 
+    1: _T18 = "Jobs"
+    2: _T19 = "Gates"
+    3: parm _T18
+    4: parm _T19
+    5: call _Main.printCompareString
+    6: _T20 = "case sensitive"
+    7: _T21 = "CASE SENSITIVE"
+    8: parm _T20
+    9: parm _T21
+    10: call _Main.printCompareString
+    11: _T22 = "Hello"
+    12: _T23 = "Hello"
+    13: parm _T22
+    14: parm _T23
+    15: call _Main.printCompareString
+    16: END BY RETURN, void result
+  Use-Def Chain : 
+    (_T18, 3): [1]
+    (_T19, 4): [2]
+    (_T20, 8): [6]
+    (_T21, 9): [7]
+    (_T22, 13): [11]
+    (_T23, 14): [12]
+
+

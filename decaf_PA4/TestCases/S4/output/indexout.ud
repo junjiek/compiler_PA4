@@ -1,0 +1,130 @@
+FUNCTION _Main_New : 
+BASIC BLOCK 0 : 
+    1: _T0 = 4
+    2: parm _T0
+    3: _T1 =  call _Alloc
+    4: _T2 = VTBL <_Main>
+    5: *(_T1 + 0) = _T2
+    6: END BY RETURN, result = _T1
+  Use-Def Chain : 
+    (_T0, 2): [1]
+    (_T1, 5): [3]
+    (_T2, 5): [4]
+    (_T1, 6): [3]
+
+
+FUNCTION main : 
+BASIC BLOCK 0 : 
+    1: _T4 = 2
+    2: _T5 = 0
+    3: _T6 = (_T4 < _T5)
+    4: END BY BEQZ, if _T6 = 0 : goto 2; 1 : goto 1
+  Use-Def Chain : 
+    (_T4, 3): [1]
+    (_T5, 3): [2]
+    (_T6, 4): [3]
+
+BASIC BLOCK 1 : 
+    5: _T7 = "Decaf runtime error: Cannot create negative-sized array\n"
+    6: parm _T7
+    7: call _PrintString
+    8: call _Halt
+    9: END BY BRANCH, goto 2
+  Use-Def Chain : 
+    (_T7, 6): [5]
+
+BASIC BLOCK 2 : 
+    10: _T8 = 4
+    11: _T9 = (_T8 * _T4)
+    12: _T10 = (_T8 + _T9)
+    13: parm _T10
+    14: _T11 =  call _Alloc
+    15: *(_T11 + 0) = _T4
+    16: _T12 = 0
+    17: _T11 = (_T11 + _T10)
+    18: END BY BRANCH, goto 3
+  Use-Def Chain : 
+    (_T4, 11): [1]
+    (_T8, 11): [10]
+    (_T8, 12): [10]
+    (_T9, 12): [11]
+    (_T10, 13): [12]
+    (_T4, 15): [1]
+    (_T11, 15): [14]
+    (_T10, 17): [12]
+    (_T11, 17): [14]
+
+BASIC BLOCK 3 : 
+    19: _T10 = (_T10 - _T8)
+    20: END BY BEQZ, if _T10 = 0 : goto 5; 1 : goto 4
+  Use-Def Chain : 
+    (_T8, 19): [10]
+    (_T10, 19): [12, 19]
+    (_T10, 20): [19]
+
+BASIC BLOCK 4 : 
+    21: _T11 = (_T11 - _T8)
+    22: *(_T11 + 0) = _T12
+    23: END BY BRANCH, goto 3
+  Use-Def Chain : 
+    (_T8, 21): [10]
+    (_T11, 21): [17, 21]
+    (_T11, 22): [21]
+    (_T12, 22): [16]
+
+BASIC BLOCK 5 : 
+    25: _T3 = _T11
+    26: _T13 = 2
+    27: _T14 = *(_T3 - 4)
+    28: _T15 = (_T13 < _T14)
+    29: END BY BEQZ, if _T15 = 0 : goto 7; 1 : goto 6
+  Use-Def Chain : 
+    (_T11, 25): [17, 21]
+    (_T3, 27): [25]
+    (_T13, 28): [26]
+    (_T14, 28): [27]
+    (_T15, 29): [28]
+
+BASIC BLOCK 6 : 
+    30: _T16 = 0
+    31: _T17 = (_T13 < _T16)
+    32: END BY BEQZ, if _T17 = 0 : goto 8; 1 : goto 7
+  Use-Def Chain : 
+    (_T13, 31): [26]
+    (_T16, 31): [30]
+    (_T17, 32): [31]
+
+BASIC BLOCK 7 : 
+    34: _T18 = "Decaf runtime error: Array subscript out of bounds\n"
+    35: parm _T18
+    36: call _PrintString
+    37: call _Halt
+    38: END BY BRANCH, goto 8
+  Use-Def Chain : 
+    (_T18, 35): [34]
+
+BASIC BLOCK 8 : 
+    39: _T19 = 4
+    40: _T20 = (_T13 * _T19)
+    41: _T21 = (_T3 + _T20)
+    42: _T22 = *(_T21 + 0)
+    43: _T23 = 0
+    44: _T24 = 4
+    45: _T25 = (_T13 * _T24)
+    46: _T26 = (_T3 + _T25)
+    47: *(_T26 + 0) = _T23
+    48: END BY RETURN, void result
+  Use-Def Chain : 
+    (_T13, 40): [26]
+    (_T19, 40): [39]
+    (_T3, 41): [25]
+    (_T20, 41): [40]
+    (_T21, 42): [41]
+    (_T13, 45): [26]
+    (_T24, 45): [44]
+    (_T3, 46): [25]
+    (_T25, 46): [45]
+    (_T23, 47): [43]
+    (_T26, 47): [46]
+
+

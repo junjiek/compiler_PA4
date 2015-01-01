@@ -127,15 +127,14 @@ public final class Driver {
 			return;
 		}
 
-		// if (option.getLevel() == Option.Level.LEVEL4) {
-		// 	for (FlowGraph g : graphs) {
-		// 		g.printUDChainTo(pw);
-		// 		pw.println();
-		// 	}
-		// 	pw.close();
-		// 	return;
-		// }
-
+		if (option.getLevel() == Option.Level.LEVEL4) {
+			for (FlowGraph g : graphs) {
+				g.printUDChainTo(pw);
+				pw.println();
+			}
+			pw.close();
+			return;
+		}
 		MachineDescription md = new Mips();
 		md.setOutputStream(pw);
 		md.emitVTable(tr.getVtables());

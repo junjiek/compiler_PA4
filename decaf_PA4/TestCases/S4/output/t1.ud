@@ -1,0 +1,25 @@
+FUNCTION _Main_New : 
+BASIC BLOCK 0 : 
+    1: _T0 = 4
+    2: parm _T0
+    3: _T1 =  call _Alloc
+    4: _T2 = VTBL <_Main>
+    5: *(_T1 + 0) = _T2
+    6: END BY RETURN, result = _T1
+  Use-Def Chain : 
+    (_T0, 2): [1]
+    (_T1, 5): [3]
+    (_T2, 5): [4]
+    (_T1, 6): [3]
+
+
+FUNCTION main : 
+BASIC BLOCK 0 : 
+    1: _T3 = "hello world"
+    2: parm _T3
+    3: call _PrintString
+    4: END BY RETURN, void result
+  Use-Def Chain : 
+    (_T3, 2): [1]
+
+
