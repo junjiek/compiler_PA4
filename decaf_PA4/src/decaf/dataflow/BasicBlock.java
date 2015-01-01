@@ -8,6 +8,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.TreeSet;
 import java.util.HashSet;
 
@@ -27,7 +28,7 @@ class DefRefPoint {
 		globalNum = globalNum1;
 	}
 
-	public static final Comparator<DefRefPoint> COMPARATOR = new Comparator<DefRefPoint>() {
+	public static final Comparator<DefRefPoint> TEMP_COMPARATOR = new Comparator<DefRefPoint>() {
 
 		@Override
 		public int compare(DefRefPoint o1, DefRefPoint o2) {
@@ -36,6 +37,19 @@ class DefRefPoint {
 				return varCompare;
 			} else {
 				return o1.globalNum > o2.globalNum ? 1 : o1.globalNum == o2.globalNum ? 0 : -1;
+			}
+		}
+	};
+
+	public static final Comparator<DefRefPoint> INDEX_COMPARATOR = new Comparator<DefRefPoint>() {
+
+		@Override
+		public int compare(DefRefPoint o1, DefRefPoint o2) {
+
+			if (o1.globalNum != o2.globalNum) {
+				return o1.globalNum > o2.globalNum ? 1 : -1;
+			} else {
+				return Temp.ID_COMPARATOR.compare(o1.var, o2.var);
 			}
 		}
 	};
@@ -90,6 +104,10 @@ public class BasicBlock {
 
 	public Map<DefRefPoint, List<Integer>> udChain;
 
+	private Hashtable<Temp, ArrayList<Integer>> inAll;
+
+	private Hashtable<Temp, Integer> newGenPointInBlock;
+
 	public Set<Temp> saves;
 
 	private List<Asm> asms;
@@ -99,18 +117,20 @@ public class BasicBlock {
 		liveUse = new TreeSet<Temp>(Temp.ID_COMPARATOR);
 		liveIn = new TreeSet<Temp>(Temp.ID_COMPARATOR);
 		liveOut = new TreeSet<Temp>(Temp.ID_COMPARATOR);
-		in = new TreeSet<DefRefPoint>(DefRefPoint.COMPARATOR);
-		out = new TreeSet<DefRefPoint>(DefRefPoint.COMPARATOR);
-		gen = new TreeSet<DefRefPoint>(DefRefPoint.COMPARATOR);
-		kill = new TreeSet<DefRefPoint>(DefRefPoint.COMPARATOR);
+		in = new TreeSet<DefRefPoint>(DefRefPoint.TEMP_COMPARATOR);
+		out = new TreeSet<DefRefPoint>(DefRefPoint.TEMP_COMPARATOR);
+		gen = new TreeSet<DefRefPoint>(DefRefPoint.TEMP_COMPARATOR);
+		kill = new TreeSet<DefRefPoint>(DefRefPoint.TEMP_COMPARATOR);
 		prev = new TreeSet<Integer>();
-		udChain = new Hashtable<DefRefPoint, List<Integer>>();
+		udChain = new TreeMap<DefRefPoint, List<Integer>>(DefRefPoint.INDEX_COMPARATOR);
+		newGenPointInBlock = new Hashtable<Temp, Integer>();
+		inAll = new Hashtable<Temp, ArrayList<Integer>>();
 		next = new int[2];
 		asms = new ArrayList<Asm>();
 	}
 
 	public void computeDefAndLiveUse() {
-		Hashtable<Temp, Integer> newGenPointInBlock = new Hashtable<Temp, Integer>();
+		newGenPointInBlock.clear();
 		for (Tac tac = tacList; tac != null; tac = tac.next) {
 			switch (tac.opc) {
 			case ADD:
@@ -211,22 +231,23 @@ public class BasicBlock {
 		} 
 	}
 	
-	private void calSingleUseDefChain(
-		DefRefPoint refPoint, Hashtable<Temp, ArrayList<Integer>> inAll,
-		Hashtable<Temp, Integer> newGenPointInBlock) {
-		if (!newGenPointInBlock.contains(refPoint.var)) {
-			ArrayList<Integer> defPoint = new ArrayList<>();
+	private void calSingleUseDefChain(DefRefPoint refPoint) {
+		ArrayList<Integer> defPoint = new ArrayList<>();
+		if (newGenPointInBlock.containsKey(refPoint.var)) {
 			defPoint.add(newGenPointInBlock.get(refPoint.var));
 			udChain.put(refPoint, defPoint);
 		} else {
-			udChain.put(refPoint, inAll.get(refPoint.var));
+			if(inAll.containsKey(refPoint.var))
+				udChain.put(refPoint, inAll.get(refPoint.var));
+			else
+				udChain.put(refPoint, defPoint);
 		}
 	}
 
 	public void calUseDefChain() {
-		Hashtable<Temp, ArrayList<Integer>> inAll = new Hashtable<Temp, ArrayList<Integer>>();
+		newGenPointInBlock.clear();
 		for (DefRefPoint point : in) {
-			if (!inAll.contains(point.var)) {
+			if (!inAll.containsKey(point.var)) {
 				ArrayList<Integer> defPlaceNum = new ArrayList<Integer>();
 				defPlaceNum.add(point.globalNum);
 				inAll.put(point.var, defPlaceNum);
@@ -234,8 +255,10 @@ public class BasicBlock {
 				inAll.get(point.var).add(point.globalNum);
 			}
 		}
-		Hashtable<Temp, Integer> newGenPointInBlock = new Hashtable<>();
+		newGenPointInBlock = new Hashtable<Temp, Integer>();
+		int endNum = -1;
 		for (Tac tac = tacList; tac != null; tac = tac.next) {
+			endNum = tac.globalNum;
 			switch (tac.opc) {
 			case ADD:
 			case SUB:
@@ -251,8 +274,8 @@ public class BasicBlock {
 			case LEQ:
 			case LES:
 				/* use op1 and op2, def op0 */
-				calSingleUseDefChain(new DefRefPoint(tac.op1, tac.globalNum), inAll, newGenPointInBlock);
-				calSingleUseDefChain(new DefRefPoint(tac.op2, tac.globalNum), inAll, newGenPointInBlock);
+				calSingleUseDefChain(new DefRefPoint(tac.op1, tac.globalNum));
+				calSingleUseDefChain(new DefRefPoint(tac.op2, tac.globalNum));
 				newGenPointInBlock.put(tac.op0, tac.globalNum);
 				break;
 			case NEG:
@@ -261,7 +284,7 @@ public class BasicBlock {
 			case INDIRECT_CALL:
 			case LOAD:
 				/* use op1, def op0 */
-				calSingleUseDefChain(new DefRefPoint(tac.op1, tac.globalNum), inAll, newGenPointInBlock);
+				calSingleUseDefChain(new DefRefPoint(tac.op1, tac.globalNum));
 				if (tac.op0 != null) { 
 					newGenPointInBlock.put(tac.op0, tac.globalNum);
 				}
@@ -279,12 +302,12 @@ public class BasicBlock {
 				break;
 			case STORE:
 				/* use op0 and op1*/
-				calSingleUseDefChain(new DefRefPoint(tac.op0, tac.globalNum), inAll, newGenPointInBlock);
-				calSingleUseDefChain(new DefRefPoint(tac.op1, tac.globalNum), inAll, newGenPointInBlock);
+				calSingleUseDefChain(new DefRefPoint(tac.op0, tac.globalNum));
+				calSingleUseDefChain(new DefRefPoint(tac.op1, tac.globalNum));
 				break;
 			case PARM:
 				/* use op0 */
-				calSingleUseDefChain(new DefRefPoint(tac.op0, tac.globalNum), inAll, newGenPointInBlock);
+				calSingleUseDefChain(new DefRefPoint(tac.op0, tac.globalNum));
 				break;
 			default:
 				/* BRANCH MEMO MARK PARM*/
@@ -292,7 +315,8 @@ public class BasicBlock {
 			}
 		}
 		if (var != null) {
-			// TODO: add return var ref
+			endNum ++;
+			calSingleUseDefChain(new DefRefPoint(var, endNum));
 		}
 	}
 	public void analyzeLiveness() {
@@ -418,6 +442,49 @@ public class BasicBlock {
 			}
 			break;
 		}
+	}
+
+	private String udChainToString() {
+		Iterator<DefRefPoint> itr = udChain.keySet().iterator();
+		String output = "";
+		while(itr.hasNext()){ 
+			DefRefPoint key = itr.next();
+			output += "    " + key.toString() + ": " + udChain.get(key).toString() + "\n";
+		}
+		return output;
+	}
+
+	public void printUDChainTo(PrintWriter pw) {
+		pw.println("BASIC BLOCK " + bbNum + " : ");
+		int endNum = -1;
+		for (Tac t = tacList; t != null; t = t.next) {
+			pw.println("    " + t.globalNum + ": " + t);
+			endNum = t.globalNum;
+		}
+		endNum ++;
+		pw.print("    " + endNum + ": ");
+		switch (endKind) {
+		case BY_BRANCH:
+			pw.println("END BY BRANCH, goto " + next[0]);
+			break;
+		case BY_BEQZ:
+			pw.print("END BY BEQZ, if " + var.name + " = ");
+			pw.println("0 : goto " + next[0] + "; 1 : goto " + next[1]);
+			break;
+		case BY_BNEZ:
+			pw.print("END BY BGTZ, if " + var.name + " = ");
+			pw.println("1 : goto " + next[0] + "; 0 : goto " + next[1]);
+			break;
+		case BY_RETURN:
+			if (var != null) {
+				pw.println("END BY RETURN, result = " + var.name);
+			} else {
+				pw.println("END BY RETURN, void result");
+			}
+			break;
+		}
+		pw.println("  Use-Def Chain : ");
+		pw.println(udChainToString());
 	}
 
 	public String toString(Set<Temp> set) {

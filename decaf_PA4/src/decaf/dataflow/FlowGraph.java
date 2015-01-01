@@ -194,7 +194,7 @@ public class FlowGraph implements Iterable<BasicBlock> {
 		for (BasicBlock bb : bbs) {
 			bb.out = bb.gen;
 			for (DefRefPoint p : bb.gen) {
-				if (!genAll.contains(p.var)) {
+				if (!genAll.containsKey(p.var)) {
 					ArrayList<DefRefPoint> pList = new ArrayList<DefRefPoint>();
 					pList.add(p);
 					genAll.put(p.var, pList);
@@ -325,6 +325,13 @@ public class FlowGraph implements Iterable<BasicBlock> {
 		pw.println("FUNCTION " + functy.label.name + " : ");
 		for (BasicBlock bb : bbs) {
 			bb.printLivenessTo(pw);
+		}
+	}
+
+	public void printUDChainTo(PrintWriter pw) {
+		pw.println("FUNCTION " + functy.label.name + " : ");
+		for (BasicBlock bb : bbs) {
+			bb.printUDChainTo(pw);
 		}
 	}
 
