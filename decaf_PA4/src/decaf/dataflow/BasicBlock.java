@@ -237,7 +237,7 @@ public class BasicBlock {
 			defPoint.add(newGenPointInBlock.get(refPoint.var));
 			udChain.put(refPoint, defPoint);
 		} else {
-			if(inAll.get(refPoint.var) != null)
+			if(inAll.containsKey(refPoint.var))
 				udChain.put(refPoint, inAll.get(refPoint.var));
 			else
 				udChain.put(refPoint, defPoint);
