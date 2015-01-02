@@ -188,8 +188,7 @@ public class FlowGraph implements Iterable<BasicBlock> {
 		}
 	}
 
-	public void analyzeArriveDef() {
-		calPrev();
+	private void calKill() {
 		Hashtable<Temp, ArrayList<DefRefPoint>> genAll = new Hashtable<Temp, ArrayList<DefRefPoint>>();
 		for (BasicBlock bb : bbs) {
 			bb.out = bb.gen;
@@ -209,6 +208,11 @@ public class FlowGraph implements Iterable<BasicBlock> {
 				bb.kill.remove(p);
 			}
 		}
+	}
+
+	public void analyzeArriveDef() {
+		calPrev();
+		calKill();
 		boolean changed = true;
 		while (changed) {
 			changed = false;
