@@ -33,9 +33,6 @@ public class FlowGraph implements Iterable<BasicBlock> {
 		for (BasicBlock bb : bbs) {
 			bb.analyzeLiveness();
 			bb.calUseDefChain();
-			// System.out.println(bb.bbNum);
-			// System.out.println(bb.udChain.toString());
-			// System.out.println();
 		}
 	}
 
